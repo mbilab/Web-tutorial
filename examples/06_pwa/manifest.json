@@ -1,0 +1,12 @@
+{
+  "name": "Progressive Web App Demo - 1",
+  "short_name": "PWA Demo 1",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [{
+    "src": "./src/VOCA-144x144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }]
+}

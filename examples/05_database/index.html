@@ -1,0 +1,88 @@
+<html>
+<body>
+	<h1>MySQL Insert</h1>
+	ID: <input id="mysql_insert_id" type="text"/>
+	Name: <input id="mysql_insert_name" type="text"/>
+	Age: <input id="mysql_insert_age" type="text"/>
+	<button id="mysql_insert_submit">Submit</button>
+	<p id="mysql_insert_result"></p>
+	
+	<h1>MySQL Query</h1>
+	Name: <input id="mysql_query_name" type="text"/>
+	<button id="mysql_query_submit">Submit</button>
+	<p id="mysql_query_result"></p>
+	
+	<h1>MongoDB Insert</h1>
+	Name: <input id="mongo_insert_name" type="text"/>
+	Age: <input id="mongo_insert_age" type="text"/>
+	<button id="mongo_insert_submit">Submit</button>
+	<p id="mongo_insert_result"></p>
+	
+	<h1>MongoDB Query</h1>
+	Name: <input id="mongo_query_name" type="text"/>
+	<button id="mongo_query_submit">Submit</button>
+	<p id="mongo_query_result"></p>
+	
+	<script
+		src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+	<script>
+		$('#mysql_insert_submit').click(() => {
+			$.post({
+				url: "php_mysql_insert.php",
+				type: "post",
+				data: {
+					id: $('#mysql_insert_id').val(),
+					name: $('#mysql_insert_name').val(),
+					age: $('#mysql_insert_age').val()
+				},
+				success: (res) => {
+					$('#mysql_insert_result').html(res);
+				}
+			});
+		});
+
+		$("#mysql_query_submit").click(() => {
+			$.post({
+				url: "php_mysql_query.php",
+				type: "post",
+				data: {
+					name: $('#mysql_query_name').val(),
+				},
+				success: (res) => {
+					$('#mysql_query_result').html(res);
+				}
+			})
+		});
+
+		$('#mongo_insert_submit').click(() => {
+			$.post({
+				url: "php_mongo_insert.php",
+				type: "post",
+				data: {
+					name: $('#mongo_insert_name').val(),
+					age: $('#mongo_insert_age').val()
+				},
+				success: (res) => {
+					$('#mongo_insert_result').html(res);
+				}
+			});
+		});
+
+		$("#mongo_query_submit").click(() => {
+			$.post({
+				url: "php_mongo_query.php",
+				type: "post",
+				data: {
+					name: $('#mongo_query_name').val(),
+				},
+				success: (res) => {
+					$('#mongo_query_result').html(res);
+				}
+			})
+		});
+
+	</script>
+</body>
+</html>

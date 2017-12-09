@@ -1,0 +1,31 @@
+{
+  "name": "preprocessor",
+  "version": "0.0.1",
+  "description": "preprocessor",
+  "scripts": {
+    "build": "NODE_ENV=production webpack -p --progress",
+    "start": "webpack-dev-server --port 10201 --progress"
+  },
+  "author": "Tien-Hao Chang <darby.chang@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-watch": "^2.0.6",
+    "css-loader": "^0.28.7",
+    "extract-loader": "^1.0.1",
+    "file-loader": "^1.1.5",
+    "html-loader": "^0.5.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.9",
+    "pug": "^2.0.0-beta6",
+    "pug-html-loader": "^1.0.10",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}

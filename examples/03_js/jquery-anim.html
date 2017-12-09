@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>UI Demo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet" type="text/css">
+    <link href="app.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="main"></div>
+    <div class="bottom ui cards">
+      <div class="card">
+        <div class="content">
+          <div class="header">Uno Wu</div>
+          <div class="description">TA of Web Programming 2017</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
+    <script>
+      let display = true
+      $(document).click(() => {
+        const transition = display ? {opacity: 0, margin: '2em auto 0'} : {opacity: 1, margin: '1em auto 0'}
+        $('.card').animate(transition, 0.2)
+        display = !display
+      })
+    </script>
+  </body>
+</html>
