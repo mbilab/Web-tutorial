@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
+    <title>Semantic UI Demo</title>
+    <style>
+      body {
+        padding: 1rem;
+        overflow-x: hidden;
+      }
+      p, a, .code {
+        font-size: 1rem;
+      }
+      p, h1.ui.header {
+        text-align: center;
+      }
+      .code, .example, .ui.buttons {
+        margin-top: 1.5rem;
+      }
+      h1.ui.header {
+        margin-top: .5em!important;
+      }
+      .ui.menu {
+        height: 100%
+      }
+      .block {
+        display: none;
+      }
+      .code {
+        background-color: #f6f8fa;
+        padding: .5rem;
+      }
+      .image.demo {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='ui container'>
+      <div class='ui left menu'>
+        <div class='item'>
+          <img class='ui tiny image' src='https://semantic-ui.com/images/logo.png'>
+        </div>
+        <a class='item'>Introduction</a>
+        <a class='item'>Getting Start</a>
+        <a class='item'>UI Element</a>
+        <a class='item'>Transition API</a>
+      </div>
+      <div class='content' style='margin-left:100px;'>
+        <h1 class='ui header'>Semantic UI</h1>
+        <div class='block'>
+          <p class='ui content'>Semantic is a development framework that helps create beautiful, responsive layouts using human-friendly HTML.</p>
+        </div>
+        <div class='block'>
+          <div class='ui segment'>
+            <h2 class='ui header'>Install via NPM</h2>
+            <div class='code'>
+              $ npm init -y
+              <br/>
+              $ npm i semantic-ui --save
+            </div>
+          </div>
+          <div class='ui segment'>
+            <h2 class='ui header'>Just use CDN</h2>
+            <div>
+              Just add the below code in your HTML header：
+            </div>
+            <div class='code'>
+              &lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css"&gt;
+              <br/>
+              &lt;script src="https://code.jquery.com/jquery-3.2.1.js"&gt;&lt;/script&gt;
+              <br/>
+              &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"&gt;&lt;/script&gt;
+            </div>
+          </div>
+        </div>
+        <div class='block'>
+          <h2 class='ui header'>Button</h2>
+          <div class='example'>
+            <button class="ui button">
+              Follow
+            </button>
+            <div class='code'>
+              &lt;button class="ui button"&gt;
+              <br/>
+              &emsp;Follow
+              <br/>
+              &lt;/button&gt;
+            </div>
+          </div>
+          <div class='example'>
+            <button class="ui primary button">
+              Save
+            </button>
+            <div class='code'>
+              &lt;button class="ui primary button"&gt;
+              <br/>
+              &emsp;Save
+              <br/>
+              &lt;/button&gt;
+            </div>
+          </div>
+          <h2 class='ui header'>Input</h2>
+          <div class='example'>
+            <div class="ui input">
+              <input type="text" placeholder="Search...">
+            </div>
+            <div class='code'>
+              &lt;div class="ui input"&gt;
+              <br/>
+              &emsp;&lt;input type="text" placeholder="Search..."&gt;
+              <br/>
+              &lt;/div&gt;
+            </div>
+          </div>
+          <div class='example'>
+            <div class="ui left icon input loading">
+              <input type="text" placeholder="Search...">
+              <i class="search icon"></i>
+            </div>
+            <div class='code'>
+              &lt;div class="ui left icon input loading"&gt;
+              <br/>
+              &emsp;&lt;input type="text" placeholder="Search..."&gt;
+              <br/>
+              &emsp;&lt;i class="search icon"&gt;&lt;/i&gt;
+              <br/>
+              &lt;/div&gt;
+            </div>
+          </div>
+          <h2 class='ui header'>More</h2>
+          <a href='https://semantic-ui.com/introduction/getting-started.html'>semantic-ui.com</a>
+        </div>
+        <div class='block'>
+          <img class='ui image demo' src='https://cdn2.ettoday.net/images/2783/2783751.jpg'>
+          <div class='ui buttons'>
+            <button class='ui button basic red'>scale</button>
+            <button class='ui button basic orange'>fade</button>
+            <button class='ui button basic orange'>fade up</button>
+            <button class='ui button basic orange'>fade down</button>
+            <button class='ui button basic orange'>fade left</button>
+            <button class='ui button basic yellow'>horizontal flip</button>
+            <button class='ui button basic yellow'>vertical flip</button>
+            <button class='ui button basic olive'>fly left</button>
+            <button class='ui button basic olive'>fly right</button>
+            <button class='ui button basic olive'>fly up</button>
+            <button class='ui button basic olive'>fly down</button>
+          </div>
+          <h3 class='ui header'>Code：</h3>
+          <div class='code'>None</div>
+          <h2 class='ui header'>More</h2>
+          <a href='https://semantic-ui.com/modules/transition.html'>semantic-ui.com</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('a.item').click(e => {
+        $(`.block:nth-child(${$('a.item.active').index() + 1})`).transition('scale')
+        $('a.item.active').removeClass('active')
+        $(e.target).addClass('active')
+        setTimeout(() => $(`.block:nth-child(${$(e.target).index() + 1})`).transition('scale'), 500)
+      })
+      $('a.item:nth-child(2)').click()
+
+      $('.ui.buttons .basic.button').click(e => {
+        let action = $(e.target).html()
+        $('.demo').transition(action)
+        $('.block:last-child .code').html(`$(".demo").transition("${action}")`)
+      })
+    </script>
+  </body>
+</html>
