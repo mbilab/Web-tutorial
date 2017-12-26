@@ -99,7 +99,7 @@ export default {
 
 <style lang="sass" scoped>
 .chart
-  margin-left: calc(50vw - 480px)
+  margin-left: calc(50vw - 480px - 1rem)
 
 .dashed-line
   stroke: rgba(50, 50, 50 ,.2)

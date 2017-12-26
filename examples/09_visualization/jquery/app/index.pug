@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title demo
+  body
+    .v-app
+      svg.chart(width='960', height='560')
+        text.title(x='300', y='40', transform='scale(1.4, 1.4)') 課程分佈
+        text.subtitle(x='380', y='90') 看看一個禮拜哪天課最少~
+        text.x-title(x='360', y='440', transform='scale(1.2, 1.2)')
+        circle(cx='350', cy='436', r='5', transform='scale(1.2, 1.2)', fill='gray')
+        g
+          line.axis(x1='35', y1='40', x2='35', y2='450')
+          line.axis(x1='35', y1='450', x2='960', y2='450')
+          line.dashed-line(x1='35', y1='130', x2='960', y2='130', stroke-dasharray='5,5')
+          line.dashed-line(x1='35', y1='210', x2='960', y2='210', stroke-dasharray='5,5')
+          line.dashed-line(x1='35', y1='290', x2='960', y2='290', stroke-dasharray='5,5')
+          line.dashed-line(x1='35', y1='370', x2='960', y2='370', stroke-dasharray='5,5')
+        g
+          text(y='50') 100
+          text(y='130') 80
+          text(y='210') 60
+          text(y='290') 40
+          text(y='370') 20
+          text(y='450') 0
+        g.bars
+          g: svg(x='60')
+            rect(width='100', fill='rgb(124, 181, 236)')
+            text.percent(x='20', fill='black')
+            text(x='10', y='400', transform='scale(1.2, 1.2)') 星期一
+          g: svg(x='210')
+            rect(width='100', fill='rgb(67, 67, 72)')
+            text.percent(x='20', fill='black')
+            text(x='10', y='400', transform='scale(1.2, 1.2)') 星期二
+          g: svg(x='360')
+            rect(width='100', fill='rgb(144, 237, 125)')
+            text.percent(x='20', fill='black')
+            text(x='10', y='400', transform='scale(1.2, 1.2)') 星期三
+          g: svg(x='510')
+            rect(width='100', fill='rgb(247, 163, 92)')
+            text.percent(x='20', fill='black')
+            text(x='10', y='400', transform='scale(1.2, 1.2)') 星期四
+          g: svg(x='660')
+            rect(width='100', fill='rgb(128, 133, 233)')
+            text.percent(x='20', fill='black')
+            text(x='10', y='400', transform='scale(1.2, 1.2)') 星期五
+          g: svg(x='810')
+            rect(width='100', fill='rgb(241, 92, 128)')
+            text.percent(x='20', fill='black')
+            text(x='10', y='400', transform='scale(1.2, 1.2)') 其他
+      .ui.basic.buttons
+        button.ui.basic.button(data-code='N2') 電機所
+        button.ui.basic.button(data-code='P7') 資訊所
+        button.ui.basic.button(data-code='Q3') 電通所
+        button.ui.basic.button(data-code='R3') 工資所
+        button.ui.basic.button(data-code='R4') 企管所
+        button.ui.basic.button(data-code='K1') 中文所
+        button.ui.basic.button(data-code='K2') 外文所
+        button.ui.basic.button(data-code='P2') 都計所
+        button.ui.basic.button(data-code='P3') 工設所
+        button.ui.basic.button(data-code='L2') 物理所
+        button.ui.basic.button(data-code='L3') 化學所
+        button.ui.basic.button(data-code='T2') 護理所
+        button.ui.basic.button(data-code='T3') 醫技所
+    script(src='./main.js')
