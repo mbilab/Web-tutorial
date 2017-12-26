@@ -17,7 +17,6 @@
     "csv-loader": "^2.1.1",
     "extract-loader": "^1.0.1",
     "file-loader": "^1.1.6",
-    "highcharts": "^6.0.4",
     "html-loader": "^0.5.1",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.0.9",
