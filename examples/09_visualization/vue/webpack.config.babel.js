@@ -88,7 +88,7 @@ if (process.env.NODE_ENV === 'production') {
   config.plugins = [
     ...config.plugins,
     new webpack.DefinePlugin({ 'process.env': { node_env: '"production"' }}),
-    new webpack.optimize.uglifyjsplugin({ output: { comments: false }, compress: { warnings: false }}),
+    new webpack.optimize.UglifyJsPlugin({ output: { comments: false }, compress: { warnings: false }}),
   ]
 }
 
