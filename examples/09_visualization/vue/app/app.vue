@@ -1,19 +1,20 @@
 <template lang="pug">
 .v-app
   #container
-  button.ui.basic.button(@click='update("N2", "電機所")') 電機所
-  button.ui.basic.button(@click='update("P7", "資訊所")') 資訊所
-  button.ui.basic.button(@click='update("Q3", "電通所")') 電通所
-  button.ui.basic.button(@click='update("R3", "工資所")') 工資所
-  button.ui.basic.button(@click='update("R4", "企管所")') 企管所
-  button.ui.basic.button(@click='update("K1", "中文所")') 中文所
-  button.ui.basic.button(@click='update("K2", "外文所")') 外文所
-  button.ui.basic.button(@click='update("P2", "都計所")') 都計所
-  button.ui.basic.button(@click='update("P3", "工設所")') 工設所
-  button.ui.basic.button(@click='update("L2", "物理所")') 物理所
-  button.ui.basic.button(@click='update("L3", "化學所")') 化學所
-  button.ui.basic.button(@click='update("T2", "護理所")') 護理所
-  button.ui.basic.button(@click='update("T3", "醫技所")') 醫技所
+  .ui.basic.buttons
+    button.ui.basic.button(@click='update("N2", "電機所")') 電機所
+    button.ui.basic.button(@click='update("P7", "資訊所")') 資訊所
+    button.ui.basic.button(@click='update("Q3", "電通所")') 電通所
+    button.ui.basic.button(@click='update("R3", "工資所")') 工資所
+    button.ui.basic.button(@click='update("R4", "企管所")') 企管所
+    button.ui.basic.button(@click='update("K1", "中文所")') 中文所
+    button.ui.basic.button(@click='update("K2", "外文所")') 外文所
+    button.ui.basic.button(@click='update("P2", "都計所")') 都計所
+    button.ui.basic.button(@click='update("P3", "工設所")') 工設所
+    button.ui.basic.button(@click='update("L2", "物理所")') 物理所
+    button.ui.basic.button(@click='update("L3", "化學所")') 化學所
+    button.ui.basic.button(@click='update("T2", "護理所")') 護理所
+    button.ui.basic.button(@click='update("T3", "醫技所")') 醫技所
 </template>
 
 <script>
@@ -105,4 +106,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.ui.buttons.basic
+  margin: 50px
 </style>
