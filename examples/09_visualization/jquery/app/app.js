@@ -1,5 +1,5 @@
 import './index.pug'
-import 'semantic-ui-css/semantic.css'
+import 'semantic-ui-offline/semantic.css'
 import './app.sass'
 
 window.$ = window.jQuery = require('jquery')
