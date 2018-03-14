@@ -47,9 +47,10 @@ body {
 }
 
 #dirty {
+  background: url(./res/dirty.jpg) center center / cover;
   border-radius: 15px;
-  width: 30px;
   height: 30px;
+  width: 30px;
 }
 
 #arrow {
