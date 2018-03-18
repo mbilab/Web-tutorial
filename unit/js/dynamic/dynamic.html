@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="">
+    <link rel='stylesheet' href='./dynamic.css'>
+    <title>JS Demo</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  </head>
+  <body>
+    <div id='demo'>
+      <div id='fixed_navber'>
+        <div id='navbar'>
+          <button class='menu pic'></button>
+          <h3 class='options'>Option</h3>
+          <button class='person pic'></button>
+        </div>
+      </div>
+      <div class='information'>
+        <div class='info left'>
+          <div id='title'>
+            <h2>Turn Left Turn Right</h2>
+            <h5> By Jimmy 1999<h5>
+          </div>
+          <h3 id='price'>$300</h3>
+        </div>
+        <div class='info star'>
+          <div id='title'>
+            <h2>Starry Night</h2>
+            <h5> By Jimmy 2002</h5>
+          </div>
+          <h3 id='price'>$320</h3>
+        </div>
+        <div class='info hug'>
+          <div id='title'>
+            <h2>Hug</h2>
+            <h5>By Jimmy 2012</h5>
+          </div>
+          <h3 id='price'>$320</h3>
+        </div>
+        <div class='info subway'>
+          <div id='title'>
+            <h2>Sound of Colors</h2>
+            <h5>By Jimmy 2001</h5>
+          </div>
+          <h3 id='price'>$280</h3>
+        </div>
+      </div>
+
+      <div class='main'>
+        <img src='./demopic/left.jpg' class='pic item' id='leftpic'
+              draggable='true' ondragstart='dragStart(event, "leftpic", "left")' ondragend='dragEnd_left(event)'>
+        <img src='./demopic/star.jpg' class='pic item' id='starpic'
+              draggable='true' ondragstart='dragStart(event, "starpic", "star")' ondragend='dragEnd_star(event)'>
+        <img src='./demopic/hug.jpg' class='pic item' id='hugpic'
+              draggable='true' ondragstart='dragStart(event, "hugpic", "hug")' ondragend='dragEnd_hug(event)'>
+        <img src='./demopic/subway.jpg' class='pic item' id='subwaypic'
+              draggable='true' ondragstart='dragStart(event, "subwaypic", "subway")' ondragend='dragEnd_subway(event)'>
+
+      </div>
+      <button class='shopcar pic' ondrop = 'drop(event)' ondragover='allowDrop(event)'></button>
+      <h4 id='add'> Added to cart</h4>
+    </div>
+    <i class='example pic'></i>
+    <script src='./dynamic.js'></script>
+  </body>
+</html>
