@@ -9,6 +9,7 @@ body, #demo, #fixed_navbar, #navbar, .information, .main{
 .pic{
   background:center center / cover
 }
+
 body{
   background-color: rgba(0, 0, 0, .1);
   overflow-y:auto;
@@ -91,15 +92,17 @@ button{
 h2, h5{
   line-height:10px;
 }
-.main{
-  height:60%;
+
+#items {
+  height: 60%;
 }
 
-.item{
-  border-radius:15px;
-  position: absolute;
+#items > img {
+  border-radius: 15px;
   box-shadow: 5px 5px 20px white;
+  position: absolute;
 }
+
 #leftpic{
   margin-left:3%;
   width:38vw;
