@@ -33,7 +33,6 @@ body {
   height: 40px;
   justify-content: space-between;
   padding: 0.5em 10%;
-  z-index: 999;
 }
 
 #navbar .icon {
@@ -44,7 +43,6 @@ body {
 .icon.menu   { background-image: url(./res/menuicon.png) }
 .icon.person { background-image: url(./res/personicon.png) }
 
-/* #information {{{ */
 #information {
   height: 100px;
   overflow: hidden;
@@ -55,6 +53,7 @@ body {
   height: 80px;
   opacity: 0;
   padding: 10px 10% 0;
+  float:left;
   width: 100%;
 }
 
@@ -74,7 +73,6 @@ body {
 #information h2, #information h5 {
   line-height: 10px;
 }
-/* }}} */
 
 #items {
   height: 60%;
