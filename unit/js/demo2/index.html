@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>JS Demo</title>
+    <link href="./app.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="demo">
+
+      <div id="navbar">
+        <button class="menu icon"></button>
+        <h3>Option</h3>
+        <button class="person icon"></button>
+      </div>
+
+      <div id="information">
+        <div class="left">
+          <div class="title">
+            <h2>Turn Left Turn Right</h2>
+            <h5> By Jimmy 1999<h5>
+          </div>
+          <h3 class="price">$300</h3>
+        </div>
+        <div class="star">
+          <div class="title">
+            <h2>Starry Night</h2>
+            <h5> By Jimmy 2002</h5>
+          </div>
+          <h3 class="price">$320</h3>
+        </div>
+        <div class="hug">
+          <div class="title">
+            <h2>Hug</h2>
+            <h5>By Jimmy 2012</h5>
+          </div>
+          <h3 class="price">$320</h3>
+        </div>
+        <div class="subway">
+          <div class="title">
+            <h2>Sound of Colors</h2>
+            <h5>By Jimmy 2001</h5>
+          </div>
+          <h3 class="price">$280</h3>
+        </div>
+      </div>
+
+      <div id="items">
+        <img src="./res/left.jpg" id="leftpic">
+        <img src="./res/star.jpg" id="starpic">
+        <img src="./res/hug.jpg" id="hugpic">
+        <img src="./res/subway.jpg" id="subwaypic">
+      </div>
+
+      <button class="shopcar pic" ondragover="event.preventDefault()"></button>
+
+      <h4 id="add">Added to cart</h4>
+    </div>
+
+    <div id="reference">
+      Painting add to cart Interaction in <a href="https://medium.muz.li/4a56fd98150c">UI Interactions of the week #115</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
