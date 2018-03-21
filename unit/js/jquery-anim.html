@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>UI Demo</title>
+
+    <!-- use a framework can speed up the development process -->
+    <!-- a drawback is introducing more dependencies -->
+    <!-- a drawback is introducing more dependencies -->
+    <!-- use cdn to leverage the browser cache on famous packages across web sites -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet" type="text/css">
+
     <link href="app.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -17,15 +23,20 @@
         </div>
       </div>
     </div>
+
+    <!-- use `script` tag to include js files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
+
+    <!-- you can code directly inside the `script` tag, but it is not a good idea -->
     <script>
       let display = true
       $(document).click(() => {
         const transition = display ? {opacity: 0, margin: '2em auto 0'} : {opacity: 1, margin: '1em auto 0'}
-        $('.card').animate(transition, 0.2)
+        $('.card').animate(transition, 0.2) // you can do all CSS things "dynamically" with this
         display = !display
       })
     </script>
+
   </body>
 </html>

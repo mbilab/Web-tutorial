@@ -20,6 +20,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
     <style>
+      .ui.cards > .card {
+        transition: all .2s;
+        -webkit-transform: all .2s;
+      }
+
+      /* css transition has limits but is worthy to learn */
+      /* less dependency, better performance */
       .ui.cards > .card:hover {
         opacity: 0;
         margin: 2em auto 0;
