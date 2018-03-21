@@ -33,7 +33,7 @@
       let display = true
       $(document).click(() => {
         const transition = display ? {opacity: 0, margin: '2em auto 0'} : {opacity: 1, margin: '1em auto 0'}
-        $('.card').animate(transition, 0.2) // you can do all CSS things "dynamically" with this
+        $('.card').animate(transition, 200) // you can do all CSS things "dynamically" with this
         display = !display
       })
     </script>
