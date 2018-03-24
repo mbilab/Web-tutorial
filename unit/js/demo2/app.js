@@ -20,6 +20,7 @@ $('#items > img')
   .bind('dragend', e => {
     x2 = e.originalEvent.pageX
     y2 = e.originalEvent.pageY
+    if ($(e.target).index() == 0) return
     if ((x2 > x1) && (Math.abs(y1 - y2) < 50)) {
       selectItem($(e.target).index() - 1)
     }
@@ -33,6 +34,7 @@ $('#items > img')
 
 $('.shopcar').bind('drop', e => {
   $('#items > img').remove()
+  $('#information').remove()
   $('#add').animate({marginTop: '-60%', opacity: '1'}, 600)
   $('.shopcar').animate({width: '8vw', height: '8vw'}, 200)
   $('.shopcar').animate({width: '6vw', height: '6vw'}, 200)
