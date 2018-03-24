@@ -26,6 +26,7 @@ $('#items > img')
     }
   })
   .click(e => {
+    if($(e.target).index() == 3) return
     selectItem($(e.target).index() + 1)
   })
   .each(function(i){
