@@ -84,6 +84,20 @@ body {
   position: absolute;
 }
 
+.shopcar {
+  background-image: url('res/shopping.png');
+  float: right;
+  margin-right: 10%;
+  margin-top: 3%;
+  width: 6vw;
+  height: 6vw;
+}
+
+#add {
+  color: green;
+  margin-left: 40%;
+  opacity: 0;
+}
 #reference {
   background: url('./res/example.gif') center / cover;
   bottom: 0;
