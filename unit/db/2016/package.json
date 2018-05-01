@@ -1,0 +1,9 @@
+{
+  "name": "sql",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mysql": "^2.12.0"
+  }
+}
