@@ -10,8 +10,9 @@ $('#ajax-form button[type=submit]').click(e => {
     fname: $('#ajax-form input[name=fname]').val(),
     lname: $('#ajax-form input[name=lname]').val(),
   }, (data) => {
-    $('#ajax-output').html(data)
+    setTimeout(() => $('#ajax-output').html(data), 3000)  
+    $('#ajax-output').html('loading')
   })
-  setTimeout(() => $('#ajax-output').html('loading'), 3000)
+  
   // try to modify the timeout
 })
