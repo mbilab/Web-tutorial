@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const config = require('./config.js');
+const config = require('./config');
 const mongoose = require('mongoose');
 
 const url = `mongodb://${config.mongodb.user}:${config.mongodb.passwd}@${config.mongodb.host}/${config.mongodb.dbname}`
