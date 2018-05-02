@@ -15,16 +15,4 @@ $('#mysql_query .submit').click(() => {
   })
 })
 
-$('#mongo_insert .submit').click(() => {
-  $.post('mongodb.php', insert_data($('#mongo_insert')), data => {
-    $('#mongo_insert .result').html(data)
-  })
-})
-
-$("#mongo_query .submit").click(() => {
-  $.post('mongodb.php', {name: $('#mongo_query input[name="name"]').val()}, data => {
-    $('#mongo_query .result').html(data)
-  })
-})
-
 // vi:et:sw=2:ts=2
