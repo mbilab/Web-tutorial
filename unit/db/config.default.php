@@ -3,15 +3,15 @@ return [
   'mongodb' => [
     'host' => '',
     'port' => '',
+    'dbname' => '',
     'user' => '',
-    'password' => '',
-    'dbname' => ''
+    'passwd' => '',
   ],
   'mysql' => [
-    'dbname' => '',
     'host' => '',
-    'passwd' => '',
+    'dbname' => '',
     'username' => '',
+    'passwd' => '',
   ]
 ];
 

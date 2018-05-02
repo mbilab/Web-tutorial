@@ -1,25 +1,34 @@
 <?php
 $config = include('config.php');
 
-$link = mysqli_connect($config['mysql']['host'], $config['mysql']['username'], $config['mysql']['passwd'], $config['mysql']['dbname']);
-if (!$link) {
-  die('fail to connect: ' . mysqli_connect_error());
+$mysqli = new mysqli($config['mysql']['host'], $config['mysql']['username'], $config['mysql']['passwd'], $config['mysql']['dbname']);
+if ($mysqli->connect_errno) {
+    die('fail to connect: ' . $mysqli->connect_errno . " " . $mysqli->connect_error);
 }
 
 #! change table
 if ($_REQUEST['id']) { # insert
-  $sql = "INSERT INTO `wp2017_ta`.`AgeData` (`id`, `name`, `age`) VALUES ('{$_POST['id']}', '{$_POST['name']}', '{$_POST['age']}');";
-  if (!mysql_query($sql, $link)) {
-    die('fail to insert: ' . mysql_error();
-  }
+    $sql = "INSERT INTO `student_course` (`sid`, `cid`) VALUES ('{$_POST['id']}', '{$_POST['course']}');";
+    if (!$result = $mysqli->query($sql)) {
+        echo 'fail to insert: ' . $mysqli->error;
+    } else {
+        echo 'insert success.';
+    }
 } else {# query
-  $sql = "SELECT * FROM `AgeData` WHERE `name`='{$_POST['name']}'";
-  $result = mysql_query($sql, $link);
-  if ($result) {
-    echo mysql_result($res,0,1)." your age is ".mysql_result($res,0,2);
-  } else {
-    die('fail to query: ' . mysql_error();
-  }
+    $sql = "SELECT student.id, student.name FROM student
+        JOIN student_course ON student_course.sid = student.id
+        JOIN course ON course.id = student_course.cid
+        WHERE course.name LIKE '{$_POST['name']}'";
+    if ($result = $mysqli->query($sql)) {
+        $students = "";
+        while ($student = $result->fetch_row()) {
+            $students = $students . $student[1] . ", ";
+        }
+        $students = substr($students, 0, -2);
+        echo "course {$_POST['name']} have students {$students}";
+    } else {
+        echo 'fail to query: ' . $mysqli->error;
+    }
 }
 
 mysqli_close($link);
