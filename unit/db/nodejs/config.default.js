@@ -1,17 +1,17 @@
 config = {
-	'mongo': {
-		'host': '',
-		'port': '',
-		'user': '',
-		'password': '',
-		'dbname': '',
-	},
-	'mysql': {
-		'host': '',
-		'user': '',
-		'password': '',
-		'dbname': '',
-	},
+  'mongodb': {
+    'host': '',
+    'port': '',
+    'dbname': '',
+    'user': '',
+    'passwd': '',
+  },
+  'mysql': {
+    'host': '',
+    'dbname': '',
+    'user': '',
+    'passwd': '',
+  },
 }
 
 module.exports = config;
