@@ -15,14 +15,15 @@ if ($_REQUEST['id']) { # insert
   $sql = "SELECT student.id, student.name FROM student
     JOIN student_course ON student_course.sid = student.id
     JOIN course ON course.id = student_course.cid
-    WHERE course.name LIKE '{$_POST['name']}'";
+    WHERE course.name LIKE '{$_REQUEST['name']}'";
+  #! use mysqli_fetch_all()
   if ($result = $mysqli->query($sql)) {
     $students = "";
     while ($student = $result->fetch_row()) {
       $students = $students . $student[1] . ", ";
     }
     $students = substr($students, 0, -2);
-    echo "course {$_POST['name']} have students {$students}";
+    echo $students;
   } else {
     die 'fail to query: ' . $mysqli->error;
   }
