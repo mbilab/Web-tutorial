@@ -7,10 +7,10 @@ config = {
     'passwd': '',
   },
   'mysql': {
+    'database': '',
     'host': '',
-    'dbname': '',
+    'password': '',
     'user': '',
-    'passwd': '',
   },
 }
 

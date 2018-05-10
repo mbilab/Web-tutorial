@@ -1,15 +1,9 @@
 #!/usr/bin/env node
-const config = require('./config');
-const mysql = require('mysql');
 
-console.log(config.mysql.host)
+const config = require('./config')
+const mysql = require('mysql')
 
-const connection = mysql.createConnection({
-  host: config.mysql.host,
-  user: config.mysql.user,
-  password: config.mysql.passwd,
-  database: config.mysql.dbname
-})
+const connection = mysql.createConnection(config.mysql)
 
 connection.connect((err) => {
   if (err) {
