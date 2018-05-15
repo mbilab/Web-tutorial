@@ -18,10 +18,9 @@ if ($_REQUEST['id']) { # insert
     WHERE course.name LIKE '{$_REQUEST['name']}'";
   if ($result = $mysqli->query($sql)) {
     $students = $result->fetch_all();
-    $students = implode(", ", array_map(function ($entry) {
-          return $entry[1];
-    }, $students));
-    echo $students;
+    foreach ($students as $student) {
+        echo $student[1].' ';
+    }
   } else {
     die('fail to query: ' . $mysqli->error);
   }

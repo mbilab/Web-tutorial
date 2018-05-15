@@ -10,7 +10,7 @@ const conn = mongoose.connect(url, { useMongoClient: true }, (err, res) => {
 });
 mongoose.Promise = global.Promise;
 
-// student
+// create student schema
 const studentCollectionName = 'student';
 const studentSchema = new mongoose.Schema({
   id: String,
@@ -18,7 +18,7 @@ const studentSchema = new mongoose.Schema({
 }, { collection: studentCollectionName });
 const studentModel = conn.model(studentCollectionName, studentSchema);
 
-// course
+// create course schema
 const courseCollectionName = 'course';
 const courseSchema = new mongoose.Schema({
   id: String,
@@ -27,16 +27,19 @@ const courseSchema = new mongoose.Schema({
 }, { collection: courseCollectionName });
 const courseModel = conn.model(courseCollectionName, courseSchema);
 
+// create student data
 const studentData = [
   {"id":"F12345678", "name":"Student A"},
   {"id":"P12345679", "name":"Student B"}
 ];
 
+// create course data
 const courseData = [
   {"id":"B0001", "name":"Web Programming", "students": ["F12345678", "P12345679"]},
   {"id":"M0001", "name":"Machine Learning", "students": ["P12345679"]}
 ];
 
+// insert
 const saveAll = (data, model) => {
   for (d of data) {
     const m = new model(d);
@@ -54,7 +57,11 @@ saveAll(studentData, studentModel);
 
 saveAll(courseData, courseModel);
 
-setTimeout(() => {
-  conn.close();
-  process.exit();
-}, 2000);
+// query
+courseModel.findOne({id: "B0001"}).exec((err, res) => {
+  if (err) console.log('Course query failed')
+  else {
+    console.log(res.name + ' have students ' + res.students)
+    conn.close()
+  }
+})
