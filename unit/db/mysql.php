@@ -19,7 +19,7 @@ if ($_REQUEST['id']) { # insert
   if ($result = $mysqli->query($sql)) {
     $students = $result->fetch_all();
     foreach ($students as $student) {
-        echo $student[1].' ';
+      echo $student[1].' ';
     }
   } else {
     die('fail to query: ' . $mysqli->error);

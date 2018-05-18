@@ -1,10 +1,9 @@
 config = {
   'mongodb': {
+    'database': '',
     'host': '',
-    'port': '',
-    'dbname': '',
+    'password': '',
     'user': '',
-    'passwd': '',
   },
   'mysql': {
     'database': '',
