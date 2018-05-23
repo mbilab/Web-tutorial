@@ -1,1 +1,1 @@
-check https://github.com/abvesa/2d_web_game/blob/master/readme.ipynb
+check https://github.com/mbilab/Web-tutorial/blob/master/unit/game/doc.ipynb
