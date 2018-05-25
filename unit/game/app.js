@@ -14,7 +14,8 @@ const game = new Phaser.Game(320, 240, Phaser.AUTO, 'game', {
     npc1 = game.add.sprite(128, 36, 'npc1', 7)
     npc2 = game.add.sprite(64, 108, 'npc2', 7)
     player = game.add.sprite(0, 0, 'player', 7)
-    game.physics.enable([npc1, npc2, player], Phaser.Physics.ARCADE)
+    sprites = [npc1, npc2, player]
+    game.physics.enable(sprites, Phaser.Physics.ARCADE)
 
     npc1.body.collideWorldBounds = true
     npc1.body.immovable = true // try mark this line
@@ -28,29 +29,26 @@ const game = new Phaser.Game(320, 240, Phaser.AUTO, 'game', {
   },
 
   update: () => {
-    velocity = { x: 0, y: 0 }
-    speed = 100
+    for (const v of sprites)
+      v.body.velocity.set(0, 0)
+
+    speed = 200 // pixel per second
     if (keyboard.up.isDown) {
+      player.body.velocity.y = -speed
       player.play('moveUp')
-      velocity.y = -speed
     } else if (keyboard.down.isDown) {
+      player.body.velocity.y =  speed
       player.play('moveDown')
-      velocity.y = speed
     } else if (keyboard.left.isDown) {
+      player.body.velocity.x = -speed
       player.play('moveLeft')
-      velocity.x = -speed
     } else if (keyboard.right.isDown) {
+      player.body.velocity.x =  speed
       player.play('moveRight')
-      velocity.x = speed
     } else
       player.animations.stop()
 
-    game.physics.arcade.collide(npc1, player)
-    if (game.physics.arcade.collide(npc2, player))
-      npc2.body.velocity = velocity
-    else
-      npc2.body.velocity = {}
-    player.body.velocity = velocity
+    game.physics.arcade.collide(sprites, sprites)
   },
 
   render: () => {
