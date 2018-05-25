@@ -1,8 +1,9 @@
 const game = new Phaser.Game(320, 240, Phaser.AUTO, 'game', {
 
   preload: () => {
-    game.load.spritesheet('npc', './res/healer_f.png', 32, 36, 12)
-    game.load.spritesheet('player', './res/healer_m.png', 32, 36, 12)
+    game.load.spritesheet('npc1', './res/healer_f.png', 32, 36, 12)
+    game.load.spritesheet('npc2', './res/healer_m.png', 32, 36, 12)
+    game.load.spritesheet('player', './res/mage_f.png', 32, 36, 12)
   },
 
   create: () => {
@@ -10,12 +11,14 @@ const game = new Phaser.Game(320, 240, Phaser.AUTO, 'game', {
     game.stage.backgroundColor = '#4488AA'
 	  keyboard = game.input.keyboard.createCursorKeys()
 
-    npc = game.add.sprite(64, 72, 'npc', 7)
+    npc1 = game.add.sprite(128, 36, 'npc1', 7)
+    npc2 = game.add.sprite(64, 108, 'npc2', 7)
     player = game.add.sprite(0, 0, 'player', 7)
-    game.physics.enable([npc, player], Phaser.Physics.ARCADE)
+    game.physics.enable([npc1, npc2, player], Phaser.Physics.ARCADE)
 
-    npc.body.immovable = true // try delete this line
-    npc.body.collideWorldBounds = true
+    npc1.body.collideWorldBounds = true
+    npc1.body.immovable = true // try mark this line
+    npc2.body.collideWorldBounds = true
 
     player.body.collideWorldBounds = true
     player.animations.add('moveUp',    [0,  1,  2], 10, true)
@@ -25,28 +28,33 @@ const game = new Phaser.Game(320, 240, Phaser.AUTO, 'game', {
   },
 
   update: () => {
-    game.physics.arcade.collide(npc, player)
     velocity = { x: 0, y: 0 }
     speed = 100
     if (keyboard.up.isDown) {
-      velocity.y = -speed
       player.play('moveUp')
+      velocity.y = -speed
     } else if (keyboard.down.isDown) {
-      velocity.y = speed
       player.play('moveDown')
+      velocity.y = speed
     } else if (keyboard.left.isDown) {
-      velocity.x = -speed
       player.play('moveLeft')
+      velocity.x = -speed
     } else if (keyboard.right.isDown) {
-      velocity.x = speed
       player.play('moveRight')
+      velocity.x = speed
     } else
       player.animations.stop()
+
+    game.physics.arcade.collide(npc1, player)
+    if (game.physics.arcade.collide(npc2, player))
+      npc2.body.velocity = velocity
+    else
+      npc2.body.velocity = {}
     player.body.velocity = velocity
   },
 
   render: () => {
-    game.debug.body(player)
+    // game.debug.body(player) // try un-mark this line
   },
 
 })
