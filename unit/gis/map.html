@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Map Demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,width=device-width">
+  </head>
+  <body style="margin: 0">
+    <div id="map" style="height: 100vh"></div>
+    <script src="id.js"></script>
+    <script>
+
+      const drawMap = pos => {
+        // create a map object and specify the DOM element for display
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: pos,
+          zoom: 15,
+        })
+        // create a marker and set its position
+        var marker = new google.maps.Marker({
+          map: map,
+          position: pos,
+          title: "I'm here",
+        })
+      }
+
+      function initMap() {
+        // check https and browser settings
+        if (false) { // set this to `true` if https is not available
+          drawMap({ lat: 22.9966779, lng: 120.2226481 })
+          return
+        }
+        if ('geolocation' in navigator) {
+          // geolocation is available
+          navigator.geolocation.getCurrentPosition((pos) => {
+            drawMap({ lat: pos.coords.latitude, lng: pos.coords.longitude })
+          })
+        } else {
+          // geolocation IS NOT available
+        }
+      }
+
+      // load Google Map API dynamically
+      const fs = document.getElementsByTagName('script')[0] // first <script>
+      const s = document.createElement('script')
+      s.async = true
+      s.defer = true
+      s.src = `https://maps.googleapis.com/maps/api/js?key=${myAPIKey}&libraries=visualization&callback=initMap`
+      fs.parentNode.insertBefore(s, fs)
+    </script>
+    <!--script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=MY_API_KEY&libraries=visualization"></script-->
+  </body>
+</html>
+<!--
+vi:et:ts=2
+-->

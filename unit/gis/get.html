@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GIS Demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,width=device-width">
+  </head>
+  <body>
+    <div id="msg"></div>
+    <script>
+      // check https and browser settings
+      if ('geolocation' in navigator) {
+        // geolocation is available
+        msg = document.getElementById('msg')
+        navigator.geolocation.getCurrentPosition(pos => {
+          msg.innerHTML = `${pos.coords.latitude}, ${pos.coords.longitude}`
+          msg.style.fontSize = window.innerWidth / 15 + 'px'
+        })
+        msg.innerHTML = 'getting your position'
+      } else {
+        // geolocation IS NOT available
+        msg = document.getElementById('msg')
+        msg.innerHTML = 'no geolocation support'
+      }
+    </script>
+  </body>
+</html>
+<!--
+vi:et:ts=2
+-->
