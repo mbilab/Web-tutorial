@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sound Demo</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <input id="text" type="text" value="測試">
+    <button id="speak">Speak</button>
+    <script>
+      const speak = () => {
+        const utter = new SpeechSynthesisUtterance()
+        utter.voice = speechSynthesis.getVoices()
+          .filter(v => v.name.includes('臺灣'))[0]
+        utter.text = document.getElementById('text').value
+        speechSynthesis.speak(utter)
+      }
+      document.getElementById('speak').onclick = speak
+    </script>
+  </body>
+</html>
+<!--
+vi:et:ts=2
+-->
