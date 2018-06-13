@@ -1,3 +1,13 @@
+////////////////////////////////////////////////////////////////////////////////
+// HTML Audio
+const play = () => {
+  const audio = document.querySelector('audio')
+  // audio.currentTime = 0 // try enable this
+  audio.play()
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// MediaDevices and MediaStream Recording API
 const type = 'audio' // try 'vedio'
 const ext = 'video' === type ? 'mp4' : 'webm'
 const recordedChunks = []
@@ -23,8 +33,8 @@ const stop = () => {
 }
 const download = () => {
   stop()
-  let blob = new Blob(recordedChunks, {type: `${type}/${ext}`})
-  let a = document.createElement('a')
+  const blob = new Blob(recordedChunks, {type: `${type}/${ext}`})
+  const a = document.createElement('a')
   document.body.appendChild(a)
   a.download = `test.${ext}`
   a.href = window.URL.createObjectURL(blob)
@@ -32,6 +42,8 @@ const download = () => {
   document.body.removeChild(a)
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Web Speech API
 const speak = () => {
   const utter = new SpeechSynthesisUtterance()
   // console.log(speechSynthesis.getVoices()) // try enable this
