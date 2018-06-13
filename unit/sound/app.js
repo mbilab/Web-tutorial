@@ -8,14 +8,14 @@ const play = () => {
 
 ////////////////////////////////////////////////////////////////////////////////
 // MediaDevices and MediaStream Recording API
-const type = 'audio' // try 'vedio'
+const type = 'audio' // try 'video'
 const ext = 'video' === type ? 'mp4' : 'webm'
 const recordedChunks = []
 navigator.mediaDevices.getUserMedia({
   audio: true,
-  video: 'vedio' === type,
+  video: 'video' === type,
 }).then(stream => {
-  if ('vedio' === type)
+  if ('video' === type)
     document.querySelector('#stream-video').srcObject = stream
   window.recorder = new MediaRecorder(stream, {mimeType: `${type}/${ext}`})
   recorder.ondataavailable = event => {
