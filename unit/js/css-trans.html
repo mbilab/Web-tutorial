@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>UI Demo</title>
+    <title>CSS Transition Demo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet" type="text/css">
     <link href="app.css" rel="stylesheet" type="text/css">
   </head>
@@ -17,19 +17,23 @@
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
+
+    <!-- no `script` tag -->
+
     <style>
       .ui.cards > .card {
         transition: all .2s;
+
+        /* vendor-prefix is for compatibility, it is less important as browsers improves */
         -webkit-transform: all .2s;
       }
 
-      /* css transition has limits but is worthy to learn */
+      /* css transition has limits, but is worthy to learn */
       /* less dependency, better performance */
+      /* `:hover` is a bad event (for touch screen), prevent using it */
       .ui.cards > .card:hover {
+        margin-top: 2em;
         opacity: 0;
-        margin: 2em auto 0;
       }
     </style>
   </body>
