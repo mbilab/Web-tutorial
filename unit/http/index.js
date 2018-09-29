@@ -3,7 +3,7 @@
 
 $('#ajax-form button[type=submit]').click((event) => {
   event.preventDefault()
-  // no need if button type is not 'submit',
+  // no need if button type is not `submit`,
   //   but make it work without ajax is a good practice
 
   $.get('ajax.php', {

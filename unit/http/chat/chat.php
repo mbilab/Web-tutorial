@@ -12,6 +12,7 @@ if ($text) {
   file_put_contents("chat.txt", $text, FILE_APPEND);
 }
 
+# create `chat.txt` with proper privilege
 # use database once you are able to
 echo file_get_contents("chat.txt");
 ?>
