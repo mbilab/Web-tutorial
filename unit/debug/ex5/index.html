@@ -1,0 +1,32 @@
+<!DOCTYPE html> <!-- tell browser how to interpret this document -->
+<html> <!-- other tags should be inside this -->
+  <head> <!-- meta (non-content) data goes here-->
+    <meta charset="utf-8">
+    <title>Title here</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./app.js"></script>
+  </head>
+  <body> <!-- content goes here-->
+    <p>This is a sample for setTimeout, Promise, and Async</p>
+    <p>We want to show 'A' after 1 sec first, and then show 'B' after 1 sec</p>
+    <br>
+
+    <p>Thie will show 'A' and 'B' at the same time</p>
+    <button id='bug'>click me</button>
+    <p id='A'> A shows here</p>
+    <p id='B'> B shows here</p>
+    <br>
+
+    <p>This will show 'A' first and then show 'B'</p>
+    <button id='promise'>click me</button>
+    <p id='promise_A'> A shows here</p>
+    <p id='promise_B'> B shows here</p>
+    <br>
+
+    <p>This will show 'A' first and then show'B'</p>
+    <button id='async'>click me</button>
+    <p id='async_A'> A shows here</p>
+    <p id='async_B'> B shows here</p>
+    <br>
+  </body>
+</html>
