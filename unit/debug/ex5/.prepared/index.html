@@ -6,17 +6,26 @@
   </head>
   <body> <!-- content goes here-->
     <p>This is a sample for setTimeout, Promise, and Async</p>
-    <hr>
+    <p>We want to show 'A' after 1 sec first, and then show 'B' after 1 sec</p>
+    <br>
 
-    <p>The following example will show 'A' and 'B' at the same time.</p>
-    <p>But we want to show 'A' after 1 sec first, and then show 'B' after 1 sec.</p>
-    <p>click button --(1 sec)--> shows 'A' --(1 sec)--> shows 'B'</p>
-    <p>Fix it !</p>
+    <p>Thie will show 'A' and 'B' at the same time</p>
     <button id='bug'>click me</button>
     <p id='A'> A shows here</p>
     <p id='B'> B shows here</p>
-    <hr>
+    <br>
 
+    <p>This will show 'A' first and then show 'B'</p>
+    <button id='promise'>click me</button>
+    <p id='promise_A'> A shows here</p>
+    <p id='promise_B'> B shows here</p>
+    <br>
+
+    <p>This will show 'A' first and then show'B'</p>
+    <button id='async'>click me</button>
+    <p id='async_A'> A shows here</p>
+    <p id='async_B'> B shows here</p>
+    <br>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="./app.js"></script>
   </body>
