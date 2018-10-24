@@ -3,23 +3,22 @@
 ## Installation
 
 ```
-npm install
+yarn
 ```
+
+## Execution
+
+1. Modify the port in serv.js:3
+2. `$ node serv.js` 
+3. Visit the [website](http://[host]:[port]).
 
 ## Description
 
-Modify the port in serv.js:3
-Visit the [website](http://[host]:[port])
+This example is a borken version of the http/ajax exercise.
 
-This example is a borken version of http/ajax homework.
-1. You can sucessfully click the 'list all students' button, and see
-   all sid:name pair.
-2. When click 'search specific student', you can find the web reload
-   but get nothing.
-3. Check whether the id of 'search specific student' button in the
-   index.html correspond to that in the main.js.
-4. After ensuring it actually enters the click function, check if
-   server side get the request, and you may need to modify the url
-   correctly.
+1. You can click the `list all students` button and see all id:name pair.
+2. When clicking the `search a specific student` button, there is no result.  You may find that the browser goes to a new page, which is not expected for an ajax request.  Try to fix this.
 
-
+Hints:
+* Check whether the id of the `search a specific student` button in the `index.html` corresponds to that in the `main.js`.
+* Check whether the server gets the request.  You may need to modify the url.
