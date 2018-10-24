@@ -10,3 +10,4 @@ $("#animate").click(function(){
     left: "0",
   }, 1500 );
 })
+// vi:et:sw=2:ts=2
