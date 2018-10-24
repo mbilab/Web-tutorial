@@ -1,4 +1,5 @@
 $("#animate").click(function(){
+  $("#animate").attr("disabled", true);
   $("#move_box").animate({
     width: "300",
     height: "300",
@@ -9,5 +10,6 @@ $("#animate").click(function(){
     height: "100",
     left: "0",
   }, 1500 );
+  $("#animate").attr("disabled", false);
 })
 // vi:et:sw=2:ts=2
