@@ -1,16 +1,17 @@
 # Debug example 3
 
+## Installation
+
+1. Softlink this directory to your `public_html`.
+2. Visit the [website](http://[host]/~[account]/ex3/).
+
 ## Description
 
-You can softlink this directory to your public_html.
-Visit the [website](http://[host]/~[account]/ex3)
-
 This is a html/css example.
-1. If the text is in class layer1, the font color should be red.
-   If the text is further in class layer2, the font color should be green.
-   If the text is further in class layer3, the font color should be blue.
-2. We can find that the forth 'layer2' become blue because of a missing
-   '</div>' tag. Try to fix it.
-3. Further, good indentation habit makes it easy to debug, or it would be
-   very hard to find where is wrong.
 
+1. Layer1, 2 and 3 should be red, blue and green, respectively.
+2. However, the forth `layer2` is blue.  Try to fix it.
+
+Hints:
+
+Note that good indentation makes it easy to debug.  Otherwise, you will find this example is very hard.
