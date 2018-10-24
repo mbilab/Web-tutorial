@@ -1,4 +1,4 @@
-$(document).ready(function() { 
+$(document).ready(function() {
   $('#bug').click(function(e){
     setTimeout(() => {
       $('#A').html('A')
@@ -10,3 +10,5 @@ $(document).ready(function() {
     }, 1000);
   })
 });
+
+// vi:et:sw=2:ts=2
