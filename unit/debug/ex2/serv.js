@@ -1,9 +1,11 @@
 const express = require('express')
 // const bodyParser = require("body-parser");
 const app = express()
-const port = 50001
+const port = 50000 // modify this if necessary
 
 app.listen(port)
+console.log(`listening port: ${port}`)
+
 app.use(express.static(__dirname + '/public'))
 // app.use(bodyParser.json())
 

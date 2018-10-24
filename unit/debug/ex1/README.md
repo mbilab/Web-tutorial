@@ -2,15 +2,10 @@
 
 ## Installation
 
-```
-yarn
-```
-
-## Execution
-
-1. Modify the port in serv.js:3
-2. `$ node serv.js` 
-3. Visit the [website](http://[host]:[port]).
+1. `$ yarn`
+2. Modify the port in serv.js:3
+3. `$ node serv.js` 
+4. Visit the [website](http://[host]:[port]).
 
 ## Description
 

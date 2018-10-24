@@ -2,18 +2,16 @@
 
 ## Installation
 
-```
-npm install
-```
+1. `$ yarn`
+2. Modify the port in serv.js:4
+3. `$ node serv.js` 
+4. Visit the [website](http://[host]:[port]).
 
 ## Description
 
-Modify the port in serv.js:4
-Visit the [website](http://[host]:[port])
+Enter something in `first name` and `last name` and click `submit via ajax`.  The result does not show what you just entered.  Try to fix it.
 
-1. Enter the fname and lname and click the button, something should
-   appear in the website. 
-2. You can find that the ajax method change to POST in 'main.js' and
-   'serv.js', but you can't get what you want in req.query.
-3. You need to use 'body-parser' to parse the data passing from web
-   to req.body, and get data through it.
+Hints:
+* Note that the ajax method change to `post` in `main.js`.
+* Check whether `req.query` in `serv.js` receives data.
+* Google `post nodejs` for reference.  You should get a keyword `body-parser`.
