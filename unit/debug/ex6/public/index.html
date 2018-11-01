@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>http & ajax</title>
   </head>
-
   <body>
-    <button type="submit" id="list">list student whose id is E123456789</button>
-    <p id="list_content"></p>
-    <br>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
-    <script src="main.js"></script>
+    <form>
+      <input name="id1" placeholder="First ID">
+      <input name="id2" placeholder="Second ID">
+      <button type="submit">Get student names</button>
+    </form>
+    <input name="name1" placeholder="First name" readonly>
+    <input name="name2" placeholder="Second name" readonly>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
+<!--
+  vi:et:sw=2:ts=2
+-->
