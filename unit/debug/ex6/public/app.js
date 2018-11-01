@@ -11,4 +11,4 @@ $(document).ready(function() {
   })
 })
 
-// vi:et:sw=2:ts=2
+// vi:et:nu:sw=2:ts=2

@@ -14,3 +14,5 @@ app.get('/ajax', function(req, res) {
   const json = JSON.stringify(students[req.query.id1]) + JSON.stringify(students[req.query.id2])
   res.send(json)
 })
+
+// vi:nu

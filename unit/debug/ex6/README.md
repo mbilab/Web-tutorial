@@ -9,7 +9,8 @@
 
 ## Description
 
-1. When clicking the `list student whose id is E123456789` button, there is no result.  You may find that the browser can't parse the response data. Try to fix this.
+Input two student IDs and click the `Get user names` button.  The corresponding student names should be shown on the screen.  Try to fix it.
 
 Hints:
-* Check how server send string in the `main.js`.
+
+You may find that `public/app.js:7` expects that server reponses a object and `serv.js:14` tries to pack two names into a JSON string.  But, is the packed JSON string valid?
