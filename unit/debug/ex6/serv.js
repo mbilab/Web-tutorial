@@ -10,7 +10,7 @@ const students = JSON.parse(fs.readFileSync('./students.json'))
 
 app.use(express.static(__dirname + '/public'))
 
-app.get('/ajax', function(req, res) {
+app.get('/ajax', (req, res) => {
   const json = JSON.stringify(students[req.query.id1]) + JSON.stringify(students[req.query.id2])
   res.send(json)
 })

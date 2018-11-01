@@ -9,10 +9,9 @@
 
 ## Description
 
-1. You can click the `list all students` button and see all id:name pair.
-2. When clicking `list all students` button, there is a Uncaught SyntaxError.
-3. After fix it, you can type two id in form, and there is only own name response. Try to fix it.
+Input two student IDs and click the `Get user names` button.  The corresponding student names should be shown on the screen.  Try to fix it.
 
 Hints:
-* Check where may cause SyntaxError in `main.js`.
-* Check whether the server throw the error message.
+
+* Check syntax of `public/app.js`.
+* The server (`serv.js`) returns two names by calling `res.send` twice.  Is this reasonable?
