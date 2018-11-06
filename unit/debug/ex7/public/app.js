@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   $('[type=submit]').click(e => {
     e.preventDefault()
     $.get('./ajax', {
