@@ -5,5 +5,6 @@ $(() => {
     })
   }
   fetchData()
-  $('#fetch-data').click(() => fetchData())
+  $('#fetch-data').click(fetchData)
 })
+// vi:et:sw=2:ts=2

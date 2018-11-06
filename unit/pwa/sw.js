@@ -1,45 +1,42 @@
-const cacheFile = [
+// try edit the cached files and/or the `cachedFiles` list
+const cachedFiles = [
   './',
+  './app.js',
   './index.html',
 ]
 
-const cacheKey = 'demo-app-v1'
+// edit this to force re-cache
+const cacheKey = 'demo-sw-v1'
 
-// install
+// install, a good time to preload cache
 self.addEventListener('install', event => {
-  console.log("now install")
-
-  event.waitUntil(
-    caches.open(cacheKey)
-    .then(cache => cache.addAll(cacheFile))
-    // .then(() => self.skipWaiting())
-  )
+  console.log(`${cacheKey} is installed`)
+  event.waitUntil((async () => {
+    const cache = await caches.open(cacheKey)
+    return cache.addAll(cachedFiles)
+  })())
 })
 
-// activate
+// activate, a good time to clean old cache since the old service work stops now
 self.addEventListener('activate', event => {
-  console.log(`activate ${cacheKey}, now ready to handle fetches`)
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      const promiseArr = cacheNames.map(item => {
-        if (item !== cacheKey) {
-          return caches.delete(item)
-        }
-      })
-      return Promise.all(promiseArr)
-    })
-  )
+  console.log(`${cacheKey} is activated`)
+  event.waitUntil((async () => {
+    const keys = await caches.keys()
+    return Promise.all(keys.filter(key => key != cacheKey).map(key => caches.delete(key)))
+  })())
 })
 
 // fetch
 self.addEventListener('fetch', event => {
-  console.log(`${event.request.method}: ${event.request.url}`)
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      if (response) {
-        return response
-      }
-      return fetch(event.request)
-    })
-  )
+  event.respondWith((async () => {
+    const response = await caches.match(event.request)
+    if (response) {
+      console.log(`Catch fetch: ${event.request.url}`)
+      return response
+    }
+    console.log(`Network fetch: ${event.request.url}`)
+    return fetch(event.request)
+  })())
 })
+
+// vi:et:sw=2:ts=2
