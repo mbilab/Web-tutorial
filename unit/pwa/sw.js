@@ -6,7 +6,7 @@ const cachedFiles = [
 ]
 
 // edit this to force re-cache
-const cacheKey = 'demo-sw-v1'
+const cacheKey = 'demo-sw-v3'
 
 // install, a good time to preload cache
 self.addEventListener('install', event => {
@@ -31,7 +31,7 @@ self.addEventListener('fetch', event => {
   event.respondWith((async () => {
     const response = await caches.match(event.request)
     if (response) {
-      console.log(`Catch fetch: ${event.request.url}`)
+      console.log(`Cache fetch: ${event.request.url}`)
       return response
     }
     console.log(`Network fetch: ${event.request.url}`)
