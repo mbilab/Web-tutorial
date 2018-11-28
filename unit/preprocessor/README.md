@@ -31,8 +31,8 @@ npm i # use `yarn` if you have it
 ./node_modules/.bin/node-sass --watch app/app.sass
 ```
 
-## stage 3 - automation
+## stage 3 - automation (with webpack)
 
-1. Change the port **10201** in `package.json`
+1. /bin/echo [PORT] > port
 2. `npm start` or `yarn start`
-3. open http://luffy.ee.ncku.edu.tw:[YOUR_PORT]
+3. open http://[HOST]:[PORT]

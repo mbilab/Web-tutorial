@@ -4,7 +4,7 @@
   "description": "preprocessor",
   "scripts": {
     "build": "NODE_ENV=production webpack -p --progress",
-    "start": "webpack-dev-server --port 10201 --progress"
+    "start": "webpack-dev-server --port $(/bin/cat port 2> /dev/null || /bin/echo 8080) --progress"
   },
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "license": "ISC",
