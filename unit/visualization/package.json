@@ -1,7 +1,6 @@
 {
   "name": "visualization",
   "version": "0.0.2",
-  "license": "MIT",
   "scripts": {
     "d3": "parcel app/d3.html",
     "jquery": "parcel app/jquery.html",
@@ -12,6 +11,7 @@
     "url": "https://github.com/mbilab/web-tutorial.git"
   },
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
+  "license": "ISC",
   "dependencies": {
     "macaddress": "0.2.9",
     "parcel-bundler": "^1.11.0",

@@ -6,10 +6,7 @@
 
 ```
 npm init -y
-npm i webpack webpack-dev-server --save
-npm i extract-loader file-loader html-loader pug pug-html-loader raw-loader --save # html-related
-npm i autoprefixer css-loader node-sass postcss-loader sass-loader style-loader --save # css-related
-npm i babel-cli babel-core babel-loader babel-preset-latest babel-watch --save # js-related
+npm i parcel-bundler --save
 # edit package.json if you want
 ```
 

@@ -1,4 +1,3 @@
-import '!file-loader?name=index.html!extract-loader!html-loader!pug-html-loader!./index.pug'
 import './app.sass'
 
 // use something new in js
