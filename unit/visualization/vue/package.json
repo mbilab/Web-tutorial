@@ -1,35 +1,26 @@
 {
   "name": "visualization",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "version": "2.0.0",
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress",
-    "start": "webpack-dev-server --port 10004 --progress"
+    "build": "parcel build app/index.pug",
+    "start": "parcel app/index.pug"
   },
+  "license": "MIT",
+  "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "dependencies": {
-    "autoprefixer": "^7.2.3",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "axios": "^0.18.0",
+    "papaparse": "^4.6.3",
+    "semantic-ui-offline": "^2.3.2",
+    "vue": "^2.6.7",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@vue/component-compiler-utils": "^2.6.0",
     "babel-preset-latest": "^6.24.1",
-    "babel-watch": "^2.0.7",
-    "css-loader": "^0.28.7",
-    "csv-loader": "^2.1.1",
-    "extract-loader": "^1.0.1",
-    "file-loader": "^1.1.6",
-    "html-loader": "^0.5.1",
-    "node-sass": "^4.7.2",
-    "postcss-loader": "^2.0.9",
-    "pug": "^2.0.0-rc.4",
-    "pug-html-loader": "^1.1.5",
-    "sass-loader": "^6.0.6",
-    "semantic-ui-css": "^2.2.12",
-    "style-loader": "^0.19.1",
-    "vue": "^2.5.13",
-    "vue-loader": "^13.6.1",
-    "vue-template-compiler": "^2.5.13",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "parcel-bundler": "^1.11.0",
+    "pug": "^2.0.3",
+    "sass": "^1.17.2",
+    "vue-template-compiler": "^2.6.7"
   }
 }

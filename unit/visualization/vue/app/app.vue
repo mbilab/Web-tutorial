@@ -40,40 +40,43 @@
 </template>
 
 <script>
-const data = require('./course.csv')
+import 'semantic-ui-offline/semantic.min.css'
+import axios from 'axios'
+import Papa from 'papaparse'
 export default {
   name: 'App',
 
-  data() {
-    return {
-      color: [
-        '124, 181, 236',
-        '67, 67, 72',
-        '144, 237, 125',
-        '247, 163, 92',
-        '128, 133, 233',
-        '241, 92, 128',
-      ],
-      chartData: [
-        { name: '星期一', y: 0.7 },
-        { name: '星期二', y: 0.15 },
-        { name: '星期三', y: 0 },
-        { name: '星期四', y: 0.5 },
-        { name: '星期五', y: 0.1 },
-        { name: '其他', y: 0 },
-      ],
-      x: ''
-    }
-  },
+  data() { return {
+    color: [
+      '124, 181, 236',
+      '67, 67, 72',
+      '144, 237, 125',
+      '247, 163, 92',
+      '128, 133, 233',
+      '241, 92, 128',
+    ],
+    courses: [],
+    chartData: [
+      { name: '星期一', y: 0.7 },
+      { name: '星期二', y: 0.15 },
+      { name: '星期三', y: 0 },
+      { name: '星期四', y: 0.5 },
+      { name: '星期五', y: 0.1 },
+      { name: '其他', y: 0 },
+    ],
+    x: ''
+  }},
 
   mounted() {
-    this.update('N2', '電機所')
+    axios.get(require('./course.csv')).then(v => {
+      this.courses = Papa.parse(v.data).data
+      this.update('N2', '電機所')
+    })
   },
 
   methods: {
     update(code, name) {
-
-      const course = data.filter(el => el[1] === code)
+      const course = this.courses.filter(el => el[1] === code)
       let newData = [0, 0, 0, 0, 0, 0, 0]
       let sum = 0
       for (let i = 0; i < course.length; i++) {
@@ -81,7 +84,7 @@ export default {
         sum++
       }
 
-      this.$data.chartData = [
+      this.chartData = [
         { name: '星期一', y: newData[0] / sum },
         { name: '星期二', y: newData[1] / sum },
         { name: '星期三', y: newData[2] / sum },
@@ -90,7 +93,7 @@ export default {
         { name: '其他', y: (newData[5] + newData[6]) / sum },
       ]
 
-      this.$data.x = name
+      this.x = name
 
     },
   },
@@ -112,3 +115,7 @@ export default {
 .ui.buttons.basic
   margin: 50px
 </style>
+
+<!--
+  vi:et:sw=2:ts=2
+-->
