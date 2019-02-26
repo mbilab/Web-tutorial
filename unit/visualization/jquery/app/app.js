@@ -1,11 +1,11 @@
-import './index.pug'
 import 'semantic-ui-offline/semantic.css'
 import './app.sass'
 
-window.$ = window.jQuery = require('jquery')
-const data = require('./course.csv')
+import $ from 'jquery'
 
-$(() => {
+$.get(require('./course.csv'), v => {
+  const data = require('papaparse').parse(v).data
+
   $('.button').click(e => {
     const course = data.filter(el => el[1] === $(e.target).data('code'))
     let newData = [0, 0, 0, 0, 0, 0, 0]

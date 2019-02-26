@@ -2,7 +2,6 @@
   "name": "visualization",
   "version": "2.0.0",
   "scripts": {
-    "build": "parcel build app/index.pug",
     "start": "parcel app/index.pug"
   },
   "license": "MIT",
