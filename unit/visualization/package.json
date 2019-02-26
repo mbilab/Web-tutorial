@@ -1,25 +1,25 @@
 {
   "name": "visualization",
-  "version": "2.0.0",
-  "scripts": {
-    "start": "parcel app/index.pug"
-  },
+  "version": "0.0.2",
   "license": "MIT",
+  "scripts": {
+    "d3": "parcel app/d3.html",
+    "jquery": "parcel app/jquery.html",
+    "vue": "parcel app/vue.pug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbilab/web-tutorial.git"
+  },
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "dependencies": {
-    "axios": "^0.18.0",
-    "papaparse": "^4.6.3",
-    "semantic-ui-offline": "^2.3.2",
+    "parcel-bundler": "^1.11.0",
     "vue": "^2.6.7",
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
     "@vue/component-compiler-utils": "^2.6.0",
-    "babel-preset-latest": "^6.24.1",
-    "parcel-bundler": "^1.11.0",
     "pug": "^2.0.3",
-    "sass": "^1.17.2",
     "vue-template-compiler": "^2.6.7"
   }
 }

@@ -1,9 +1,9 @@
 <template lang="pug">
 .v-app
-  svg#chart(height='560',width='960')
-    svg(v-for="(v, i) in chart" :x="60 + i * 150")
-      text(x="20" :y="440 - 400 * v") {{(v * 100).toFixed(1)}}%
-      rect(:height="v * 400" width="100" :y='450 - v * 400')
+  svg#chart(height="560",width="960")
+    svg(v-for="(v, i) in chart",:x="60 + i * 150")
+      text(x="20",:y="440 - 400 * v") {{(v * 100).toFixed(1)}}%
+      rect(:height="v * 400",width="100",:y='450 - v * 400')
   div
     button(@click="update('N2')") 電機所
     button(@click="update('P7')") 資訊所
