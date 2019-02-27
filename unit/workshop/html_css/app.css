@@ -1,0 +1,80 @@
+body {
+  background: rgba(0, 0, 0, .1);
+  margin: 0;
+}
+
+#navbar, #banner, #main, #bottom {
+  background-color: white;
+  max-width: 30em;
+  position: fixed;
+  width: 100%;
+}
+
+#navbar {
+  line-height: 0;
+  padding: 5px 0;
+  top: 0;
+}
+
+i.avatar, i.icon {
+  background-position: center;
+  display: inline-block;
+  height: 30px;
+}
+
+i.avatar {
+  background-size: cover;
+  border-radius: 15px;
+  width: 30px;
+}
+
+i.icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+}
+
+.right {
+  position: absolute;
+  right: 0.5em;
+}
+
+.avatar.dirty { background-image: url(./res/dirty.jpg) }
+.icon.arrow   { background-image: url(./res/angle-left.jpg) }
+.icon.dot     { background-image: url(./res/dot.svg) }
+.icon.submit  { background-image: url(./res/external-link.svg) }
+
+#banner {
+  background: url(./res/main.jpg) center / cover;
+  top: 40px;
+  height: 250px;
+}
+
+#main {
+  box-sizing: border-box;
+  padding: 1px 4% 5vh;
+  position: relative;
+  top: 290px;
+  z-index: -1;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 5% 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+p {
+  line-height: 30px;
+}
+
+#bottom {
+  bottom: 0;
+  display: inline-flex;
+  position: fixed;
+}
+
