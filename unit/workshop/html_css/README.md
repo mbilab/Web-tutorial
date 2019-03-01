@@ -6,7 +6,18 @@ Follow guide bellow and build your web
 ## Edit the app.css
 `$ vi app.css`
 
-### step 1: Show the avatar
+### step 1: Fix the position of banner image
+to learn the position attribute and the value "fixed"
+```
+#navbar, #banner, #main, #bottom {
+  background-color: white;
+  max-width: 30em;
+  position: fixed;
+  width: 100%;
+}
+```
+
+### step 2: Show the avatar
 to learn the differences in (block/inline-block/inline)
 ```
 i.avatar, i.icon {
@@ -16,23 +27,12 @@ i.avatar, i.icon {
 }
 ```
 
-### step 2: Set position of the "More icon" 
+### step 3: Set position of the "More icon" 
 to learn the position attribute and the use of "absolute"
 ```
 .right {
   position: absolute;
   right: 0.5em;
-}
-```
-
-### step 3: Fix the position of banner image
-to learn the position attribute and the value "fixed"
-```
-#navbar, #banner, #main, #bottom {
-  background-color: white;
-  max-width: 30em;
-  position: fixed;
-  width: 100%;
 }
 ```
 

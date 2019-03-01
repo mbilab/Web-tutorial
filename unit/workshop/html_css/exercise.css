@@ -7,7 +7,7 @@ body {
   background-color: white;
   max-width: 30em;
   /*
-  step3.
+  step1.
 
   the banner should be fixed when the page scrolled
   */
@@ -23,7 +23,7 @@ body {
 i.avatar, i.icon {
   background-position: center;
   /*
-   step1.
+   step2.
 
    I can't find the avatar
    */
@@ -44,7 +44,7 @@ i.icon {
 
 .right {
   /*
-  step2.
+  step3.
 
   the "More icon" doesn't on the right side
   */
@@ -61,6 +61,17 @@ i.icon {
   height: 250px;
 }
 
+.info {
+  /*
+  step4.
+
+  the writer/date info should be arranged, to
+  the end of left and right sides
+  */
+  justify-content: space-between;
+  margin: 0 0 5% 0;
+}
+
 #main {
   box-sizing: border-box;
   padding: 1px 4% 5vh;
@@ -72,17 +83,6 @@ i.icon {
   the paragraph will block the bannner,
   while the page scrolled down
   */
-}
-
-.info {
-  /*
-  step4.
-
-  the writer/date info should be arranged, to
-  the end of left and right sides
-  */
-  justify-content: space-between;
-  margin: 0 0 5% 0;
 }
 
 h1 {
