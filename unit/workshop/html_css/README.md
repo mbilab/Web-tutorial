@@ -3,93 +3,11 @@
 ## Introduction 
 Follow guide bellow and build your web
 
-## Edit the index.html
-`$ vi index.html`
-### step 1: Paste code bellow to index.html
-```
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>css demo</title>
-    <style>
-      #reference {
-        background: url('./res/demo.png') no-repeat top/contain;
-        bottom: 0;
-        padding: .5em;
-        position: fixed;
-        right: 0;
-        text-align: right;
-        top: 0;
-        width: 40vw;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="reference">
-    </div>
-  </body>
-</html>
-```
-
-### step2: Add content
-```
-  <body>
-    <div id="navbar">
-      <i class="arrow icon"></i>
-      <i class="dirty avatar"></i>
-      <i class="right dot icon"></i>
-    </div>
-
-    <div id="banner"></div>
-
-    <div id="main">
-      <h1>Outstanding<br>acoustics</h1>
-      <div class="info">
-        <div class="author">By dirty</div>
-        <div class="date">2018/03/14</div>
-      </div>
-      <p>Hi Rakesh, not only is it permitted to use reasonable capitalisation in the Display URL, I'd actually recommend it, however, there are some things that Google do in the way they're actually shown. It's fixed internally by WhatsApp, update will be pushed out soon (see thread.</p>
-      <p>Hi Rakesh, not only is it permitted to use reasonable capitalisation in the Display URL, I'd actually recommend it, however, there are some things that Google do in the way they're actually shown. It's fixed internally by WhatsApp, update will be pushed out soon (see thread.</p>
-      <p>Hi Rakesh, not only is it permitted to use reasonable capitalisation in the Display URL, I'd actually recommend it, however, there are some things that Google do in the way they're actually shown. It's fixed internally by WhatsApp, update will be pushed out soon (see thread.</p>
-    </div>
-
-    <div id="bottom">
-      <input type="text" placeholder="Say something...">
-      <i class="right submit icon"></i>
-    </div>
-    <div id="reference">
-    </div>
-  </body>
-```
-
-### step 3: Link css
-```
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>css demo</title>
-    <link href="app.css" rel="stylesheet" type="text/css">
-    <style>
-      #reference {
-        background: url('./res/demo.png') no-repeat top/contain;
-        bottom: 0;
-        padding: .5em;
-        position: fixed;
-        right: 0;
-        text-align: right;
-        top: 0;
-        width: 40vw;
-      }
-    </style>
-  </head>
-```
-
 ## Edit the app.css
 `$ vi app.css`
-### step 1: Set display
+
+### step 1: Show the avatar
+to learn the differences in (block/inline-block/inline)
 ```
 i.avatar, i.icon {
   background-position: center;
@@ -97,15 +15,18 @@ i.avatar, i.icon {
   height: 30px;
 }
 ```
+
+### step 2: Set position of the "More icon" 
+to learn the position attribute and the use of "absolute"
 ```
-.info {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 5% 0;
+.right {
+  position: absolute;
+  right: 0.5em;
 }
 ```
 
-### step 2: Set position
+### step 3: Fix the position of banner image
+to learn the position attribute and the value "fixed"
 ```
 #navbar, #banner, #main, #bottom {
   background-color: white;
@@ -115,7 +36,18 @@ i.avatar, i.icon {
 }
 ```
 
-### step 3: Set z-index
+### step 4: Arrange the info of the paragraph
+to learn flexbox for arranging items
+```
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 5% 0;
+}
+```
+
+### step 5: Adjust the position of the main content on z-coordinate
+to learn the attribute z-index to adjust items' position on z-coordinate
 ```
 #main {
   box-sizing: border-box;
@@ -123,13 +55,5 @@ i.avatar, i.icon {
   position: relative;
   top: 290px;
   z-index: -1;
-}
-```
-
-### step 4: Set position 
-```
-.right {
-  position: absolute;
-  right: 0.5em;
 }
 ```
