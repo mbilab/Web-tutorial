@@ -3,57 +3,40 @@
 ## Introduction 
 Follow guide bellow and build your web
 
-## Edit the app.css
-`$ vi app.css`
+## Edit the exercise.html
+`$ vi exercise.html`
+
+### step 0: Link to css file
+* to learn how to import a css file
+
+how should I link to a css file?
+
+## Edit the exercise.css
+`$ vi exercise.css`
 
 ### step 1: Fix the position of banner image
-to learn the position attribute and the value "fixed"
-```
-#navbar, #banner, #main, #bottom {
-  background-color: white;
-  max-width: 30em;
-  position: fixed;
-  width: 100%;
-}
-```
+* to learn the position attribute and the value "fixed"
+
+the banner should be fixed when the page scrolled
 
 ### step 2: Show the avatar
-to learn the differences in (block/inline-block/inline)
-```
-i.avatar, i.icon {
-  background-position: center;
-  display: inline-block;
-  height: 30px;
-}
-```
+* to learn the differences in (block/inline-block/inline)
+
+I can't find the avatar
 
 ### step 3: Set position of the "More icon" 
-to learn the position attribute and the use of "absolute"
-```
-.right {
-  position: absolute;
-  right: 0.5em;
-}
-```
+* to learn the position attribute and the use of "absolute"
+
+the "More icon" doesn't on the right side
 
 ### step 4: Arrange the info of the paragraph
-to learn flexbox for arranging items
-```
-.info {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 5% 0;
-}
-```
+* to learn flexbox for arranging items
+
+the writer/date info should be arranged, to the
+end of left and right sides
 
 ### step 5: Adjust the position of the main content on z-coordinate
-to learn the attribute z-index to adjust items' position on z-coordinate
-```
-#main {
-  box-sizing: border-box;
-  padding: 1px 4% 5vh;
-  position: relative;
-  top: 290px;
-  z-index: -1;
-}
-```
+* to learn the attribute z-index to adjust items' position on z-coordinate
+
+the paragraph will block the bannner, while the
+page scrolled down
