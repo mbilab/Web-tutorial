@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>css exercise</title>
+
+    <!-- Step 1: link to your css file -->
+    <link href="./exercise.css" rel="stylesheet" type="text/css">
+
+    <!-- Step 0: do you know how the `./res/exercise.png` is presented? -->
+    <style>
+      #reference {
+        background: url('./res/exercise.png') no-repeat top / contain;
+        bottom: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 40vw;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Step 0: `navbar` is a good practice -->
+    <!-- Step 0: why `id` is used instead of `class`? -->
+    <div id="navbar">
+      <i class="arrow icon"></i>
+      <i class="dirty avatar"></i>
+      <i class="right dot icon"></i>
+    </div>
+
+    <div id="banner"></div>
+
+    <div id="main">
+      <h1>Outstanding<br>acoustics</h1>
+      <!-- Step 0: why `class` is used instead of `id`? -->
+      <div class="info">
+        <div class="author">By dirty</div>
+        <div class="date">2018/03/14</div>
+      </div>
+      <p>Hi Rakesh, not only is it permitted to use reasonable capitalisation in the Display URL, I'd actually recommend it, however, there are some things that Google do in the way they're actually shown. It's fixed internally by WhatsApp, update will be pushed out soon (see thread.</p>
+      <p>Hi Rakesh, not only is it permitted to use reasonable capitalisation in the Display URL, I'd actually recommend it, however, there are some things that Google do in the way they're actually shown. It's fixed internally by WhatsApp, update will be pushed out soon (see thread.</p>
+      <p>Hi Rakesh, not only is it permitted to use reasonable capitalisation in the Display URL, I'd actually recommend it, however, there are some things that Google do in the way they're actually shown. It's fixed internally by WhatsApp, update will be pushed out soon (see thread.</p>
+    </div>
+
+    <div id="bottom">
+      <input type="text" placeholder="Say something...">
+      <i class="right submit icon"></i>
+    </div>
+
+    <div id="reference"></div>
+  </body>
+</html>
