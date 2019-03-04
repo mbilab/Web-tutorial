@@ -8,6 +8,7 @@ body {
   max-width: 30em; /* Step 2: input an appropriate content width */
   width: 100%; /* Step 2: watch out the unit, `%`, and google `css unit` for more */
   /* Step 2: why both `max-width` and `width` are used? */
+  /**/
 }
 
 #navbar {

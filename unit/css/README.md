@@ -4,7 +4,7 @@ Follow the guide bellow to finish a web shown in `./res/exercise.png`.
 
 ## Step 0: observe the html structure
 
-Though css does the most styling work. A good html structure can make things easy. Search `Step 0` in `./res/exercise.html` to see some useful details. In `vi`, try pressing `/` key to search text.
+Though css does the most styling work. A good html structure can make things easy. Search `Step 0` in `./exercise.html` to see some useful details. In `vi`, try pressing `/` key to search text.
 
 ## Step 1: link to your css file
 

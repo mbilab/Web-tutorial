@@ -5,12 +5,41 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>JavaScript Demo</title>
 
+    <!-- Step 0 -->
     <!-- use a framework can speed up the development process -->
     <!-- a drawback is introducing more dependencies -->
     <!-- use cdn to leverage the browser cache on famous packages across web sites -->
+    <!-- the semantic.css is for the card demo below -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet" type="text/css">
 
     <link href="app.css" rel="stylesheet" type="text/css">
+
+    <!-- Step 0 -->
+    <!-- you can code directly inside the `style` tag, but it is not a good idea -->
+    <!-- As for a long stylesheet, we usually will seperate css from html to manage them more easily -->
+    <style>
+      .hide {
+        opacity: 0;
+        margin-top: 2em;
+      }
+
+      #c4 {
+        transition: all .2s;
+
+        /* Step 6 */
+        /* vendor-prefix is for compatibility, it is less important as browsers improves */
+        -webkit-transform: all .2s;
+      }
+
+      /* Step 6 */
+      /* css transition has limits, but is worthy to learn */
+      /* less dependency, better performance */
+      /* `:hover` is a bad event (for touch screen), prevent using it */
+      #c4:hover {
+        margin-top: 2em;
+        opacity: 0;
+      }
+    </style>
   </head>
   <body>
     <div class="bottom ui cards" id="c1">
@@ -50,17 +79,27 @@
       </div>
     </div>
 
+    <!-- Step 1 -->
     <!-- use `script` tag to include js files -->
+    <!-- the jquery.min.js is for the jquery code (Step3) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <!-- in this demo, you need the js part of semantic-ui -->
+    <!-- Step 1 -->
+    <!-- in this demo, you need the js part of semantic-ui (Step5) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
 
+
+    <!-- Step 0 -->
     <!-- you can code directly inside the `script` tag, but it is not a good idea -->
     <script>
+      //Step 2
+      //we trigger some event to do something
       let display = true
       $("#c1").click(() => {
+        //Step 3
+        //const tmp = (condition)? a: b  ->  if condition is True, then tmp = a, else tmp = b
+        //we use opacity here, what if display: none?
         const transition = display ? {opacity: 0, 'margin-top': '2em'} : {opacity: 1, 'margin-top': '1em'}
         $("#c1 > div").animate(transition, 400) // you can do all css things "dynamically" with this
         display = !display
@@ -68,31 +107,10 @@
 
       $("#c2").click(() => {$("#c2 > div").toggleClass("hide", 400)})
 
+      //Step 5
       $("#c3").click(() => $("#c3 > div").transition('fade up'))
     </script>
 
-    <style> 
-      .hide {
-        opacity: 0;
-        margin-top: 2em;
-      }
-
-
-      #c4 {
-        transition: all .2s;
-
-        /* vendor-prefix is for compatibility, it is less important as browsers improves */
-        -webkit-transform: all .2s;
-      }
-
-      /* css transition has limits, but is worthy to learn */
-      /* less dependency, better performance */
-      /* `:hover` is a bad event (for touch screen), prevent using it */
-      #c4:hover {
-        margin-top: 2em;
-        opacity: 0;
-      }
-    </style>
 
   </body>
 </html>
