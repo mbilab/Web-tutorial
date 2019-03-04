@@ -24,7 +24,7 @@
     </div>
 
     <div class="bottom ui cards" id="c2">
-      <div class="card">
+      <div class="card show">
         <div class="content">
           <div class="header">Step 4</div>
           <div class="description">change class for animation with css transition</div>
@@ -52,6 +52,7 @@
 
     <!-- use `script` tag to include js files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- in this demo, you need the js part of semantic-ui -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
@@ -61,14 +62,22 @@
       let display = true
       $("#c1").click(() => {
         const transition = display ? {opacity: 0, 'margin-top': '2em'} : {opacity: 1, 'margin-top': '1em'}
-        $("#c1 > div").animate(transition, 200) // you can do all CSS things "dynamically" with this
+        $("#c1 > div").animate(transition, 400) // you can do all css things "dynamically" with this
         display = !display
       })
+
+      $("#c2").click(() => {$("#c2 > div").toggleClass("hide", 400)})
 
       $("#c3").click(() => $("#c3 > div").transition('fade up'))
     </script>
 
-    <style>
+    <style> 
+      .hide {
+        opacity: 0;
+        margin-top: 2em;
+      }
+
+
       #c4 {
         transition: all .2s;
 
