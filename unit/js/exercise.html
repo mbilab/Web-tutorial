@@ -18,6 +18,7 @@
     <!-- you can code directly inside the `style` tag, but it is not a good idea -->
     <!-- As for a long stylesheet, we usually will seperate css from html to manage them more easily -->
     <style>
+      /* Step 4 */
       .hide {
         opacity: 0;
         margin-top: 2em;
@@ -83,6 +84,8 @@
     <!-- use `script` tag to include js files -->
     <!-- the jquery.min.js is for the jquery code (Step3) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Step 1 -->
+    <!-- the jQuery-ui.js is for the .toggleClass() (Step4) -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Step 1 -->
@@ -91,20 +94,25 @@
 
 
     <!-- Step 0 -->
-    <!-- you can code directly inside the `script` tag, but it is not a good idea -->
+    <!-- you can code javascript directly inside the `script` tag, but it is not a good idea -->
     <script>
       //Step 2
       //we trigger some event to do something
+      //what is '() => {}', arrow function?
+      $(doucument).click(() => {console.log("Event triggered!")})
+
       let display = true
       $("#c1").click(() => {
         //Step 3
         //const tmp = (condition)? a: b  ->  if condition is True, then tmp = a, else tmp = b
-        //we use opacity here, what if display: none?
+        //we use 'opacity: 0' here, what if 'display: none' ? what's the difference?
         const transition = display ? {opacity: 0, 'margin-top': '2em'} : {opacity: 1, 'margin-top': '1em'}
         $("#c1 > div").animate(transition, 400) // you can do all css things "dynamically" with this
         display = !display
       })
 
+      //Step 4
+      //Pratically, we usually switch on/off the class
       $("#c2").click(() => {$("#c2 > div").toggleClass("hide", 400)})
 
       //Step 5
