@@ -13,12 +13,39 @@
     <link href="app.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div class="main"></div>
-    <div class="bottom ui cards">
+    <div class="bottom ui cards" id="c1">
       <div class="card">
         <div class="content">
-          <div class="header">Uno Wu</div>
-          <div class="description">TA of Web Programming 2017</div>
+          <div class="header">Step 3</div>
+          <div class="description">change css properties dynamically
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom ui cards" id="c2">
+      <div class="card">
+        <div class="content">
+          <div class="header">Step 4</div>
+          <div class="description">change class for animation with css transition</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom ui cards" id="c3">
+      <div class="card">
+        <div class="content">
+          <div class="header">Step 5</div>
+          <div class="description">experimence the power of framework</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom ui cards" id="c4">
+      <div class="card">
+        <div class="content">
+          <div class="header">Step 6</div>
+          <div class="description">pure css solution (it depends)</div>
         </div>
       </div>
     </div>
@@ -26,15 +53,37 @@
     <!-- use `script` tag to include js files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- in this demo, you need the js part of semantic-ui -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
+
     <!-- you can code directly inside the `script` tag, but it is not a good idea -->
     <script>
       let display = true
-      $(document).click(() => {
+      $("#c1").click(() => {
         const transition = display ? {opacity: 0, 'margin-top': '2em'} : {opacity: 1, 'margin-top': '1em'}
-        $('.card').animate(transition, 200) // you can do all CSS things "dynamically" with this
+        $("#c1 > div").animate(transition, 200) // you can do all CSS things "dynamically" with this
         display = !display
       })
+
+      $("#c3").click(() => $("#c3 > div").transition('fade up'))
     </script>
+
+    <style>
+      #c4 {
+        transition: all .2s;
+
+        /* vendor-prefix is for compatibility, it is less important as browsers improves */
+        -webkit-transform: all .2s;
+      }
+
+      /* css transition has limits, but is worthy to learn */
+      /* less dependency, better performance */
+      /* `:hover` is a bad event (for touch screen), prevent using it */
+      #c4:hover {
+        margin-top: 2em;
+        opacity: 0;
+      }
+    </style>
 
   </body>
 </html>
