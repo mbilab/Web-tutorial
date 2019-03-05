@@ -3,20 +3,26 @@ body {
 }
 
 .ui.cards {
-  /* Step 0: google `flexbox` to know `align-items`, `flex-direction` and `justify-content` */
+  /* Step 0:
+   * google `flexbox` to know `align-items`, `flex-direction` and `justify-content`
+   */
   align-items: center;
   flex-direction: column;
   height: 100%;
   justify-content: flex-end;
 }
 
-.card { /* Step 6 */
+.card {
   transition: all .2s;
 
-  /* Step 6: vendor-prefix like `-webkit-transform` is for compatibility, it is less important as browsers improves */
+  /* Step 0:
+   * vendor-prefix like `-webkit-transform` is for compatibility, it is less important as browsers improves
+   */
   -webkit-transform: all .2s;
 }
 
-.card.hidden { /* Step 4 */
+.card.hidden {
   opacity: 0.1;
 }
+
+/* Step 6 code goest here */
