@@ -34,6 +34,7 @@ $(doucument).[event](() => { // Step 2: replace [event] with an approprite value
   console.log("Event triggered!")
 })`
 ```
+// Step 2: use browser developer console to see the class change of the div
 
 ## Step 3: change css properties dynamically
 
@@ -41,9 +42,9 @@ Insert the following code into `./exercise.html` and follow instructions beginni
 
 ```
 let display = true
-$('.card:nth-child(1)').click(() => { // Step 3: google `css nth-child` for the special css selector
+$('.card:nth-child(1)').click(function(){ // Step 3: google `css nth-child` for the special css selector
   // Step 3: replace [alternative style] to an appropriate value
-  const transition = display ? { opacity: 0, 'margin-top': '2em' } : { [alternative style] } 
+  const transition = display ? { opacity: 0.1, 'margin-top': '2em' } : { [alternative style] } 
   // Step 3: google `js ternary operator` for the `... ? ... : ...` syntax
   $(this).animate(transition, 400) // Step 3: all css properties can be changed "dynamically" with `animate()` of jQuery
   // Step 3: `this` points to the event trigger in jQuery
@@ -56,7 +57,7 @@ $('.card:nth-child(1)').click(() => { // Step 3: google `css nth-child` for the 
 Insert the following code into `./exercise.html` and follow instructions beginning with `Step 4`.
 
 ```
-$('.card:nth-child(2)').click(() => {
+$('.card:nth-child(2)').click(function(){
   $(this).toggleClass([css class], 400) // Step 4: replace [css class] with an appropriate value
   // Step 4: (hint) you may need to check `./exercise.css`
   // Step 4: use browser developer console to see the class change of the div
@@ -68,7 +69,7 @@ $('.card:nth-child(2)').click(() => {
 Insert the following code into `./exercise.html` and follow instructions beginning with `Step 5`.
 
 ```
-$('.card:nth-child(3)').click(() => {
+$('.card:nth-child(3)').click(function(){
   $(this).transition('[effect]')) // Step 5: replace [effect] with an appropriate value
   // Step 5: see https://semantic-ui.com/modules/transition.html for more effects
 })
@@ -79,8 +80,8 @@ $('.card:nth-child(3)').click(() => {
 Insert the following code into `./exercise.css` and follow instructions beginning with `Step 6`. Pure css transition has limits, but is worthy to learn. It requires less dependency and has better performance.
 
 ```
-.ui.card:nth-child(4):hover { /* Step 6: `:hover` is a bad event (for touch screen), prevent using it */
+.card:nth-child(4):hover { /* Step 6: `:hover` is a bad event (for touch screen), prevent using it */
    margin-top: 2em;
-   opacity: 0;
+   opacity: 0.1;
 }
 ```

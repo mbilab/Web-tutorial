@@ -10,14 +10,13 @@ body {
   justify-content: flex-end;
 }
 
-.ui.card { /* Step 6 */
+.card { /* Step 6 */
   transition: all .2s;
 
   /* Step 6: vendor-prefix like `-webkit-transform` is for compatibility, it is less important as browsers improves */
   -webkit-transform: all .2s;
 }
 
-.ui.cards.hidden { /* Step 4 */
-  margin-top: 2em;
-  opacity: 0;
+.card.hidden { /* Step 4 */
+  opacity: 0.1;
 }
