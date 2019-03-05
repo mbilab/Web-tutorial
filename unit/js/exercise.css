@@ -1,0 +1,23 @@
+body {
+  background: rgba(0, 0, 0, .1);
+}
+
+.ui.cards {
+  /* Step 0: google `flexbox` to know `align-items`, `flex-direction` and `justify-content` */
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.ui.card { /* Step 6 */
+  transition: all .2s;
+
+  /* Step 6: vendor-prefix like `-webkit-transform` is for compatibility, it is less important as browsers improves */
+  -webkit-transform: all .2s;
+}
+
+.ui.cards.hidden { /* Step 4 */
+  margin-top: 2em;
+  opacity: 0;
+}

@@ -1,72 +1,86 @@
-## description
-這個特效是一個fade效果，所以第一個想法就是改變它的透明度，透明度在css中可以用opacity來設定，接著它在淡出期間會下降，所以也要調整與上邊的距離，在css中也就是改變margin-top
-知道要修改那些css屬性後，接著就是選擇一種方法來完成動畫的部分，範例有三種作法，分別是css transition屬性, jQuery animation, 以及semantic ui的transition api
+# js exercise
+
+Follow the guide bellow to finish a web shown in `./res/exercise.png`.
+
+本練習實作淡入淡出(fade in/out)的動態效果。第一個想法是改變 div 的透明度，透明度在 css 中可以用 `opacity` 來設定。接著 div 在淡出期間會下降，這部分可以靠調整上方的留白達成，在 css 中可以用 `margin-top` 來設定。知道要修改那些 css 屬性後，本練習提供了四種作法來實作動態效果，請參著下方的 Steps 3-6。
 
 ## Step 0: observe the html and css
-    Insert the following code into `./exercise.html` and edit `[path to css]` to the correct path.
 
-    `<link href=[path to css] rel="stylesheet" type="text/css">`
+Insert the following code into `<head>` of `./exercise.html` and follow instructions beginning with `Step 0`. In `vi`, try pressing `/` key to search text.
 
-    We use semantic-ui in this practice. Find the [cdn address of semantic-ui] in https://cdnjs.com .
-    `<link href="https://cdnjs.cloudflare.com/[cdn address of semantic-ui]/semantic.css" rel="stylesheet" type="text/css">`
+```
+<link href="[cdn address of semantic-ui]" rel="stylesheet" type="text/css"> <!-- Step 0: replace [cdn address of semantic-ui] with the correct address -->`
+<!-- Step 0: semantic-ui is used in this exercise, find its cdn in `https://cdnjs.com`. -->
+`<link href="exercise.css" rel="stylesheet" type="text/css"> <!-- Step 0: why this line is below? -->
+```
 
-## Step 1: include jQuery and Sementic-ui from cdn
-    Include javascript framework, jQuery, and semantic.js. 
+## Step 1: include js
 
-    ```
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
-    ```
+Insert the following code into `<body>` bottom of `./exercise.html` and follow instructions beginning with `Step 1`.
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
+`<!-- Step 1: why putting js in the bottom of html? -->
+```
 
 ## Step 2: handle events
-    Go to http://www.w3school.com.cn/jquery/jquery_ref_events.asp, try these events. 
-    e.g. `click()`, `dbclick()`, `mouseleave()`. 
 
-    `$(doucument).[event](() => {console.log("Event triggered!")})`
+Insert the following code into `./exercise.html` and follow instructions beginning with `Step 2`.
+
+```
+$(doucument).[event](() => { // Step 2: replace [event] with an approprite value
+// Step 2: see http://www.w3school.com.cn/jquery/jquery_ref_events.asp for possible events
+  console.log("Event triggered!")
+})`
+```
+
 ## Step 3: change css properties dynamically
-    You can use jQuery to do something fancy. Try to change opacity to 1, and margin-top to 1em.	
 
-    ```
-      let display = true
-      $("#c1").click(() => {
-        //Step 3
-        //const tmp = (condition)? a: b  ->  if condition is True, then tmp = a, else tmp = b
-        //we use opacity here, what if display: none?
-        const transition = display ? {opacity: 0, 'margin-top': '2em'} : {[another style]} 
-        $("#c1 > div").animate(transition, 400) // you can do all css things "dynamically" with this
-        display = !display
-      })
-    ```
+Insert the following code into `./exercise.html` and follow instructions beginning with `Step 3`.
+
+```
+let display = true
+$('.card:nth-child(1)').click(() => { // Step 3: google `css nth-child` for the special css selector
+  // Step 3: replace [alternative style] to an appropriate value
+  const transition = display ? { opacity: 0, 'margin-top': '2em' } : { [alternative style] } 
+  // Step 3: google `js ternary operator` for the `... ? ... : ...` syntax
+  $(this).animate(transition, 400) // Step 3: all css properties can be changed "dynamically" with `animate()` of jQuery
+  // Step 3: `this` points to the event trigger in jQuery
+  display = !display
+})
+```
+
 ## Step 4: change class for animation with css transition
-    Add class hiding "#c2" by `toggleClass()`. 
 
-    `$("#c2").click(() => {$("#c2 > div").toggleClass([css class], 400)})`
-    
+Insert the following code into `./exercise.html` and follow instructions beginning with `Step 4`.
+
+```
+$('.card:nth-child(2)').click(() => {
+  $(this).toggleClass([css class], 400) // Step 4: replace [css class] with an appropriate value
+  // Step 4: (hint) you may need to check `./exercise.css`
+  // Step 4: use browser developer console to see the class change of the div
+})
+```
+
 ## Step 5: experimence the power of framework
-    Go to https://semantic-ui.com/modules/transition.html and try some fancy effects.
 
-    `$("#c3").click(() => $("#c3 > div").transition('[effect]'))`
-	
+Insert the following code into `./exercise.html` and follow instructions beginning with `Step 5`.
+
+```
+$('.card:nth-child(3)').click(() => {
+  $(this).transition('[effect]')) // Step 5: replace [effect] with an appropriate value
+  // Step 5: see https://semantic-ui.com/modules/transition.html for more effects
+})
+```
 
 ## Step 6: pure css solution (it depends)
-    You can use css make some animation, but it depends on the condition.
 
-    ```
-      #c4 {
-        transition: all .2s;
+Insert the following code into `./exercise.css` and follow instructions beginning with `Step 6`. Pure css transition has limits, but is worthy to learn. It requires less dependency and has better performance.
 
-        /* Step 6 */
-        /* vendor-prefix is for compatibility, it is less important as browsers improves */
-        -webkit-transform: all .2s;
-      }
-
-      /* Step 6 */
-      /* css transition has limits, but is worthy to learn */
-      /* less dependency, better performance */
-      /* `:hover` is a bad event (for touch screen), prevent using it */
-      #c4:hover {
-        margin-top: 2em;
-        opacity: 0;
-      }
-    ```
+```
+.ui.card:nth-child(4):hover { /* Step 6: `:hover` is a bad event (for touch screen), prevent using it */
+   margin-top: 2em;
+   opacity: 0;
+}
+```
