@@ -9,9 +9,9 @@ Follow the guide bellow to finish a web shown in `./res/exercise.png`.
 Insert the following code into `<head>` of `./exercise.html` and follow instructions beginning with `Step 0`(Capital). In `vi`, try pressing `/` key to search text.
 
 ```
-<link href="[cdn address of semantic-ui]" rel="stylesheet" type="text/css"> <!-- Step 0: replace [cdn address of semantic-ui] with the correct address -->`
+<link href="[cdn address of semantic-ui]" rel="stylesheet" type="text/css"> <!-- Step 0: replace [cdn address of semantic-ui] with the correct address -->
 <!-- Step 0: semantic-ui is used in this exercise, find its cdn in `https://cdnjs.com`. -->
-`<link href="exercise.css" rel="stylesheet" type="text/css"> <!-- Step 0: why this line is below? -->
+<link href="exercise.css" rel="stylesheet" type="text/css"> <!-- Step 0: why this line is below? -->
 ```
 
 ## Step 1: include js
@@ -22,7 +22,7 @@ Insert the following code into `<body>` bottom of `./exercise.html` and follow i
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
-`<!-- Step 1: why putting js in the bottom of html? -->
+<!-- Step 1: why putting js in the bottom of html? -->
 ```
 
 ## Step 2: handle events
@@ -32,9 +32,9 @@ Insert the following code into `./exercise.html` and follow instructions beginni
 ```
 //Step 2: see http://www.w3school.com.cn/jquery/jquery_ref_events.asp for possible events
 //use browser developer console to see the class change of the div
-$(doucument).[event](() => { // Step 2: replace [event] with an approprite value
+$(document).[event](() => { // Step 2: replace [event] with an approprite value
   console.log("Event triggered!")
-})`
+})
 ```
 
 
@@ -72,7 +72,7 @@ Insert the following code into `./exercise.html` and follow instructions beginni
 
 ```
 $('.card:nth-child(3)').click(function(){
-  $(this).transition('[effect]')) // Step 5: replace [effect] with an appropriate value
+  $(this).transition('[effect]') // Step 5: replace [effect] with an appropriate value
   // Step 5: see https://semantic-ui.com/modules/transition.html for more effects
 })
 ```
