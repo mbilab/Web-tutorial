@@ -6,7 +6,7 @@ Follow the guide bellow to finish a web shown in `./res/exercise.png`.
 
 ## Step 0: observe the html and css
 
-Insert the following code into `<head>` of `./exercise.html` and follow instructions beginning with `Step 0`. In `vi`, try pressing `/` key to search text.
+Insert the following code into `<head>` of `./exercise.html` and follow instructions beginning with `Step 0`(Capital). In `vi`, try pressing `/` key to search text.
 
 ```
 <link href="[cdn address of semantic-ui]" rel="stylesheet" type="text/css"> <!-- Step 0: replace [cdn address of semantic-ui] with the correct address -->`
@@ -20,6 +20,7 @@ Insert the following code into `<body>` bottom of `./exercise.html` and follow i
 
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
 `<!-- Step 1: why putting js in the bottom of html? -->
 ```
@@ -29,12 +30,13 @@ Insert the following code into `<body>` bottom of `./exercise.html` and follow i
 Insert the following code into `./exercise.html` and follow instructions beginning with `Step 2`.
 
 ```
+//Step 2: see http://www.w3school.com.cn/jquery/jquery_ref_events.asp for possible events
+//use browser developer console to see the class change of the div
 $(doucument).[event](() => { // Step 2: replace [event] with an approprite value
-// Step 2: see http://www.w3school.com.cn/jquery/jquery_ref_events.asp for possible events
   console.log("Event triggered!")
 })`
 ```
-// Step 2: use browser developer console to see the class change of the div
+
 
 ## Step 3: change css properties dynamically
 
@@ -81,7 +83,6 @@ Insert the following code into `./exercise.css` and follow instructions beginnin
 
 ```
 .card:nth-child(4):hover { /* Step 6: `:hover` is a bad event (for touch screen), prevent using it */
-   margin-top: 2em;
    opacity: 0.1;
 }
 ```

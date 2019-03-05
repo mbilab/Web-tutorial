@@ -10,11 +10,9 @@
     <!-- a drawback is introducing more dependencies -->
     <!-- use cdn to leverage the browser cache on famous packages across web sites -->
     <!-- the semantic.css is for the card demo below -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet" type="text/css">
 
-    <link href="exercise.css" rel="stylesheet" type="text/css">
 
-    <!-- Step 0 -->
+
     <!-- you can code directly inside the `style` tag, but it is not a good idea -->
     <!-- As for a long stylesheet, we usually will seperate css from html to manage them more easily -->
     <style>
@@ -22,9 +20,8 @@
       /* css transition has limits, but is worthy to learn */
       /* less dependency, better performance */
       /* `:hover` is a bad event (for touch screen), prevent using it */
-      .card:nth-child(4):hover {
-        opacity: 0.1;
-      }
+
+
     </style>
   </head>
   <body>
@@ -32,28 +29,28 @@
 
       <div class="card">
         <div class="content">
-          <div class="header">Step 3</div>
+          <div class="header">Step3</div>
           <div class="description">Change css properties dynamically.</div>
         </div>
       </div>
 
       <div class="card">
         <div class="content">
-          <div class="header">Step 4</div>
+          <div class="header">Step4</div>
           <div class="description">Change class for animation with css transition.</div>
         </div>
       </div>
 
       <div class="card">
         <div class="content">
-          <div class="header">Step 5</div>
+          <div class="header">Step5</div>
           <div class="description">Experimence the power of framework.</div>
         </div>
       </div>
 
       <div class="card">
         <div class="content">
-          <div class="header">Step 6</div>
+          <div class="header">Step6</div>
           <div class="description">Pure css solution (it depends).</div>
         </div>
       </div>
@@ -63,43 +60,35 @@
     <!-- Step 1 -->
     <!-- use `script` tag to include js files -->
     <!-- the jquery.min.js is for the jquery code (Step3) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Step 1 -->
     <!-- the jQuery-ui.js is for the .toggleClass() (Step4) -->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Step 1 -->
     <!-- in this demo, you need the js part of semantic-ui (Step5) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
 
 
-    <!-- Step 0 -->
-    <!-- you can code javascript directly inside the `script` tag, but it is not a good idea -->
+
     <script>
       //Step 2
       //we trigger some event to do something
       //what is '() => {}', arrow function?
-      $(document).click(() => {console.log("Event triggered!")})
 
-      let display = true
-      $('.card:nth-child(1)').click(function(){
-        //Step 3
-        //const tmp = (condition)? a: b  ->  if condition is True, then tmp = a, else tmp = b
-        //we use 'opacity: 0.1' here, what if 'display: none' ? what's the difference?
-        const transition = display ? {opacity: 0.1, 'margin-top': '2em'} : {opacity: 1, 'margin-top': '1em'}
-        $(this).animate(transition, 400) // you can do all css things "dynamically" with this
-        display = !display
-      })
+
+
+      //Step 3
+
+
+
 
       //Step 4
       //Pratically, we usually switch on/off the class
-      $('.card:nth-child(2)').click(function(){$(this).toggleClass("hidden", 400)})
+
+
+
 
       //Step 5
-      $('.card:nth-child(3)').click(function(){
-        $(this).transition('fade up')
-        $(this).transition('fade up')
-      })
+
     </script>
 
 
