@@ -1,4 +1,5 @@
 import './app.sass'
+import '@babel/polyfill'
 
 // use something new in js
 // here we choose `async` at Nov 2017

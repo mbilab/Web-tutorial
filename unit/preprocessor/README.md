@@ -7,6 +7,7 @@
 ```
 npm init -y
 npm i parcel-bundler --save
+npm install --save @babel/polyfill
 # edit package.json if you want
 ```
 
