@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "preprocessor",
   "scripts": {
-    "start": "parcel app/index.pug"
+    "start": "parcel app/index.pug --port $($/bin/cat port 2> /dev/null || /bin/echo 8080)"
   },
   "repository": {
     "type": "git",
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+    "jquery": "^3.3.1",
     "macaddress": "^0.2.9",
     "parcel-bundler": "^1.11.0"
   },
