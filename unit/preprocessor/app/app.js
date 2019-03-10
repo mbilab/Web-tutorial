@@ -9,7 +9,7 @@ window.$ = window.jQuery = jquery;
 
 const stuendts = ['Jine', 'Tom', 'Anna']
 const teachers = ['Tony', 'Aaron']
-const people = [...teachers, ... stuendts]
+const people = [...teachers, ...stuendts]
 
 $(document).ready(function() {
   $('#button').click(()=>console.log(`There are ${people} in the classroom`))
