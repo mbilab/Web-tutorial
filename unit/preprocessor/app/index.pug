@@ -2,8 +2,14 @@ doctype html
 html
   head
     title webpack demo
+    style(type='text/css')
+      |#firstPug  {
+      |  color: red;
+      |  text-align: center;
+      |}
   body
+    h1#firstPug Hello world!
     #container
-      // step one
-      // Transfer html: `<div id='button'>Click me</div>` to pug. And, import `app.js`
-    script(src="")
+      - for (let i = 0; i < 3; i++)
+        #button Click me
+    script(src="./app.js")

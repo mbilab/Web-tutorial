@@ -1,4 +1,4 @@
-[import sass]
+import './app.sass'
 // step 5 : learn new Javascript standard
 // Use new feature in es6, Module, importing './app.sass'.
 
