@@ -9,6 +9,7 @@ npm init -y
 npm i parcel-bundler --save
 npm i jquery --save
 npm i pug-cli --save
+npm i node-sass --save
 # edit package.json if you want
 ```
 
@@ -35,20 +36,26 @@ npm i # use `yarn` if you have it
 
 ### complie pug every time you debugging
 ```
-./node_modules/.bin/node-sass example/app.sass
+./node_modules/.bin/node-sass example/app.sass -o public/
 ```
 
 ### or, add parameter to  watch files for changes and automatically re-render
 
 ```
-./node_modules/.bin/node-sass --watch example/app.sass
+./node_modules/.bin/node-sass example/app.sass -o public--watch
 ```
 
 ## step 3 : automation (with parcel)
 
 Using parcel, you can complie pug and sass together, moreover build a server for development. 
 
-Modify script in `package.json`, and use parcel build a devServer.
+Edit script in `package.json`, and use parcel build a devServer.
+```
+  "scripts": {
+    "start": "parcel app/index.pug --port $($/bin/cat port 2> /dev/null || /bin/echo 8080)",
+    "example": "parcel [path to index.pug under example] --port $($/bin/cat port 2> /dev/null || /bin/echo 8080)"
+  },
+```
 
 1. /bin/echo [PORT] > port
 2. `npm example` or `yarn example`
