@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "description": "preprocessor",
   "scripts": {
-    "start": "parcel app/index.pug --port $($/bin/cat port 2> /dev/null || /bin/echo 8080)"
+    "start": "parcel app/index.pug --port $($/bin/cat port 2> /dev/null || /bin/echo 8080)",
+    "example": "parcel [path to index.pug under example] --port $($/bin/cat port 2> /dev/null || /bin/echo 8080)"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.3.1",
-    "parcel-bundler": "^1.11.0"
+    "parcel-bundler": "^1.11.0",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",

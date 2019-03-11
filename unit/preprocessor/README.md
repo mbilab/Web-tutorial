@@ -1,6 +1,6 @@
 # preprocessor
 
-## setup
+## step 0 : set up
 
 ### from scratch
 
@@ -8,6 +8,7 @@
 npm init -y
 npm i parcel-bundler --save
 npm i jquery --save
+npm i pug-cli --save
 # edit package.json if you want
 ```
 
@@ -17,32 +18,49 @@ npm i jquery --save
 npm i # use `yarn` if you have it
 ```
 
-## stage 1 - command line
+## step 1 : compile your first pug
 
+### complie pug every time you debugging
 ```
-./node_modules/.bin/node-sass app/app.sass
-```
-
-## stage 2 - watch
-
-```
-./node_modules/.bin/node-sass --watch app/app.sass
+./node_modules/.bin/pug example/index.pug -o public/
 ```
 
-## stage 3 - automation (with webpack)
+### or, add parameter to  watch files for changes and automatically re-render
+
+```
+./node_modules/.bin/node-sass example/index.pug -o public/ --watch
+```
+
+##step 2 : compile your first sass
+
+### complie pug every time you debugging
+```
+./node_modules/.bin/node-sass example/app.sass
+```
+
+### or, add parameter to  watch files for changes and automatically re-render
+
+```
+./node_modules/.bin/node-sass --watch example/app.sass
+```
+
+## step 3 : automation (with parcel)
+
+Using parcel, you can complie pug and sass together, moreover build a server for development. 
+
+Modify script in `package.json`, and use parcel build a devServer.
 
 1. /bin/echo [PORT] > port
-2. `npm start` or `yarn start`
+2. `npm example` or `yarn example`
 3. open http://[HOST]:[PORT]
 
-## stage 4 - write your pug and sass
+## step 4 : write your first pug
 When you are writing pug, you should know following points.
 * Need no start tag/end tag.
 * Use indent to represent scope level.
 * Able to add class and name with css selector.e.g. `#container`
 * Add attribute in bracket.e.g. `a(href="sample.com")`
 
-### step 1 : add a button in index.pug
 Transfer html: 
 ```
 <div id='button'>Click me</div>
@@ -51,8 +69,12 @@ to pug.
 
 And, import `app.js`
 
-### step 2 : add style sheet of button
-Use variable to change background color of button, and transfer css:
+## step 5 : write your first sass
+Sass is a CSS extension language.
+As pug, sass use indent to represent scope level.
+Moreover, Variables, Nesting, and Mixins are powerful feature of sass.
+
+Use variable to change background color of button.
 ```
 #container div{
     margin: auto;
@@ -61,15 +83,16 @@ Use variable to change background color of button, and transfer css:
     padding: 15px;
 }
 ```
-to sass.
 
-hint: As pug, sass use indent to represent scope level.
+Use 
 
-### step 4 : use jQuery with Parcel 
+
+## step 6 : use jQuery with Parcel 
 Read : https://stackoverflow.com/questions/47968529/how-do-i-use-jquery-and-jquery-ui-with-parcel-bundler
 
-### step 5 : learn new Javascript standard 
+## step 7 : learn new Javascript standard 
 Use new feature in es6, Module, importing `./app.sass`.
+What`s babel?
 
 Read the example in `app/app.js` and google es6.
 
