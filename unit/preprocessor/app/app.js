@@ -1,11 +1,15 @@
-import './app.sass'
-import '@babel/polyfill'
+[import sass]
+// step 5 : learn new Javascript standard
+// Use new feature in es6, Module, importing './app.sass'.
 
-const jquery = require("jquery");
-window.$ = window.jQuery = jquery;
+// step 4 : use jQuery with Parcel
+// Read : https://stackoverflow.com/questions/47968529/how-do-i-use-jquery-and-jquery-ui-with-parcel-bundler
+const jquery = require("jquery")
+window.$ = window.jQuery = jquery
 
-// use something new in js
-// here we choose`Spread operator` and `Template literals`
+// step 5 : learn new Javascript standard
+// Read the following example and google es6.
+// Here are `Spread operator` and `Template literals`
 
 const stuendts = ['Jine', 'Tom', 'Anna']
 const teachers = ['Tony', 'Aaron']

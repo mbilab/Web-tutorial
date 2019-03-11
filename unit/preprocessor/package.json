@@ -12,9 +12,7 @@
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
     "jquery": "^3.3.1",
-    "macaddress": "^0.2.9",
     "parcel-bundler": "^1.11.0"
   },
   "devDependencies": {
