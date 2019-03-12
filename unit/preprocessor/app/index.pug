@@ -2,14 +2,18 @@ doctype html
 html
   head
     title webpack demo
+    link(rel="stylesheet" type="text/css" href="./app.css")
     style(type='text/css')
-      |#firstPug  {
-      |  color: red;
+      |.firstPug  {
+      |  color: grey;
       |  text-align: center;
       |}
   body
-    h1#firstPug Hello world!
+    h1.firstPug This is my first pug!
+    // Step 1
+    // Add a 'Hello world!' with h2 tag
+    // hint: Transfer html: '<h2>Hello world!</h2>' to pug.
     #container
       - for (let i = 0; i < 3; i++)
-        #button Click me
+        button Click me
     script(src="./app.js")

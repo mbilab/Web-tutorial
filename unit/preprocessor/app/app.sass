@@ -1,16 +1,18 @@
-// step 2 : add style sheet of button
-// Use variable to change background color of button.
-=buttonStyle($color)
+=buttonStyle($color, $radius)
   background-color: $color
-  color: white
-  padding: 15px
+  border-radius: $radius
 
 #container
   display: flex
   justify-content: space-around
-  div:nth-child(1)
-    +buttonStyle(red)
-  div:nth-child(2)
-    +buttonStyle(green)
-  div:nth-child(3)
-    +buttonStyle(blue)
+  button
+    color: white
+    padding: 15px
+    // Step2:
+    // Determinie your button color and border-radius
+    //
+    //   &:nth-child([which chld])
+    //     +buttonStyle([color], [border])
+    //
+    // hint: There three children in container and be aware of indent.
+

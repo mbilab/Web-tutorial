@@ -3,8 +3,7 @@
   "version": "0.0.2",
   "description": "preprocessor",
   "scripts": {
-    "start": "parcel app/index.pug --port $($/bin/cat port 2> /dev/null || /bin/echo 8080)",
-    "example": "parcel [path to index.pug under example] --port $($/bin/cat port 2> /dev/null || /bin/echo 8080)"
+    "start": "parcel watch --public-url ./ app/index.pug dist/"
   },
   "repository": {
     "type": "git",
@@ -13,16 +12,16 @@
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.3.1",
-    "node-sass": "^4.11.0",
-    "parcel-bundler": "^1.11.0",
-    "pug-cli": "^1.0.0-alpha6"
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "babel-preset-es2015": "^6.24.1",
+    "node-sass": "^4.11.0",
     "pug": "^2.0.3",
-    "sass": "^1.17.2"
+    "sass": "^1.17.2",
+    "parcel-bundler": "^1.11.0",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "bugs": {
     "url": "https://github.com/mbilab/web-tutorial/issues"
