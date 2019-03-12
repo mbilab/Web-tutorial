@@ -24,7 +24,7 @@ $ npm i node-sass --save-dev
   * Add attribute in bracket.e.g. `a(href="sample.com")`
 
 * Complie your first pug</br>
-  `$ ./node_modules/.bin/pug app/index.pug -o dist/ --watch`
+  `$ ./node_modules/.bin/pug app/index.pug -o dist/`
 
   Type `cat ./app/index.pug` to see the default pug file.</br>
   Then run the following code.
