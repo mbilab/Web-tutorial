@@ -16,7 +16,7 @@ $ npm i node-sass --save --save-dev
 ### or, use our package.json
 
   ```
-`$ npm i` # use `$ yarn` if you have it
+`$ npm i` or `$ yarn` if you have it
 ```
 
 ## Step 1: build your first pug
@@ -28,22 +28,25 @@ https://pugjs.org/language/tags.html
     * Add attribute in bracket.e.g. `a(href="sample.com")`
 
 * Complie your first pug
+
+Type `cat ./app/index.pug` to see the default pug file.
+Then run the following code.
 ```
 $ ./node_modules/.bin/pug app/index.pug -o dist/
 ```
 
-* Add a 'Hello world!' with h2 tag under 'This is my first pug'
+* Add a 'Hello world!' with h2 tag into `./app/index.pug`.
 
-  hint: Transfer html: '<h2>Hello world!</h2>' to pug.
+  hint: Transfer html: `<h2>Hello world!</h2>` to pug.
 
 * Add parameter to  watch files for changes
 
   Your files will automatically re-render. No more inconvenient commands.
-
-  ```
+```
 $ ./node_modules/.bin/node-sass app/index.pug -o dsit/ --watch
 ```
-* Experien the power of `--watch`.
+
+* Experience the power of `--watch`.
 
   Add firstPug-class to your 'Hello world!' with automatically re-render.
 ```
