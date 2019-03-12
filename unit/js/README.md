@@ -56,7 +56,19 @@ $(document).[event](() => { // Step 2: replace [event] with an approprite value
 
 ## Step 3: change css properties dynamically
 
-Insert the following code into `./exercise.html` and follow instructions beginning with `Step 3`.
+Paste the following code into `./exercise.html`
+```
+<!--
+    Script code will work when put at the bottom of <body> in html file(such as Step2),
+    but the better developing way is separating js code in other file/files,
+    and import them into html file.
+    Make sure the following code is under Step1's code,
+    because jQuery will be used later.
+-->
+<script src='./exercise.js'></script>
+```
+
+Next, insert the following code into `./exercise.js` and follow instructions beginning with `Step 3`.
 
 ```
 /* Step 3:
@@ -78,7 +90,7 @@ $('.card:nth-child(1)').click(function(){
 
 ## Step 4: change class for animation with css transition
 
-Insert the following code into `./exercise.html` and follow instructions beginning with `Step 4`.
+Insert the following code into `./exercise.js` and follow instructions beginning with `Step 4`.
 
 ```
 /* Step 4:
@@ -93,7 +105,7 @@ $('.card:nth-child(2)').click(function(){
 
 ## Step 5: experimence the power of framework
 
-Insert the following code into `./exercise.html` and follow instructions beginning with `Step 5`.
+Insert the following code into `./exercise.js` and follow instructions beginning with `Step 5`.
 
 ```
 /* Step 5:
@@ -107,7 +119,7 @@ $('.card:nth-child(3)').click(function(){
 
 ## Step 6: pure css solution (it depends)
 
-Insert the following code into `./exercise.css` and follow instructions beginning with `Step 6`.
+Insert the following code into `./exercise.html` and follow instructions beginning with `Step 6`.
 
 ```
 /* Step 6:
