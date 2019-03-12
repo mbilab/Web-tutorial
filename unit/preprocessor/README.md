@@ -52,7 +52,7 @@ $ yarn # if you have it
 * Complie `./app/app.sass` to `./dist/app.css`.
 
   ```
-  $ ./node_modules/.bin/node-sass ./app/app.sass -o dist -w
+  $ ./node_modules/.bin/node-sass ./app/app.sass -o dist --watch
   ```
 
 * Reference the following code to make the three buttons different with `buttonStyle` mixin.
@@ -69,24 +69,30 @@ $ yarn # if you have it
 
   Compare `./app/app.sass` and `./dist/app.css`.
 
-## Step 3: Why preprocessor?
+## Step 3: is there a better js?
 
-The  solution of web development skyrocketing.
-Try to compile `/new` with old version node.js or old browser.
+There was, see [Babel](https://babeljs.io/). However, modern js engines catch up the development of js. Try to open `./new/es6.js` in old [Node.js](https://nodejs.org/en/) (version < [version]) or browsers (IE version < [version]). Now Babel is usually used for js variants such as [TypeScript](https://www.typescriptlang.org/). Execute the following command and than compare `./new/typescript.js` and `[path to the compiled js]`.
+
+```
+[use babel to compile ./new/typescript.js]
+```
 
 ## Step 4: automation (with parcel)
-Using parcel, you can complie pug and sass together.
-Edit [port] in `package.json`, and use parcel build your web.
 
-There are some difference between using parcel and compiling one by one.
-e.g. you should link `app.sass` nor `app.css`
+* Using parcel, you can watch pug, sass and js together.
 
-You should go `parcel/app.js` and learn how to use jquery with parcel.
+  ```
+  $ ./node_modules/.bin/parcel watch ./parcel/index.pug
+  ```
 
-* watch
-  `npm run watch` or `yarn run watch`
+  Note that `./app/index.pug` links `app.css` but `./parcel/index.pug` links `app.sass`.
 
-* devServer
-  1. `npm run serv` or `yarn run serv`
-  2. open http://[HOST]:[PORT]
+* See `parcel/app.js` to learn how to use jquery with parcel.
 
+* Automation tools like parcel do more than just preprocessing.
+
+  ```
+  $ ./node_modules/.bin/parcel ./parcel/index.pug --port [port]
+  ```
+
+  Open `http://[host]:[port]` in your broser. Remember to replace [host] and [port] to appropriate values.
