@@ -4,7 +4,7 @@
 
 ### from scratch
 
-  ```
+```
 $ npm init -y
 $ npm i parcel-bundler --save-dev
 $ npm i jquery --save
@@ -15,7 +15,7 @@ $ npm i node-sass --save --save-dev
 
 ### or, use our package.json
 
-  ```
+```
 `$ npm i` or `$ yarn` if you have it
 ```
 
