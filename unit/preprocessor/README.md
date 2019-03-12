@@ -19,6 +19,7 @@ $ npm i node-sass --save --save-dev
 `$ npm i` or `$ yarn` if you have it
 ```
 
+
 ## Step 1: build your first pug
 * What`s Pug?
 https://pugjs.org/language/tags.html
@@ -42,8 +43,9 @@ $ ./node_modules/.bin/pug app/index.pug -o dist/
 * Add parameter to  watch files for changes
 
   Your files will automatically re-render. No more inconvenient commands.
+  You can find the `index.html` in dist directory.
 ```
-$ ./node_modules/.bin/node-sass app/index.pug -o dsit/ --watch
+$ ./node_modules/.bin/node-sass app/index.pug -o dist/ --watch
 ```
 
 * Experience the power of `--watch`.
@@ -52,6 +54,7 @@ $ ./node_modules/.bin/node-sass app/index.pug -o dsit/ --watch
 ```
 `h2[firstPug-class] Hello world!`
 ```
+
 
 ## Step 2: build your first sass
 
@@ -62,6 +65,7 @@ https://sass-lang.com/guide
 Moreover, Variables, Nesting, and Mixins are powerful feature of sass.
 
 * Complie your first sass
+  You can find the `app.css` in dist directory.
 ```
 $ ./node_modules/.bin/node-sass app/app.sass -o dist/ --watch
 ```
@@ -73,11 +77,12 @@ $ ./node_modules/.bin/node-sass app/app.sass -o dist/ --watch
 ```
 hint: There three children in container and be aware of indent.
 
+
 ## Why preprocessor?
 
 The  solution of web development skyrocketing.
 
-Try to compile `/new` with old version node.js or old browser
+Try to compile `/new` with old version node.js or old browser.
 
 ## Step 4: automation (with parcel)
 
