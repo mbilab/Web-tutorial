@@ -1,48 +1,52 @@
-# Preprocessor
+# preprocessor exercise
 
 ## Step 0: set up
 
-### from scratch
+You can create a project from scratch.  That is, install dependent packages via their names.
+
 ```
 $ npm init -y
-$ npm i parcel-bundler --save-dev
+$ npm i node-sass --save-dev # for step 2
 $ npm i jquery --save
-$ npm i pug-cli --save-dev
-$ npm i node-sass --save-dev
+$ npm i parcel-bundler --save-dev # for step 3
+$ npm i pug-cli --save-dev # for step 1
 # edit package.json if you want
 ```
 
-### or, use our package.json
-`$ npm i` or `$ yarn` if you have it
+Or, simply use our `package.json`, which specifies dependent packages for you. Notice that only one of the following two commands is required.
 
+```
+$ npm i
+$ yarn # if you have it
+```
 
-## Step 1: build your first pug
-* What`s [Pug](https://pugjs.org/language/tags.html)?
+## Step 1: use pug, a better html
+
+* What's [Pug](https://pugjs.org/language/tags.html)?
   * Need no start tag/end tag.
   * Use indent to represent scope level.
-  * Able to add class and name with css selector.e.g. `#container`
-  * Add attribute in bracket.e.g. `a(href="sample.com")`
+  * Use css selector to create html tag. For example, `#container` in pug equals `<div id="container"></div>` in html.
 
-* Complie your first pug</br>
-  `$ ./node_modules/.bin/pug app/index.pug -o dist/`
+* Complie a pug file
 
-  Type `cat ./app/index.pug` to see the default pug file.</br>
-  Then run the following code.
+  ```
+  $ ./node_modules/.bin/pug ./app/index.pug -o ./dist/
+  ```
 
-* Add a 'Hello world!' with h2 tag into `./app/index.pug`.</br>
-  hint: Transfer html: `<h2>Hello world!</h2>` to pug.
+  Compare `./app/index.pug` and `./dist/index.html`.
 
-* Add parameter to  watch files for changes</br>
-  Your files will automatically re-render. No more inconvenient commands.</br>
-  You can find the `index.html` in dist directory.
-  `$ ./node_modules/.bin/pug app/index.pug -o dist/ --watch`
+* Insert a `<h2>Hello world!</h2>` equivalent into `./app/index.pug` and follow instructions beginning with `Step 1`. In `vi`, try pressing `/` key to search text. Remember to re-compile once you edit `./app/index.pug`.
 
-* Experience the power of `--watch`.</br>
-  Add firstPug-class to your 'Hello world!' with automatically re-render.
-  `h2[firstPug-class] Hello world!`
+* Feel tired to compile manually? Use `--watch`.
 
+  ```
+  $ ./node_modules/.bin/pug ./app/index.pug -o ./dist/ --watch
+  ```
+
+  The `./dist/index.html` will be automatically re-compiled whenever you save `./app/index.pug`.
 
 ## Step 2: build your first sass
+
 * What's [SASS](https://sass-lang.com/guide)?</br>
   As pug, sass use indent to represent scope level.</br>
   Moreover, Variables, Nesting, and Mixins are powerful feature of sass.
