@@ -45,7 +45,7 @@ $ ./node_modules/.bin/pug app/index.pug -o dist/
   Your files will automatically re-render. No more inconvenient commands.</br>
   You can find the `index.html` in dist directory.
 ```
-$ ./node_modules/.bin/node-sass app/index.pug -o dist/ --watch
+$ ./node_modules/.bin/pug app/index.pug -o dist/ --watch
 ```
 
 * Experience the power of `--watch`.
@@ -58,10 +58,10 @@ $ ./node_modules/.bin/node-sass app/index.pug -o dist/ --watch
 
 ## Step 2: build your first sass
 
-* What`s sass?
+* What's sass?
 https://sass-lang.com/guide
 
-  As pug, sass use indent to represent scope level.</br>
+As pug, sass use indent to represent scope level.</br>
 Moreover, Variables, Nesting, and Mixins are powerful feature of sass.
 
 * Complie your first sass.</br>
