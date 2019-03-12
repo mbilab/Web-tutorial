@@ -27,7 +27,7 @@ $ yarn # if you have it
   * Use indent to represent scope level.
   * Use css selector to create html tag. For example, `#container` in pug equals `<div id="container"></div>` in html.
 
-* Complie a pug file
+* Complie a pug file.
 
   ```
   $ ./node_modules/.bin/pug ./app/index.pug -o ./dist/
@@ -45,24 +45,32 @@ $ yarn # if you have it
 
   The `./dist/index.html` will be automatically re-compiled whenever you save `./app/index.pug`.
 
-## Step 2: build your first sass
+## Step 2: use sass, a better css
 
-* What's [SASS](https://sass-lang.com/guide)?</br>
-  As pug, sass use indent to represent scope level.</br>
-  Moreover, Variables, Nesting, and Mixins are powerful feature of sass.
+* What's [SASS](https://sass-lang.com/guide)? As pug, sass use indent to represent scope level and has many useful features. Try variables, nesting, and mixins.
 
-* Complie your first sass.</br>
-  You can find the `app.css` in `dist/` directory.</br>
-  `$ ./node_modules/.bin/node-sass app/app.sass -wo dist`
+* Complie `./app/app.sass` to `./dist/app.css`.
 
-* Determinie your button color and border-radius
   ```
-    &:nth-child([which chld])
-      +buttonStyle([color], [border])
+  $ ./node_modules/.bin/node-sass ./app/app.sass -o dist -w
   ```
-  hint: There three children in container and be aware of indent.
+
+* Reference the following code to make the three buttons different with `buttonStyle` mixin.
+
+  ```
+  /* Step 2:
+   * copy the following code to `./app/app.sass`
+   * you may need to copy more than once
+   * replace [child index], [color] and [border radius] with appropriate values
+   */
+  &:nth-child([child index])
+    +buttonStyle([color], [border radius])
+  ```
+
+  Compare `./app/app.sass` and `./dist/app.css`.
 
 ## Step 3: Why preprocessor?
+
 The  solution of web development skyrocketing.
 Try to compile `/new` with old version node.js or old browser.
 

@@ -49,7 +49,7 @@ Insert the following code into `./exercise.html` and follow instructions beginni
  * google `js arrow function` for the `( ... ) => { ... }` syntax
  * use browser developer console to test the event
  */
-$(document).[event](() => { // Step 2: replace [event] with an approprite value
+$(document).[event](() => { // Step 2: replace [event] with an appropriate value
   console.log("Event triggered!")
 })
 ```
