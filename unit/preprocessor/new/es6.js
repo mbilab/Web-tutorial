@@ -1,3 +1,4 @@
+import "babel-polyfill"
 // let/const
 // Default Parametersi and Arrow Function
 const func1 = (v='default') => {console.log(v)}
