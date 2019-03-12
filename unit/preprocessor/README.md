@@ -30,7 +30,7 @@ https://pugjs.org/language/tags.html
 
 * Complie your first pug
 
-Type `cat ./app/index.pug` to see the default pug file.
+Type `cat ./app/index.pug` to see the default pug file.</br>
 Then run the following code.
 ```
 $ ./node_modules/.bin/pug app/index.pug -o dist/
@@ -42,7 +42,7 @@ $ ./node_modules/.bin/pug app/index.pug -o dist/
 
 * Add parameter to  watch files for changes
 
-  Your files will automatically re-render. No more inconvenient commands.
+  Your files will automatically re-render. No more inconvenient commands.</br>
   You can find the `index.html` in dist directory.
 ```
 $ ./node_modules/.bin/node-sass app/index.pug -o dist/ --watch
@@ -61,10 +61,10 @@ $ ./node_modules/.bin/node-sass app/index.pug -o dist/ --watch
 * What`s sass?
 https://sass-lang.com/guide
 
-  As pug, sass use indent to represent scope level.
+  As pug, sass use indent to represent scope level.</br>
 Moreover, Variables, Nesting, and Mixins are powerful feature of sass.
 
-* Complie your first sass
+* Complie your first sass.</br>
   You can find the `app.css` in dist directory.
 ```
 $ ./node_modules/.bin/node-sass app/app.sass -o dist/ --watch
@@ -81,7 +81,6 @@ hint: There three children in container and be aware of indent.
 ## Why preprocessor?
 
 The  solution of web development skyrocketing.
-
 Try to compile `/new` with old version node.js or old browser.
 
 ## Step 4: automation (with parcel)
