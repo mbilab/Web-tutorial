@@ -1,4 +1,4 @@
-# preprocessor
+# Preprocessor
 
 ## Step 0: set up
 
