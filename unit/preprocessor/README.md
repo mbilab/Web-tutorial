@@ -71,7 +71,7 @@ $ yarn # if you have it
 
 ## Step 3: is there a better js?
 
-There was, see [Babel](https://babeljs.io/). However, modern js engines catch up the development of js. Try to open `./babel/es6.js` in old [Node.js](https://nodejs.org/en/) (version < 7) or browsers (IE version < [version]). Now Babel is usually used for js variants such as [TypeScript](https://www.typescriptlang.org/). Execute the following command and than compare `./babel/typescript.ts` and `./dist/typescript.js`.
+There was, see [Babel](https://babeljs.io/). However, modern js engines catch up the development of js. Try to open `./babel/es6.js` in old [Node.js](https://nodejs.org/en/) (version < 7) or browsers. Now Babel is usually used for js variants such as [TypeScript](https://www.typescriptlang.org/). Execute the following command and than compare `./babel/typescript.ts` and `./dist/typescript.js`.
 
 ```
 $ ./node_modules/.bin/babel ./babel/typescript.ts --out-dir ./dist/ --extensions ".ts"
