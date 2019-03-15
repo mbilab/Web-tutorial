@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title HTTP & Ajax
+  body
+    mixin user-name()
+      div
+      |first name:
+      input(type="text", name="fname")
+      br
+      |last name:
+      input(type="text", name="lname")
+      br
+
+    form(action='get-data', method='get')
+      +user-name()
+      button(type='submit') submit via get
+
+    form(action='post-data', method='post')
+      +user-name()
+      button(type='submit') submit via post
+
+    form(id="ajax-form")
+      +user-name()
+      button(type='button') submit via ajax
+
+    #ajax-output
+    script(src="index.js")
