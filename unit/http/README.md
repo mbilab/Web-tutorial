@@ -23,6 +23,7 @@ $ npm i express jquery --save
 ```
 
 Or, simply use our `package.json`, which specifies dependent packages for you. 
+
 或者，直接使用我們的 `package.json`，裡頭記錄了需要的套件。
 
 ```
@@ -30,6 +31,7 @@ $ yarn
 ```
 
 The corresponding command of `npm`.
+
 對應的 `npm` 指令。
 
 ```
@@ -113,6 +115,8 @@ Insert the following code to `./ser.js` and follow instructions beginning with `
  * `__dirname` 是 node.js 的環境變數，搜尋 `nodejs _-dirname` 了解更多
  */
 
+// handle other urls
+// 處理其它網址
 app.use(express.static(`${__dirname}/[path]`))
 ```
 
@@ -120,10 +124,29 @@ Re-execute server and open `[host]:[port]/step3.html` in a browser to see the re
 
 重新執行啟伺器，然後用瀏覽器打開 `[host]:[port]/step3.html` 看結果。你知道 `step3.html` 在哪嗎？
 
-step 4: then why server side code? “dynamic results”, even with the same url
-## Step 4: 伺服器端操作，動態顯示資料
+## Step 4: dynamic results even with the same url
 
-step 5: usually the results are related to user input
+That's the reason to develop server-side programs. Insert the following code to `./ser.js` and follow instructions beginning with `Step 4`.
+
+這才是開發伺服器端程式的理由。將底下的程式碼插入 `./ser.js`，然後照著 `Step 4` 開頭的提示操作。
+
+```
+/* Step 4:
+ * open `[host]:[port]/step4` in a browser multiple times to see the result
+ * try re-execute the program
+ * learn the syntax of string interpolation in js, see `${++nRequests}` in the code
+ * 用瀏覽器打開 `[host]:[port]/step4` 多次看結果
+ * 試著重新執行程式
+ * 學習 js 的 string interpolation 語法，參考程式中的 `${++nRequests}`
+ */
+let nRequests = 0
+app.get('/step4', (req, res) => {
+  res.send(`this is request #${++nRequests}`)
+})
+```
+
+## Step 5: usually the results are related to user input
+
 ## Step 5: 利用url去操作get方法
 
 #### Step 5.1

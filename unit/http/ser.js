@@ -20,11 +20,14 @@ app.listen(port, () => {
   console.log(`listening on port: ${port}`)
 })
 
+// Step 4 code goes here
+let nRequests = 0
+app.get('/step4', (req, res) => {
+  res.send(`this is request #${++nRequests}`)
+})
 
 // Step 3 code goes here
-// serve other urls
 app.use(express.static(`${__dirname}/dist`))
-
 
 // Step 5.1 code goes here
 // serve `/get` url
