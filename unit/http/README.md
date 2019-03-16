@@ -31,10 +31,10 @@ $ npm i
 ```
 
 
-## Step 1: 用express去新增一個路由，去監聽`./`這個路徑，回傳" 哈囉，世界XD "
+## Step 1: 用express去新增一個路由
 
 [Express](https://expressjs.com/) 是一個輕量的網頁伺服器，使用的語言是 [Node.js](https://nodejs.org/). </br>
-試著在十行程式碼內建造一個網頁伺服器(web server)。</br>
+試著在十行程式碼內建造一個網頁伺服器(web server)，他會去監聽`./`這個路徑，並且在有request的時候回應`hello world`。</br>
 將底下的程式碼貼進`./ser.js`裡面，然後跟著`Step 1`的步驟做下去。</br>
 然後用瀏覽器打開 [host]:[port] 去看看結果。
 
@@ -60,11 +60,13 @@ app.listen(port, () => {
 })
 ```
 
-## Step 2: 用網頁伺服器(web server)，傳html的內容。
+## Step 2: 用網頁伺服器(web server)，傳送html的內容。
 
-網頁伺服器(web server)，可以用來回傳html。試著修改`.ser.js`的回應(response)，將" 哈囉，世界 "改回"hello world"，並加上`<h1>`的標籤。使用瀏覽器的開發者工具，去看看伺服器的回應和網頁資源。
+網頁伺服器(web server)，可以用來回傳html。試著修改`.ser.js`的response，將"hello world"加上`<h1>`的標籤。使用瀏覽器的開發者工具，去看看伺服器的回應和網頁資源。
 
-## Step 3: 不要在js裡面打html的程式碼了，express就能夠直接讀取靜態檔案。將底下的程式碼貼到`./ser.js`去設定靜態檔案的路徑。
+## Step 3: 讀取靜態檔案
+
+不要在js裡面打html的程式碼了，express就能夠直接讀取靜態檔案。將底下的程式碼貼到`./ser.js`去設定靜態檔案的路徑。
 
 ```
 /* Step 3:
