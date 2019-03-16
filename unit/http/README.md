@@ -35,7 +35,7 @@ $ npm i
 
 [Express](https://expressjs.com/) 是一個輕量的網頁伺服器，使用的語言是 [Node.js](https://nodejs.org/). </br>
 試著在十行程式碼內建造一個網頁伺服器(web server)，他會去監聽`./`這個路徑，並且在有request的時候回應`hello world`。</br>
-將底下的程式碼貼進`./ser.js`裡面，然後跟著`Step 1`的步驟做下去。</br>
+將底下的程式碼貼進`./ser.js`裡面，然後跟著`Step 1`的提示做下去。</br>
 然後用瀏覽器打開 [host]:[port] 去看看結果。
 
 ```
@@ -60,9 +60,10 @@ app.listen(port, () => {
 })
 ```
 
-## Step 2: 用網頁伺服器(web server)，傳送html的內容。
+## Step 2: 用網頁伺服器(web server)，傳送html的內容
 
-網頁伺服器(web server)，可以用來回傳html。試著修改`.ser.js`的response，將"hello world"加上`<h1>`的標籤。使用瀏覽器的開發者工具，去看看伺服器的回應和網頁資源。
+網頁伺服器(web server)，可以用來回傳html。試著修改`.ser.js`的response，將"hello world"加上`<h1>`的標籤。</br>
+使用瀏覽器的開發者工具，去看看伺服器的回應和網頁資源。
 
 ## Step 3: 讀取靜態檔案
 
@@ -71,13 +72,37 @@ app.listen(port, () => {
 ```
 /* Step 3:
  * 將Step 1的app.get那個函式先註解起來，確保你能夠看到這個步驟的結果。
- * 你需要自己在http路徑下中新增一個'dist'資料夾，然後放入想要瀏覽的靜態檔案（html, css, js , 圖片等等）。
+ * 你需要自己在http路徑下中新增一個'dist'資料夾，然後裡面就能放入想要瀏覽的靜態檔案（html, css, js , 圖片等等）。
  * 這邊'dist'資料夾，其實就像是'public_html'
  * 注意這邊'__dirname'指的就是該script檔案（這次是ser.js這支）存放的路徑。
  */
 
 app.use(express.static(`${__dirname}/dist`))
 ```
+
+## Step 4: 伺服器端操作，動態顯示資料
+
+## Step 5: 利用url去操作get方法
+
+#### Step 5.1
+透過修改網址，將資料傳回去伺服器端。</br>
+將底下的程式碼貼進`./ser.js`裡面，然後跟著`Step 5`的提示做下去。</br>
+然後用瀏覽器打開 [host]:[port] 去看看結果。
+
+```
+/* Step 5.1:
+ * req裡面會包含前端傳進來的資料
+ */
+
+app.get('/get-data', function(req, res) {
+  res.send(`<h1>Hello, ${req.query.fname} ${req.query.lname}</h1>`)
+})
+```
+
+#### Step 5.2
+在網址的後面加上`/get-data?fname=[姓]&lname=[名]`，並自行將姓名改掉。</br>
+送出後，觀察結果。
+
 
 step 4: then why server side code? “dynamic results”, even with the same url
 res.send(++nRequests)

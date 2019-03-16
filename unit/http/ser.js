@@ -7,11 +7,13 @@ const express = require('express')
 const app = express()
 const port = 30000 // change the port number
 
+/*
 // handle `/` url
 app.get('/', (req, res) => {
   // response a string
   res.send('hello world')
 })
+*/
 
 // start the server
 app.listen(port, () => {
@@ -23,6 +25,12 @@ app.listen(port, () => {
 // serve other urls
 app.use(express.static(`${__dirname}/dist`))
 
+
+// Step 5.1 code goes here
+// serve `/get` url
+app.get('/get-data', function(req, res) {
+  res.send(`<h1>Hello, ${req.query.fname} ${req.query.lname}</h1>`)
+})
 
 /*
 const bodyParser = require('body-parser')
