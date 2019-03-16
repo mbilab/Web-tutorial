@@ -36,7 +36,7 @@ $ npm i
 [Express](https://expressjs.com/) 是一個輕量的網頁伺服器，使用的語言是 [Node.js](https://nodejs.org/). </br>
 試著在十行程式碼內建造一個網頁伺服器(web server)。</br>
 將底下的程式碼貼進`./ser.js`裡面，然後跟著`Step 1`的步驟做下去。</br>
-然後用瀏覽器打開[host]:[port]去看看結果。
+然後用瀏覽器打開 [host]:[port] 去看看結果。
 
 ```
 /* Step 1:
@@ -64,12 +64,10 @@ app.listen(port, () => {
 
 網頁伺服器(web server)，可以用來回傳html。試著修改`.ser.js`的回應(response)，將" 哈囉，世界 "改回"hello world"，並加上`<h1>`的標籤。使用瀏覽器的開發者工具，去看看伺服器的回應和網頁資源。
 
-## Step 3: use static files instead typing html code in js. Insert the following code to `./ser.js` set the directory where we will put the static files.
 ## Step 3: 不要在js裡面打html的程式碼了，express就能夠直接讀取靜態檔案。將底下的程式碼貼到`./ser.js`去設定靜態檔案的路徑。
 
 ```
 /* Step 3:
- * hide the 'get function' in Step 1, to ensure you can see the result of this step 
  * 將Step 1的app.get那個函式先註解起來，確保你能夠看到這個步驟的結果。
  * 你需要自己在http路徑下中新增一個'dist'資料夾，然後放入想要瀏覽的靜態檔案（html, css, js , 圖片等等）。
  * 這邊'dist'資料夾，其實就像是'public_html'
