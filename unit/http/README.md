@@ -37,7 +37,28 @@ $ npm i express jquery --save
 
 ## Step 1: create an express to listen requests, return “hello world”
 
-res.send(‘hello world’)
+[Express](https://expressjs.com/) is a lightweight web server for [Node.js](https://nodejs.org/). Try use it to create a web server in ten lines. Insert the following code into `./ser.js` and follow instructions beginning with `Step 1`. Open [host]:[port] in a browser to see the result.
+
+```
+/* Step 1:
+ * replace [port] to an appropriate value
+ * storing config to variables is a good practice, such as `port`
+ * watch out the string interpolation in js, such as `${port}`
+ */
+const express = require('express') // include `express`
+const app = express() // create an express, aka web server, instance
+const port = [port]
+
+// handle `/` url
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
+
+// start the server
+app.listen(port, () => {
+  console.log(`listening on port: ${port}`)
+})
+```
 
 step 2: html code is okay
 res.send(‘<h1>hello world’)
