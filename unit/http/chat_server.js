@@ -10,18 +10,18 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.post('/chat_text', function(req, res){
     if(req.body.text){
         req.body.text += '</br>'
-        fs.appendFile('./chat/chat.txt', req.body.text, (err)=>{
+        fs.appendFile(`${__dirname}/chat/chat.txt`, req.body.text, (err)=>{
             if(err) console.log(err)
         })
     }
-    fs.readFile('./chat/chat.txt', (err, data)=>{
+    fs.readFile(`${__dirname}/chat/chat.txt`, (err, data)=>{
         if (err) console.log(err)
         else res.send(data)
     })
 })
 
 
-app.use(express.static(`${__dirname}/chat`))
+app.use(express.static(`${__dirname}/chat/dist`))
 app.listen(port, () => {
   console.log(`listening on port: ${port}`)
 })
