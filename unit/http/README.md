@@ -51,6 +51,7 @@ const port = [port]
 
 // handle `/` url
 app.get('/', (req, res) => {
+  // response a string
   res.send('hello world')
 })
 
@@ -60,10 +61,13 @@ app.listen(port, () => {
 })
 ```
 
-step 2: html code is okay
-res.send(‘<h1>hello world’)
-step 3: use static files instead typing html code in js
+## Step 2: html code is okay
+
+One can response html code. Try modify `./ser.js` to response `hello world` in a `<h1>`. Use browser developer console to see server response and page source.
+
+## step 3: use static files instead typing html code in js
 app.use(express.static(…))
+
 step 4: then why server side code? “dynamic results”, even with the same url
 res.send(++nRequests)
 step 5: usually the results are related to user input
