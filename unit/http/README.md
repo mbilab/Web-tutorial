@@ -65,8 +65,18 @@ app.listen(port, () => {
 
 One can response html code. Try modify `./ser.js` to response `hello world` in a `<h1>`. Use browser developer console to see server response and page source.
 
-## step 3: use static files instead typing html code in js
-app.use(express.static(…))
+## Step 3: use static files instead typing html code in js. Insert the following code to `./ser.js` set the directory where we will put the static files.
+
+```
+/* Step 3:
+ * hide the 'get function' in Step 1, to ensure you can see the result of this step 
+ * 'dist' here is like public_html
+ * you can create a new folder named 'dist', then put some static files like html, css, js, images, etc.
+ * notice the '__dirname' is pointing to the directory where we put the script, 'ser.js' here.
+ */
+
+app.use(express.static(`${__dirname}/dist`))
+```
 
 step 4: then why server side code? “dynamic results”, even with the same url
 res.send(++nRequests)
