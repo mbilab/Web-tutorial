@@ -124,7 +124,7 @@ Re-execute server and open `[host]:[port]/step3.html` in a browser to see the re
 
 重新執行啟伺器，然後用瀏覽器打開 `[host]:[port]/step3.html` 看結果。你知道 `step3.html` 在哪嗎？
 
-## Step 4: dynamic results even with the same url
+## Step 4: dynamic results, even with the same url
 
 That's the reason to develop server-side programs. Insert the following code to `./ser.js` and follow instructions beginning with `Step 4`.
 
@@ -133,10 +133,10 @@ That's the reason to develop server-side programs. Insert the following code to 
 ```
 /* Step 4:
  * open `[host]:[port]/step4` in a browser multiple times to see the result
- * try re-execute the program
+ * try re-execute the program and see the result
  * learn the syntax of string interpolation in js, see `${++nRequests}` in the code
  * 用瀏覽器打開 `[host]:[port]/step4` 多次看結果
- * 試著重新執行程式
+ * 試著重新執行程式並觀察結果
  * 學習 js 的 string interpolation 語法，參考程式中的 `${++nRequests}`
  */
 let nRequests = 0
@@ -145,40 +145,28 @@ app.get('/step4', (req, res) => {
 })
 ```
 
-## Step 5: usually the results are related to user input
+## Step 5: receive user input
 
-## Step 5: 利用url去操作get方法
+Usually, the dynamic results are related to user input. Insert the following code to `./ser.js` and follow instructions beginning with `Step 5`.
 
-#### Step 5.1
-You can use the url to send data to the server side. Insert the following code into `./ser.js`, and follow instructions beginning with `Step 5`. Open [host]:[port] in a browser to see the result.
-透過修改網址，將資料傳回去伺服器端。</br>
-將底下的程式碼貼進`./ser.js`裡面，然後跟著`Step 5`的提示做下去。</br>
-然後用瀏覽器打開 [host]:[port] 去看看結果。
+通常網頁的結果會跟使用者的輸入有關，將底下的程式碼插入 `./ser.js`，然後照著 `Step 5` 開頭的提示操作。
 
 ```
-/* Step 5.1:
- * data are included in req, and we can find them in req.query
+/* Step 5:
+ * user input is stored in the first argument of the callback function, aka `req` in the code
+ * open `[host]:[port]/step5?fname=[fname]&lname=[lname]` in a browser to see the result
+ * try edit [fname] and [lname]
+ * notice the syntax of `?` and `&` in the url
+ * 使用者輸入存放在回呼函式的第一個參數，也就是程式中的 `req` 裡
+ * 用瀏覽器打開 `[host]:[port]/step5?fname=[fname]&lname=[lname]` 看結果
+ * 試著修改 [fname] 與 [lanme]
+ * 注意網址中 `?` 與 `&` 的用法
  */
-/* Step 5.1:
- * req裡面會包含前端傳進來的資料，我們可以從req.query取得他們
- */
-
-app.get('/get-data', function(req, res) {
+app.get('/step5', (req, res) => {
   res.send(`<h1>Hello, ${req.query.fname} ${req.query.lname}</h1>`)
 })
 ```
 
-#### Step 5.2
-Add the following string `/get-data?fname=[姓]&lname=[名]` to the end of the url. You can see the result after submitting.
-送出後，觀察結果。
-在網址的後面加上`/get-data?fname=[姓]&lname=[名]`，並自行將姓名改掉。</br>
-送出後，觀察結果。
-
-
-step 4: then why server side code? “dynamic results”, even with the same url
-res.send(++nRequests)
-step 5: usually the results are related to user input
-handle get, test with url
 step 6: input from from instead of url
 <form method=“get”>
 step 7: how to upload file?
