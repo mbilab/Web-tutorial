@@ -1,20 +1,21 @@
 # http & ajax 練習
 
 ## Step 0: steup
-## Step 0: 建環境
 
 You can install packages from scratch.
-從零開始安裝需要用到的套件。
+
+你可以從零開始安裝需要用到的套件。
 
 ```
 $ yarn init -y
 $ yarn add express jquery
 ```
 
-If you don't have yarn, here is `npm` commands.
-Notice that only one of the following two commands is required.
-如果你的電腦沒有安裝`yarn`，底下是`npm`的指令。
-需要注意的是，兩個擇其一使用即可。
+If you don't have `yarn`, try `npm`.
+Notice that either way is okay.
+
+如果你的電腦沒有 `yarn`，試試 `npm`。
+注意兩個擇其一使用即可。
 
 ```
 $ npm init -y
@@ -22,86 +23,102 @@ $ npm i express jquery --save
 ```
 
 Or, simply use our `package.json`, which specifies dependent packages for you. 
-Use `yarn` to setup with our `package.json`, which specifies dependent packages for you.
-或者，`package.json`會記錄過去安裝過的套件，有他就能夠快速裝好環境。</br>
-用`yarn`能夠依照`package.json`中的設定，去安裝好相關套件。
+或者，直接使用我們的 `package.json`，裡頭記錄了需要的套件。
 
 ```
 $ yarn
 ```
 
-If you don't have yarn, try `npm`.
-如果沒有`yarn`，可以使用`npm`。
+The corresponding command of `npm`.
+對應的 `npm` 指令。
 
 ```
 $ npm i
 ```
 
+## Step 1: create a web server, which returns text
 
-## Step 1: create an express to listen requests, return “hello world”
-## Step 1: 用express去新增一個路由
+[Express](https://expressjs.com/) is a lightweight web server for [Node.js](https://nodejs.org/). This step uses it to create a web server in ten lines. Insert the following code into `./ser.js` and follow instructions beginning with `Step 1`.
 
-[Express](https://expressjs.com/) is a lightweight web server for [Node.js](https://nodejs.org/). Try use it to create a web server in ten lines. Insert the following code into `./ser.js` and follow instructions beginning with `Step 1`. Open [host]:[port] in a browser to see the result.
-[Express](https://expressjs.com/) 是一個輕量的網頁伺服器，使用的語言是 [Node.js](https://nodejs.org/). </br>
-試著在十行程式碼內建造一個網頁伺服器(web server)，他會去監聽`./`這個路徑，並且在有request的時候回應`hello world`。</br>
-將底下的程式碼貼進`./ser.js`裡面，然後跟著`Step 1`的提示做下去。</br>
-然後用瀏覽器打開 [host]:[port] 去看看結果。
+[Express](https://expressjs.com/) 是一個使用 [Node.js](https://nodejs.org/) 開發的輕量級網頁伺服器，這個步驟用其在十行程式碼內打造一個網頁伺服器。將底下的程式碼插入 `./ser.js`，然後照著 `Step 1` 開頭的提示操作。
 
 ```
 /* Step 1:
- * replace [port] to an appropriate value
- * storing config to variables is a good practice, such as `port`
- * watch out the string interpolation in js, such as `${port}`
+ * edit [port] to an appropriate value
+ * storing config to variables is a good practice, see `port` in the code
+ * learn the syntax of string interpolation in js, see `${port}` in the code
+ * 將 [port] 改成合適的值
+ * 將設定放在變數中是一種好習慣，參考程式中的 `port`
+ * 學習 js 的 string interpolation 語法，參考程式中的 `${port}`
  */
-/* Step 1:
- * 把[port]改成適合的值
- * 像是`port`這種設定，比較好的作法是將他存成變數。
- * js裡面的string interpolation，像是`${port}`，是一種很方便的寫法。
- */
-const express = require('express') // include `express`
-const app = express() // create an express, aka web server, instance
+
+// include `express`
+// 載入 `express`
+const express = require('express')
+
+// create an express, aka web server, instance
+// 建立一個 express (也就是網頁伺服器)實體
+const app = express()
+
 const port = [port]
 
-// handle `/` url
-app.get('/', (req, res) => {
-  // response a string
+// handle `/step1` url
+// 處理 `/step1` 網址
+app.get('/step1', (req, res) => {
+  // response browser
+  // 回應瀏覽器
   res.send('hello world')
 })
 
 // start the server
+// 啟動伺服器
 app.listen(port, () => {
   console.log(`listening on port: ${port}`)
 })
 ```
 
+Execute `./ser.js`.
+
+執行 `./ser.js`。
+
+```
+$ node ./ser.js
+```
+
+Open `[host]:[port]/step1` in a browser to see the result.
+
+用瀏覽器打開 `[host]:[port]/step1` 看結果。
+
 ## Step 2: html code is okay
-## Step 2: 用網頁伺服器(web server)，傳送html的內容
 
-One can response html code. Try modify `./ser.js` to response `hello world` in a `<h1>`. Use browser developer console to see server response and page source.
-網頁伺服器(web server)，可以用來回傳html。試著修改`.ser.js`的response，將"hello world"加上`<h1>`的標籤。</br>
-使用瀏覽器的開發者工具，去看看伺服器的回應和網頁資源。
+Server can return html code. Try modify `./ser.js` to return `hello world` in a `<h1>`. Use browser developer console to see server response and page source. Remember to re-execute the modified server.
 
-## Step 3: use static files instead typing html code in js. Insert the following code to `./ser.js` set the directory where we will put the static files.
-## Step 3: 讀取靜態檔案
+伺服器可以回傳 html 語法。試著修改 `./ser.js` 使其回傳在 `<h1>` 標籤內的 `hello world`。使用瀏覽器的開發者工具，去看看伺服器的回應和網頁原始碼。記得重新執行你修改過後的伺服器程式。
 
-不要在js裡面打html的程式碼了，express就能夠直接讀取靜態檔案。將底下的程式碼貼到`./ser.js`去設定靜態檔案的路徑。
+## Step 3: use static files instead typing html code in js
+
+Insert the following code to `./ser.js` and follow instructions beginning with `Step 3`.
+
+將底下的程式碼插入 `./ser.js`，然後照著 `Step 3` 開頭的提示操作。
 
 ```
 /* Step 3:
- * hide the 'get function' in Step 1, to ensure you can see the result of this step 
- * 'dist' here is like public_html
- * you can create a new folder named 'dist', then put some static files like html, css, js, images, etc.
- * notice the '__dirname' is pointing to the directory where we put the script, 'ser.js' here.
- */
-/* Step 3:
- * 將Step 1的app.get那個函式先註解起來，確保你能夠看到這個步驟的結果。
- * 你需要自己在http路徑下中新增一個'dist'資料夾，然後裡面就能放入想要瀏覽的靜態檔案（html, css, js , 圖片等等）。
- * 這邊'dist'資料夾，其實就像是'public_html'
- * 注意這邊'__dirname'指的就是該script檔案（這次是ser.js這支）存放的路徑。
+ * edit [path] to an appropriate value
+ * notice that the static files are stored in `./dist/`
+ * `express.static()` is used to server static files, google `express static` for more
+ * `__dirname` is an environment variable in node.js, google `nodejs __dirname` for more
+ * 將 [path] 改成合適的值
+ * 注意靜態檔案放在 `./dist` 目錄下
+ * `express.static()` 專門用來處理靜態檔案，搜尋 `express static` 了解更多
+ * `__dirname` 是 node.js 的環境變數，搜尋 `nodejs _-dirname` 了解更多
  */
 
-app.use(express.static(`${__dirname}/dist`))
+app.use(express.static(`${__dirname}/[path]`))
 ```
+
+Re-execute server and open `[host]:[port]/step3.html` in a browser to see the result. Do you know where `step3.html` is?
+
+重新執行啟伺器，然後用瀏覽器打開 `[host]:[port]/step3.html` 看結果。你知道 `step3.html` 在哪嗎？
 
 step 4: then why server side code? “dynamic results”, even with the same url
 ## Step 4: 伺服器端操作，動態顯示資料
