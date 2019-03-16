@@ -1,6 +1,6 @@
 $(document).ready(function(){
   const submit = () => {
-    $.post('chat.php', {text: $('input').val()}, data => {
+    $.post('chat_text', {text: $('input').val()}, data => {
       $('#content').html(data)
       $('input').val('')
     })
@@ -8,7 +8,7 @@ $(document).ready(function(){
 
   // refresh every second
   setInterval(function(){
-    $.post('chat.php', data => $("#content").html(data))
+    $.post('chat_text', data => $("#content").html(data))
   }, 1000)
 
   $('button[type=submit]').click(e => {
