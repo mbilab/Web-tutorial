@@ -49,7 +49,7 @@ $ npm i
  * edit [port] to an appropriate value
  * storing config to variables is a good practice, see `port` in the code
  * learn the syntax of string interpolation in js, see `${port}` in the code
- * 將 [port] 改成合適的值
+ * 將 [port] 修改成合適的值
  * 將設定放在變數中是一種好習慣，參考程式中的 `port`
  * 學習 js 的 string interpolation 語法，參考程式中的 `${port}`
  */
@@ -109,7 +109,7 @@ Insert the following code to `./ser.js` and follow instructions beginning with `
  * notice that the static files are stored in `./dist/`
  * `express.static()` is used to server static files, google `express static` for more
  * `__dirname` is an environment variable in node.js, google `nodejs __dirname` for more
- * 將 [path] 改成合適的值
+ * 將 [path] 修改成合適的值
  * 注意靜態檔案放在 `./dist` 目錄下
  * `express.static()` 專門用來處理靜態檔案，搜尋 `express static` 了解更多
  * `__dirname` 是 node.js 的環境變數，搜尋 `nodejs _-dirname` 了解更多
@@ -120,9 +120,9 @@ Insert the following code to `./ser.js` and follow instructions beginning with `
 app.use(express.static(`${__dirname}/[path]`))
 ```
 
-Re-execute server and open `[host]:[port]/step3.html` in a browser to see the result. Do you know where `step3.html` is?
+Re-execute server and open `[host]:[port]/exercise.html` in a browser to see the result. Do you know where `exercise.html` is?
 
-重新執行啟伺器，然後用瀏覽器打開 `[host]:[port]/step3.html` 看結果。你知道 `step3.html` 在哪嗎？
+重新執行啟伺器，然後用瀏覽器打開 `[host]:[port]/exercise.html` 看結果。你知道 `exercise.html` 在哪嗎？
 
 ## Step 4: dynamic results, even with the same url
 
@@ -167,8 +167,34 @@ app.get('/step5', (req, res) => {
 })
 ```
 
-step 6: input from from instead of url
-<form method=“get”>
+## Step 6: input from form instead of url
+
+In practice, no users will input via editing url. Instead, web developers need to provide html forms for users. Insert the following code to `./dist/exercise.html` and follow instructions beginning with `Step 5`.
+
+```
+<!-- Step 6:
+ * edit [field name]s to appropriate values
+ * `action` specifies the url to receive the form data
+ * here the server code developed in the last step is used
+ * `method="get"` indicates encoding form data in the url, see the next step for more
+ * `type="submit"` indicates that clicking the button will trigger the action
+ * open `[host]:[port]/step6.html` in a browser, fill the form, click the submit button and see the result
+ * notice the url
+ * 將 [field name] 修改成適合的值
+ * `action` 指定接收表單資料的網址
+ * 這裡使用的是前一個步驟所開發的伺服器端程式
+ * `method="get"` 將表單資料編碼至網址，參考下一個步驟了解更多
+ * `type="submit"` 表示按下此按鈕後會觸發 `action` 設定的網址
+ * 用瀏覽器打開 `[host]:[port]/step6.html`，填好表單，按下送出按鈕看結果
+ * 注意網址的變化
+-->
+<form action="./step5" method="get">
+  first name: <input type="text" name="[field name]"><br>
+  last name: <input type="text" name="[field name]"><br>
+  <button type="submit">submit via get</button>
+</form>
+```
+
 step 7: how to upload file?
 <form method=“post”>
 step 8: a whole new page for each request, not a modern design
