@@ -169,7 +169,9 @@ app.get('/step5', (req, res) => {
 
 ## Step 6: input from form instead of url
 
-In practice, no users will input via editing url. Instead, web developers need to provide html forms for users. Insert the following code to `./dist/exercise.html` and follow instructions beginning with `Step 5`.
+In practice, websites need to provide html forms, since no users will input via editing url. Insert the following code to `./dist/exercise.html` and follow instructions beginning with `Step 6`.
+
+實際上，網頁需要提供表單，畢竟沒有使用者會透過網址來輸入資料。將底下的程式碼插入 `./dist/exercise.html`，然後照著 `Step 6` 開頭的提示操作。
 
 ```
 <!-- Step 6:
@@ -178,14 +180,14 @@ In practice, no users will input via editing url. Instead, web developers need t
  * here the server code developed in the last step is used
  * `method="get"` indicates encoding form data in the url, see the next step for more
  * `type="submit"` indicates that clicking the button will trigger the action
- * open `[host]:[port]/step6.html` in a browser, fill the form, click the submit button and see the result
+ * open `[host]:[port]/exercise.html` in a browser, fill the form, click the submit button and see the result
  * notice the url
  * 將 [field name] 修改成適合的值
  * `action` 指定接收表單資料的網址
  * 這裡使用的是前一個步驟所開發的伺服器端程式
  * `method="get"` 將表單資料編碼至網址，參考下一個步驟了解更多
  * `type="submit"` 表示按下此按鈕後會觸發 `action` 設定的網址
- * 用瀏覽器打開 `[host]:[port]/step6.html`，填好表單，按下送出按鈕看結果
+ * 用瀏覽器打開 `[host]:[port]/exercise.html`，填好表單，按下送出按鈕看結果
  * 注意網址的變化
 -->
 <form action="./step5" method="get">
@@ -195,8 +197,60 @@ In practice, no users will input via editing url. Instead, web developers need t
 </form>
 ```
 
-step 7: how to upload file?
-<form method=“post”>
+Step 7: how to upload file?
+
+For complex data and/or security issue, encoding form data to somewhere not in the url is necessary. Insert the following code to `./ser.js` and follow instructions beginning with `Step 7`.
+
+```
+/* Step 7:
+ * edit [property name]s to appropriate values
+ * google `express body-parser` for more
+ * notice `app.post()` is used instead of `app.get()`
+ * server can return different results for get and post requests of the same url
+ * 將 [property name] 修改成合適的值
+ * 搜尋 `express body-parser` 了解更多
+ * 注意這裡用的是 `app.post()` 而非 `app.get()`
+ * 伺服器可以依 get 或是 post，針對同樣網址回傳不同結果
+ */
+
+// include `body-parser`
+// 載入 `body-parser`
+const bodyParser = require('body-parser')
+
+// setup `body-parser`
+// 設定 `body-parser`
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.post('/step7', (req, res) => {
+  // `bady-parser` stores parsed data in `req.body`
+  // `bady-parser` 將解析好的資料存放在 `req.body`
+  res.send(`<h1>Hello, ${req.[property name].fname} ${req.[property name].lname}</h1>`)
+})
+```
+
+Insert the following code to `./dist/exercise.html` and follow instructions beginning with `Step 7`.
+
+```
+<!-- Step 7:
+ * edit [field name]s to appropriate values
+ * the biggest difference to the last step is `method="post"`
+ * open `[host]:[port]/exercise.html` in a browser, fill the form, click the submit button and see the result
+ * notice the url
+ * try reload the page
+ * 將 [file name] 修改成合適的值
+ * 跟前一步驟最大的不同就是 `method="post"`
+ * 用瀏覽器打開 `[host]:[port]/exercise.html`，填好表單，按下送出按鈕看結果
+ * 注意網址
+ * 試著重新整理網頁
+-->
+<form action="./step7" method="post">
+  first name: <input type="text" name="[field name]"><br>
+  last name: <input type="text" name="[field name]"><br>
+  <button type="submit">submit via post</button>
+</form>
+```
+
 step 8: a whole new page for each request, not a modern design
 jQuery.get()
 step 9: you need to pack input by yourself
