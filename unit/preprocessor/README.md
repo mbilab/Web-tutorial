@@ -27,7 +27,7 @@ $ yarn # if you have it
   * Use indent to represent scope level.
   * Use css selector to create html tag. For example, `#container` in pug equals `<div id="container"></div>` in html.
 
-* Complie a pug file.
+* Compile a pug file.
 
   ```
   $ ./node_modules/.bin/pug ./app/index.pug -o ./dist/
@@ -49,7 +49,7 @@ $ yarn # if you have it
 
 * What's [SASS](https://sass-lang.com/guide)? As pug, sass use indent to represent scope level and has many useful features. Try variables, nesting, and mixins.
 
-* Complie `./app/app.sass` to `./dist/app.css`.
+* Compile `./app/app.sass` to `./dist/app.css`.
 
   ```
   $ ./node_modules/.bin/node-sass ./app/app.sass -o dist --watch
@@ -95,4 +95,4 @@ $ ./node_modules/.bin/babel ./babel/typescript.ts --out-dir ./dist/ --extensions
   $ ./node_modules/.bin/parcel ./parcel/index.pug --port [port]
   ```
 
-  Open `http://[host]:[port]` in your broser. Remember to replace [host] and [port] to appropriate values.
+  Open `http://[host]:[port]` in your browser. Remember to replace [host] and [port] to appropriate values.
