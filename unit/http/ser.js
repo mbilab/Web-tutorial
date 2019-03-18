@@ -53,7 +53,6 @@ app.get('/ajax-data', function(req, res) {
   res.send(`<h1>Hello, ${req.query.fname} ${req.query.lname}</h1>`)
 })
 
-
 // start the server
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`)

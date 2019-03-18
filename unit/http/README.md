@@ -197,9 +197,11 @@ In practice, websites need to provide html forms, since no users will input via 
 </form>
 ```
 
-Step 7: how to upload file?
+# Step 7: how to upload file?
 
-For complex data and/or security issue, encoding form data to somewhere not in the url is necessary. Insert the following code to `./ser.js` and follow instructions beginning with `Step 7`.
+For complex data and/or security issue, sometimes we need to store form data to somewhere not in the url. Insert the following code to `./ser.js` and follow instructions beginning with `Step 7`.
+
+為了複雜資料或是安全等因素，有時需要將資料存放在網址以外。將底下的程式碼插入 `./ser.js`，然後照著 `Step 7` 開頭的提示操作。
 
 ```
 /* Step 7:
@@ -231,6 +233,8 @@ app.post('/step7', (req, res) => {
 
 Insert the following code to `./dist/exercise.html` and follow instructions beginning with `Step 7`.
 
+將底下的程式碼插入 `./dist/exercise.html`，然後照著 `Step 7` 開頭的提示操作。
+
 ```
 <!-- Step 7:
  * edit [field name]s to appropriate values
@@ -251,8 +255,48 @@ Insert the following code to `./dist/exercise.html` and follow instructions begi
 </form>
 ```
 
-step 8: a whole new page for each request, not a modern design
-jQuery.get()
+# Step 8: lightweight request
+
+In above steps, servers return a whole new page for each request, which is not a modern web design. Follow instructions beginning with `Step 8`.
+
+```
+<!-- Step 8:
+ * insert this code snippet to `./dist/exercise.html`
+ * set form `id` to help jquery selection
+ * `type="submit"` is not necessary, see the next code snippet for more
+-->
+<form id="ajax-form">
+  first name: <input type="text" name="fname"><br>
+  last name: <input type="text" name="lname"><br>
+  <button type="submit">submit via ajax</button>
+  <h1 id="ajax-output"></h1>
+</form>
+```
+
+```
+/* Step 8:
+ * insert this code snippet to `./dist/exercise.js`
+ * edit [selector of the submit button of the ajax form] to an appropriate value
+ * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
+ * click the ajax submit button and see the request
+ * notice the url
+ */
+$([selector of the submit button of the ajax form]).click((event) => {
+
+  /* Step 8:
+   * try comment this line
+   *  the default non-ajax request will be performed
+   *  the whole page is returned, which is not what we want
+   * not necessary if button type is not `submit`
+   *  try remove `type="submit"` in the last code snippet
+   * but make the form work without ajax is a good practice
+   */
+  event.preventDefault()
+
+  $.get('./step4')
+})
+```
+
 step 9: you need to pack input by yourself
 jQuery(…).value()
 step 10: you need to render the output by yourself
