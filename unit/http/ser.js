@@ -5,15 +5,13 @@
 
 const express = require('express')
 const app = express()
-const port = 30000 // change the port number
+const port = [port] // change the port number
 
-/*
 // handle `/` url
-app.get('/', (req, res) => {
+app.get('[url]', (req, res) => {
   // response a string
   res.send('hello world')
 })
-*/
 
 // start the server
 app.listen(port, () => {
@@ -27,20 +25,26 @@ app.get('/step4', (req, res) => {
 })
 
 // Step 3 code goes here
-app.use(express.static(`${__dirname}/dist`))
+app.use(express.static(`${__dirname}/[path]`))
 
-// Step 5.1 code goes here
-// serve `/get` url
-app.get('/get-data', function(req, res) {
+// Step 5 code goes here
+app.get('/step5', function(req, res) {
   res.send(`<h1>Hello, ${req.query.fname} ${req.query.lname}</h1>`)
 })
 
-/*
+// Step 6 code goes here
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-// serve `/get` url
+app.post('/step7', (req, res) => {
+  // `bady-parser` stores parsed data in `req.body`
+  // `bady-parser` 將解析好的資料存放在 `req.body`
+  res.send(`<h1>Hello, ${req.[property name].fname} ${req.[property name].lname}</h1>`)
+})
+
+
+/*
 app.get('/get-data', function(req, res) {
   res.send(`<h1>Hello, ${req.query.fname} ${req.query.lname}</h1>`)
 })
