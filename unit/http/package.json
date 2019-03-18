@@ -1,15 +1,16 @@
 {
-  "name": "http exercise",
-  "version": "0.0.2",
-  "description": "http exercise",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mbilab/web-tutorial.git"
-  },
-  "author": "Tien-Hao Chang <darby.chang@gmail.com>",
-  "license": "ISC",
+  "name": "http",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
     "jquery": "^3.3.1"
-  }
+  },
+  "description": "## Step 0: steup",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": ""
 }
