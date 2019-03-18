@@ -325,7 +325,7 @@ $.get('./step5', {
 ))
 ```
 
-# Step 11: experience "asyncronous"
+## Step 11: experience "asyncronous"
 
 Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`. Follow instructions beginning with `Step 11`.
 
@@ -339,7 +339,10 @@ setTimeout(() => {
 }, [timeout])
 ```
 
-step 11+: more examples
-php: classic
-chat: file
-parcel
+## Step 12: more
+
+There are more examples included in this unit. No step-by-step instructions for them. But maybe you can larn something form the source code.
+
+  * `./php/` provides a php version of this exercise. php is a classic server side language. Unlike nodejs will create a web server, you need a web server, such as Apache, to run php.
+  * `./chat/` provide a chat room example, where you can learn how to save server data "permanently". That is, the data is stored in file, which does not disappear even if server restarts.
+  * `./parcel/` uses `parcel` to bulid static files.
