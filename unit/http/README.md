@@ -263,37 +263,16 @@ In above steps, servers return a whole new page for each request, which is not a
 <!-- Step 8:
  * insert this code snippet to `./dist/exercise.html`
  * set form `id` to help jquery selection
- * `type="submit"` is not necessary, see the next code snippet for more
+ * `type="submit"` is not necessary, see the step 8 instructions in `./dist/exercise.js`
+ * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
+ * click the ajax submit button and see the request
+ * notice the url
 -->
 <form id="ajax-form">
   first name: <input type="text" name="fName"><br>
   last name: <input type="text" name="lName"><br>
   <button type="submit">submit via ajax</button>
 </form>
-```
-
-```
-/* Step 8:
- * insert this code snippet to `./dist/exercise.js`
- * edit [selector of the submit button of the ajax form] to an appropriate value
- * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
- * click the ajax submit button and see the request
- * notice the url
- */
-$([selector of the submit button of the ajax form]).click((event) => {
-
-  /* Step 8:
-   * try comment this line
-   *  the default non-ajax request will be performed
-   *  the whole page is returned, which is not what we want
-   * not necessary if button type is not `submit`
-   *  try remove `type="submit"` in the last code snippet
-   * but make the form work without ajax is a good practice
-   */
-  event.preventDefault()
-
-  $.get('./step5')
-})
 ```
 
 ## Step 9: send data in ajax requests
@@ -346,8 +325,20 @@ $.get('./step5', {
 ))
 ```
 
-# Step 11: experience “async”
-try modify timeout
+# Step 11: experience "asyncronous"
+
+Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`. Follow instructions beginning with `Step 11`.
+
+```
+/* Step 11:
+ * edit [timeout] to an appropriate value
+ * if you don't know which code snippet (last or this) update `div#ajax-output` first, that is asyncronous
+ */
+setTimeout(() => {
+  $('#ajax-output').html('loading')
+}, [timeout])
+```
+
 step 11+: more examples
 php: classic
 chat: file

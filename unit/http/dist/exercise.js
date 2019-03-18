@@ -1,7 +1,5 @@
-
-$( document ).ready(function() {
-  // Step 8 code goes here
-  $([selector of the submit button of the ajax form]).click((event) => {
+$(document).ready(function() {
+  $('#ajax-form button[type="submit"]').click((event) => {
     /* Step 8:
      * try comment this line
      *  the default non-ajax request will be performed
@@ -13,7 +11,7 @@ $( document ).ready(function() {
     event.preventDefault()
 
     $.get('./step5')
-    // Step 9 code goes here
-    // Step 10 code goes here
+
+    // Step 11 code goes here
   })
 });
