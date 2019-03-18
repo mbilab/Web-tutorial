@@ -1,6 +1,6 @@
 # css exercise
 
-Follow the guide bellow to finish a web shown in `./res/exercise.png`.
+Follow the guide below to finish a web shown in `./res/exercise.png`.
 
 ## Step 0: observe the html structure
 
@@ -27,7 +27,7 @@ Insert the following code into `./exercise.css` and edit `[content width]` to an
 }
 ```
 
-## Step 3: style the navgation bar
+## Step 3: style the navigation bar
 
 Insert the following code into `./exercise.css` and edit `[correct display]` to an appropriate value.
 
