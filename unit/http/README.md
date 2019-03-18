@@ -266,8 +266,8 @@ In above steps, servers return a whole new page for each request, which is not a
  * `type="submit"` is not necessary, see the next code snippet for more
 -->
 <form id="ajax-form">
-  first name: <input type="text" name="fname"><br>
-  last name: <input type="text" name="lname"><br>
+  first name: <input type="text" name="fName"><br>
+  last name: <input type="text" name="lName"><br>
   <button type="submit">submit via ajax</button>
   <h1 id="ajax-output"></h1>
 </form>
@@ -293,12 +293,30 @@ $([selector of the submit button of the ajax form]).click((event) => {
    */
   event.preventDefault()
 
-  $.get('./step4')
+  $.get('./step5')
 })
 ```
 
-step 9: you need to pack input by yourself
-jQuery(…).value()
+## Step 9: send data in ajax requests
+
+Do you notice that browser did not send form data in the ajax request? In ajax, developers need to pack the data explicitly via js code. Follow instructions beginning with `Step 9`.
+
+```
+/* Step 9:
+ * edit the `$.get()` in the last code snippet with the following code snippet
+ * edit [element selector]s to appropriate values
+ * notice the link from html `fName` to server `fname`
+ *  `fName` in `./dist/exercise.html` vs. `fname` in `./ser.js`
+ *  packing data explicitly is troublesome, but it brings flexibility
+ * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
+ * click the ajax submit button and see the request
+ */
+$.get('./step5', {
+  fname: $([element selector]).val(),
+  lname: $([element selector]).val(),
+})
+```
+
 step 10: you need to render the output by yourself
 jQuery(…).html()
 step 11: experience “async”
