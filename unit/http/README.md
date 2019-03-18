@@ -304,6 +304,7 @@ Do you notice that browser did not send form data in the ajax request? In ajax, 
 /* Step 9:
  * edit the `$.get()` in the last code snippet with this code snippet
  * edit [element selector]s to appropriate values
+ * the second argument of `$.get()` specifies the data sent to server
  * notice the link from html `fName` to server `fname`
  *  `fName` in `./dist/exercise.html` vs. `fname` in `./ser.js`
  *  packing data explicitly is troublesome, but it brings flexibility
@@ -323,6 +324,8 @@ In the last two steps, the ajax results can only be observed in developer consol
 ```
 <!-- Step 10:
  * insert this code snippet to `./dist/exercise.html`
+ * this div is used to display the result
+ * give it an id, `ajax-output`, to help jquery seleciton
 -->
 <h1 id="ajax-output"></h1>
 ```
@@ -330,22 +333,20 @@ In the last two steps, the ajax results can only be observed in developer consol
 ```
 /* Step 10:
  * edit the `$.get()` in the code snippet of step 9 with this code snippet
- * edit [element selector]s to appropriate values
- * notice the link from html `fName` to server `fname`
- *  `fName` in `./dist/exercise.html` vs. `fname` in `./ser.js`
- *  packing data explicitly is troublesome, but it brings flexibility
- * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
- * click the ajax submit button and see the request
+ * the third argument of `$.get()` is a callback function, which is called whenever server responses
+ * the first argument of the callback function is the data retruned by server
+ * edit [show data in div#ajax-output] to an appropriate
+ * open `[host]:[port]/exercise.html` in a browser, click the ajax submit button and see the result
  */
 $.get('./step5', {
-  fname: $([element selector]).val(),
-  lname: $([element selector]).val(),
-})
+  fname: $('#ajax-form input[name=fName]').val(),
+  lname: $('#ajax-form input[name=lName]').val(),
+}, (data) => {
+  [show data in div#ajax-output]
+))
 ```
 
-jQuery(…).html()
-
-step 11: experience “async”
+# Step 11: experience “async”
 try modify timeout
 step 11+: more examples
 php: classic
