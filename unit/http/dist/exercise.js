@@ -8,6 +8,7 @@ $(document).ready(function() {
      *  try remove `type="submit"` in the last code snippet
      * but make the form work without ajax is a good practice
      */
+    event.preventDefault()
 
     $.get('./step5')
     /*
