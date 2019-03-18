@@ -8,9 +8,18 @@ $(document).ready(function() {
      *  try remove `type="submit"` in the last code snippet
      * but make the form work without ajax is a good practice
      */
-    event.preventDefault()
 
     $.get('./step5')
+    /*
+    $.get('./step5',{
+        fname: $("input[name='fName']").val(),
+        lname: $("input[name='lName']").val()
+    }, (data) => {
+        $('#ajax-output').html(data)
+    })
+    */
+
+
 
     // Step 11 code goes here
   })

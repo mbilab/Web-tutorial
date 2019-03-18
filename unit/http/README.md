@@ -258,6 +258,7 @@ Insert the following code to `./dist/exercise.html` and follow instructions begi
 # Step 8: lightweight request
 
 In above steps, servers return a whole new page for each request, which is not a modern web design. Follow instructions beginning with `Step 8`.
+在之前的步驟，伺服器每次收到request都回傳一整個新頁面，而這並不是網頁設計的主流用法。照著`Step 8`開頭的提示操作。
 
 ```
 <!-- Step 8:
@@ -327,7 +328,7 @@ $.get('./step5', {
 
 ## Step 11: experience "asyncronous"
 
-Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`. Follow instructions beginning with `Step 11`.
+Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`.
 
 ```
 /* Step 11:
