@@ -1,19 +1,23 @@
 ## Use parcel to run this demo
 
-1. go to the directory where you put node_modules
+1. Install `parcel-bundler` to preprocess pug/sass
 
 ```
-$ cd ./..
+$ yarn add parcel-bundler
+
+or you can use npm
+
+$ npm i parcel-bundler --save-dev
 ```
 
-2. Rreprocess the files which are in directory chat
+2. Preprocess the files which are in directory chat
 
 ```
-$ ./node_modules/.bin/parcel build ./chat/index.pug -d ./chat/dist
+$ ./../node_modules/.bin/parcel build ./index.pug -d ./dist
 
 or you can use watch mode to help develop
 
-$ ./node_modules/.bin/parcel watch ./chat/index.pug -d ./chat/dist/
+$ ./../node_modules/.bin/parcel watch ./index.pug -d ./dist/
 ```
 
 3. Run the backend server
