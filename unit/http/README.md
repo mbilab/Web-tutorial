@@ -269,7 +269,6 @@ In above steps, servers return a whole new page for each request, which is not a
   first name: <input type="text" name="fName"><br>
   last name: <input type="text" name="lName"><br>
   <button type="submit">submit via ajax</button>
-  <h1 id="ajax-output"></h1>
 </form>
 ```
 
@@ -303,7 +302,7 @@ Do you notice that browser did not send form data in the ajax request? In ajax, 
 
 ```
 /* Step 9:
- * edit the `$.get()` in the last code snippet with the following code snippet
+ * edit the `$.get()` in the last code snippet with this code snippet
  * edit [element selector]s to appropriate values
  * notice the link from html `fName` to server `fname`
  *  `fName` in `./dist/exercise.html` vs. `fname` in `./ser.js`
@@ -317,8 +316,35 @@ $.get('./step5', {
 })
 ```
 
-step 10: you need to render the output by yourself
+## Step 10: show ajax results
+
+In the last two steps, the ajax results can only be observed in developer console. In ajax, developers need to show the resutls explicitly via js code. Follow instructions beginning with `Step 10`.
+
+```
+<!-- Step 10:
+ * insert this code snippet to `./dist/exercise.html`
+-->
+<h1 id="ajax-output"></h1>
+```
+
+```
+/* Step 10:
+ * edit the `$.get()` in the code snippet of step 9 with this code snippet
+ * edit [element selector]s to appropriate values
+ * notice the link from html `fName` to server `fname`
+ *  `fName` in `./dist/exercise.html` vs. `fname` in `./ser.js`
+ *  packing data explicitly is troublesome, but it brings flexibility
+ * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
+ * click the ajax submit button and see the request
+ */
+$.get('./step5', {
+  fname: $([element selector]).val(),
+  lname: $([element selector]).val(),
+})
+```
+
 jQuery(…).html()
+
 step 11: experience “async”
 try modify timeout
 step 11+: more examples
