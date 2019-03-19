@@ -258,6 +258,7 @@ Insert the following code to `./dist/exercise.html` and follow instructions begi
 # Step 8: lightweight request
 
 In above steps, servers return a whole new page for each request, which is not a modern web design. Follow instructions beginning with `Step 8`.
+
 在之前的步驟，伺服器每次收到request都回傳一整個新頁面，而這並不是網頁設計的主流用法。照著`Step 8`開頭的提示操作。
 
 ```
@@ -268,6 +269,11 @@ In above steps, servers return a whole new page for each request, which is not a
  * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
  * click the ajax submit button and see the request
  * notice the url
+ * 將這個程式碼片段插入 `./dist/exercise.html`
+ * 設定 form 的 id 讓 jquery 的選取
+ * `type="submit"` 不是必須的，查看 `./dist/exercise.js` 在第八步的指示
+ * 在瀏覽器中開啟 `[host]:[port]/exercise.html` 以及開發者工具
+ * 點擊 ajax 提交按鈕並查看 request 並注意網址
 -->
 <form id="ajax-form">
   first name: <input type="text" name="fName"><br>
@@ -280,6 +286,7 @@ In above steps, servers return a whole new page for each request, which is not a
 
 Do you notice that browser did not send form data in the ajax request? In ajax, developers need to pack the data explicitly via js code. Follow instructions beginning with `Step 9`.
 
+你有注意到瀏覽器沒有透過 ajax request 傳送資料嗎? 使用 ajax 時，開發者需要使用 javascript 妥善地包裝資料。請跟著底下 `Step 9` 的指令作
 ```
 /* Step 9:
  * edit the `$.get()` in the last code snippet with this code snippet
@@ -300,6 +307,8 @@ $.get('./step5', {
 ## Step 10: show ajax results
 
 In the last two steps, the ajax results can only be observed in developer console. In ajax, developers need to show the resutls explicitly via js code. Follow instructions beginning with `Step 10`.
+
+在最後的兩個步驟中， ajax 的結果只能在開發者工具中觀察到。使用 ajax 時，開發者需要使用 javascript 妥善地呈現結果。請跟著底下 `Step 10` 的指令作
 
 ```
 <!-- Step 10:
@@ -329,7 +338,8 @@ $.get('./step5', {
 ## Step 11: experience "asyncronous"
 
 Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`.
-
+Ajax 代表「非同步 javascript 以及 xml」。所以什麼是非同步?請跟著底下 `Step 11` 的指令作
+ 
 ```
 /* Step 11:
  * edit [timeout] to an appropriate value
@@ -342,7 +352,8 @@ setTimeout(() => {
 
 ## Step 12: more
 
-There are more examples included in this unit. No step-by-step instructions for them. But maybe you can larn something form the source code.
+There are more examples included in this unit. No step-by-step instructions for them. But maybe you can learn something form the source code.
+以下有更多這個單元的範例。但沒有手把手的教學，但希望你們能夠從原始碼中學到一些東西。
 
   * `./php/` provides a php version of this exercise. php is a classic server side language. Unlike nodejs will create a web server, you need a web server, such as Apache, to run php.
   * `./chat/` provide a chat room example, where you can learn how to save server data "permanently". That is, the data is stored in file, which does not disappear even if server restarts.
