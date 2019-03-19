@@ -314,7 +314,7 @@ $.get('./step5', {
 
 ## Step 10: show ajax results
 
-In the last two steps, the ajax results can only be observed in developer console. In ajax, developers need to show the resutls explicitly via js code. Follow instructions beginning with `Step 10`.
+In the last two steps, the ajax results can only be observed in developer console. In ajax, developers need to show the results explicitly via js code. Follow instructions beginning with `Step 10`.
 
 在最後的兩個步驟中， ajax 的結果只能在開發者工具中觀察到。使用 ajax 時，開發者需要使用 javascript 妥善地呈現結果。請跟著底下 `Step 10` 的指令作
 
@@ -349,6 +349,7 @@ $.get('./step5', {
 ## Step 11: experience "asyncronous"
 
 Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`.
+
 Ajax 代表「非同步 javascript 以及 xml」。所以什麼是非同步?請跟著底下 `Step 11` 的指令作
  
 ```
@@ -363,7 +364,8 @@ setTimeout(() => {
 
 ## Step 12: more
 
-There are more examples included in this unit. No step-by-step instructions for them. But maybe you can learn something form the source code.
+There are more examples included in this unit. No step-by-step instructions for them. But maybe you can learn something from the source code.
+
 以下有更多這個單元的範例。但沒有手把手的教學，但希望你們能夠從原始碼中學到一些東西。
 
   * `./php/` provides a php version of this exercise. php is a classic server side language. Unlike nodejs will create a web server, you need a web server, such as Apache, to run php.
