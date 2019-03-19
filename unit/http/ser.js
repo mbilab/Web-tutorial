@@ -6,6 +6,6 @@
 
 // Step 4 code goes here
 
-// Step 5 and step 9 code goes here
+// Step 5 code goes here
 
 // Step 7 code goes here
