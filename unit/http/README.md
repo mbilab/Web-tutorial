@@ -1,6 +1,6 @@
 # http & ajax 練習
 
-## Step 0: steup
+## Step 0: Setup
 
 You can install packages from scratch.
 
@@ -122,7 +122,7 @@ app.use(express.static(`${__dirname}/[path]`))
 
 Re-execute server and open `[host]:[port]/exercise.html` in a browser to see the result. Do you know where `exercise.html` is?
 
-重新執行啟伺器，然後用瀏覽器打開 `[host]:[port]/exercise.html` 看結果。你知道 `exercise.html` 在哪嗎？
+重新執行啟伺服器，然後用瀏覽器打開 `[host]:[port]/exercise.html` 看結果。你知道 `exercise.html` 在哪嗎？
 
 ## Step 4: dynamic results, even with the same url
 
@@ -197,7 +197,7 @@ In practice, websites need to provide html forms, since no users will input via 
 </form>
 ```
 
-# Step 7: how to upload file?
+## Step 7: how to upload file?
 
 For complex data and/or security issue, sometimes we need to store form data to somewhere not in the url. Insert the following code to `./ser.js` and follow instructions beginning with `Step 7`.
 
@@ -255,7 +255,7 @@ Insert the following code to `./dist/exercise.html` and follow instructions begi
 </form>
 ```
 
-# Step 8: lightweight request
+## Step 8: lightweight request
 
 In above steps, servers return a whole new page for each request, which is not a modern web design. Follow instructions beginning with `Step 8`.
 

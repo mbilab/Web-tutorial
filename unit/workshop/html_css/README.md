@@ -1,7 +1,7 @@
 # Course 01 css and html
 
 ## Introduction 
-Follow guide bellow and build your web
+Follow guide below and build your web
 
 ## Edit the exercise.html
 `$ vi exercise.html`
