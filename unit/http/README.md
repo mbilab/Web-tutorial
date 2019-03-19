@@ -112,7 +112,7 @@ Insert the following code to `./ser.js` and follow instructions beginning with `
  * 將 [path] 修改成合適的值
  * 注意靜態檔案放在 `./dist` 目錄下
  * `express.static()` 專門用來處理靜態檔案，搜尋 `express static` 了解更多
- * `__dirname` 是 node.js 的環境變數，搜尋 `nodejs _-dirname` 了解更多
+ * `__dirname` 是 node.js 的環境變數，搜尋 `nodejs __dirname` 了解更多
  */
 
 // handle other urls
@@ -343,7 +343,7 @@ $.get('./step5', {
   lname: $('#ajax-form input[name=lName]').val(),
 }, (data) => {
   [show data in div#ajax-output]
-))
+})
 ```
 
 ## Step 11: experience "asyncronous"
