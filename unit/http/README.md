@@ -259,7 +259,7 @@ Insert the following code to `./dist/exercise.html` and follow instructions begi
 
 In above steps, servers return a whole new page for each request, which is not a modern web design. Follow instructions beginning with `Step 8`.
 
-在之前的步驟，伺服器每次收到request都回傳一整個新頁面，而這並不是網頁設計的主流用法。照著`Step 8`開頭的提示操作。
+在之前的步驟，伺服器每次收到request都回傳一整個新頁面，而這並不是網頁設計的主流用法。照著 `Step 8` 開頭的提示操作。
 
 ```
 <!-- Step 8:
@@ -297,6 +297,14 @@ Do you notice that browser did not send form data in the ajax request? In ajax, 
  *  packing data explicitly is troublesome, but it brings flexibility
  * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
  * click the ajax submit button and see the request
+ * 修改上一個程式碼片段的 `$.get()` ，加上下面的程式碼的內容
+ * 修改 `element selector` 成適合的值
+ *  `$.get()` 的第二個參數，用來將資料送給伺服器
+ * 特別注意 html 中的 `fName` 和伺服器端的 `fname` 兩者之間的連結
+ *  `./dist/exercise.html` 中的 `fName` vs. `./ser.js` 中的 `fname`
+ *  明確的打包資料確實很麻煩，但是他能夠帶來更大的延展性
+ * 在瀏覽器中打開 `[host]:[port]/exercise.html` ，開啟開發者工具（F12）並切到 network 的分頁，觀察開發者日誌
+ * 點擊 ajax 的提交按鈕，並且觀察 request
  */
 $.get('./step5', {
   fname: $([element selector]).val(),
@@ -315,6 +323,9 @@ In the last two steps, the ajax results can only be observed in developer consol
  * insert this code snippet to `./dist/exercise.html`
  * this div is used to display the result
  * give it an id, `ajax-output`, to help jquery seleciton
+ * 將這段程式碼插入 `./dist/exercise.html`
+ * 這個 div 是用來顯示結果的
+ * 給他一個 id , `ajax-output`, 讓 jquery 可以選到他
 -->
 <h1 id="ajax-output"></h1>
 ```
