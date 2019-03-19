@@ -258,42 +258,22 @@ Insert the following code to `./dist/exercise.html` and follow instructions begi
 ## Step 8: lightweight request
 
 In above steps, servers return a whole new page for each request, which is not a modern web design. Follow instructions beginning with `Step 8`.
+在之前的步驟，伺服器每次收到request都回傳一整個新頁面，而這並不是網頁設計的主流用法。照著`Step 8`開頭的提示操作。
 
 ```
 <!-- Step 8:
  * insert this code snippet to `./dist/exercise.html`
  * set form `id` to help jquery selection
- * `type="submit"` is not necessary, see the next code snippet for more
+ * `type="submit"` is not necessary, see the step 8 instructions in `./dist/exercise.js`
+ * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
+ * click the ajax submit button and see the request
+ * notice the url
 -->
 <form id="ajax-form">
   first name: <input type="text" name="fName"><br>
   last name: <input type="text" name="lName"><br>
   <button type="submit">submit via ajax</button>
 </form>
-```
-
-```
-/* Step 8:
- * insert this code snippet to `./dist/exercise.js`
- * edit [selector of the submit button of the ajax form] to an appropriate value
- * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
- * click the ajax submit button and see the request
- * notice the url
- */
-$([selector of the submit button of the ajax form]).click((event) => {
-
-  /* Step 8:
-   * try comment this line
-   *  the default non-ajax request will be performed
-   *  the whole page is returned, which is not what we want
-   * not necessary if button type is not `submit`
-   *  try remove `type="submit"` in the last code snippet
-   * but make the form work without ajax is a good practice
-   */
-  event.preventDefault()
-
-  $.get('./step5')
-})
 ```
 
 ## Step 9: send data in ajax requests
@@ -304,6 +284,7 @@ Do you notice that browser did not send form data in the ajax request? In ajax, 
 /* Step 9:
  * edit the `$.get()` in the last code snippet with this code snippet
  * edit [element selector]s to appropriate values
+ * the second argument of `$.get()` specifies the data sent to server
  * notice the link from html `fName` to server `fname`
  *  `fName` in `./dist/exercise.html` vs. `fname` in `./ser.js`
  *  packing data explicitly is troublesome, but it brings flexibility
@@ -323,6 +304,8 @@ In the last two steps, the ajax results can only be observed in developer consol
 ```
 <!-- Step 10:
  * insert this code snippet to `./dist/exercise.html`
+ * this div is used to display the result
+ * give it an id, `ajax-output`, to help jquery seleciton
 -->
 <h1 id="ajax-output"></h1>
 ```
@@ -330,24 +313,37 @@ In the last two steps, the ajax results can only be observed in developer consol
 ```
 /* Step 10:
  * edit the `$.get()` in the code snippet of step 9 with this code snippet
- * edit [element selector]s to appropriate values
- * notice the link from html `fName` to server `fname`
- *  `fName` in `./dist/exercise.html` vs. `fname` in `./ser.js`
- *  packing data explicitly is troublesome, but it brings flexibility
- * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
- * click the ajax submit button and see the request
+ * the third argument of `$.get()` is a callback function, which is called whenever server responses
+ * the first argument of the callback function is the data retruned by server
+ * edit [show data in div#ajax-output] to an appropriate
+ * open `[host]:[port]/exercise.html` in a browser, click the ajax submit button and see the result
  */
 $.get('./step5', {
-  fname: $([element selector]).val(),
-  lname: $([element selector]).val(),
-})
+  fname: $('#ajax-form input[name=fName]').val(),
+  lname: $('#ajax-form input[name=lName]').val(),
+}, (data) => {
+  [show data in div#ajax-output]
+))
 ```
 
-jQuery(…).html()
+## Step 11: experience "asyncronous"
 
-step 11: experience “async”
-try modify timeout
-step 11+: more examples
-php: classic
-chat: file
-parcel
+Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`.
+
+```
+/* Step 11:
+ * edit [timeout] to an appropriate value
+ * if you don't know which code snippet (last or this) update `div#ajax-output` first, that is asyncronous
+ */
+setTimeout(() => {
+  $('#ajax-output').html('loading')
+}, [timeout])
+```
+
+## Step 12: more
+
+There are more examples included in this unit. No step-by-step instructions for them. But maybe you can larn something form the source code.
+
+  * `./php/` provides a php version of this exercise. php is a classic server side language. Unlike nodejs will create a web server, you need a web server, such as Apache, to run php.
+  * `./chat/` provide a chat room example, where you can learn how to save server data "permanently". That is, the data is stored in file, which does not disappear even if server restarts.
+  * `./parcel/` uses `parcel` to bulid static files.

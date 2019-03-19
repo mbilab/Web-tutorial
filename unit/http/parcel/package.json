@@ -4,9 +4,7 @@
   "description": "http-and-ajax-via-nodejs",
   "main": "index.js",
   "scripts": {
-    "start": "./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "parcel watch public/index.pug"
+    "watch": "parcel watch index.pug"
   },
   "keywords": [],
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
