@@ -34,7 +34,7 @@ connection.query('[some query] TABLES', function (error, results, fields) {
 ```
 
 ## Step 3: insert data
-加入學生資料 課程資料及成績
+加入學生資料 課程資料及成績，並保持 `[your id]` 一致
 
 ```
 connection.query('INSERT INTO student (id, name, cid) VALUES ([your id], [your name], "W0001"), ("A12345679", "StudentB", "M0001")', (err, result) => {
@@ -58,17 +58,19 @@ connection.query('[some query] id FROM student WHERE name LIKE [your name]', fu
 
 ## Step 4: combone tables
 結合兩個 table 並查詢相關資訊
-hint: join
+找出語法結合兩個 table
 ```
 const sql = `
   SELECT student.id, student.name FROM student
-  JOIN course [some query] course.id = student.cid
+  [some query] course [some query] course.id = student.cid
   WHERE course.name LIKE 'Web Programming'`
 connection.query(sql, (err, rows, fields) => {
   if (err) console.log('fail to query: ', err)
   else console.log(rows)
 })
 ```
+
+hint: join
 
 ## Quiz:
 使用你的名字找出你的成績
