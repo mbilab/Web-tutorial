@@ -20,9 +20,9 @@ or
 加入 student, course, score 3個 table 
 
 ```
-connection.query('CREATE TABLE IF NOT EXISTS [table name] (id VARCHAR(10), name VARCHAR(30), cid VARCHAR(30))')
-connection.query('CREATE TABLE IF NOT EXISTS [table name] (id VARCHAR(10), name VARCHAR(30))')
-connection.query('CREATE TABLE IF NOT EXISTS [table name] (id VARCHAR(10), score VARCHAR(10))')
+connection.query('CREATE TABLE IF NOT EXISTS student (id VARCHAR(10), name VARCHAR(30), cid VARCHAR(30))')
+connection.query('CREATE TABLE IF NOT EXISTS course (id VARCHAR(10), name VARCHAR(30))')
+connection.query('CREATE TABLE IF NOT EXISTS score (id VARCHAR(10), score VARCHAR(10))')
 ```
 
 查看所有 table，上網查找列出 table 的語法
@@ -58,11 +58,11 @@ connection.query('[some query] id FROM student WHERE name LIKE [your name]', fu
 
 ## Step 4: combone tables
 結合兩個 table 並查詢相關資訊
-
+hint: join
 ```
 const sql = `
   SELECT student.id, student.name FROM student
-  JOIN course ON course.id = student.cid
+  JOIN course [some query] course.id = student.cid
   WHERE course.name LIKE 'Web Programming'`
 connection.query(sql, (err, rows, fields) => {
   if (err) console.log('fail to query: ', err)
