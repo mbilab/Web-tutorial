@@ -12,6 +12,10 @@ connection.connect(err => {
   }
 })
 
+// Step 2
 // create table if necessary
+
+
+// Step 3
 // insert
 connection.end()
