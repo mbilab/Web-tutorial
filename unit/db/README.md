@@ -50,7 +50,7 @@ connection.query('INSERT INTO course (id, score) VALUES ([your id], [your score]
 
 找出語法查看 student 中你的 id
 ```
-connection.query('[some query] id FROM student LIKE [your name]', function (error, results, fields) {
+connection.query('[some query] id FROM student WHERE name LIKE [your name]', function (error, results, fields) {
   if (error) throw error
   console.log('My id is: ', results)
 })
