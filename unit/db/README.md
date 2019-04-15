@@ -43,7 +43,7 @@ connection.query('INSERT INTO student (id, name, cid) VALUES ([your id], [your n
 connection.query('INSERT INTO course (id, name) VALUES ("W0001", "Web Programming"), ("M0001", "Machine Learning"), [your class]', (err, result) => {
   if (err) console.log('fail to insert:', err)
 })
-connection.query('INSERT INTO course (id, score) VALUES ([your id], [your score]), ("A123456789", 90)', (err, result) => {
+connection.query('INSERT INTO score (id, score) VALUES ([your id], [your score]), ("A123456789", 90)', (err, result) => {
   if (err) console.log('fail to insert:', err)
 })
 ```
