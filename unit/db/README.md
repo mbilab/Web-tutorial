@@ -17,30 +17,59 @@ or
 `$ vi config.js`
 
 ## Step 2: create table 
-加入 student 跟 course 兩個 table 
+加入 student, course, score 3個 table 
 
 ```
-connection.query('CREATE TABLE IF NOT EXISTS student (id VARCHAR(10), name VARCHAR(30), cid VARCHAR(30))')
-connection.query('CREATE TABLE IF NOT EXISTS course (id VARCHAR(10), name VARCHAR(30))')
-connection.query('CREATE TABLE IF NOT EXISTS score (id VARCHAR(10), score VARCHAR(10))')
+connection.query('CREATE TABLE IF NOT EXISTS [table name] (id VARCHAR(10), name VARCHAR(30), cid VARCHAR(30))')
+connection.query('CREATE TABLE IF NOT EXISTS [table name] (id VARCHAR(10), name VARCHAR(30))')
+connection.query('CREATE TABLE IF NOT EXISTS [table name] (id VARCHAR(10), score VARCHAR(10))')
 ```
 
-查看所有 TABLE
+查看所有 table，上網查找列出 table 的語法
 ```
-connection.query('SHOW TABLES', function (error, results, fields) {
+connection.query('[some query] TABLES', function (error, results, fields) {
   if (error) throw error
   console.log('There are tables: ', results)
 })
 ```
+
 ## Step 3: insert data
-
+加入學生資料 課程資料及成績
 
 ```
-connection.query('INSERT INTO student (id, name, cid) VALUES ("F12345678", "StudentA", "W0001"), ("P12345679", "StudentB", "M0001")', (err, result) => {
+connection.query('INSERT INTO student (id, name, cid) VALUES ([your id], [your name], "W0001"), ("A12345679", "StudentB", "M0001")', (err, result) => {
   if (err) console.log('fail to insert:', err)
 })
-connection.query('INSERT INTO course (id, name) VALUES ("W0001", "Web Programming"), ("M0001", "Machine Learning")', (err, result) => {
+connection.query('INSERT INTO course (id, name) VALUES ("W0001", "Web Programming"), ("M0001", "Machine Learning"), [your class]', (err, result) => {
+  if (err) console.log('fail to insert:', err)
+})
+connection.query('INSERT INTO course (id, score) VALUES ([your id], [your score]), ("A123456789", 90)', (err, result) => {
   if (err) console.log('fail to insert:', err)
 })
 ```
+
+找出語法查看 student 中你的 id
+```
+connection.query('[some query] id FROM student LIKE [your name]', function (error, results, fields) {
+  if (error) throw error
+  console.log('My id is: ', results)
+})
+```
+
+## Step 4: combone tables
+結合兩個 table 並查詢相關資訊
+
+```
+const sql = `
+  SELECT student.id, student.name FROM student
+  JOIN course ON course.id = student.cid
+  WHERE course.name LIKE 'Web Programming'`
+connection.query(sql, (err, rows, fields) => {
+  if (err) console.log('fail to query: ', err)
+  else console.log(rows)
+})
+```
+
+## Quiz:
+使用你的名字找出你的成績
 
