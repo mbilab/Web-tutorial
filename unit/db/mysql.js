@@ -16,6 +16,17 @@ connection.connect(err => {
 // create table if necessary
 
 
+// show table
+
+
 // Step 3
-// insert
+// insert data
+
+
+// search data
+
+
+// Step 4
+// combine tables
+
 connection.end()
