@@ -1,8 +1,9 @@
 // try edit the cached files and/or the `cachedFiles` list
 const cachedFiles = [
   './',
-  './app.js',
+  './js/app.js',
   './index.html',
+  './src/VOCA-144x144.png',
 ]
 
 // edit this to force re-cache
