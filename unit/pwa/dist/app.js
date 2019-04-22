@@ -1,9 +1,10 @@
 $(() => {
   const fetchData = () => {
-    $.get('./data.php', res => {
+    $.get('./version', res => {
       $('#version').text(`version: ${res}`)
     })
   }
+
   fetchData()
   $('#fetch-data').click(fetchData)
 })

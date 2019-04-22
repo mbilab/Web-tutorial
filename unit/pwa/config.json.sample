@@ -1,0 +1,8 @@
+{
+  "port": <your port>,
+  "ssl":{
+    "ca": <your ca>,
+    "key": <your key>,
+    "cert": <your cert>
+  }
+}
