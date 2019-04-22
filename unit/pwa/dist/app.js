@@ -1,11 +1,12 @@
 $(() => {
   const fetchData = () => {
-    $.get('./version', res => {
-      $('#version').text(`version: ${res}`)
+    $('#hello').text(`fetching...`)
+
+    $.get('./hello', res => {
+      $('#hello').text(`server: ${res}`)
     })
   }
 
-  fetchData()
   $('#fetch-data').click(fetchData)
 })
 // vi:et:sw=2:ts=2
