@@ -5,7 +5,9 @@
 
 ## Step 1: set up ssl configeration
 自行申請 ssl 憑證，並將 config.json.sample 複製成 config.json，並完成設定。
+
 `cp config.json.sample config.json`
+
 架設以 https 為協定的 Server，配合 pwa 的安全規定。
 在 `ser/js` 加入
 ```
@@ -85,7 +87,7 @@ self.addEventListener('fetch', event => {
   event.respondWith((async () => {
     const response = await caches.match(event.request)
     if (response) {
-      console.log(`Cache fetch: ${await caches.keys()} ${event.request.url}`)
+      console.log(`Cache fetch: ${event.request.url}`)
       return response
     }
     console.log(`Network fetch: ${event.request.url}`)
