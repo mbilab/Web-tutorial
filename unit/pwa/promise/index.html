@@ -1,0 +1,80 @@
+<!DOCTYPE>
+<html>
+
+    <head>
+        <title>
+            promise
+        </title>
+    </head>
+
+    <body>
+
+        <h2>data to send</h2>
+        <input type='text'></input>
+        <button id='send'>send</button>
+        <p id='show'></p>
+
+    </body>
+    <script src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    <script>
+
+        $('#send').click(()=>{
+
+            /*
+            doSomething(1);
+            doSomething(2);
+            doSomething(3);
+            */
+
+            /*
+            doSomething(1,()=>{
+                doSomething(2, ()=>{
+                    doSomething(3);
+                });
+            });
+            */
+
+            promise(1)
+            .then(()=>promise(2))
+            .then((n)=>promise(n));
+
+            /*
+            (async ()=>{
+                await promise(1);
+                await promise(2);
+                await promise(3);
+            })()
+            */
+
+        });
+
+        var doSomething1 = (token)=>{
+            setTimeout(()=>{
+                $('#show').html(`data_${token} return : ${$('input[type="text"]').val()}`);
+                console.log(`data_${token} return : ${$('input[type="text"]').val()}`);
+            }, 1500);
+        }
+
+        var doSomething = (token, callback)=>{
+            setTimeout(()=>{
+                $('#show').html(`data_${token} return : ${$('input[type="text"]').val()}`);
+                console.log(`data_${token} return : ${$('input[type="text"]').val()}`);
+
+                if(typeof callback === 'function'){
+                    callback();
+                }
+            }, 1500);
+        }
+
+        function promise(token){
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    $('#show').html(`data_${token} return : ${$('input[type="text"]').val()}`);
+                    console.log(`data_${token} return : ${$('input[type="text"]').val()}`);
+                    resolve('n');
+                }, 1500);
+            });
+        }
+
+    </script>
+</html>
