@@ -24,6 +24,20 @@ https.createServer(options, app).listen(port,()=>{
 補充: https 在 http 的基礎上，透過 ssl/stl 加密，以非對稱加密配合對稱加密，確保封包傳輸在過程中沒有被攔截或竄改。
 
 ## Step 2: 註冊 service worker
+為了讓應用離線工作，要註冊一個 service worker，一段允許在後臺運行的腳本。其中 sw.js 必須放在根目錄，因為 service workers 的作用範圍是根據其在目錄結構中的位置決定的。
+在 `register.js` 中加入。
+```
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js')
+  .then(reg => {
+    console.log(`SW is registered with scope: ${reg.scope}`)
+  })
+  .catch(err => {
+    console.log('SW Error ', err)
+  })
+}
+```
+補充: Promise and Async function
 
 ## Step 3: 安裝 service worker
 
