@@ -4,26 +4,33 @@
 啟動 server 完成基本網站的架設。
 
 ## Step 1: set up ssl configeration
-自行申請 ssl 憑證，並將 config.json.sample 複製成 config.json，並完成設定。
+由於 pwa 對於資訊安全的要求，我們必須架設以 https 為協定的 Server。
 
-`cp config.json.sample config.json`
+* 申請 ssl 憑證。
 
-架設以 https 為協定的 Server，配合 pwa 的安全規定。
-在 `ser/js` 加入
-```
-const https = require('https')
+  [SSL For Free](https://www.sslforfree.com/)
 
-const options = {
-  ca : fs.readFileSync(config.ssl.ca),
-  key: fs.readFileSync(config.ssl.key),
-  cert:fs.readFileSync(config.ssl.cert)
-}
+* 將 config.json.sample 複製成 config.json。
 
-https.createServer(options, app).listen(port,()=>{
-    console.log(`listen on port:${port}`)
-})
-```
-補充: https 在 http 的基礎上，透過 ssl/stl 加密，以非對稱加密配合對稱加密，確保封包傳輸在過程中沒有被攔截或竄改。
+  `cp config.json.sample config.json`
+
+* 進入`config.json`，填寫 `cert`、`ca`、`key` 的路徑。
+
+* 在 `ser.js` 加入
+  ```
+  const https = require('https')
+
+  const options = {
+    ca : fs.readFileSync(config.ssl.ca),
+    key: fs.readFileSync(config.ssl.key),
+    cert:fs.readFileSync(config.ssl.cert)
+  }
+
+  https.createServer(options, app).listen(port,()=>{
+      console.log(`listen on port:${port}`)
+  })
+  ```
+補充: https 加密連線，可以確保封包傳輸在過程中沒有被攔截或竄改。
 
 ## Step 2: 註冊 service worker
 為了讓應用離線工作，要註冊一個 service worker，一段允許在後臺運行的腳本。其中 sw.js 必須放在根目錄，因為 service workers 的作用範圍是根據其在目錄結構中的位置決定的。
@@ -46,6 +53,7 @@ if ('serviceWorker' in navigator) {
 補充: Promise and Async function
 
 ## Step 3: service worker 安裝時
+// todo 解釋三階段
 當 service worker 被註冊以後，當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的應用需要再次用到的資源，把所有你設定的資源加入 cache 中。在 `register.js` 中加入:
 
 ```
@@ -95,3 +103,5 @@ self.addEventListener('fetch', event => {
   })())
 })
 ```
+
+todo: 設計增加檔案，設計更改檔案
