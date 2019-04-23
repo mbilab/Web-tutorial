@@ -36,6 +36,8 @@
 Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、圖示、描述）。 manifest 的功用是將 Web 應用程式安裝到設備的主畫面。
 在 `dist/index.html` 加入:
  ```
+ <!-- for iOS -->
+ <link rel="apple-touch-icon" sizes="144x144" href="./src/VOCA-144x144.png"/>
  <link rel="manifest" href="./manifest.json">
  ```
  可以在`./manifest.json`更改 pwa 名稱及縮圖。
