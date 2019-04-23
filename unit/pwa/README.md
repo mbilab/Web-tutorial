@@ -107,7 +107,7 @@ if ('serviceWorker' in navigator) {
 ```
 self.addEventListener('activate', event => {
   console.log(`${cacheKey} is activated`)
-  event.waitUntivl((async () => {
+  event.waitUntil((async () => {
     const keys = await caches.keys()
     return Promise.all(keys.filter(key => key != cacheKey).map(key => caches.delete(key)))
   })())
@@ -150,7 +150,7 @@ const cacheKey = 'demo-sw-v2'
 
 這時重新整理網頁並觀察 console，會發先圖片原先由網路抓取，加入 cahce 後，從 cache 抓取。
 
-## Step 7: 資料更改
+## Step 8: 資料更改
 在 `dist/index.html`中更改貓咪圖片為貓咪2:
 ```
  <div style="background:url('src/cat2.jpeg') no-repeat no-repeat;width:600px;height:400px;"></div>
