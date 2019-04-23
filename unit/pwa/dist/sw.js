@@ -1,13 +1,14 @@
 // try edit the cached files and/or the `cachedFiles` list
 const cachedFiles = [
   './',
-  './js/app.js',
+  './src/app.js',
+  './src/cat1.jpeg',
   './index.html',
   './src/VOCA-144x144.png',
 ]
 
 // edit this to force re-cache
-const cacheKey = 'demo-sw-v1'
+const cacheKey = 'demo-sw-v3'
 
 // install, a good time to preload cache
 self.addEventListener('install', event => {
