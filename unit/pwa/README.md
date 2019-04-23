@@ -36,9 +36,9 @@
 Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、圖示、描述）。 manifest 的功用是將 Web 應用程式安裝到設備的主畫面。
 在 `dist/index.html` 加入:
  ```
- <link rel="manifest" href="./src/manifest.json">
+ <link rel="manifest" href="./manifest.json">
  ```
- 可以在`src/manifest.json`更改 pwa 名稱及縮圖。
+ 可以在`./manifest.json`更改 pwa 名稱及縮圖。
 
 ## Step 3: 註冊 service worker
 為了在離線時能順利工作，我們要註冊一個 service worker，一支在後臺運行的程式，管理向網路抓取資料的行為。
