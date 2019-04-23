@@ -4,7 +4,7 @@
 啟動 server 完成基本網站的架設。
 
 ## Step 1: set up ssl configeration
-由於 pwa 對於資訊安全的要求，我們必須架設以 https 為協定的 Server。
+由於 pwa 對於資訊安全的規定，我們必須架設以 https 為協定的 Server。
 
 * 申請 ssl 憑證。
 
@@ -33,11 +33,11 @@
 補充: https 加密連線，可以確保封包傳輸在過程中沒有被攔截或竄改。
 
 ## Step 2: 註冊 service worker
-為了讓應用離線工作，要註冊一個 service worker，一段允許在後臺運行的腳本。其中 sw.js 必須放在根目錄，因為 service workers 的作用範圍是根據其在目錄結構中的位置決定的。
-在 `register.js` 中加入:
+為了在離線時能順利工作，我們要註冊一個 service worker，一支在後臺運行的程式，管理向網路抓取資料的行為。
+在 `app.js` 中加入:
 ```
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js')
+  navigator.serviceWorker.register('../sw.js')
   .then(reg => {
     console.log(`SW is registered with scope: ${reg.scope}`)
   })
@@ -46,15 +46,21 @@ if ('serviceWorker' in navigator) {
   })
 }
 ```
-這時，console 會顯示 `SW is registered with scope: ${reg.scope}`，但實際上 cache 裡沒有任何資料。
+其中 sw.js 必須放在根目錄，因為 service workers 的作用範圍是根據其在目錄結構中的位置決定的。
+這時打開瀏覽器，console 會顯示 `SW is registered with scope: ${reg.scope}`，但實際上 cache 裡沒有任何資料。
 
 ![](https://i.imgur.com/WEwp3DY.png)
 
 補充: Promise and Async function
 
-## Step 3: service worker 安裝時
-// todo 解釋三階段
-當 service worker 被註冊以後，當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的應用需要再次用到的資源，把所有你設定的資源加入 cache 中。在 `register.js` 中加入:
+## Step 3: 安裝 service worker
+
+當 service worker 被註冊以後，service worker 就會開始運行， service worker 運行時，有三大事件可以被  listen。
+* Install 
+* Active
+* Fetch
+
+當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的資源，把所有你設定的資源加入 cache 中。在 `register.js` 中加入:
 
 ```
   // try edit the cached files and/or the `cachedFiles` list
@@ -72,11 +78,15 @@ if ('serviceWorker' in navigator) {
     })())
   })
 ```
-這時 cahce 會加入我們所需要的資料，但我們還尚未啟動 service worker。
+其中 ExtendableEvent.waitUntil() 延長事件的壽命，從而阻止瀏覽器在事件完成之前終止 service worker。
+
+這時 cahce 會加入新的資料，但如果有舊的 service worker 我們不一定會啟動的新版 service worker。
 ![](https://i.imgur.com/x8Lg5Dm.png)
 
 ## Step 4: service worker 啟動時
-我們可以在這個時候把舊的 cache 清除。在 `register.js` 中加入:
+首先我們要知道，如果有舊的 service worker，剛安裝好的 service worker 並不會馬上啟動，這種狀態稱爲“waiting”。  
+
+當新的 serviceworker 啟動時 ，舊的 serviceworker 仍在 cache 中，我們可以把舊的 cache 清除或是其他你想要做的事。在 `register.js` 中加入:
 ```
 self.addEventListener('activate', event => {
   console.log(`${cacheKey} is activated`)
@@ -86,7 +96,10 @@ self.addEventListener('activate', event => {
   })())
 })
 ```
-新舊版本的 cache 資料很像 chrome 的更新，會先將新的資料下載好，當瀏覽器重新啟動後才會把新的資料拿來用。而 service worker 會在分頁重新啟動後，才會把新的資料拿來用。原因獲得新版本時，是舊的版本仍在啟動中，新的版本只能被安裝無法被啟動，詳情請看[service worker生命週期](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa?hl=zh-tw)
+
+只要舊的版本還在，就算新版的 service worker 安裝好，這段程式程式碼仍不會運作。當分頁關閉，舊的 service worker 停止，重新開啟分頁我們這段程式碼才會運作。
+
+詳情請看[service worker生命週期](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa?hl=zh-tw)。
 
 ## Step 5: 控制資料抓取
 當網頁要向網路抓取資料時，先查看 cache 中是否有相符的資料，若沒有相符的資料再向網路抓取資料。
@@ -103,5 +116,6 @@ self.addEventListener('fetch', event => {
   })())
 })
 ```
+
 
 todo: 設計增加檔案，設計更改檔案
