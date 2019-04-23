@@ -68,7 +68,7 @@ if ('serviceWorker' in navigator) {
 * Active
 * Fetch
 
-當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的資源，把所有你設定的資源加入 cache 中。在 `register.js` 中加入:
+當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的資源，把所有你設定的資源加入 cache 中。在 `src/app.js` 中加入:
 
 ```
   // try edit the cached files and/or the `cachedFiles` list
@@ -124,6 +124,25 @@ self.addEventListener('fetch', event => {
   })())
 })
 ```
+## Step 7: 資料新增
+在  cachedFiles 中加入 './src/cat1.jpeg' 並更新 cacheKey，在 `dist/sw.js`中更改
 
+```
+const cachedFiles = [
+  ...
+  './src/cat1.jpeg',
+  ...
+]
+const cacheKey = 'demo-sw-v2'
 
-todo: 設計增加檔案，設計更改檔案
+```
+
+這時重新整理網頁並觀察 console，會發先圖片原先由網路抓取，加入 cahce 後，從 cache 抓取。
+
+## Step 7: 資料更改
+在 `dist/index.html`中更改貓咪圖片為貓咪2:
+```
+ <div style="background:url('src/cat2.jpeg') no-repeat no-repeat;width:600px;height:400px;"></div>
+```
+
+這時重新整理網頁，會發現網頁上的貓咪一直是貓咪 1，cahce 中的index.html 也並未改動。關掉網頁重開後，發現變成貓咪2，cahce 中的index.html 也變了。印證先前的教學。
