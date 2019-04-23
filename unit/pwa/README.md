@@ -16,7 +16,7 @@
 
 * 進入`config.json`，填寫 `cert`、`ca`、`key` 的路徑。
 
-* 在 `ser.js` 加入
+* 打開 `ser.js` 依指示刪掉程式碼，並加入:
   ```
   const https = require('https')
 
@@ -34,7 +34,7 @@
 
 ## Step 2: 加入 manifest.json
 Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、圖示、描述）。 manifest 的功用是將 Web 應用程式安裝到設備的主畫面。
-在index.html 加入:
+在 `dist/index.html` 加入:
  ```
  <link rel="manifest" href="./src/manifest.json">
  ```
@@ -42,7 +42,7 @@ Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、
 
 ## Step 3: 註冊 service worker
 為了在離線時能順利工作，我們要註冊一個 service worker，一支在後臺運行的程式，管理向網路抓取資料的行為。
-在 `app.js` 中加入:
+在 `dist/src/app.js` 中加入:
 ```
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('../sw.js')
@@ -68,14 +68,20 @@ if ('serviceWorker' in navigator) {
 * Active
 * Fetch
 
-當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的資源，把所有你設定的資源加入 cache 中。在 `src/app.js` 中加入:
+當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的資源，把所有你設定的資源加入 cache 中。在 `dist/sw.js` 中加入:
 
 ```
   // try edit the cached files and/or the `cachedFiles` list
-  const cachedFiles = [[files you want to cache]]
+  const cachedFiles = [
+    './',
+    './src/app.js',
+    './src/cat1.jpeg',
+    './index.html',
+    './src/VOCA-144x144.png',
+  ]
 
   // edit this to force re-cache
-  const cacheKey = [service worker's version]
+  const cacheKey = 'demo-sw-v3'
 
   // install, a good time to preload cache
   self.addEventListener('install', event => {
@@ -94,11 +100,11 @@ if ('serviceWorker' in navigator) {
 ## Step 5: service worker 啟動時
 首先我們要知道，如果有舊的 service worker，剛安裝好的 service worker 並不會馬上啟動，這種狀態稱爲“waiting”。  
 
-當新的 serviceworker 啟動時 ，舊的 serviceworker 仍在 cache 中，我們可以把舊的 cache 清除或是其他你想要做的事。在 `register.js` 中加入:
+當新的 serviceworker 啟動時 ，舊的 serviceworker 仍在 cache 中，我們可以把舊的 cache 清除或是其他你想要做的事。在 `dist/sw.js` 中加入:
 ```
 self.addEventListener('activate', event => {
   console.log(`${cacheKey} is activated`)
-  event.waitUntil((async () => {
+  event.waitUntivl((async () => {
     const keys = await caches.keys()
     return Promise.all(keys.filter(key => key != cacheKey).map(key => caches.delete(key)))
   })())
@@ -108,9 +114,11 @@ self.addEventListener('activate', event => {
 只要舊的版本還在，就算新版的 service worker 安裝好，這段程式程式碼仍不會運作。當分頁關閉，舊的 service worker 停止，重新開啟分頁我們這段程式碼才會運作。
 
 詳情請看[service worker生命週期](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa?hl=zh-tw)。
+並試試在 install 階段以 .skipWating() 取代 .waitUntivl()
 
 ## Step 6: 控制資料抓取
-當網頁要向網路抓取資料時，先查看 cache 中是否有相符的資料，若沒有相符的資料再向網路抓取資料。
+當網頁要向網路抓取資料時，先查看 cache 中是否有相符的資料，若沒有相符的資料再向網路抓取資料。在 `dist/sw.js` 中加入:
+
 ```
 self.addEventListener('fetch', event => {
   event.respondWith((async () => {
