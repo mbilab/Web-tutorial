@@ -77,6 +77,7 @@ if ('serviceWorker' in navigator) {
     './src/app.js',
     './src/cat1.jpeg',
     './index.html',
+    './manifest.json',
     './src/VOCA-144x144.png',
   ]
 
