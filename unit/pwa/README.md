@@ -3,7 +3,7 @@
 使用 npm 或 yarn 安裝 express `npm i express --save` 或 `yarn add express`
 啟動 server 完成基本網站的架設。
 
-## Step 1: set up ssl configeration
+## Step 1: set up https
 由於 pwa 對於資訊安全的規定，我們必須架設以 https 為協定的 Server。
 
 * 申請 ssl 憑證。
@@ -32,7 +32,15 @@
   ```
 補充: https 加密連線，可以確保封包傳輸在過程中沒有被攔截或竄改。
 
-## Step 2: 註冊 service worker
+## Step 2: 加入 manifest.json
+Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、圖示、描述）。 manifest 的功用是將 Web 應用程式安裝到設備的主畫面。
+在index.html 加入:
+ ```
+ <link rel="manifest" href="./src/manifest.json">
+ ```
+ 可以在`src/manifest.json`更改 pwa 名稱及縮圖。
+
+## Step 3: 註冊 service worker
 為了在離線時能順利工作，我們要註冊一個 service worker，一支在後臺運行的程式，管理向網路抓取資料的行為。
 在 `app.js` 中加入:
 ```
@@ -53,7 +61,7 @@ if ('serviceWorker' in navigator) {
 
 補充: Promise and Async function
 
-## Step 3: 安裝 service worker
+## Step 4: 安裝 service worker
 
 當 service worker 被註冊以後，service worker 就會開始運行， service worker 運行時，有三大事件可以被  listen。
 * Install 
@@ -83,7 +91,7 @@ if ('serviceWorker' in navigator) {
 這時 cahce 會加入新的資料，但如果有舊的 service worker 我們不一定會啟動的新版 service worker。
 ![](https://i.imgur.com/x8Lg5Dm.png)
 
-## Step 4: service worker 啟動時
+## Step 5: service worker 啟動時
 首先我們要知道，如果有舊的 service worker，剛安裝好的 service worker 並不會馬上啟動，這種狀態稱爲“waiting”。  
 
 當新的 serviceworker 啟動時 ，舊的 serviceworker 仍在 cache 中，我們可以把舊的 cache 清除或是其他你想要做的事。在 `register.js` 中加入:
@@ -101,7 +109,7 @@ self.addEventListener('activate', event => {
 
 詳情請看[service worker生命週期](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa?hl=zh-tw)。
 
-## Step 5: 控制資料抓取
+## Step 6: 控制資料抓取
 當網頁要向網路抓取資料時，先查看 cache 中是否有相符的資料，若沒有相符的資料再向網路抓取資料。
 ```
 self.addEventListener('fetch', event => {
