@@ -113,7 +113,7 @@ self.addEventListener('activate', event => {
 
 只要舊的版本還在，就算新版的 service worker 安裝好，這段程式程式碼仍不會運作。當分頁關閉，舊的 service worker 停止，重新開啟分頁我們這段程式碼才會運作。
 
-詳情請看[service worker生命週期](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa?hl=zh-tw)。
+詳情請看[service worker生命週期](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle?hl=zh-tw)。
 並試試在 install 階段以 .skipWating() 取代 .waitUntivl()
 
 ## Step 6: 控制資料抓取
