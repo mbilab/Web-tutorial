@@ -5,6 +5,7 @@
     ```
     python3 -m venv ./venv
     ```
+
 ## Step 2: enter the virtual environment
 
     ```
