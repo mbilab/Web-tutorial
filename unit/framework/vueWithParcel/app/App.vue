@@ -1,44 +1,30 @@
 <template lang="pug">
 #app
-  #input.ui.input.action
-    input(type="text", v-model='inputTask', placeholder="add todo...")
-    button.ui.icon.button(@click='addTask()')
-      i.plus.icon
-  .task(v-for="task in tasks" )
-    .ui.checkbox(@click='toggleCheckBox(task.name)')
-      input(type="checkbox" v-model='task.toggle')
-      label(v-if='!task.toggle') {{task.name}}
-      label(v-if='task.toggle')
-        del {{task.name}}
-    i.delete.icon(v-if='task.toggle' @click='rmTask(task.name)')
+  <!-- step 2 code here -->
+
+  <!-- step 3 code here -->
+
+  <!-- step 5 code here -->
+
 </template>
 
 <script>
-import 'semantic-ui-offline/semantic.min.css'
 export default {
 
   data() {return {
-    inputTask: '',
-    tasks: []
+    <!-- step 3 code here -->
+    <!-- step 4 code here -->
   }},
 
   methods: {
 
-    addTask() {
-      if (!this.inputTask)
-        return
-      this.tasks.push({
-        name: this.inputTask,
-        toggle: false
-      })
-      this.inputTask = ''
-    },
+    <!-- step 4 code here -->
 
     rmTask(tsk) {
       this.tasks = this.tasks.filter(task => task.name != tsk)
     },
 
-    toggleCheckBox(tsk) {
+    toggleTask(tsk) {
       const toggle = this.tasks.find(task => task.name === tsk).toggle
       this.tasks.find(task => task.name === tsk).toggle = !toggle
 
