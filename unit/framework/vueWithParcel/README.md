@@ -3,16 +3,15 @@ Vue
 
 ## Step 0: setup and pack
 
-`npm i vue semantic-ui-offline`
+安裝 dependency 套件
+uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非課程的同學請自行`npm i parcel` or `yarn add parcel`
+打包並開啟 devServer: `parcel ./app/index.pug`
+
+`$ npm i vue semantic-ui-offline`
 
 or
 
-`yarn add  vue semantic-ui-offline`
-
-uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非課程的同學請自行`npm i parcel` or `yarn add parcel`
-
-
-打包並開啟 devServer: `parcel ./app/index.pug`
+`$ yarn add  vue semantic-ui-offline`
 
 ## Step 1: import js, vue, and semantic-ui-offline
 
@@ -26,8 +25,6 @@ uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非�
     #app
     script(src="./app.js")
     ```
-
-
 
 在 `app/app.js` 加入以下程式碼:
 
@@ -45,7 +42,6 @@ uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非�
         el: '#app',
         render: h => h(App)
     })
-    
     ```
 
 ## Step 2: Using semantic-ui 
@@ -71,7 +67,8 @@ uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非�
 
 ## Step 3: data binding
 
-將 `app/App.vue` 中Step 2的 Step2.1 部分改成如下程式碼:
+將 `app/App.vue` 中Step 2的 Step2.1 部分改成如下程式碼
+透過 parcel 打包後，可以看到顯示的變數即時變跟著資料動。
 
     ```
     <!-- Step 3.1
@@ -95,8 +92,6 @@ uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非�
     ```
     [your var name]: 'Data bing is cool!',
     ```
-
-透過 parcel 打包後，可以看到顯示的變數即時變跟著資料動。
 
 ## Step 4: data and method
 
@@ -132,9 +127,9 @@ uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非�
     },
     ```
 
-透過 parcel 打包後，可以看到我們透過 @click 綁定事件，並透過 methods 裡的 function 不斷增加資料。
-
 ## Step 5: don't repeat yourself: 學會 v-for，提高效率。
+
+透過 parcel 打包後，可以看到我們透過 @click 綁定事件，並透過 methods 裡的 function 不斷增加資料。
 
     ```
     <!-- Step 5
