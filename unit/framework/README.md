@@ -42,10 +42,10 @@ semantic-ui 也提供了部分動畫特效。
 ```	
 //-- Step 3 --
 $('#follow').click(e => {
-  $('#folloe').transition('bounce')
-}
+  $('#follow').transition('bounce')
+})
 $('#save').click(e => {
   $('#save').transition('tada')
-}
+})
 ```
 去[官網](https://semantic-ui.com/modules/transition.html)查詢並嘗試更多有趣的特效吧!
