@@ -7,6 +7,9 @@
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
+  {% for student in students %}
+    <p>{{ student.name }} 's score is {{ student.score }}</p>
+  {% endfor %}
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a>
