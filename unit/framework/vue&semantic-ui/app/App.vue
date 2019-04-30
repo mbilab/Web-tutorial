@@ -2,7 +2,7 @@
 #app
   <!-- step 2 code here -->
 
-  <!-- step 3 code here -->
+  <!-- step 3.2 code here -->
 
   <!-- step 5 code here -->
 
@@ -12,13 +12,13 @@
 export default {
 
   data() {return {
-    <!-- step 3 code here -->
-    <!-- step 4 code here -->
+    // step 3.3 code here
+    // step 4.2 code here
   }},
 
   methods: {
 
-    <!-- step 4 code here -->
+    // step 4.3 code here
 
     rmTask(tsk) {
       this.tasks = this.tasks.filter(task => task.name != tsk)
