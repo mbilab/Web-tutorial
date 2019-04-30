@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Semantic UI Demo</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
+    <!-- step 1.1 -->
     <style>
       .block {
         display: none;
@@ -69,23 +69,22 @@
         <div class='block'>
           <h2 class='ui header'>Button</h2>
           <div class='example'>
-            <button class="ui button">Follow</button>
+            <!-- Step 2.1 -->
             <div class='code'>
-              <button class="ui button">
-              <br>
-               Follow
-              <br>
-            </button>
+              &lt button class="ui button" &gt
+              Follow
+              &lt /button &gt
             </div>
           </div>
           <div class='example'>
-            <button class="ui primary button">Save</button>
+            <!-- Step 2.2 -->
             <div class='code'>
-              <button class="ui primary button">
+              &lt button class="ui primary button"&gt
               <br>
-               Save
+              &nbsp &nbsp Save
               <br>
-              </button>
+              &lt /button &gt
+
             </div>
           </div>
           <h2 class='ui header'>Input</h2>
@@ -94,11 +93,11 @@
               <input type="text" placeholder="Search...">
             </div>
             <div class='code'>
-              <div class="ui input">
+              &lt div class="ui input" &gt
               <br>
-               <input type="text" placeholder="Search...">
+              &nbsp &nbsp &lt input type="text" placeholder="Search..." &gt
               <br>
-              </div>
+              &lt /div &gt
             </div>
           </div>
           <div class='example'>
@@ -107,13 +106,13 @@
               <i class="search icon"></i>
             </div>
             <div class='code'>
-              <div class="ui left icon input loading">
+              &lt div class="ui left icon input loading" &gt
               <br/>
-               <input type="text" placeholder="Search...">
+              &nbsp &nbsp &lt input type="text" placeholder="Search..." &gt
               <br/>
-               <i class="search icon"></i>
+              &nbsp &nbsp &lt i class="search icon" &gt &lt /i &gt
               <br/>
-              </div>
+              &lt /div &gt
             </div>
           </div>
           <h2 class='ui header'>More</h2>
@@ -143,8 +142,7 @@
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
+    <!-- step 1.2 -->
     <script>
       $('a.item').click(e => {
         $(`.block:nth-child(${$('a.item.active').index() + 1})`).transition('scale')
@@ -154,6 +152,7 @@
       })
       $('a.item:nth-child(2)').click()
 
+      //-- Step 3 code here --
       $('.ui.buttons .basic.button').click(e => {
         let action = $(e.target).html()
         $('.demo').transition(action)
