@@ -21,7 +21,6 @@
     "@babel/preset-typescript": "^7.0.0-alpha.19",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "node-sass": "^4.11.0",
     "parcel-bundler": "^1.11.0",
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6",
