@@ -343,7 +343,7 @@ $.get('./step5', {
   lname: $('#ajax-form input[name=lName]').val(),
 }, (data) => {
   [show data in div#ajax-output]
-))
+})
 ```
 
 ## Step 11: experience "asyncronous"
