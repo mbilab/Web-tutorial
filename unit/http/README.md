@@ -112,7 +112,7 @@ Insert the following code to `./ser.js` and follow instructions beginning with `
  * 將 [path] 修改成合適的值
  * 注意靜態檔案放在 `./dist` 目錄下
  * `express.static()` 專門用來處理靜態檔案，搜尋 `express static` 了解更多
- * `__dirname` 是 node.js 的環境變數，搜尋 `nodejs _-dirname` 了解更多
+ * `__dirname` 是 node.js 的環境變數，搜尋 `nodejs __dirname` 了解更多
  */
 
 // handle other urls
@@ -314,7 +314,7 @@ $.get('./step5', {
 
 ## Step 10: show ajax results
 
-In the last two steps, the ajax results can only be observed in developer console. In ajax, developers need to show the resutls explicitly via js code. Follow instructions beginning with `Step 10`.
+In the last two steps, the ajax results can only be observed in developer console. In ajax, developers need to show the results explicitly via js code. Follow instructions beginning with `Step 10`.
 
 在最後的兩個步驟中， ajax 的結果只能在開發者工具中觀察到。使用 ajax 時，開發者需要使用 javascript 妥善地呈現結果。請跟著底下 `Step 10` 的指令作
 
@@ -349,6 +349,7 @@ $.get('./step5', {
 ## Step 11: experience "asyncronous"
 
 Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`.
+
 Ajax 代表「非同步 javascript 以及 xml」。所以什麼是非同步?請跟著底下 `Step 11` 的指令作
  
 ```
@@ -363,7 +364,8 @@ setTimeout(() => {
 
 ## Step 12: more
 
-There are more examples included in this unit. No step-by-step instructions for them. But maybe you can learn something form the source code.
+There are more examples included in this unit. No step-by-step instructions for them. But maybe you can learn something from the source code.
+
 以下有更多這個單元的範例。但沒有手把手的教學，但希望你們能夠從原始碼中學到一些東西。
 
   * `./php/` provides a php version of this exercise. php is a classic server side language. Unlike nodejs will create a web server, you need a web server, such as Apache, to run php.
