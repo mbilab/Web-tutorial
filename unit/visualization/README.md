@@ -150,18 +150,18 @@ for (const i in data[code]) {
 uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非課程的同學請自行`npm i parcel` or `yarn add parcel`
 打包並開啟 devServer: `parcel build ./app/index.pug`
 
-`$ npm i vue semantic-ui-offline`
+`$ npm i vue`
 
 or
 
-`$ yarn add  vue semantic-ui-offline`
+`$ yarn add vue`
 
 ## Step 1: include js, import vue
 
 在 `app/vue.pug` 加入以下程式碼:
 
 ```
-    /* Step 1 
+    /* Step 1
      * 加入被綁定的 DOM 以及 vue 實例
      */
     #app
