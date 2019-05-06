@@ -20,8 +20,9 @@ Visualization
 ```
 /* Step 1:
  * 將內容包在 `$(()=>{  })` 裡面，確保所有的東西都準備好，才會執行這段程式碼
- * 在 `jquery.html` 裡面的 `data-code` 是一個自定義的變數。在 `html` 中，能利用 `data-*` 將字串存在 DOM 中，再從CSS或JS中取出來使用
- * $(e.target)就是選到 "被點擊的那個 element"
+ * 在 `jquery.html` 裡面的 `data-code` 是一個自定義的變數。
+ * 在 `html` 中，能利用 `data-*` 將字串存在 DOM 中，再從CSS或JS中取出來使用
+ * `$(e.target)` 就是選到 "被點擊的那個 element"
  * `.data('code')` 可以將預存在 DOM 中的 `data-code` 字串取出來
  */
 
@@ -35,7 +36,12 @@ $(() => {
     const code = $(e.target).data('code')
     console.log(data[code])
 
+    
+    //Step 3
+
+
 	//Step 2
+
   })
   $('button:first-child').click()
 })
@@ -43,7 +49,7 @@ $(() => {
 
 ### Step 2: 繪製圖表
 
-將 data 使用 svg 繪製出來，在`./app/jquery.js`中插入以下程式碼，並觀察結果。
+將 data 使用 svg 繪製出來，在 `./app/jquery.js` 中插入以下程式碼，並觀察結果。
 
 ```
 /* Step 2:
@@ -64,7 +70,7 @@ for (const i in data[code]) {
 
 ### Step 3: 清除圖表
 
-測試後應該會發現，資料顯示的狀況好像怪怪的，因為新加入的 svg 圖片，被留在畫面上了，在`./app/jquery.js`中插入以下程式碼
+測試後應該會發現，資料顯示的狀況好像怪怪的，因為新加入的 svg 圖片，被留在畫面上了，在 `./app/jquery.js` 中插入以下程式碼
 
 ```
 /* Step 3:
