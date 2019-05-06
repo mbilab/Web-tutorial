@@ -4,8 +4,9 @@ const data = {
 }
 
 $(() => {
-
-  // initialize
+  /* Step 1:
+   * 使用 css selector 加上 .select() 選取要加入資料的元件
+   */
   const chart = d3.select('#chart')
 
   $('button').click(e => {
@@ -21,7 +22,7 @@ $(() => {
       .text((v, i) => (v * 100).toFixed(1) + '%')
     bars.select('rect')
       //.transition().duration(1000)
-      .attr({ 
+      .attr({
         height: (v, i) => v * 400,
         y: (v, i) => 450 - v * 400,
       })

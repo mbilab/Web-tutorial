@@ -10,12 +10,13 @@ Visualization
 * 如何在 html 引用 javaScript
 * Handle Events
 * 用 jQuery 修改 css/html
-上網[查詢]( https://www.w3schools.com/html/html5_svg.asp )，了解 svg
+* 上網[查詢]( https://www.w3schools.com/html/html5_svg.asp )，了解 svg
 
 ### Step 1: access 到要視覺化的資料
 
-確定 Event 觸發能夠正確 access 到想要顯示的 data，在`./app/jquery.js`插入以下程式碼，並開啟F12觀察資料，是否正確印出
+確定 Event 觸發能夠正確 access 到想要顯示的 data，在`./app/jquery.js`插入以下程式碼，並開啟F12觀察資料，是否正確印出。
 
+在`./app/jquery.js`中插入以下程式碼，並觀察結果。
 ```
 /* Step 1:
  * 將內容包在 `$(()=>{  })` 裡面，確保所有的東西都準備好，才會執行這段程式碼
@@ -73,12 +74,54 @@ for (const i in data[code]) {
 ```
 
 ## D3.js
+相比 jQuery，D3.js 可以將資料與 DOM 元件連結，讓我們可以直接使用 DOM 裡的資料，思考的角度更是從物件變成資料。
+### Step 1: 選取物件
+使用 select 選取物件 
+```
+  /* Step 1:
+   * 使用 css selector 加上 .select() 選取要加入資料的元件
+   */
+  const chart = d3.select('#chart')
+```
 
-### Step 1: 資料綁定
+### Step 2: 資料連結
+透過 selectAll 選取子物件並用 .data() 連結資料，這時很有機會發生資料與物件數量不對齊的狀況，需要下兩個步驟解決這個問題。
+```
+    /* Step 2:
+     */
+    const bars = chart.selectAll('svg').data(data[code])
+```
 
-### Step 2: 清空圖表
+### Step 3: 清空沒有資料的物件
+選取沒有資料配對的物件後，將剛該物件刪除。
+```
+    /* Step 3:
+     * .exit() 會過濾出沒有資料配對的物件
+     * .remove() 會把這些物件刪掉 
+     */
+    bars.exit().remove()
+```
 
-### Step 3: 繪製圖表
+### Step 4: 繪製沒物件的資料
+為沒物件的資料建立物件
+```
+    /* Step 4:
+     * .enter() 為沒物件的資料建立物件
+     * .append() 跟 jQuery 的 append 類似，加入 DOM 元件。
+     * d3 元件裡的資料跟索引會傳進 `(v, i) => {}` 裡的 v 跟 i
+     */
+    const entered = bars.enter().append('svg').attr('x', (v, i) => { return 60 + i * 150 })
+    entered.append('text').attr('x', 20)
+    entered.append('rect').attr('width', 100)
+    bars.select('text')
+      .attr('y', (v, i) => { return 440 - v * 400 })
+      .text((v, i) => (v * 100).toFixed(1) + '%')
+    bars.select('rect')
+      .attr({
+        height: (v, i) => { return v * 400 },
+        y: (v, i) => { return 450 - v * 400 },
+      })
+```
 
 ## Vue
 ## Step 0: setup and pack
