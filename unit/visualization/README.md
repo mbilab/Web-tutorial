@@ -183,6 +183,7 @@ or
         render: h => h(App)
     })
 ```
+完成後開啟 devServer，可以看到 hello world
 
 ## Step 2: 資料綁定
 
@@ -193,7 +194,7 @@ or
     /* Step 2.1
      * 加入變數
      */
-    inputData: [Type something here],
+    inputData: "Type something here",
 ```
 
 在 `app/vue.vue` step 2.2 中加入以下程式碼:
@@ -202,7 +203,7 @@ or
      * 你的輸入會跟 inputData 雙向綁定，並在螢幕顯示
      */
     input(type="text", v-model='inputData')
-    {{inputData}}
+    | {{inputData}}
 ```
 
 補充: v-model 用來雙向綁定，另有單向綁定的 v-bind。
@@ -216,8 +217,7 @@ or
     /* Step 3.1
      * 使用 v-for，網頁內容隨著資料迭代渲染。
      */
-    li(v-for="value in chart")
-    |  value: {{value}}
+    span(v-for="value in chart") {{value}} ,
 ```
 
 閱讀[官方教學](https://v1-cn.vuejs.org/guide/list.html)或是[教學部落格](https://cythilya.github.io/2017/04/27/vue-list-rendering/)，找到取得 index of value 的方法。
@@ -250,7 +250,7 @@ or
   /* step 4.2
    * 換你寫了
    */
-  this.chart = ??????
+  this.chart = [??????]
 ```
 
 在 vue 實例內部要使用內部的資料或方法時，可是使用 this，例: `this.myData`，`this.myMethod`。
