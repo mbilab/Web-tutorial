@@ -161,9 +161,9 @@ or
 在 `app/vue.pug` 加入以下程式碼:
 
 ```
-    /* Step 1
-     * 加入被綁定的 DOM 以及 vue 實例
-     */
+    // Step 1
+    // 加入被綁定的 DOM 以及 vue 實例
+    //
     #app
     script(src="./vue.js")
 ```
@@ -177,19 +177,20 @@ or
      */
 
     import App from './vue.vue'
-    
+
     new Vue({
         el: '#app',
         render: h => h(App)
     })
 ```
-完成後開啟 devServer，可以看到 hello world
+
+完成後可以用 `yarn vue` 開啟 devServer，可以看到 hello world
 
 ## Step 2: 資料綁定
 
 將 `app/vue.vue`加入 pug 與 vue 實例。透過 parcel 打包後，可以看到顯示的變數即時變跟著資料動。
 
-在 `app/App.vue` step 2.1 的部分加入data:	
+在 `app/vue.vue` step 2.1 的部分加入data:	
 ```
     /* Step 2.1
      * 加入變數
@@ -199,9 +200,9 @@ or
 
 在 `app/vue.vue` step 2.2 中加入以下程式碼:
 ```
-    /* Step 2.2
-     * 你的輸入會跟 inputData 雙向綁定，並在螢幕顯示
-     */
+    // Step 2.2
+    // 你的輸入會跟 inputData 雙向綁定，並在螢幕顯示
+    // 注意：`input` 和 `p` 在同一層縮排
     input(type="text", v-model='inputData')
     | {{inputData}}
 ```
@@ -214,19 +215,21 @@ or
 在 `app/vue.vue` step 3.1 的部分加入以下程式碼:
 
 ```
-    /* Step 3.1
-     * 使用 v-for，網頁內容隨著資料迭代渲染。
-     */
+    // Step 3.1
+    // 使用 v-for，網頁內容隨著資料迭代渲染。
+    // 注意：`span` 和 `br` 在同一層縮排
     span(v-for="value in chart") {{value}} ,
 ```
 
 閱讀[官方教學](https://v1-cn.vuejs.org/guide/list.html)或是[教學部落格](https://cythilya.github.io/2017/04/27/vue-list-rendering/)，找到取得 index of value 的方法。
 完成 `app/vue.vue` step 3.2 的程式碼:
 ```
-    /* Step 3.2
-     * 完成 v-for 的語法，定義裡的value跟idx
-     */
+    // Step 3.2
+    // 完成 v-for 的語法，定義裡的value跟idx
+    //
     svg(v-for="[value and idx of data]",:x="60 + idx * 150")
+      text(x="20",:y="440 - 400 * value") {{(value * 100).toFixed(1)}}%
+      rect(:height="value * 400",width="100",:y='450 - value * 400')
 ```
 
 ## Step 4: 方法與事件處理
@@ -235,14 +238,14 @@ or
 在 `app/vue.vue` step 4.1 的部分加入以下程式碼:
 
 ```
-  /* step 4.1
-   * 加入 button
-   */
+  // step 4.1
+  // 加入 button
+  //
   div
     button(@click="update('N2')") 電機所
     button(@click="update('P7')") 資訊所
-    
 ```
+
 @click會處理該 DOM 的點擊事件，並把這個事件與 update() 綁定。你可以在下面的程式碼中看到 this.inputData 被改為按鈕名稱並顯示在螢幕上。
 現在，輪到你把 this.chart 改成 N2 array 或 P7 array。
 修改 `app/vue.vue` step 4.2 的部分:
