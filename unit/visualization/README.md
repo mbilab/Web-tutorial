@@ -74,9 +74,14 @@ for (const i in data[code]) {
 ```
 
 ## D3.js
+
 相比 jQuery，D3.js 可以將資料與 DOM 元件連結，讓我們可以直接使用 DOM 裡的資料，思考的角度更是從物件變成資料。
+
 ### Step 1: 選取物件
-使用 select 選取物件 
+
+使用 select 選取物件
+在`./app/d3.js`中插入以下程式碼:
+
 ```
   /* Step 1:
    * 使用 css selector 加上 .select() 選取要加入資料的元件
@@ -85,7 +90,10 @@ for (const i in data[code]) {
 ```
 
 ### Step 2: 資料連結
+
 透過 selectAll 選取子物件並用 .data() 連結資料，這時很有機會發生資料與物件數量不對齊的狀況，需要下兩個步驟解決這個問題。
+在`./app/d3.js`中插入以下程式碼:
+
 ```
     /* Step 2:
      */
@@ -93,7 +101,10 @@ for (const i in data[code]) {
 ```
 
 ### Step 3: 清空沒有資料的物件
+
 選取沒有資料配對的物件後，將剛該物件刪除。
+在`./app/d3.js`中插入以下程式碼:
+
 ```
     /* Step 3:
      * .exit() 會過濾出沒有資料配對的物件
@@ -103,7 +114,9 @@ for (const i in data[code]) {
 ```
 
 ### Step 4: 繪製沒物件的資料
+
 為沒物件的資料建立物件
+
 ```
     /* Step 4:
      * .enter() 為沒物件的資料建立物件
@@ -128,7 +141,7 @@ for (const i in data[code]) {
 
 安裝 dependency 套件
 uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非課程的同學請自行`npm i parcel` or `yarn add parcel`
-打包並開啟 devServer: `parcel ./app/index.pug`
+打包並開啟 devServer: `parcel build ./app/index.pug`
 
 `$ npm i vue semantic-ui-offline`
 
@@ -141,9 +154,9 @@ or
 在 `app/vue.pug` 加入以下程式碼:
 
 ```
-    // Step 1 
-    //    加入被綁定的 DOM 以及 vue 實例
-
+    /* Step 1 
+     * 加入被綁定的 DOM 以及 vue 實例
+     */
     #app
     script(src="./vue.js")
 ```
@@ -168,30 +181,34 @@ or
 
 將 `app/vue.vue`加入 pug 與 vue 實例。透過 parcel 打包後，可以看到顯示的變數即時變跟著資料動。
 
-在 `app/App.vue` step 2.1 的部分加入data:
-	
+在 `app/App.vue` step 2.1 的部分加入data:	
 ```
-    // Step 2.1
-    // 加入變數
+    /* Step 2.1
+     * 加入變數
+     */
     inputData: [Type something here],
 ```
 
 在 `app/vue.vue` step 2.2 中加入以下程式碼:
 ```
-    // Step 2.2
-    // 你的輸入會跟 inputData 雙向綁定，並在螢幕顯示
+    /* Step 2.2
+     * 你的輸入會跟 inputData 雙向綁定，並在螢幕顯示
+     */
     input(type="text", v-model='inputData')
     {{inputData}}
 ```
 
 補充: v-model 用來雙向綁定，另有單向綁定的 v-bind。
 
-## Step 3: 列表選染
+## Step 3: 列表渲染
+
 使用v-for迭代陣列或物件中的元素。 
 在 `app/vue.vue` step 3.1 的部分加入以下程式碼:
+
 ```
-    // Step 3.1
-    // 使用 v-for，網頁內容隨著資料迭代渲染。
+    /* Step 3.1
+     * 使用 v-for，網頁內容隨著資料迭代渲染。
+     */
     li(v-for="value in chart")
     |  value: {{value}}
 ```
@@ -199,17 +216,21 @@ or
 閱讀[官方教學](https://v1-cn.vuejs.org/guide/list.html)或是[教學部落格](https://cythilya.github.io/2017/04/27/vue-list-rendering/)，找到取得 index of value 的方法。
 完成 `app/vue.vue` step 3.2 的程式碼:
 ```
-    // Step 3.2
-    // 完成 v-for 的語法，定義裡的value跟idx
+    /* Step 3.2
+     * 完成 v-for 的語法，定義裡的value跟idx
+     */
     svg(v-for="[value and idx of data]",:x="60 + idx * 150")
 ```
 
 ## Step 4: 方法與事件處理
+
 綁定 DOM 的事件，透過 methods 在 vue 實例中，修改 data。
 在 `app/vue.vue` step 4.1 的部分加入以下程式碼:
+
 ```
-  // step 4.1
-  // 加入 button
+  /* step 4.1
+   * 加入 button
+   */
   div
     button(@click="update('N2')") 電機所
     button(@click="update('P7')") 資訊所
@@ -219,8 +240,9 @@ or
 現在，輪到你把 this.chart 改成 N2 array 或 P7 array。
 修改 `app/vue.vue` step 4.2 的部分:
 ```
-  // step 4.2
-  // 換你寫了
+  /* step 4.2
+   * 換你寫了
+   */
   this.chart = ??????
 ```
 
