@@ -7,25 +7,23 @@ $(() => {
   /* Step 1:
    * 使用 css selector 加上 .select() 選取要加入資料的元件
    */
-  const chart = d3.select('#chart')
 
   $('button').click(e => {
     const code = $(e.target).data('code')
-    const bars = chart.selectAll('svg').data(data[code])
-    bars.exit().remove()
-    const entered = bars.enter().append('svg').attr('x', (v, i) => 60 + i * 150)
-    entered.append('text').attr('x', 20)
-    entered.append('rect').attr('width', 100)
-    bars.select('text')
-      //.transition().duration(1000)
-      .attr('y', (v, i) => 440 - v * 400)
-      .text((v, i) => (v * 100).toFixed(1) + '%')
-    bars.select('rect')
-      //.transition().duration(1000)
-      .attr({
-        height: (v, i) => v * 400,
-        y: (v, i) => 450 - v * 400,
-      })
+    /* Step 2:
+     * 連結資料
+     */
+
+    /* Step 3:
+     * .exit() 會過濾出沒有資料配對的物件
+     * .remove() 會把這些物件刪掉
+     */
+
+    /* Step 4:
+     * .enter() 為沒物件的資料建立物件
+     * .append() 跟 jQuery 的 append 類似，加入 DOM 元件。
+     * d3 元件裡的資料跟索引會傳進 `(v, i) => {}` 裡的 v 跟 i
+     */
   })
   $('button:first-child').click()
 

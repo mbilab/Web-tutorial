@@ -96,6 +96,7 @@ for (const i in data[code]) {
 
 ```
     /* Step 2:
+     * 連結資料
      */
     const bars = chart.selectAll('svg').data(data[code])
 ```
@@ -108,7 +109,7 @@ for (const i in data[code]) {
 ```
     /* Step 3:
      * .exit() 會過濾出沒有資料配對的物件
-     * .remove() 會把這些物件刪掉 
+     * .remove() 會把這些物件刪掉
      */
     bars.exit().remove()
 ```
