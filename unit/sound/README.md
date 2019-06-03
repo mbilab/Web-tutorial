@@ -5,7 +5,7 @@
 
 只需要使用 audio 的標籤就可以將音訊載入，將以下的程式碼插入`./index.html`中，並觀察結果
 ```
-    <!-- Step 1 
+    <!-- Step 1
     controls 的屬性表示用瀏覽器預設的播放器
     還有其他屬性包括 autoplay(自動播放)、loop(循環)、muted(靜音)等等
     更詳細內容的可以參考 https://www.w3schools.com/tags/ref_av_dom.asp
@@ -16,10 +16,10 @@
 
 ### Step 2: current time
 
-另外，我們也可以讓音樂在一個特定時間開始播放，將以下的程式碼插入`./app.js`的 Step 2中，觀察結果，並且改改看其中的秒數
+另外，我們也可以讓音樂在一個特定時間開始播放，將以下的程式碼插入`./app.js`的 Step 2中，點擊 `play` 觀察結果，並且改改看其中的秒數
 ```
   //Step 2
-  audio.currentTime = 1.2
+  audio.currentTime = 0.3
 ```
 
 ## Video
@@ -27,7 +27,7 @@
 
 只需要使用 video 的標籤就可以將視訊載入，將以下的程式碼插入`./index.html`中，並觀察結果
 ```
-    <!-- Step 1
+    <!-- Step 3
     和audio相同
     controls 的屬性表示用瀏覽器預設的播放器
     還有其他屬性包括 autoplay(自動播放)、loop(循環)、muted(靜音)等等
@@ -42,9 +42,6 @@
 使用瀏覽器獲得使用者裝置上影像或聲音。
 將以下內容寫入 `app.js`:
 ```
-// MediaDevices and MediaStream Recording API
-const type = 'video'
-const recordedChunks = []
 /* Step 4
  * 使用 navigator 獲得麥克風的訪問權
  * 利用 WebRTC 規範中名爲 getUserMedia() 的 API 直接訪問麥克風。
