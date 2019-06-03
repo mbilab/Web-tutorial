@@ -113,7 +113,7 @@ const download = () => {
 ```
 
 ## Web Speech
-##Step 6:
+### Step 6:
 
 將以下內容寫入 `app.js` 的 Step 6:
 
