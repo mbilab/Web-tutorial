@@ -46,7 +46,7 @@
  * 使用 navigator 獲得麥克風的訪問權
  * 利用 WebRTC 規範中名爲 getUserMedia() 的 API 直接訪問麥克風。
  * getUserMedia() 將提示用戶授予對其相連麥克風和攝像頭的訪問權。
- * 將 getUserMedia() 返回的 stram 附加到 <audio> 元素上，便能在網頁上顯示影片。
+ * 將 getUserMedia() 返回的 stream 附加到 <audio> 元素上，便能在網頁上顯示影片。
  */
   navigator.mediaDevices.getUserMedia({
     audio: true,
@@ -125,8 +125,9 @@ const download = () => {
  * 並透過 SpeechSynthesisUtterance 回應發生請求。
  */
 // Web Speech API
+const utter = new SpeechSynthesisUtterance()
+console.log(speechSynthesis.getVoices())
 const speak = () => {
-  const utter = new SpeechSynthesisUtterance()
   // 嘗試把以下內容顯示在螢幕上，了解 speechSynthesis
   // console.log(speechSynthesis.getVoices())
   utter.voice = speechSynthesis.getVoices()
