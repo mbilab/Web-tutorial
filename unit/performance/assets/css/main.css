@@ -1,0 +1,654 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#section-1 {
+    width: 100vw;
+    height: 100vh;
+}
+
+.rec {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.intro-2 {
+    position: relative;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    /* padding-top: 4rem; */
+    padding: 4rem 3rem 0 2rem;
+}
+
+#section-2 {
+    position: relative;
+}
+
+.e-Title {
+    font-style: bold;
+    width: 100%;
+    font-family: Microsoft JhengHei;
+    text-align: center;
+    color: black;
+}
+
+.e-card {
+    padding-top: 7rem;
+    text-align: center;
+}
+
+.e-icon {
+    width: 30%;
+    margin: 0 auto;
+    /* text-align: center; */
+}
+
+.e-iconTitle {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: Microsoft JhengHei;
+    color: black;
+}
+
+.P3-title {
+    font-family: Microsoft JhengHei;
+    font-style: bold;
+    margin-bottom: 2rem;
+    color: black;
+}
+
+.e-iconWord {
+    font-family: Microsoft JhengHei;
+    color: black;
+}
+
+
+/*
+ * Section-2
+ * by Wun Hua
+ */
+
+.intro {
+    position: relative;
+    background: white;
+    height: 100vh;
+}
+
+.arrow-d,
+.arrow-d2,
+.arrow-d3 {
+    position: absolute;
+    bottom: 1rem;
+    left: 48%;
+    width: 4rem;
+}
+
+.intro-left {
+    padding-top: 20rem;
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    margin-left: -45vw;
+    background-color: #f7484e;
+    text-align: center;
+    /* transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955); */
+}
+
+.intro-right {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    position: relative;
+    width: 50%;
+    height: 100vh;
+}
+
+.w-Title {
+    /* font: italic; */
+    font-style: italic;
+    font-size: 18pt;
+    margin-bottom: 1rem;
+    /* margin-left: 2rem; */
+    border-color: black;
+    border-left-style: solid;
+    border-width: 2.5pt;
+    padding-left: 0.6rem;
+}
+
+.w-aboutus,
+.w-motivation,
+.w-ourmission {
+    /* height: 30%; */
+    width: 100%;
+    margin-top: 3rem;
+}
+
+
+/* w-Title img {
+    width: 100%;
+} */
+
+.align-center {
+    /* position: absolute; */
+    /* top: 43%; */
+    /* left: 50%; */
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.word-problem {
+    color: #ffffff;
+    /* margin-bottom: 0.08rem; */
+    /* font-family: Microsoft JhengHei; */
+    font-family: Microsoft JhengHei;
+    /* font-weight: bold; */
+    font-size: 13pt;
+}
+
+#word-about {
+    margin-bottom: 3rem;
+    height: 3rem;
+    width: 20rem
+}
+
+.dash {
+    height: 30vh;
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+
+/* .dash img {
+    max-width: 70%;
+    max-height: 30vh;
+} */
+
+.board {
+    display: inline-block;
+}
+
+
+/* del */
+
+
+/* .w-word {
+    margin-top: 5rem;
+    height: 2.5rem;
+    width: 3.5rem;
+    padding-bottom: 0.2rem;
+    filter: drop-shadow(0px 1px 0.5px rgba(155, 140, 140, 0.9));
+}
+
+.w-word:hover {
+    margin-top: 5rem;
+    height: 2.5rem;
+    width: 3.5rem;
+    cursor: pointer;
+    padding-bottom: 0.2rem;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: rgba(218, 210, 210, 0.9);
+} */
+
+.w-word {
+    margin-left: 3rem;
+    font-family: Microsoft JhengHei;
+    line-height: initial;
+    font-size: 11pt;
+}
+
+.w-dia {
+    margin-top: 5rem;
+    height: 3rem;
+    width: 2rem;
+}
+
+#w-word {
+    margin-top: 5rem;
+    height: 2.5rem;
+    width: 20rem;
+}
+
+.arrow {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    width: 4rem;
+    /* display: inline-block; */
+}
+
+
+/*
+ * others
+ */
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);
+    /* nature black */
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    /* horizontal center */
+}
+
+.intro {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn-intro {
+    padding: 0.5rem 2.5rem;
+    color: #fff;
+    background-color: #43a7a7;
+    border-radius: 3rem;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+/* section-3 */
+
+#section-3 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+}
+
+#section-2extra {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#section-2 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#S3background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.S3allLine {
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+}
+
+.introTeam {
+    position: relative;
+    display:block;
+    margin: auto;
+    width: 1225px;
+    height: 60vh;
+}
+
+.S3allLine{
+    position: relative;
+    bottom: 0;
+    width: 1225px;
+    margin:auto;
+}
+
+.S3allLine img{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    left:0; 
+    margin:0 112.5px 0 112.5px;
+    width: 1000px;
+}
+
+.teamMember {
+    float: left;
+    width: 245px;
+}
+
+.personalImg {
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto auto 0 auto;
+    cursor: pointer;
+}
+
+
+/* .teamMember {
+    float: left;
+    width: 20vw;
+    text-align: center;
+}
+
+.personalIntro {
+    margin: 0;
+}
+
+.introTeamImg{
+    position: relative;
+    height: 27%;
+    width: 20vw;
+    float: left;
+}
+
+.personalIntro{
+    position: relative;
+    height: 73%;
+    width: 20vw;
+    float: left;
+    margin: 15vw 0vw 0 0vw;
+}
+
+.frameImg {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top:0;
+    width: 15vw;
+    height: 15vw;
+    margin: 0 2.5vw 0 2.5vw;
+}
+.personalImg {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top:0;
+    width: 12.7vw;
+    height: 12.7vw;
+    margin: 1vw 3.65vw 0 3.85vw;
+    cursor: pointer;
+} */
+/*
+.personalImg {
+    z-index: 2;
+    position: absolute;
+    top: -18.71vh;
+    left: 5.2vw;
+    width: 17vmin;
+    height: 17vmin;
+    cursor: pointer;
+}
+
+.YAHAN {
+    position: absolute;
+}
+
+.SHENSI {
+    position: absolute;
+    left: 20vw;
+}
+
+.TINGYI {
+    position: absolute;
+    left: 40vw;
+}
+
+.WENHUA {
+    position: absolute;
+    left: 60vw;
+}
+
+.SHANGRONG {
+    position: absolute;
+    left: 80vw;
+} */
+
+#section-3 {
+    background-image: url(../media/S3background.png);
+    /* background-color: black; */
+}
+
+#section-3 p {
+    font-family: Microsoft JhengHei;
+    text-align: center;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 20px 0 0px 0;
+}
+
+.resume {
+    padding: 2px 0 2px 0;
+}
+
+.saying {
+    font-size: 1.2rem;
+    font-style: oblique;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* .S3Line {
+    position: absolute;
+    top: 103vh
+} */
+
+/* #S3line1 {
+    width: 20vw;
+    height: 40vh;
+    position: absolute;
+    left: 8vw;
+    top: 3vh;
+}
+
+#S3line2 {
+    width: 9vw;
+    height: 26vh;
+    position: absolute;
+    right: 61vw;
+    top: 19vh;
+}
+
+#S3line3 {
+    width: 7vw;
+    height: 20vh;
+    position: absolute;
+    right: 45.5vw;
+    top: 25vh;
+}
+
+#S3line4 {
+    width: 10vw;
+    height: 25vh;
+    position: absolute;
+    left: 60vw;
+    top: 20vh;
+}
+
+#S3line5 {
+    width: 20vw;
+    height: 40vh;
+    position: absolute;
+    left: 72vw;
+    top: 3vh;
+} */
+
+
+/*sense*/
+
+.background-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.mid_pic {
+    position: absolute;
+    padding-top: 15rem;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+}
+
+#finger {
+    /* position: absolute; */
+    width: 15%;
+    /* margin: 0 auto; */
+    /* left: 200%; */
+    /* top: 60%; */
+}
+
+#page104 {
+    width: 50vw;
+    /* height: 350vh; */
+    position: center;
+    overflow: visible;
+}
+
+.welcome {
+    /* display: none; */
+    /* position: relative;
+    margin: auto;
+    left: 100%;
+    top: 150%;
+    width: 300px; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50vh;
+    left: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link {
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+    text-align: center;
+    /* height: 50px; */
+    /* margin: 0 auto; */
+    /* float:left; */
+}
+
+.first-word {
+    margin: 0 1rem;
+    display: inline;
+    font-size: 25pt;
+    font-family: Monotype Corsiva, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* color:; */
+}
+
+.first-word:hover {
+    cursor: pointer;
+    border-color: black;
+    border-bottom-style: solid;
+    border-width: 1.5px;
+    padding-bottom: 0.3rem;
+    /* margin: 0 1rem;
+    display: inline;
+    font-size: 25pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* color:; */
+}
+
+.icon {
+    position: relative;
+    top: 0px;
+    margin-right: 25px;
+    margin-left: 25px;
+    float: left;
+    width: 50%;
+}
+
+#background1 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+#background1 img {
+    height: 100%;
+}
+
+.about-1 {}
+
+.contact-1 {}
+
+.member-1 {}
+
+.dash-1 {}
+
+.dash-2 {}
+
+
+/*shanglong*/
+
+#section-4 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.S4background {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    background-image: url("../media/S4background.png");
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+}
+#p4 {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    height: 60vh;
+    left: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.S4ThankYou{
+    position: absolute;
+    bottom: 100px;
+    left:0;right:0; 
+    margin:auto;
+    width: 800px;
+}
+.group_photo {
+    position: relative;
+    height: 40vh;
+    width: 100%;
+}
+
+.S4backTeam {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left:0;right:0; 
+    margin:auto;
+    width: 800px;
+    opacity: 0.35;
+}
+
+#S4Thankyou {
+    z-index: 20;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    left:0;right:0; 
+    margin: 0 250px 0 250px;
+    position: center;
+}
