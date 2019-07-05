@@ -27,8 +27,8 @@ result: https://i.imgur.com/6MtN7Cc.png
 
 2. `semantic-ui` 等等的框架，通常會一併推出壓縮過後的版本，直接將 `./index.html` 中的 `Step 3` 的 `CDN`，改成以下版本
 ```
-<!-- Step 3 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <!-- Step 3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 ```
 
 3. 再跑一次 `GTmetrix` (https://gtmetrix.com/ )看看結果。
@@ -41,9 +41,9 @@ result: https://i.imgur.com/6MtN7Cc.png
 
 2. `semantic-ui` 等等的框架，通常會一併推出壓縮過後的版本，直接將 `./index.html` 中的 `Step 4` 的 `CDN`，改成以下版本
 ```
-<!-- Step 4 -->
-<!-- Step 6 -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" type="text/css">
+    <!-- Step 4 -->
+    <!-- Step 6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" type="text/css">
 ```
 
 3. 再跑一次 `GTmetrix` (https://gtmetrix.com/ )看看結果。
@@ -53,8 +53,8 @@ result: https://i.imgur.com/6MtN7Cc.png
 favicon用在瀏覽器頁籤上的標示以及書籤的圖案，當網頁載入時會自動去根目錄抓，如果沒有抓到，就會回傳404。為了優化的需求，我們可以設定這個icon或者禁止產生這個request。將 `./step5` 中的icon放到 `./assets/media` 中，並且在 `./index.html` 中的 `Step 5` 中加入以下的程式碼。
 
 ```
-<!-- Step 5 -->
-<link rel = 'icon' type = 'image/ico' href = './assets/media/favicon.ico'>
+    <!-- Step 5 -->
+    <link rel='icon' type='image/ico' href='./assets/media/favicon.ico'>
 ```
 
 ## Step 6: Avoid CSS @import
