@@ -76,8 +76,8 @@ $ yarn add semantic-ui-offline
 
 2. 將 `./index.html` 中的 `Step 6` 改成以下程式碼。
 ```
-<!-- Step 6 -->
-<link href="./node_modules/semantic-ui-offline/semantic.min.css" rel="stylesheet" type="text/css">
+    <!-- Step 6 -->
+    <link href="./node_modules/semantic-ui-offline/semantic.min.css" rel="stylesheet" type="text/css">
 ```
 
 3. 再跑一次 `GTmetrix` (https://gtmetrix.com/ )看看結果。
