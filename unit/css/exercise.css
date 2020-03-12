@@ -5,7 +5,7 @@ body {
 
 #navbar, #banner, #main, #bottom {
   background-color: white;
-  max-width: 30em; /* Step 2: input an appropriate content width */
+  max-width: [content width]; /* Step 2: input an appropriate content width */
   width: 100%; /* Step 2: watch out the unit, `%`, and google `css unit` for more */
   /* Step 2: why both `max-width` and `width` are used? */
   /**/
@@ -19,7 +19,7 @@ body {
 
 i.avatar, i.icon {
   background-position: center;
-  display: inline-block; /* Step 3: input the correct display to make `height` work */
+  display: [correct display]; /* Step 3: input the correct display to make `height` work */
   /* Step 3: Google `css dispaly` for more */
   height: 30px;
 }
@@ -37,7 +37,7 @@ i.icon {
 }
 
 .right {
-  position: absolute; /* Step 4: change `static` to the correct value to make the `right` property work */
+  position: static; /* Step 4: change `static` to the correct value to make the `right` property work */
   /* Step 4: Google `css position` for more */
   right: 0.5em;
 }
@@ -48,8 +48,45 @@ i.icon {
 .icon.submit  { background-image: url(./res/external-link.svg) }
 
 #banner {
-  background: url(./res/main.jpg) center / cover; /* Step 5: try different `[position]` and `[size]` and see how banner changes */
+  background: url(./res/main.jpg) [position] / [size]; /* Step 5: try different `[position]` and `[size]` and see how banner changes */
   /* Step 5: Google `css background-position` and `css background-size` for more */
   top: 40px;
   height: 250px;
+}
+
+#main {
+  box-sizing: border-box;
+  padding: 1px 4% 5vh;
+  position: relative;
+  top: 290px;
+}
+
+.info {
+  /* Step 6: Learn flexbox for arranging items */
+  margin: 0 0 5% 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+p {
+  line-height: 30px;
+}
+
+#bottom {
+  bottom: 0;
+  display: inline-flex;
+  position: fixed;
+}
+
+#reference {
+  background: url('./res/detail-2.gif') center / cover;
+  bottom: 0;
+  padding: .5em;
+  position: fixed;
+  right: 0;
+  text-align: right;
+  top: 0;
+  width: 40vw;
 }

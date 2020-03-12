@@ -86,18 +86,28 @@ Insert the following code into `./exercise.css` and edit `[position]` and `[size
 }
 ```
 
-## Step ?
+## Step 6: The banner should be fixed when the page is scrolled
 
-The banner should be fixed when the page is scrolled.
+Change position to "fixed" in #banner
 
-### step 4: Arrange the info of the paragraph
+```
+#banner {
+  position: fixed;
+}
+```
+
+## step 7: Arrange the info of the paragraph
 * to learn flexbox for arranging items
 
 the writer/date info should be arranged, to the
 end of left and right sides
 
-### step 5: Adjust the position of the main content on z-coordinate
+use flex and justify-content in .info
+
+## step 8: Adjust the position of the main content on z-coordinate
 * to learn the attribute z-index to adjust items' position on z-coordinate
 
 the paragraph will block the bannner, while the
 page scrolled down
+
+add z-index in .main
