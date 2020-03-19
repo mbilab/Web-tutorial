@@ -13,7 +13,8 @@
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.4.0"
+    "jquery": "^3.4.0",
+    "minimist": "^1.2.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
