@@ -4,6 +4,7 @@
   "description": "",
   "main": "config.js",
   "dependencies": {
+    "lodash": "^4.17.12",
     "mongodb": "^2.2.33",
     "mongoose": "^4.13.2",
     "mysql": "^2.16.0"
