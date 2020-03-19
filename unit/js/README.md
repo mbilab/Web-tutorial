@@ -4,9 +4,9 @@ Follow the guide below to finish a web shown in `./detail-2.gif`.
 
 本練習實作淡入淡出(fade in/out)的動態效果，透明度在 css 中可以用 `opacity` 來設定，本練習提供了四種作法來實作動態效果，請參著下方的 Steps 3-6。
 
-## Step 0: observe the html and css
+## Step 0: prepare the html and css
 
-Insert the following code into `<head>` of `./exercise.html` and follow instructions beginning with `Step 0`(Capital). In `vi`, try pressing `/` key to search text.
+Insert the following code into `<head>` of `./exercise.html` and follow instructions beginning with `Step 0` (case-sensitive). In `vi`, try pressing `/` key to search text.
 
 ```
 <!-- Step 0:
@@ -80,15 +80,15 @@ Next, insert the following code into `./exercise.js` and follow instructions beg
 let display = true
 $('.card:nth-child(1)').click(function(){
   // Step 3: replace [alternative style] to an appropriate value
-  const transition = display
+  const style = display
   ? { opacity: 0.1 }
   : { [alternative style] }
-  $(this).animate(transition, 400)
+  $(this).animate(style, 400)
   display = !display
 })
 ```
 
-## Step 4: change class for animation with css transition
+## Step 4: change css properties with class
 
 Insert the following code into `./exercise.js` and follow instructions beginning with `Step 4`.
 
