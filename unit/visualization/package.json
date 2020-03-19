@@ -17,6 +17,7 @@
     "macaddress": "0.2.9",
     "minimist": "^1.2.2",
     "parcel-bundler": "^1.11.0",
+    "set-value": "^2.0.1",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },

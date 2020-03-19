@@ -15,7 +15,8 @@
   "dependencies": {
     "acorn": "^5.7.4",
     "jquery": "^3.4.0",
-    "minimist": "^1.2.2"
+    "minimist": "^1.2.2",
+    "set-value": "^2.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
