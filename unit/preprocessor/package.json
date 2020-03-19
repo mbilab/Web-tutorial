@@ -13,6 +13,7 @@
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "acorn": "^5.7.4",
     "jquery": "^3.4.0",
     "minimist": "^1.2.2"
   },

@@ -13,6 +13,7 @@
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "acorn": "^5.7.4",
     "macaddress": "0.2.9",
     "minimist": "^1.2.2",
     "parcel-bundler": "^1.11.0",
