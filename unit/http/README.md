@@ -358,9 +358,11 @@ Ajax 代表「非同步 javascript 以及 xml」。所以什麼是非同步?請�
  * if you don't know which code snippet (last or this) update `div#ajax-output` first, that is asyncronous
  */
 setTimeout(() => {
-  $('#ajax-output').html('loading')
+  $('#ajax-output').html('loaded')
 }, [timeout])
+$('#ajax-output').html('loading')
 ```
+誰會先執行？誰會先出現？為什麼？
 
 ## Step 12: more
 
