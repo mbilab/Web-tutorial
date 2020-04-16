@@ -37,20 +37,18 @@ Open `[host]:[port]` in a browser to see the result.
 在 `app/app.js` 加入以下程式碼:
 
 ```
-    /* Step 1
-     * 在 `app.js` 中們新增一個 vue 實例並跟 `#app` 綁定
-在 `app/index.pug` 加入以下程式碼:
+/* Step 1
+ * 在 `app.js` 中們新增一個 vue 實例並跟 `#app` 綁定
+ * 根據 vue 作者的說法程式碼中的 h 代表 hyperscript
+ * 我們會在同一個檔案，App.vue，中撰寫 pug/sass/js，並在此引入這個檔案
+ */
+import 'semantic-ui-offline/semantic.min.css'
+import App from './App.vue'
 
-     * 根據 vue 作者的說法程式碼中的 h 代表 hyperscript
-     * 我們會在同一個檔案，App.vue，中撰寫 pug/sass/js，並在此引入這個檔案
-     */
-    import 'semantic-ui-offline/semantic.min.css'
-    import App from './App.vue'
-
-    new Vue({
-        el: '#app',
-        render: h => h(App)
-    })
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})
 ```
 
 ## Step 2: use semantic-ui 
@@ -109,7 +107,7 @@ Open `[host]:[port]` in a browser to see the result.
 
 ```
     // Step 4.2
-    tasks: []
+    tasks: [],
 ```
 
 在 `app/App.vue` methods 的部分加入以下程式碼: 
@@ -132,15 +130,15 @@ Open `[host]:[port]` in a browser to see the result.
 在 `app/App.vue` 加入以下程式碼：
 
 ```
-    // Step 5
-    // v-for 根據 task 中元素的數量選染出數個 .task。
-    .task(v-for="task in tasks")
-      .ui.checkbox(@click='toggleTask(task.name)')
-        input(type="checkbox" v-model='task.toggle')
-        label(v-if='!task.toggle') {{task.name}}
-        label(v-if='task.toggle')
-          del {{task.name}}
-      i.delete.icon(v-if='task.toggle' @click='rmTask(task.name)')
+  // Step 5
+  // v-for 根據 task 中元素的數量選染出數個 .task。
+  .task(v-for="task in tasks")
+    .ui.checkbox(@click='toggleTask(task.name)')
+      input(type="checkbox" v-model='task.toggle')
+      label(v-if='!task.toggle') {{task.name}}
+      label(v-if='task.toggle')
+        del {{task.name}}
+    i.delete.icon(v-if='task.toggle' @click='rmTask(task.name)')
 ```
 
 你已經完成一個用以 vue 作為框架的 todo list app。
