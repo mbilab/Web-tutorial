@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "parcel": "^1.12.4",
     "semantic-ui-offline": "^2.4.1-1",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
