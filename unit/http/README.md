@@ -11,18 +11,16 @@ $ yarn init -y
 $ yarn add express jquery
 ```
 
-If you don't have `yarn`, try `npm`.
-Notice that either way is okay.
+If you don't have `yarn`, try `npm`.  Notice that either way is okay.
 
-如果你的電腦沒有 `yarn`，試試 `npm`。
-注意兩個擇其一使用即可。
+如果你的電腦沒有 `yarn`，試試 `npm`。注意兩個擇其一使用即可。
 
 ```
 $ npm init -y
 $ npm i express jquery --save
 ```
 
-Or, simply use our `package.json`, which specifies dependent packages for you. 
+Or, simply use our `package.json`, which includes the dependent packages.
 
 或者，直接使用我們的 `package.json`，裡頭記錄了需要的套件。
 
@@ -30,7 +28,7 @@ Or, simply use our `package.json`, which specifies dependent packages for you.
 $ yarn
 ```
 
-The corresponding command of `npm`.
+The corresponding command for `npm`.
 
 對應的 `npm` 指令。
 
@@ -40,7 +38,7 @@ $ npm i
 
 ## Step 1: create a web server, which returns text
 
-[Express](https://expressjs.com/) is a lightweight web server for [Node.js](https://nodejs.org/). This step uses it to create a web server in ten lines. Insert the following code into `./ser.js` and follow instructions beginning with `Step 1`.
+[Express](https://expressjs.com/) is a lightweight web server built with [Node.js](https://nodejs.org/).  This step uses it to create a web server in ten lines.  Insert the following code into `./ser.js` and follow the instructions beginning with `Step 1`.
 
 [Express](https://expressjs.com/) 是一個使用 [Node.js](https://nodejs.org/) 開發的輕量級網頁伺服器，這個步驟用其在十行程式碼內打造一個網頁伺服器。將底下的程式碼插入 `./ser.js`，然後照著 `Step 1` 開頭的提示操作。
 
@@ -93,13 +91,13 @@ Open `[host]:[port]/step1` in a browser to see the result.
 
 ## Step 2: html code is okay
 
-Server can return html code. Try modify `./ser.js` to return `hello world` in a `<h1>`. Use browser developer console to see server response and page source. Remember to re-execute the modified server.
+Server can return html code.  Try modify `./ser.js` to return `hello world` in a `<h1>`.  Use browser developer console to the see server response and page source.  Remember to re-execute the modified server.
 
-伺服器可以回傳 html 語法。試著修改 `./ser.js` 使其回傳在 `<h1>` 標籤內的 `hello world`。使用瀏覽器的開發者工具，去看看伺服器的回應和網頁原始碼。記得重新執行你修改過後的伺服器程式。
+伺服器可以回傳 html 語法。試著修改 `./ser.js` 使其回傳包在 `<h1>` 標籤內的 `hello world`。使用瀏覽器的開發者工具，去看看伺服器的回應和網頁原始碼。記得重新執行你修改過後的伺服器程式。
 
 ## Step 3: use static files instead typing html code in js
 
-Insert the following code to `./ser.js` and follow instructions beginning with `Step 3`.
+Insert the following code to `./ser.js` and follow the instructions beginning with `Step 3`.
 
 將底下的程式碼插入 `./ser.js`，然後照著 `Step 3` 開頭的提示操作。
 
@@ -120,15 +118,15 @@ Insert the following code to `./ser.js` and follow instructions beginning with `
 app.use(express.static(`${__dirname}/[path]`))
 ```
 
-Re-execute server and open `[host]:[port]/exercise.html` in a browser to see the result. Do you know where `exercise.html` is?
+Re-execute server and open `[host]:[port]/exercise.html` in a browser to see the result.  Do you know where `exercise.html` is?
 
 重新執行啟伺服器，然後用瀏覽器打開 `[host]:[port]/exercise.html` 看結果。你知道 `exercise.html` 在哪嗎？
 
 ## Step 4: dynamic results, even with the same url
 
-That's the reason to develop server-side programs. Insert the following code to `./ser.js` and follow instructions beginning with `Step 4`.
+That's the reason to develop server-side programs.  Insert the following code to `./ser.js` and follow the instructions beginning with `Step 4`.
 
-這才是開發伺服器端程式的理由。將底下的程式碼插入 `./ser.js`，然後照著 `Step 4` 開頭的提示操作。
+產生動態結果才是開發伺服器端程式的理由。將底下的程式碼插入 `./ser.js`，然後照著 `Step 4` 開頭的提示操作。
 
 ```
 /* Step 4:
@@ -147,7 +145,7 @@ app.get('/step4', (req, res) => {
 
 ## Step 5: receive user input
 
-Usually, the dynamic results are related to user input. Insert the following code to `./ser.js` and follow instructions beginning with `Step 5`.
+Usually, the dynamic results are related to user input.  Insert the following code to `./ser.js` and follow the instructions beginning with `Step 5`.
 
 通常網頁的結果會跟使用者的輸入有關，將底下的程式碼插入 `./ser.js`，然後照著 `Step 5` 開頭的提示操作。
 
@@ -157,19 +155,19 @@ Usually, the dynamic results are related to user input. Insert the following cod
  * open `[host]:[port]/step5?fname=[fname]&lname=[lname]` in a browser to see the result
  * try edit [fname] and [lname]
  * notice the syntax of `?` and `&` in the url
- * 使用者輸入存放在回呼函式的第一個參數，也就是程式中的 `req` 裡
+ * 使用者輸入存放在回呼(callback)函式的第一個參數，也就是程式中的 `req` 裡
  * 用瀏覽器打開 `[host]:[port]/step5?fname=[fname]&lname=[lname]` 看結果
  * 試著修改 [fname] 與 [lanme]
  * 注意網址中 `?` 與 `&` 的用法
  */
 app.get('/step5', (req, res) => {
-  res.send(`<h1>Hello, ${req.query.fname} ${req.query.lname}</h1>`)
+  res.send(`Hello, ${req.query.fname} ${req.query.lname}`)
 })
 ```
 
 ## Step 6: input from form instead of url
 
-In practice, websites need to provide html forms, since no users will input via editing url. Insert the following code to `./dist/exercise.html` and follow instructions beginning with `Step 6`.
+In practice, websites need to provide html forms, since no users will input via editing url.  Insert the following code to `./dist/exercise.html` and follow the instructions beginning with `Step 6`.
 
 實際上，網頁需要提供表單，畢竟沒有使用者會透過網址來輸入資料。將底下的程式碼插入 `./dist/exercise.html`，然後照著 `Step 6` 開頭的提示操作。
 
@@ -199,9 +197,9 @@ In practice, websites need to provide html forms, since no users will input via 
 
 ## Step 7: how to upload file?
 
-For complex data and/or security issue, sometimes we need to store form data to somewhere not in the url. Insert the following code to `./ser.js` and follow instructions beginning with `Step 7`.
+For complex data and/or security issue, sometimes we don't want to store form data in the url.  Insert the following code to `./ser.js` and follow the instructions beginning with `Step 7`.
 
-為了複雜資料或是安全等因素，有時需要將資料存放在網址以外。將底下的程式碼插入 `./ser.js`，然後照著 `Step 7` 開頭的提示操作。
+為了複雜資料或是安全等因素，有時我們不想將資料存放在網址上。將底下的程式碼插入 `./ser.js`，然後照著 `Step 7` 開頭的提示操作。
 
 ```
 /* Step 7:
@@ -227,11 +225,11 @@ app.use(bodyParser.json())
 app.post('/step7', (req, res) => {
   // `bady-parser` stores parsed data in `req.body`
   // `bady-parser` 將解析好的資料存放在 `req.body`
-  res.send(`<h1>Hello, ${req.[property name].fname} ${req.[property name].lname}</h1>`)
+  res.send(`Hello, ${req.[property name].fname} ${req.[property name].lname}`)
 })
 ```
 
-Insert the following code to `./dist/exercise.html` and follow instructions beginning with `Step 7`.
+Insert the following code to `./dist/exercise.html` and follow the instructions beginning with `Step 7`.
 
 將底下的程式碼插入 `./dist/exercise.html`，然後照著 `Step 7` 開頭的提示操作。
 
@@ -257,9 +255,9 @@ Insert the following code to `./dist/exercise.html` and follow instructions begi
 
 ## Step 8: lightweight request
 
-In above steps, servers return a whole new page for each request, which is not a modern web design. Follow instructions beginning with `Step 8`.
+In above steps, servers return a whole new page for each request, which is not a modern web design.  Follow the instructions beginning with `Step 8`.
 
-在之前的步驟，伺服器每次收到request都回傳一整個新頁面，而這並不是網頁設計的主流用法。照著 `Step 8` 開頭的提示操作。
+在之前的步驟，伺服器每次收到瀏覽器的請求(request)都回傳一個完整的新頁面，而這並不是現代的網頁設計。照著 `Step 8` 開頭的提示操作。
 
 ```
 <!-- Step 8:
@@ -276,34 +274,35 @@ In above steps, servers return a whole new page for each request, which is not a
  * 點擊 ajax 提交按鈕並查看 request 並注意網址
 -->
 <form id="ajax-form">
-  first name: <input type="text" name="fName"><br>
-  last name: <input type="text" name="lName"><br>
+  first name: <input type="text" name="fname"><br>
+  last name: <input type="text" name="lname"><br>
   <button type="submit">submit via ajax</button>
 </form>
 ```
 
 ## Step 9: send data in ajax requests
 
-Do you notice that browser did not send form data in the ajax request? In ajax, developers need to pack the data explicitly via js code. Follow instructions beginning with `Step 9`.
+Do you notice that browser did not send form data in the ajax request?  In ajax, developers need to pack the data explicitly via js code.  Follow the instructions beginning with `Step 9`.
 
-你有注意到瀏覽器沒有透過 ajax request 傳送資料嗎? 使用 ajax 時，開發者需要使用 javascript 妥善地包裝資料。請跟著底下 `Step 9` 的指令作
+你有注意到瀏覽器沒有透過 ajax request 傳送資料嗎? 使用 ajax 時，瀏覽器不會幫忙，開發者需要自己使用 js 打包資料。請照著 `Step 9` 開頭的提示操作。
+
 ```
 /* Step 9:
  * edit the `$.get()` in the last code snippet with this code snippet
  * edit [element selector]s to appropriate values
  * the second argument of `$.get()` specifies the data sent to server
- * notice the link from html `fName` to server `fname`
- *  `fName` in `./dist/exercise.html` vs. `fname` in `./ser.js`
- *  packing data explicitly is troublesome, but it brings flexibility
+ * notice the link from html `fname` to server `fname`
+ * `fname` in `./dist/exercise.html` vs. `fname` in `./ser.js`
+ * packing data explicitly is troublesome, but it brings flexibility
  * open `[host]:[port]/exercise.html` in a browser and open the network tab of the developer console
  * click the ajax submit button and see the request
  * 修改上一個程式碼片段的 `$.get()` ，加上下面的程式碼的內容
  * 修改 `element selector` 成適合的值
- *  `$.get()` 的第二個參數，用來將資料送給伺服器
- * 特別注意 html 中的 `fName` 和伺服器端的 `fname` 兩者之間的連結
- *  `./dist/exercise.html` 中的 `fName` vs. `./ser.js` 中的 `fname`
- *  明確的打包資料確實很麻煩，但是他能夠帶來更大的延展性
- * 在瀏覽器中打開 `[host]:[port]/exercise.html` ，開啟開發者工具（F12）並切到 network 的分頁，觀察開發者日誌
+ * `$.get()` 的第二個參數，用來將資料送給伺服器
+ * 特別注意 html 中的 `fname` 和伺服器端的 `fname` 兩者之間的連結
+ * `./dist/exercise.html` 中的 `fname` vs. `./ser.js` 中的 `fname`
+ * 自己打包資料確實很麻煩，但是也帶來更大的彈性
+ * 在瀏覽器中打開 `[host]:[port]/exercise.html`，開啟瀏覽器的開發者工具並切到 network 的分頁
  * 點擊 ajax 的提交按鈕，並且觀察 request
  */
 $.get('./step5', {
@@ -314,9 +313,9 @@ $.get('./step5', {
 
 ## Step 10: show ajax results
 
-In the last two steps, the ajax results can only be observed in developer console. In ajax, developers need to show the results explicitly via js code. Follow instructions beginning with `Step 10`.
+In the last two steps, the ajax results can only be observed in developer console.  In ajax, developers need to show the results explicitly via js code.  Follow the instructions beginning with `Step 10`.
 
-在最後的兩個步驟中， ajax 的結果只能在開發者工具中觀察到。使用 ajax 時，開發者需要使用 javascript 妥善地呈現結果。請跟著底下 `Step 10` 的指令作
+在前兩個步驟中，ajax 的結果只能在開發者工具中觀察到。使用 ajax 時，開發者需要自己使用 js 呈現結果。請照著 `Step 10` 開頭的提示操作。
 
 ```
 <!-- Step 10:
@@ -327,7 +326,7 @@ In the last two steps, the ajax results can only be observed in developer consol
  * 這個 div 是用來顯示結果的
  * 給他一個 id , `ajax-output`, 讓 jquery 可以選到他
 -->
-<h1 id="ajax-output"></h1>
+<div id="ajax-output"></div>
 ```
 
 ```
@@ -337,10 +336,15 @@ In the last two steps, the ajax results can only be observed in developer consol
  * the first argument of the callback function is the data retruned by server
  * edit [show data in div#ajax-output] to an appropriate
  * open `[host]:[port]/exercise.html` in a browser, click the ajax submit button and see the result
+ * 用以下程式碼片段取代 Step 9 中的 `$.get()`
+ * `$.get()` 的第三個參數是一個回呼(callback)函式，當伺服器回傳時就會被呼叫
+ * 這個回呼函式的第一個參數，就是伺器器回傳的結果
+ * 將 [show data in div#ajax-output] 修改成合適的值
+ * 用瀏覽器打開 `[host]:[port]/exercise.html`，點擊 ajax 提交按鈕並查看結果
  */
 $.get('./step5', {
-  fname: $('#ajax-form input[name=fName]').val(),
-  lname: $('#ajax-form input[name=lName]').val(),
+  fname: $('#ajax-form input[name=fname]').val(),
+  lname: $('#ajax-form input[name=lname]').val(),
 }, (data) => {
   [show data in div#ajax-output]
 })
@@ -348,28 +352,36 @@ $.get('./step5', {
 
 ## Step 11: experience "asyncronous"
 
-Ajax means "asynchronous js and xml". So, what's asyncronous? Follow instructions beginning with `Step 11`.
+Ajax means "asynchronous js and xml".  So, what's asyncronous?  Follow the instructions beginning with `Step 11`.
 
-Ajax 代表「非同步 javascript 以及 xml」。所以什麼是非同步?請跟著底下 `Step 11` 的指令作
+Ajax 代表「非同步的 js 與 xml」。所以什麼是非同步呢？請照著 `Step 11` 開頭的提示操作。
  
 ```
 /* Step 11:
  * edit [timeout] to an appropriate value
- * if you don't know which code snippet (last or this) update `div#ajax-output` first, that is asyncronous
+ * if you don't know which code snippet update `div#ajax-output` first, that is asyncronous
+ * 將 [timeout] 修改成合適的值
+ * 如果你不知道哪段程式會先更新 `div#ajax-output`，這就是非同步
  */
 setTimeout(() => {
   $('#ajax-output').html('loaded')
 }, [timeout])
 $('#ajax-output').html('loading')
 ```
+
+Which code snippet execute first and why?
+
 誰會先執行？誰會先出現？為什麼？
 
 ## Step 12: more
 
-There are more examples included in this unit. No step-by-step instructions for them. But maybe you can learn something from the source code.
+There are more examples included in this unit.  No step-by-step instructions for them.  But maybe you can learn something from the source code.
 
-以下有更多這個單元的範例。但沒有手把手的教學，但希望你們能夠從原始碼中學到一些東西。
+以下有更多這個單元的範例，但沒有手把手的教學，但也許你能從原始碼中學到一些東西。
 
-  * `./php/` provides a php version of this exercise. php is a classic server side language. Unlike nodejs will create a web server, you need a web server, such as Apache, to run php.
-  * `./chat/` provide a chat room example, where you can learn how to save server data "permanently". That is, the data is stored in file, which does not disappear even if server restarts.
+  * `./php/` provides a php version of this exercise.  Php is a classic server side language.  Unlike nodejs, which creates a web server, you need a web server, such as Apache, to run your php code.
+  * `./chat/` provides a chat room example, where you can learn how to save server data "permanently".  That is, the data is stored in file, which does not disappear even if the server restarts.
   * `./parcel/` uses `parcel` to bulid static files.
+  * `./php/` 提供本教學的 php 版本。Php 是一個經典的伺服器端語言。與 nodejs 自己建立一個網頁伺器不同，在使用 php 時，你會需要其他網頁伺服器(例如 apache)來執行你的 php 程式。
+  * `./chat/` 提供一個聊天室範例，其中你們可將資料 "永久" 存在伺服器端。這些資料會以檔案的形式存在伺服器端，即使網頁伺服器重開也不會消失。
+  * `./parcel/` 使用 `parcel` 來編譯靜態檔案。
