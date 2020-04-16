@@ -5,19 +5,19 @@
 You can create a project from scratch.  That is, install dependent packages via their names.
 
 ```
-$ npm init -y
-$ npm i node-sass --save-dev # for step 2
-$ npm i jquery --save
-$ npm i parcel-bundler --save-dev # for step 3
-$ npm i pug-cli --save-dev # for step 1
+npm init -y
+npm i node-sass --save-dev # for step 2
+npm i jquery --save
+npm i parcel-bundler --save-dev # for step 3
+npm i pug-cli --save-dev # for step 1
 # edit package.json if you want
 ```
 
-Or, simply use our `package.json`, which specifies dependent packages for you. Notice that only one of the following two commands is required.
+Or, simply use our `package.json`, which specifies dependent packages for you.  Notice that only one of the following two commands is required.
 
 ```
-$ npm i
-$ yarn # if you have it
+npm i
+yarn # if you have it
 ```
 
 ## Step 1: use pug, a better html
@@ -25,19 +25,19 @@ $ yarn # if you have it
 * What's [Pug](https://pugjs.org/language/tags.html)?
   * Need no start tag/end tag.
   * Use indent to represent scope level.
-  * Use css selector to create html tag. For example, `#container` in pug equals `<div id="container"></div>` in html.
+  * Use css selector to create html tag.  For example, `#container` in pug equals `<div id="container"></div>` in html.
 
 * Compile a pug file.
 
   ```
-  $ ./node_modules/.bin/pug ./app/index.pug -o ./dist/
+  ./node_modules/.bin/pug ./app/index.pug -o ./dist/
   ```
 
   Compare `./app/index.pug` and `./dist/index.html`.
 
-* Insert a `<h2>Hello world!</h2>` equivalent into `./app/index.pug` and follow instructions beginning with `Step 1`. In `vi`, try pressing `/` key to search text. Remember to re-compile once you edit `./app/index.pug`.
+* Insert a `<h2>Hello world!</h2>` equivalent into `./app/index.pug` and follow the instructions beginning with `Step 1`.  In `vi`, try pressing `/` key to search text.  Remember to re-compile once you edit `./app/index.pug`.
 
-* Feel tired to compile manually? Use `--watch`.
+* Feel tired to compile manually?  Use `--watch`.
 
   ```
   $ ./node_modules/.bin/pug ./app/index.pug -o ./dist/ --watch
@@ -47,7 +47,7 @@ $ yarn # if you have it
 
 ## Step 2: use sass, a better css
 
-* What's [SASS](https://sass-lang.com/guide)? As pug, sass use indent to represent scope level and has many useful features. Try variables, nesting, and mixins.
+* What's [SASS](https://sass-lang.com/guide)?  As pug, sass use indent to represent scope level and has many useful features.  Try variables, nesting, and mixins.
 
 * Compile `./app/app.sass` to `./dist/app.css`.
 
@@ -71,7 +71,7 @@ $ yarn # if you have it
 
 ## Step 3: is there a better js?
 
-There was, see [Babel](https://babeljs.io/). However, modern js engines catch up the development of js. Try to open `./babel/es6.js` in old [Node.js](https://nodejs.org/en/) (version < 7) or browsers. Now Babel is usually used for js variants such as [TypeScript](https://www.typescriptlang.org/). Execute the following command and than compare `./babel/typescript.ts` and `./dist/typescript.js`.
+There was, see [Babel](https://babeljs.io/).  However, modern js engines catch up the development of js.  Try to open `./babel/es6.js` in old [Node.js](https://nodejs.org/en/) (version < 7) or browsers.  Now Babel is usually used for js variants such as [TypeScript](https://www.typescriptlang.org/).  Execute the following command and than compare `./babel/typescript.ts` and `./dist/typescript.js`.
 
 ```
 $ ./node_modules/.bin/babel ./babel/typescript.ts --out-dir ./dist/ --extensions ".ts"
@@ -95,4 +95,4 @@ $ ./node_modules/.bin/babel ./babel/typescript.ts --out-dir ./dist/ --extensions
   $ ./node_modules/.bin/parcel ./parcel/index.pug --port [port]
   ```
 
-  Open `http://[host]:[port]` in your browser. Remember to replace [host] and [port] to appropriate values.
+  Open `http://[host]:[port]` in your browser.  Remember to replace [host] and [port] to appropriate values.

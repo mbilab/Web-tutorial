@@ -1,12 +1,13 @@
-import "babel-polyfill"
 // let/const
+
 // Default Parametersi and Arrow Function
 const func1 = (v='default') => {console.log(v)}
 func1()
+
 // Spread Operator and Template Literals
-const stuendts = ['Jine', 'Tom', 'Anna']
+const students = ['Jine', 'Tom', 'Anna']
 const teachers = ['Tony', 'Aaron']
-const people = [...teachers, ...stuendts]
+const people = [...teachers, ...students]
 
 console.log(`There are ${people} in the classroom`)
 
@@ -42,4 +43,3 @@ const asynchronization = async(x) => {
   const asyn = await asynchronization()
   console.log(asyn)
 })()
-
