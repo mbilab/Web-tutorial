@@ -23,7 +23,7 @@ $ cd myApp
 $ ../node_modules/ionic/bin/ionic serve
 ```
 
-將會開啟開發伺服器，依循螢幕上的只是開啟你的 App
+將會開啟開發伺服器，依循螢幕上的指示開啟你的 App
 
 ## Step 4: Customize and future
 
