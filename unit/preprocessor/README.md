@@ -32,6 +32,10 @@ yarn # if you have it
   ```
   ./node_modules/.bin/pug ./app/index.pug -o ./dist/
   ```
+  or use [npx](https://www.npmjs.com/package/npx):
+  ```
+  npx pug ./app/index.pug -o ./dist/
+  ```
 
   Compare `./app/index.pug` and `./dist/index.html`.
 
