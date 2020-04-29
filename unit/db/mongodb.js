@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 const url = `mongodb://${config.mongodb.user}:${config.mongodb.password}@${config.mongodb.host}/${config.mongodb.database}`
 
-const conn = mongoose.connect(url, { useMongoClient: true }, (err, res) => {
+const conn = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
   if (err) console.log('fail to connect:', err)
 });
 mongoose.Promise = global.Promise
