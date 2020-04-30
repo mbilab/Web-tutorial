@@ -17,12 +17,12 @@ Try to read the [official document](https://www.npmjs.com/package/mysql), maybe 
 
 ## Step 1: config and connect
 
-Copy `config.js.sample` to `config.js` and edit it.  When using git, this is a common design.
+Copy `config.default.js` to `config.js` and edit it.  When using git, this is a common design.
 
-將 `config.js.sample` 複製到 `config.js` 並修改其內容。在使用 git 時，這是一個常見的設計。
+將 `config.default.js` 複製到 `config.js` 並修改其內容。在使用 git 時，這是一個常見的設計。
 
 ```
-cp config.js.sample config.js
+cp config.default.js config.js
 vi config.js
 ```
 
@@ -65,9 +65,6 @@ Insert the following code to `./mysql.js` and follow the instructions beginning 
 
 將底下的程式碼插入 `./mysql.js`，然後照著 `Step 3` 開頭的提示操作。
 
-加入學生資料 課程資料及成績，並保持 `[your id]` 一致
-成功之後，可以將這一段註解掉( /* 內容 */ )，避免重複插入資料！
-
 ```
 /* Step 3:
  * edit [your id], [your name], [your course] and [your score] to appropriate values
@@ -101,7 +98,7 @@ Insert the following code to `./mysql.js` and follow the instructions beginning 
  * edit [some query] and [your name] to appropriate values
  * 將 [some query] 以及 [your name] 修改成合適的值
  */
-connection.query('[some query] id FROM student WHERE name LIKE [your name]', function (error, results, fields) {
+connection.query('[some query] id FROM student WHERE name LIKE [your name]', function (error, results, fields) {
   if (error) throw error
   console.log('My id is: ', results)
 })
@@ -136,47 +133,55 @@ Query your score via your name.
 
 使用你的名字查詢你的成績。
 
-## mongo-express
+## mongodb
 
-從github下載mongo-express
+This tutorial includes a demo code of using MongoDB without a step-by-step README.  Try to trace `mongodb.js` by youself.  Following are steps to setup a GUI environment for MongoDB.
+
+這份教材有提供使用 MongoDB 的範例程式，但是沒有一步一步的教學。可以試著靠自己了解 `mondb.js` 的程式。下面是為 MongoDB 設置 GUI 環境的教學。
+
 
 ```
-$ git clone https://github.com/mongo-express/mongo-express.git
-$ cd mongo-express
-$ npm install
-$ cp config.default.js config.js
+// clong 'mongo-express'
+git clone https://github.com/mongo-express/mongo-express.git
+cd mongo-express
+npm install
+yarn # if you have it
+cp config.default.js config.js
 ```
 
-在config.js裡找到以下地方並修改
+Find and edit the following code snippet in `config.js`.
+
+在 `config.js` 裡找到以下地方並修改。
 
 ```
 mongo = {
   connectionString: process.env.ME_CONFIG_MONGODB_SERVER ? '' : process.env.ME_CONFIG_MONGODB_URL,
-  db: '你們那組 database name',
-  username: '你們那組 mongodb user name',
-  password: '你們那組 mongodb password',
+  db: [database name],
+  username: [user name],
+  password: [password],
 };
 
-......
+...
 
   site: {
     baseUrl: process.env.ME_CONFIG_SITE_BASEURL || '/',
-    cookieKeyName: 'mongo-express',    cookieSecret:     process.env.ME_CONFIG_SITE_COOKIESECRET  || 'cookiesecret',
-    host:             process.env.VCAP_APP_HOST                || 'luffy.ee.ncku.edu.tw',
-    port:             process.env.VCAP_APP_PORT                 || '你們MongoDB UI要用的port',
-    requestSizeLimit: process.env.ME_CONFIG_REQUEST_SIZE        || '50mb',
-    sessionSecret:    process.env.ME_CONFIG_SITE_SESSIONSECRET  || 'sessionsecret',
-    sslCert:          process.env.ME_CONFIG_SITE_SSL_CRT_PATH   || '',
-    sslEnabled:       process.env.ME_CONFIG_SITE_SSL_ENABLED    || false,
-    sslKey:           process.env.ME_CONFIG_SITE_SSL_KEY_PATH   || '',
-  }
+    cookieKeyName: 'mongo-express',
+    cookieSecret: process.env.ME_CONFIG_SITE_COOKIESECRET || 'cookiesecret',
+    host: process.env.VCAP_APP_HOST || 'luffy.ee.ncku.edu.tw',
+    port: process.env.VCAP_APP_PORT || [port],
+
+...
 
   basicAuth: {
-    username: process.env.ME_CONFIG_BASICAUTH_USERNAME || '你想要登入MongoDB UI的帳號',
-    password: process.env.ME_CONFIG_BASICAUTH_PASSWORD || '你想要登入MongoDB UI的密碼',
+    username: getFileEnv(basicAuthUsername) || [user name you want for the GUI],
+    password: getFileEnv(basicAuthPassword) || [password your want for the GUI],
   },
 ```
 
-執行
+Execute:
 
-`$ node app.js`
+執行：
+
+```
+node app.js
+```
