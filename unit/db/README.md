@@ -75,3 +75,47 @@ hint: join
 
 ## Quiz:
 使用你的名字找出你的成績
+
+## MongoDB UI
+從github下載mongo-express
+
+```
+$ git clone https://github.com/mongo-express/mongo-express.git
+$ cd mongo-express
+$ npm install
+$ cp config.default.js config.js
+```
+
+在config.js裡找到以下地方並修改
+
+```
+mongo = {
+  connectionString: process.env.ME_CONFIG_MONGODB_SERVER ? '' : process.env.ME_CONFIG_MONGODB_URL,
+  db: '你們那組 database name',
+  username: '你們那組 mongodb user name',
+  password: '你們那組 mongodb password',
+};
+
+......
+
+  site: {
+    baseUrl: process.env.ME_CONFIG_SITE_BASEURL || '/',
+    cookieKeyName: 'mongo-express',    cookieSecret:     process.env.ME_CONFIG_SITE_COOKIESECRET  || 'cookiesecret',
+    host:             process.env.VCAP_APP_HOST                || 'luffy.ee.ncku.edu.tw',
+    port:             process.env.VCAP_APP_PORT                 || '你們MongoDB UI要用的port',
+    requestSizeLimit: process.env.ME_CONFIG_REQUEST_SIZE        || '50mb',
+    sessionSecret:    process.env.ME_CONFIG_SITE_SESSIONSECRET  || 'sessionsecret',
+    sslCert:          process.env.ME_CONFIG_SITE_SSL_CRT_PATH   || '',
+    sslEnabled:       process.env.ME_CONFIG_SITE_SSL_ENABLED    || false,
+    sslKey:           process.env.ME_CONFIG_SITE_SSL_KEY_PATH   || '',
+  }
+
+  basicAuth: {
+    username: process.env.ME_CONFIG_BASICAUTH_USERNAME || '你想要登入MongoDB UI的帳號',
+    password: process.env.ME_CONFIG_BASICAUTH_PASSWORD || '你想要登入MongoDB UI的密碼',
+  },
+```
+
+執行
+
+`$ node app.js`
