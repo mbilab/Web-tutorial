@@ -1,6 +1,6 @@
 # preprocessor exercise
 
-## Step 0: set up
+## Step 0: setup
 
 You can create a project from scratch.  That is, install dependent packages via their names.
 

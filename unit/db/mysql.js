@@ -12,21 +12,12 @@ connection.connect(err => {
   }
 })
 
-// Step 2
-// create table if necessary
+// Step 2 code goes here
 
+// Step 3 code goes here
 
-// show table
+// Step 4 code goes here
 
-
-// Step 3
-// insert data
-
-
-// search data
-
-
-// Step 4
-// combine tables
+// Step 5 code goes here
 
 connection.end()
