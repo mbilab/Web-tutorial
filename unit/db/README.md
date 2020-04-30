@@ -85,7 +85,7 @@ connection.query('INSERT INTO score (id, score) VALUES ([your id], [your score])
 
 Use phpMyAdmin to see the database.
 
-使用 phpMyAdmin 觀看資料庫內容.
+使用 phpMyAdmin 觀看資料庫內容。
 
 ## Step 4: query data
 
