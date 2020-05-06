@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@line/bot-sdk": "^6.8.4",
+    "express": "^4.17.1",
+    "forever": "^2.0.0"
+  }
+}
