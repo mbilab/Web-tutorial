@@ -1,4 +1,1 @@
-// Step 1
-
-
-// vi:et
+// Step 1 code goes here

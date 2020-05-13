@@ -1,29 +1,28 @@
-Visualization
-===
-透過資料視覺化，我們可以有效地將圖表化成易於吸收的內容。
-以下是透過 jQuery, D3.js, Vue 三種框架呈現資料視覺化的示範。
+# visualization
+
+透過資料視覺化，我們可以有效地將圖表化成易於吸收的內容。以下是透過 `jQuery`, `D3.js` 以及 `Vue` 三種框架呈現資料視覺化的示範。
 
 ## jQuery
 
 ### Step 0: 基本 jQuery 與 svg
+
 到[以前的教學]( https://github.com/mbilab/Web-tutorial/tree/master/unit/js )學習基本jQuery如何運作，包含:
-* 如何在 html 引用 javaScript
-* Handle Events
-* 用 jQuery 修改 css/html
-* 上網[查詢]( https://www.w3schools.com/html/html5_svg.asp )，了解 svg
+  - 如何在 html 引用 javaScript
+  - Handle Events
+  - 用 jQuery 修改 css/html
+  - 上網[查詢]( https://www.w3schools.com/html/html5_svg.asp )，了解 svg
 
-### Step 1: access 到要視覺化的資料
+### Step 1: 準備要視覺化的資料
 
-確定 Event 觸發能夠正確 access 到想要顯示的 data，在`./app/jquery.js`插入以下程式碼，並開啟F12觀察資料，是否正確印出。
+確定點擊按鈕的事件觸發後，能夠正確存取到想要顯示的資料。將底下的程式碼插教 `./app/jquery.js`，然後照著 `Step 1` 開頭的提示操作。
 
-在`./app/jquery.js`中插入以下程式碼，並觀察結果。
 ```
 /* Step 1:
- * 將內容包在 `$(()=>{  })` 裡面，確保所有的東西都準備好，才會執行這段程式碼
- * 在 `jquery.html` 裡面的 `data-code` 是一個自定義的變數。
- * 在 `html` 中，能利用 `data-*` 將字串存在 DOM 中，再從CSS或JS中取出來使用
- * `$(e.target)` 就是選到 "被點擊的那個 element"
- * `.data('code')` 可以將預存在 DOM 中的 `data-code` 字串取出來
+ * 包在 `$(()=>{  })` 裡面的程式碼，jQuery 會在整個網頁讀取完後才會執行。
+ * 在 `./app/jquery.html` 裡面的 `data-code` 是一個自定義的屬性。
+ * 在 HTML 中，能利用 `data-*` 將字串存在 DOM 中，方便 CSS 或 JS 使用。
+ * `e.target` 代表產生 `e` 這個事件的元件。
+ * `$(e.target).data('code')` 可以將 `e.target` 中 `data-code` 的內容取出來。
  */
 
 const data = {
@@ -36,46 +35,45 @@ $(() => {
     const code = $(e.target).data('code')
     console.log(data[code])
 
-    
-    //Step 3
+    // Step 3 code goes here
 
-
-	//Step 2
+    // Step 2 code goes here
 
   })
   $('button:first-child').click()
 })
 ```
 
+用瀏覽器開戶 `./app/jquery.html`，開啟開發人員工具(按下 `F12`)觀察資料是否正確印出。
+
 ### Step 2: 繪製圖表
 
-將 data 使用 svg 繪製出來，在 `./app/jquery.js` 中插入以下程式碼，並觀察結果。
+將資料使用 svg 繪製出來。將底下的程式碼插教 `./app/jquery.js`，然後照著 `Step 2` 開頭的提示操作。
 
 ```
-/* Step 2:
- * for 迴圈的 `i` 回傳的是 `index` 值
- * `toFixed(1)` 規定前面字串的格式，是顯示到小數點後一位
- */
+    /* Step 2:
+     * `toFixed(1)` 設定小數點位數。
+     */
 
-for (const i in data[code]) {
-  const ratio = (data[code][i] * 100).toFixed(1)
-  $('#chart').append($(`
-    <svg x="${60 + i * 150}">
-      <text x="20" y="${440 - ratio * 4}">${ratio}%</text>
-      <rect height="${ratio * 4}" width="100" y="${450 - ratio * 4}">
-    </svg>
-  `))
-}
+    for (const i in data[code]) {
+      const ratio = (data[code][i] * 100).toFixed(1)
+      $('#chart').append($(`
+        <svg x="${60 + i * 150}">
+          <text x="20" y="${440 - ratio * 4}">${ratio}%</text>
+          <rect height="${ratio * 4}" width="100" y="${450 - ratio * 4}">
+        </svg>
+      `))
+    }
 ```
 
 ### Step 3: 清除圖表
 
-測試後應該會發現，資料顯示的狀況好像怪怪的，因為新加入的 svg 圖片，被留在畫面上了，在 `./app/jquery.js` 中插入以下程式碼
+測試後應該會發現，資料顯示的狀況好像怪怪的，因為新加入的 svg 圖片，被留在畫面上了。將底下的程式碼插教 `./app/jquery.js`，然後照著 `Step 3` 開頭的提示操作。
 
 ```
-/* Step 3:
- * 先將舊的圖刪掉，才接著加上新圖片
- */
+    /* Step 3:
+     * 先將舊的圖刪掉之後再繪製新圖片
+     */
     $('#chart > svg').remove()
 ```
 
