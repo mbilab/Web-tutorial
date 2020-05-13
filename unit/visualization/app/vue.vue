@@ -48,5 +48,5 @@ export default {
 </script>
 
 <!--
-vi:et
+vi:et:backupcopy=yes
 -->
