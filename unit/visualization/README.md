@@ -144,7 +144,7 @@ for (const i in data[code]) {
 ```
 
 ## Vue
-## Step 0: setup and pack
+### Step 0: setup and pack
 
 安裝 dependency 套件
 uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非課程的同學請自行`npm i parcel` or `yarn add parcel`
@@ -156,7 +156,7 @@ or
 
 `$ yarn add vue`
 
-## Step 1: include js, import vue
+### Step 1: include js, import vue
 
 在 `app/vue.pug` 加入以下程式碼:
 
@@ -171,22 +171,22 @@ or
 在 `app/vue.js` 加入以下程式碼:
 
 ```
-    /* Step 1
-     * 根據 vue 作者的說法程式碼中的 h 代表 hyperScript
-     * 我們會在同一個 .vue 檔中撰寫 pug/sass/js，並在此引入他。
-     */
+/* Step 1
+ * 根據 vue 作者的說法程式碼中的 h 代表 hyperScript
+ * 我們會在同一個 .vue 檔中撰寫 pug/sass/js，並在此引入他。
+ */
 
-    import App from './vue.vue'
+import App from './vue.vue'
 
-    new Vue({
-        el: '#app',
-        render: h => h(App)
-    })
+new Vue({
+    el: '#app',
+    render: h => h(App)
+})
 ```
 
 完成後可以用 `yarn vue` 開啟 devServer，可以看到 hello world
 
-## Step 2: 資料綁定
+### Step 2: 資料綁定
 
 將 `app/vue.vue`加入 pug 與 vue 實例。透過 parcel 打包後，可以看到顯示的變數即時變跟著資料動。
 
@@ -200,25 +200,25 @@ or
 
 在 `app/vue.vue` step 2.2 中加入以下程式碼:
 ```
-    // Step 2.2
-    // 你的輸入會跟 inputData 雙向綁定，並在螢幕顯示
-    // 注意：`input` 和 `p` 在同一層縮排
-    input(type="text", v-model='inputData')
-    | {{inputData}}
+  // Step 2.2
+  // 你的輸入會跟 inputData 雙向綁定，並在螢幕顯示
+  // 注意：`input` 和 `p` 在同一層縮排
+  input(type="text", v-model='inputData')
+  | {{inputData}}
 ```
 
 補充: v-model 用來雙向綁定，另有單向綁定的 v-bind。
 
-## Step 3: 列表渲染
+### Step 3: 列表渲染
 
 使用v-for迭代陣列或物件中的元素。 
 在 `app/vue.vue` step 3.1 的部分加入以下程式碼:
 
 ```
-    // Step 3.1
-    // 使用 v-for，網頁內容隨著資料迭代渲染。
-    // 注意：`span` 和 `br` 在同一層縮排
-    span(v-for="value in chart") {{value}} ,
+  // Step 3.1
+  // 使用 v-for，網頁內容隨著資料迭代渲染。
+  // 注意：`span` 和 `br` 在同一層縮排
+  span(v-for="value in chart") {{value}} ,
 ```
 
 閱讀[官方教學](https://v1-cn.vuejs.org/guide/list.html)或是[教學部落格](https://cythilya.github.io/2017/04/27/vue-list-rendering/)，找到取得 index of value 的方法。
@@ -232,7 +232,7 @@ or
       rect(:height="value * 400",width="100",:y='450 - value * 400')
 ```
 
-## Step 4: 方法與事件處理
+### Step 4: 方法與事件處理
 
 綁定 DOM 的事件，透過 methods 在 vue 實例中，修改 data。
 在 `app/vue.vue` step 4.1 的部分加入以下程式碼:
@@ -250,10 +250,10 @@ or
 現在，輪到你把 this.chart 改成 N2 array 或 P7 array。
 修改 `app/vue.vue` step 4.2 的部分:
 ```
-  /* step 4.2
-   * 換你寫了
-   */
-  this.chart = [??????]
+      /* step 4.2
+       * 換你寫了
+       */
+      this.chart = [??????]
 ```
 
 在 vue 實例內部要使用內部的資料或方法時，可是使用 this，例: `this.myData`，`this.myMethod`。
