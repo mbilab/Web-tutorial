@@ -210,51 +210,50 @@ new Vue({
   | {{ inputData }}
 ```
 
-### Step 3: 列表渲染
+### Step 3: 繪製清單
 
-使用v-for迭代陣列或物件中的元素。 
-在 `app/vue.vue` step 3.1 的部分加入以下程式碼:
+使用 `v-for` 迭代清單中的元素。將底下的程式碼插入 `./app/vue.vue`，然後照著 `Step 3` 開頭的提示操作。
+
+在 `./app/vue.vue` Step 3.1 的部分加入以下程式碼。
 
 ```
   // Step 3.1
   // 使用 v-for，網頁內容隨著資料迭代渲染。
   // 注意：`span` 和 `br` 在同一層縮排
-  span(v-for="value in chart") {{value}} ,
+  span(v-for="value in chart") {{value}},&nbsp;
 ```
 
-閱讀[官方教學](https://v1-cn.vuejs.org/guide/list.html)或是[教學部落格](https://cythilya.github.io/2017/04/27/vue-list-rendering/)，找到取得 index of value 的方法。
-完成 `app/vue.vue` step 3.2 的程式碼:
+閱讀[官方教學](https://v1-cn.vuejs.org/guide/list.html)或是[教學部落格](https://cythilya.github.io/2017/04/27/vue-list-rendering/)，找到取得 index of value 的方法。將底下的程式碼加入 `./app/vue.vue`，然後照著 `Step 3.2` 開頭的提示操作。
+
 ```
     // Step 3.2
-    // 完成 v-for 的語法，定義裡的value跟idx
-    //
+    // 完成 v-for 的語法，將 [value and idex of data] 改成適當的內容
     svg(v-for="[value and idx of data]",:x="60 + idx * 150")
       text(x="20",:y="440 - 400 * value") {{(value * 100).toFixed(1)}}%
       rect(:height="value * 400",width="100",:y='450 - value * 400')
 ```
 
-### Step 4: 方法與事件處理
+### Step 4: 事件與方法
 
-綁定 DOM 的事件，透過 methods 在 vue 實例中，修改 data。
-在 `app/vue.vue` step 4.1 的部分加入以下程式碼:
+綁定 DOM 的事件，透過方法(method)修改資料。將底下的程式碼加入 `./app/vue.vue`，然後照著 `Step 4.1` 開頭的提示操作。
 
 ```
   // step 4.1
-  // 加入 button
-  //
+  // 加入按鈕。
   div
     button(@click="update('N2')") 電機所
     button(@click="update('P7')") 資訊所
 ```
 
-@click會處理該 DOM 的點擊事件，並把這個事件與 update() 綁定。你可以在下面的程式碼中看到 this.inputData 被改為按鈕名稱並顯示在螢幕上。
-現在，輪到你把 this.chart 改成 N2 array 或 P7 array。
-修改 `app/vue.vue` step 4.2 的部分:
+`@click` 會處理該 DOM 的點擊事件，程式碼中的處理方式是呼叫 `update()` 方法。你可以瀏覽器中看到 `inputData` 會隨著點擊按鈕而改變。
+
+將 vue 實例中的 `chart` 變數，改成對應 N2 或 P7 的清單。將底下的程式碼加入 `./app/vue.vue`，然後照著 `Step 4.2` 開頭的提示操作。
+
 ```
       /* step 4.2
-       * 換你寫了
+       * 將 [list according to `code`] 改成適當的內容
+       * 可能需要修改 Step 3.2 的程式碼
+       * 在 vue 實例內部要使用資料或方法時，可是使用 `this`，例如 `this.chart` 或是 `this.update()`。
        */
-      this.chart = [??????]
+      this.chart = [list according to `code`]
 ```
-
-在 vue 實例內部要使用內部的資料或方法時，可是使用 this，例: `this.myData`，`this.myMethod`。

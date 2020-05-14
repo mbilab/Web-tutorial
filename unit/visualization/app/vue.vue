@@ -1,20 +1,16 @@
 <template lang="pug">
 .v-app
   p hello world
-  // Step 2.2
-
+  // Step 2.2 code goes here
 
   br
-  // Step 3.1
-
+  // Step 3.1 code goes here
 
   br
   svg#chart(height="460",width="960")
     // Step 3.2
 
-
   // step 4.1
-
 
 </template>
 
@@ -28,8 +24,7 @@ export default {
   data() { return {
     chart: null,
 
-    // Step 2.1
-
+    // Step 2.1 code goes here
 
     N2: [.2, .2, .2, .2, .2],
     P7: [.2, .2, .2, .2, .1, .1],
@@ -37,10 +32,8 @@ export default {
 
   methods: {
     update(code) {
-      this.inputData = `你按了${code}的按鈕`
+      this.inputData = `你按了 ${code}`
       // step 4.2
-
-
     },
   },
 
@@ -48,5 +41,5 @@ export default {
 </script>
 
 <!--
-vi:et:backupcopy=yes
+vi:backupcopy=yes
 -->
