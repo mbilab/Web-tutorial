@@ -14,7 +14,7 @@
 
 ### Step 1: 準備要視覺化的資料
 
-確定點擊按鈕的事件觸發後，能夠正確存取到想要顯示的資料。將底下的程式碼插教 `./app/jquery.js`，然後照著 `Step 1` 開頭的提示操作。
+確定點擊按鈕的事件觸發後，能夠正確存取到想要顯示的資料。將底下的程式碼插入 `./app/jquery.js`，然後照著 `Step 1` 開頭的提示操作。
 
 ```
 /* Step 1:
@@ -48,7 +48,7 @@ $(() => {
 
 ### Step 2: 繪製圖表
 
-將資料使用 svg 繪製出來。將底下的程式碼插教 `./app/jquery.js`，然後照著 `Step 2` 開頭的提示操作。
+將資料使用 svg 繪製出來。將底下的程式碼插入 `./app/jquery.js`，然後照著 `Step 2` 開頭的提示操作。
 
 ```
     /* Step 2:
@@ -68,7 +68,7 @@ $(() => {
 
 ### Step 3: 清除圖表
 
-測試後應該會發現，資料顯示的狀況好像怪怪的，因為新加入的 svg 圖片，被留在畫面上了。將底下的程式碼插教 `./app/jquery.js`，然後照著 `Step 3` 開頭的提示操作。
+測試後應該會發現，資料顯示的狀況好像怪怪的，因為新加入的 svg 圖片，被留在畫面上了。將底下的程式碼插入 `./app/jquery.js`，然後照著 `Step 3` 開頭的提示操作。
 
 ```
     /* Step 3:
@@ -79,12 +79,11 @@ $(() => {
 
 ## D3.js
 
-相比 jQuery，D3.js 可以將資料與 DOM 元件連結，讓我們可以直接使用 DOM 裡的資料，思考的角度更是從物件變成資料。
+相比 jQuery，D3.js 可以綁定(binding)資料與 DOM 元件，思考的角度從處理物件變成處理資料。
 
 ### Step 1: 選取物件
 
-使用 select 選取物件
-在`./app/d3.js`中插入以下程式碼:
+使用 `select` 選取物件。將底下的程式碼插入 `./app/d3.js`，然後照著 `Step 1` 開頭的提示操作。
 
 ```
   /* Step 1:
@@ -93,10 +92,9 @@ $(() => {
   const chart = d3.select('#chart')
 ```
 
-### Step 2: 資料連結
+### Step 2: 資料綁定
 
-透過 selectAll 選取子物件並用 .data() 連結資料，這時很有機會發生資料與物件數量不對齊的狀況，需要下兩個步驟解決這個問題。
-在`./app/d3.js`中插入以下程式碼:
+透過 `selectAll` 選取子物件並用 `.data()` 綁定資料，這時很有機會發生資料與物件數量不對齊的狀況，需要下兩個步驟解決這個問題。將底下的程式碼插入 `./app/d3.js`，然後照著 `Step 2` 開頭的提示操作。
 
 ```
     /* Step 2:
@@ -105,27 +103,26 @@ $(() => {
     const bars = chart.selectAll('svg').data(data[code])
 ```
 
-### Step 3: 清空沒有資料的物件
+### Step 3: 清空沒有資料的元件
 
-選取沒有資料配對的物件後，將剛該物件刪除。
-在`./app/d3.js`中插入以下程式碼:
+選取沒有資料配對的元件後，將剛該物件刪除。將底下的程式碼插入 `./app/d3.js`，然後照著 `Step 3` 開頭的提示操作。
 
 ```
     /* Step 3:
-     * .exit() 會過濾出沒有資料配對的物件
-     * .remove() 會把這些物件刪掉
+     * .exit() 會過濾出沒有資料綁定的元件
+     * .remove() 會把這些元件刪掉
      */
     bars.exit().remove()
 ```
 
-### Step 4: 繪製沒物件的資料
+### Step 4: 繪製沒有元件的資料
 
-為沒物件的資料建立物件
+將底下的程式碼插入 `./app/d3.js`，然後照著 `Step 4` 開頭的提示操作。
 
 ```
     /* Step 4:
-     * .enter() 為沒物件的資料建立物件
-     * .append() 跟 jQuery 的 append 類似，加入 DOM 元件。
+     * `.enter()` 為沒元件的資料建立元件。
+     * `.append()` 加入 DOM 元件。
      * d3 元件裡的資料跟索引會傳進 `(v, i) => {}` 裡的 v 跟 i
      */
     const entered = bars.enter().append('svg').attr('x', (v, i) => { return 60 + i * 150 })
@@ -142,36 +139,41 @@ $(() => {
 ```
 
 ## Vue
+
 ### Step 0: setup and pack
 
-安裝 dependency 套件
-uidd 的同學不用再裝 parcel，伺服器上裝好全域的 parcel了，非課程的同學請自行`npm i parcel` or `yarn add parcel`
-打包並開啟 devServer: `parcel build ./app/index.pug`
+安裝套件。
 
-`$ npm i vue`
+```
+npm i
+yarn # if you have it
+```
 
-or
+打包並開啟測試伺服器，記得將 `[port]` 改成適點的數值。
 
-`$ yarn add vue`
+```
+npx parcel ./app/vue.pug --port [port]
+yarn parcel ./app/vue.pug --port [port] # if you have it
+```
 
-### Step 1: include js, import vue
+### Step 1: from pug, js to vue
 
-在 `app/vue.pug` 加入以下程式碼:
+將底下的程式碼插入 `./app/vue.pug`，然後照著 `Step 1` 開頭的提示操作。
 
 ```
     // Step 1
-    // 加入被綁定的 DOM 以及 vue 實例
-    //
+    // 加入未來要顯示用的 DOM 元件以及連結 vue 程式碼。
     #app
     script(src="./vue.js")
 ```
 
-在 `app/vue.js` 加入以下程式碼:
+將底下的程式碼插入 `./app/vue.js`，然後照著 `Step 1` 開頭的提示操作。
 
 ```
 /* Step 1
- * 根據 vue 作者的說法程式碼中的 h 代表 hyperScript
- * 我們會在同一個 .vue 檔中撰寫 pug/sass/js，並在此引入他。
+ * 根據 vue 作者的說法，程式碼中的 h 代表 hyperScript。
+ * 連結 .vue 檔，之後會在其中撰寫 pug/sass/js。
+ * 注意 `#app` 就是剛剛在 `./app/vue.pug` 加入的 DOM 元件。
  */
 
 import App from './vue.vue'
@@ -182,13 +184,14 @@ new Vue({
 })
 ```
 
-完成後可以用 `yarn vue` 開啟 devServer，可以看到 hello world
+用瀏覽器打開對應的網頁(`http://[your host]:[port]`)，此時可以看到 hello world。
 
 ### Step 2: 資料綁定
 
-將 `app/vue.vue`加入 pug 與 vue 實例。透過 parcel 打包後，可以看到顯示的變數即時變跟著資料動。
+在 `./app/vue.vue` 撰寫 pug 與 js。將底下的程式碼插入 `./app/vue.vue`，然後照著 `Step 2` 開頭的提示操作。在瀏覽器中可以看到顯示的內容即時變跟著資料變動。
 
-在 `app/vue.vue` step 2.1 的部分加入data:	
+在 `./app/vue.vue` Step 2.1 的部分加入 `inputData`。
+
 ```
     /* Step 2.1
      * 加入變數
@@ -196,16 +199,16 @@ new Vue({
     inputData: "Type something here",
 ```
 
-在 `app/vue.vue` step 2.2 中加入以下程式碼:
+在 `./app/vue.vue` Step 2.2 的部分中加入以下程式碼。
+
 ```
   // Step 2.2
-  // 你的輸入會跟 inputData 雙向綁定，並在螢幕顯示
-  // 注意：`input` 和 `p` 在同一層縮排
+  // 你的輸入會跟 inputData 雙向綁定。
+  // 注意：`input` 和 `p` 在同一層縮排。
+  // `v-model 用來雙向綁定，另有單向綁定的 `v-bind`。
   input(type="text", v-model='inputData')
-  | {{inputData}}
+  | {{ inputData }}
 ```
-
-補充: v-model 用來雙向綁定，另有單向綁定的 v-bind。
 
 ### Step 3: 列表渲染
 
