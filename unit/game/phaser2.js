@@ -18,7 +18,7 @@ const game = new Phaser.Game(320, 240, Phaser.AUTO, 'game', {
     game.physics.enable(sprites, Phaser.Physics.ARCADE)
 
     npc1.body.collideWorldBounds = true
-    npc1.body.immovable = true // try mark this line
+    npc1.body.immovable = true // try comment this line
     npc2.body.collideWorldBounds = true
 
     player.body.collideWorldBounds = true
@@ -52,9 +52,7 @@ const game = new Phaser.Game(320, 240, Phaser.AUTO, 'game', {
   },
 
   render: () => {
-    // game.debug.body(player) // try un-mark this line
+    // game.debug.body(player) // try un-comment this line
   },
 
 })
-
-// vi:et:sw=2:ts=2
