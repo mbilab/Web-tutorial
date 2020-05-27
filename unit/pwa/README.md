@@ -17,28 +17,28 @@
 * 進入`config.json`，填寫 `cert`、`ca`、`key` 的路徑。
 
 * 打開 `ser.js` 依指示刪掉程式碼，並加入:
-  ```
-  const https = require('https')
+```
+const https = require('https')
 
-  const options = {
-    ca : fs.readFileSync(config.ssl.ca),
-    key: fs.readFileSync(config.ssl.key),
-    cert:fs.readFileSync(config.ssl.cert)
-  }
+const options = {
+  ca : fs.readFileSync(config.ssl.ca),
+  key: fs.readFileSync(config.ssl.key),
+  cert:fs.readFileSync(config.ssl.cert)
+}
 
-  https.createServer(options, app).listen(port,()=>{
-      console.log(`listen on port:${port}`)
-  })
-  ```
+https.createServer(options, app).listen(port,()=>{
+    console.log(`listen on port:${port}`)
+})
+```
 補充: https 加密連線，可以確保封包傳輸在過程中沒有被攔截或竄改。
 
 ## Step 2: 加入 manifest.json
 Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、圖示、描述）。 manifest 的功用是將 Web 應用程式安裝到設備的主畫面。
 在 `dist/index.html` 加入:
  ```
- <!-- for iOS -->
- <link rel="apple-touch-icon" sizes="144x144" href="./src/VOCA-144x144.png"/>
- <link rel="manifest" href="./manifest.json">
+    <!-- for iOS -->
+    <link rel="apple-touch-icon" sizes="144x144" href="./src/VOCA-144x144.png"/>
+    <link rel="manifest" href="./manifest.json">
  ```
  可以在`./manifest.json`更改 pwa 名稱及縮圖。
 
@@ -46,15 +46,15 @@ Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、
 為了在離線時能順利工作，我們要註冊一個 service worker，一支在後臺運行的程式，管理向網路抓取資料的行為。
 在 `dist/src/app.js` 中加入:
 ```
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('../sw.js')
-  .then(reg => {
-    console.log(`SW is registered with scope: ${reg.scope}`)
-  })
-  .catch(err => {
-    console.log('SW Error ', err)
-  })
-}
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../sw.js')
+    .then(reg => {
+      console.log(`SW is registered with scope: ${reg.scope}`)
+    })
+    .catch(err => {
+      console.log('SW Error ', err)
+    })
+  }
 ```
 其中 sw.js 必須放在根目錄，因為 service workers 的作用範圍是根據其在目錄結構中的位置決定的。
 這時打開瀏覽器，console 會顯示 `SW is registered with scope: ${reg.scope}`，但實際上 cache 裡沒有任何資料。
@@ -73,27 +73,27 @@ if ('serviceWorker' in navigator) {
 當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的資源，把所有你設定的資源加入 cache 中。在 `dist/sw.js` 中加入:
 
 ```
-  // try edit the cached files and/or the `cachedFiles` list
-  const cachedFiles = [
-    './',
-    './src/app.js',
-    './src/cat1.jpeg',
-    './index.html',
-    './manifest.json',
-    './src/VOCA-144x144.png',
-  ]
+// try edit the cached files and/or the `cachedFiles` list
+const cachedFiles = [
+  './',
+  './src/app.js',
+  './src/cat1.jpeg',
+  './index.html',
+  './manifest.json',
+  './src/VOCA-144x144.png',
+]
 
-  // edit this to force re-cache
-  const cacheKey = 'demo-sw-v3'
+// edit this to force re-cache
+const cacheKey = 'demo-sw-v3'
 
-  // install, a good time to preload cache
-  self.addEventListener('install', event => {
-    console.log(`${cacheKey} is installed`)
-    event.waitUntil((async () => {
-      const cache = await caches.open(cacheKey)
-      return cache.addAll(cachedFiles)
-    })())
-  })
+// install, a good time to preload cache
+self.addEventListener('install', event => {
+  console.log(`${cacheKey} is installed`)
+  event.waitUntil((async () => {
+    const cache = await caches.open(cacheKey)
+    return cache.addAll(cachedFiles)
+  })())
+})
 ```
 其中 ExtendableEvent.waitUntil() 延長事件的壽命，從而阻止瀏覽器在事件完成之前終止 service worker。
 
@@ -117,7 +117,7 @@ self.addEventListener('activate', event => {
 只要舊的版本還在，就算新版的 service worker 安裝好，這段程式程式碼仍不會運作。當分頁關閉，舊的 service worker 停止，重新開啟分頁我們這段程式碼才會運作。
 
 詳情請看[service worker生命週期](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle?hl=zh-tw)。
-並試試在 install 階段以 .skipWating() 取代 .waitUntivl()
+並試試在 install 階段以 .skipWaiting() 取代 .waitUntil()
 
 ## Step 6: 控制資料抓取
 當網頁要向網路抓取資料時，先查看 cache 中是否有相符的資料，若沒有相符的資料再向網路抓取資料。在 `dist/sw.js` 中加入:
