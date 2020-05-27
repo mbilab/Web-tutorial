@@ -17,7 +17,7 @@
 * 進入`config.json`，填寫 `cert`、`ca`、`key` 的路徑。
 
 * 打開 `ser.js` 依指示刪掉程式碼，並加入:
-```
+```javascript
 const https = require('https')
 
 const options = {
@@ -35,7 +35,7 @@ https.createServer(options, app).listen(port,()=>{
 ## Step 2: 加入 manifest.json
 Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、圖示、描述）。 manifest 的功用是將 Web 應用程式安裝到設備的主畫面。
 在 `dist/index.html` 加入:
- ```
+ ```html
     <!-- for iOS -->
     <link rel="apple-touch-icon" sizes="144x144" href="./src/VOCA-144x144.png"/>
     <link rel="manifest" href="./manifest.json">
@@ -45,7 +45,7 @@ Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、
 ## Step 3: 註冊 service worker
 為了在離線時能順利工作，我們要註冊一個 service worker，一支在後臺運行的程式，管理向網路抓取資料的行為。
 在 `dist/src/app.js` 中加入:
-```
+```javascript
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('../sw.js')
     .then(reg => {
@@ -57,7 +57,7 @@ Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、
   }
 ```
 其中 sw.js 必須放在根目錄，因為 service workers 的作用範圍是根據其在目錄結構中的位置決定的。
-這時打開瀏覽器，console 會顯示 `SW is registered with scope: ${reg.scope}`，但實際上 cache 裡沒有任何資料。
+這時打開瀏覽器，console 會顯示 `SW is registered with scope: ${reg.scope}`，這時候 cache 裡沒有任何資料。
 
 ![](https://i.imgur.com/WEwp3DY.png)
 
@@ -72,7 +72,7 @@ Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、
 
 當用戶首次訪問頁面的時候一個 install 事件會被觸發。在這個事件的回調函數中，我們能夠緩存所有的資源，把所有你設定的資源加入 cache 中。在 `dist/sw.js` 中加入:
 
-```
+```javascript
 // try edit the cached files and/or the `cachedFiles` list
 const cachedFiles = [
   './',
@@ -95,16 +95,16 @@ self.addEventListener('install', event => {
   })())
 })
 ```
-其中 ExtendableEvent.waitUntil() 延長事件的壽命，從而阻止瀏覽器在事件完成之前終止 service worker。
+其中 event.waitUntil() 延長事件的壽命，從而阻止瀏覽器在事件完成之前終止 service worker。
 
-這時 cahce 會加入新的資料，但如果有舊的 service worker 我們不一定會啟動的新版 service worker。
+這時 cahce 會加入新的資料，但如果有舊的 service worker 新版的 service worker 不會自動 activate。
 ![](https://i.imgur.com/x8Lg5Dm.png)
 
 ## Step 5: service worker 啟動時
 首先我們要知道，如果有舊的 service worker，剛安裝好的 service worker 並不會馬上啟動，這種狀態稱爲“waiting”。  
 
 當新的 serviceworker 啟動時 ，舊的 serviceworker 仍在 cache 中，我們可以把舊的 cache 清除或是其他你想要做的事。在 `dist/sw.js` 中加入:
-```
+```javascript
 self.addEventListener('activate', event => {
   console.log(`${cacheKey} is activated`)
   event.waitUntil((async () => {
@@ -117,12 +117,12 @@ self.addEventListener('activate', event => {
 只要舊的版本還在，就算新版的 service worker 安裝好，這段程式程式碼仍不會運作。當分頁關閉，舊的 service worker 停止，重新開啟分頁我們這段程式碼才會運作。
 
 詳情請看[service worker生命週期](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle?hl=zh-tw)。
-並試試在 install 階段以 .skipWaiting() 取代 .waitUntil()
+並試試在 install 階段加上 `self.skipWaiting()`
 
 ## Step 6: 控制資料抓取
 當網頁要向網路抓取資料時，先查看 cache 中是否有相符的資料，若沒有相符的資料再向網路抓取資料。在 `dist/sw.js` 中加入:
 
-```
+```javascript
 self.addEventListener('fetch', event => {
   event.respondWith((async () => {
     const response = await caches.match(event.request)
@@ -138,7 +138,7 @@ self.addEventListener('fetch', event => {
 ## Step 7: 資料新增
 在  cachedFiles 中加入 './src/cat1.jpeg' 並更新 cacheKey，在 `dist/sw.js`中更改
 
-```
+```javascript
 const cachedFiles = [
   ...
   './src/cat2.jpeg',
@@ -152,7 +152,7 @@ const cacheKey = 'demo-sw-v2'
 
 ## Step 8: 資料更改
 在 `dist/index.html`中更改貓咪圖片為貓咪2:
-```
+```html
  <div style="background:url('src/cat2.jpeg') no-repeat no-repeat;width:600px;height:400px;"></div>
 ```
 
