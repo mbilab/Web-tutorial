@@ -84,7 +84,7 @@ const cachedFiles = [
 ]
 
 // edit this to force re-cache
-const cacheKey = 'demo-sw-v3'
+const cacheKey = 'demo-sw-v1'
 
 // install, a good time to preload cache
 self.addEventListener('install', event => {
@@ -141,7 +141,7 @@ self.addEventListener('fetch', event => {
 ```
 const cachedFiles = [
   ...
-  './src/cat1.jpeg',
+  './src/cat2.jpeg',
   ...
 ]
 const cacheKey = 'demo-sw-v2'
