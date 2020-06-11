@@ -1,21 +1,15 @@
-////////////////////////////////////////////////////////////////////////////////
-// HTML Audio
 const play = () => {
   const audio = document.querySelector('audio')
 
-  //Step 2
+  // Step 2 code goes here
+
   audio.play()
 }
 
-// MediaDevices and MediaStream Recording API
-const type = 'video'
-const recordedChunks = []
-// Stpe 4
+// Stpe 4 code goes here
 
-// Step 5.2
+// Step 5.2 code goes here
 
-// Step 5.3
+// Step 5.3 code goes here
 
-// Step 6
-
-// vi:et:ts=2
+// Step 6 code goes here
