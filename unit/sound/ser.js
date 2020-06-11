@@ -1,14 +1,14 @@
-const express = require('express');
-const app = express();
+const express = require('express')
 const fs = require('fs')
-const https = require('https');
-const path = require('path');
+const https = require('https')
+const path = require('path')
 const request = require('request')
 
+const app = express()
 app.use(express.static(path.join(__dirname, 'howhow')))
 const server = https.createServer({
-	key: fs.readFileSync('./ssl/private.key'),
-  cert: fs.readFileSync('./ssl/certificate.crt') 
+  cert: fs.readFileSync('./ssl/certificate.crt'),
+  key: fs.readFileSync('./ssl/private.key'),
 }, app)
 
 port = 1299
@@ -21,6 +21,5 @@ app.get('/test', (req, res)=>{
 })
 
 server.listen(port, function() {
-    console.log('runing Web Server in ' + port + ' port...')
+  console.log('runing Web Server in ' + port + ' port...')
 })
-
