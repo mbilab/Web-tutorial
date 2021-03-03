@@ -15,6 +15,7 @@ body {
   line-height: 0;
   padding: 5px 0;
   top: 0;
+  /* Step 6: Change position to "fixed" */
 }
 
 i.avatar, i.icon {
@@ -50,6 +51,7 @@ i.icon {
 #banner {
   background: url(./res/main.jpg) [position] / [size]; /* Step 5: try different `[position]` and `[size]` and see how banner changes */
   /* Step 5: Google `css background-position` and `css background-size` for more */
+  /* Step 6: Change position to "fixed" */
   top: 40px;
   height: 250px;
 }
@@ -62,7 +64,7 @@ i.icon {
 }
 
 .info {
-  /* Step 6: Learn flexbox for arranging items */
+  /* Step 7: Learn flexbox for arranging items */
   margin: 0 0 5% 0;
 }
 

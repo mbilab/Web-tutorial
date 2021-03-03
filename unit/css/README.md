@@ -86,11 +86,15 @@ Insert the following code into `./exercise.css` and edit `[position]` and `[size
 }
 ```
 
-## Step 6: The banner should be fixed when the page is scrolled
+## Step 6: The banner and navbar should be fixed when the page is scrolled
 
-Change position to "fixed" in #banner
+Change position to "fixed" in #banner and #navbar
 
 ```
+#navbar {
+  position: fixed;
+}
+
 #banner {
   position: fixed;
 }
