@@ -1,14 +1,18 @@
 body {
   background: rgba(0, 0, 0, .1);
-  margin: 0; /* Step 1: reset margin is a good practice for consistency across browsers. */
+  /* Step 1: reset margin is a good practice for consistency across browsers. */
+  margin: 0;
 }
 
 #navbar, #banner, #main, #bottom {
   background-color: white;
-  max-width: [content width]; /* Step 2: input an appropriate content width */
-  width: 100%; /* Step 2: watch out the unit, `%`, and google `css unit` for more */
-  /* Step 2: why both `max-width` and `width` are used? */
-  /**/
+  /* Step 2:
+   * Input an appropriate content width
+   * Watch out the unit, `%`, and google `css unit` for more
+   * Why both `max-width` and `width` are used?
+   */
+  max-width: [content width];
+  width: 100%;
 }
 
 #navbar {
@@ -20,8 +24,11 @@ body {
 
 i.avatar, i.icon {
   background-position: center;
-  display: [correct display]; /* Step 3: input the correct display to make `height` work */
-  /* Step 3: Google `css dispaly` for more */
+  display: [correct display];
+  /* Step 3:
+   * Input the correct display to make `height` work
+   * Google `css dispaly` for more
+   */
   height: 30px;
 }
 
@@ -38,8 +45,11 @@ i.icon {
 }
 
 .right {
-  position: static; /* Step 4: change `static` to the correct value to make the `right` property work */
-  /* Step 4: Google `css position` for more */
+  /* Step 4:
+   * Change `static` to the correct value to make the `right` property work
+   * Google `css position` for more
+   */
+  position: static;
   right: 0.5em;
 }
 
@@ -49,8 +59,11 @@ i.icon {
 .icon.submit  { background-image: url(./res/external-link.svg) }
 
 #banner {
-  background: url(./res/main.jpg) [position] / [size]; /* Step 5: try different `[position]` and `[size]` and see how banner changes */
-  /* Step 5: Google `css background-position` and `css background-size` for more */
+  /* Step 5:
+   * Try different `[position]` and `[size]` and see how banner changes
+   * Google `css background-position` and `css background-size` for more
+   */
+  background: url(./res/main.jpg) [position] / [size];
   /* Step 6: Change position to "fixed" */
   top: 40px;
   height: 250px;
@@ -61,10 +74,14 @@ i.icon {
   padding: 1px 4% 5vh;
   position: relative;
   top: 290px;
+  /* Step 8: Input the correct z-index to adjust the position*/
+  z-index: [correct z-index];
 }
 
 .info {
-  /* Step 7: Learn flexbox for arranging items */
+  /* Step 7: Input the correct display and justify-content to make flexbox */
+  display: [correct display];
+  justify-content: [correct justify-content];
   margin: 0 0 5% 0;
 }
 
