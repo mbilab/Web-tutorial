@@ -119,7 +119,7 @@ $('.card:nth-child(3)').click(function(){
 
 ## Step 6: pure css solution (it depends)
 
-Insert the following code into `./exercise.html` and follow instructions beginning with `Step 6`.
+Insert the following code into `./exercise.css` and follow instructions beginning with `Step 6`.
 
 ```
 /* Step 6:
