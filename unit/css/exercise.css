@@ -6,30 +6,25 @@ body {
 
 #navbar, #banner, #main, #bottom {
   background-color: white;
-  /* Step 2:
-   * Input an appropriate content width
-   * Watch out the unit, `%`, and google `css unit` for more
-   * Why both `max-width` and `width` are used?
-   */
-  max-width: [content width];
-  width: 100%;
+
+  /* Step 2 code goes here */
+
 }
 
 #navbar {
   line-height: 0;
   padding: 5px 0;
   top: 0;
-  /* Step 6: Change position to "fixed" */
+
+  /* Step 6 code goes here */
+
 }
 
 i.avatar, i.icon {
   background-position: center;
-  display: [correct display];
-  /* Step 3:
-   * Input the correct display to make `height` work
-   * Google `css dispaly` for more
-   */
-  height: 30px;
+
+  /* Step 3 code goes here */
+
 }
 
 i.avatar {
@@ -45,12 +40,9 @@ i.icon {
 }
 
 .right {
-  /* Step 4:
-   * Change `static` to the correct value to make the `right` property work
-   * Google `css position` for more
-   */
-  position: static;
-  right: 0.5em;
+
+  /* Step 4 code goes here */
+
 }
 
 .avatar.dirty { background-image: url(./res/dirty.jpg) }
@@ -59,14 +51,14 @@ i.icon {
 .icon.submit  { background-image: url(./res/external-link.svg) }
 
 #banner {
-  /* Step 5:
-   * Try different `[position]` and `[size]` and see how banner changes
-   * Google `css background-position` and `css background-size` for more
-   */
-  background: url(./res/main.jpg) [position] / [size];
-  /* Step 6: Change position to "fixed" */
+
+  /* Step 5 code goes here */
+
   top: 40px;
   height: 250px;
+
+  /* Step 6 code goes here */
+
 }
 
 #main {
@@ -74,14 +66,15 @@ i.icon {
   padding: 1px 4% 5vh;
   position: relative;
   top: 290px;
-  /* Step 8: Input the correct z-index to adjust the position*/
-  z-index: [correct z-index];
+
+  /* Step 8 code goes here */
+
 }
 
 .info {
-  /* Step 7: Input the correct display and justify-content to make flexbox */
-  display: [correct display];
-  justify-content: [correct justify-content];
+
+  /* Step 7 code goes here */
+
   margin: 0 0 5% 0;
 }
 
