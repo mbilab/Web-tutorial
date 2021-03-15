@@ -163,7 +163,7 @@ const cachedFiles = [
 const cacheKey = 'demo-sw-v2'
 ```
 
-這時重新整理網頁並觀察 console，會發先圖片原先由網路抓取，加入 cahce 後，從 cache 抓取。
+這時重新整理網頁並觀察 console，會發先圖片原先由網路抓取，加入 cache 後，從 cache 抓取。
 
 ## Step 8: 資料更改
 
@@ -173,4 +173,4 @@ const cacheKey = 'demo-sw-v2'
  <div style="background:url('src/cat2.jpeg') no-repeat no-repeat; width: 600px; height: 400px;"></div>
 ```
 
-這時重新整理網頁，會發現網頁上的貓咪一直是貓咪 1，cahce 中的 `index.html` 也並未改動。關掉網頁重開後，發現變成貓咪 2，cahce 中的 `index.html` 也變了。
+這時重新整理網頁，會發現網頁上的貓咪一直是貓咪 1，cache 中的 `index.html` 也並未改動。關掉網頁重開後，發現變成貓咪 2，cahce 中的 `index.html` 也變了。

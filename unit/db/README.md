@@ -135,7 +135,7 @@ Query your score via your name.
 
 ## mongodb
 
-This tutorial includes a demo code of using MongoDB without a step-by-step README.  Try to trace `mongodb.js` by youself.  Following are steps to setup a GUI environment for MongoDB.
+This tutorial includes a demo code of using MongoDB without a step-by-step README.  Try to trace `mongodb.js` by yourself.  Following are steps to setup a GUI environment for MongoDB.
 
 這份教材有提供使用 MongoDB 的範例程式，但是沒有一步一步的教學。可以試著靠自己了解 `mondb.js` 的程式。下面是為 MongoDB 設置 GUI 環境的教學。
 
