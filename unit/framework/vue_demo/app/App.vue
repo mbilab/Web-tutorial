@@ -1,11 +1,9 @@
 <template lang="pug">
 #app
   // Step 2 code here
-  // ゴ碞㎝ [semantic-ui ﹛呼](https://semantic-ui.com/elements/input.html#action) 妓 input
+  // 打包後，就能看到和 [semantic-ui 官網](https://semantic-ui.com/elements/input.html#action) 一樣的 input。
   #input.ui.input.action
     // Step 2.1
-
-
     // Step 2.2
 
 
@@ -57,4 +55,3 @@ html
   display: flex
   justify-content: space-between
 </style>
-
