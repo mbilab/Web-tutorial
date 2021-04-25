@@ -119,7 +119,7 @@ Add the following code into `./app.js` and follow the instructions beginning wit
 
 ## Step 5: stars
 
-Create stars and set thier interactions with grounds.  Add the following code into `./app.js` and follow the instructions beginning with `Step 2`.
+Create stars and set thier interactions with grounds.  Add the following code into `./app.js` and follow the instructions beginning with `Step 5.1`.
 
 ```javascript
   /* Step 5.1 code goes here
@@ -149,7 +149,7 @@ Initialize `score` and a text object.  Add the following code into `./app.js` an
   scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' })
 ```
 
-Update them whenever the player touch a star.  Add the following code into `./app.js` and follow the instructions beginning with `Step 2`.
+Update them whenever the player touch a star.  Add the following code into `./app.js` and follow the instructions beginning with `Step 6.2`.
 ```javascript
   score += 10
   scoreText.setText('Score: ' + score)
@@ -202,7 +202,7 @@ Load sounds.  Add the following code into `./app.js` and follow the instructions
 
 ```javascript
   // Step 8.1 code goes here
-  this.load.audioSprite('sfx', 'assets/audio/SoundEffects/fx_mixdown.json');
+  this.load.audioSprite('sfx', 'assets/audio/SoundEffects/fx_mixdown.json')
 ```
 
 Add the following code into `./app.js` and follow the instructions beginning with `Step 8.2`.
