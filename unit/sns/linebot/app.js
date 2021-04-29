@@ -24,18 +24,18 @@ app.post('/webhook', line.middleware(lineConfig), (req, res) => {
 
 const client = new line.Client(lineConfig)
 function handleEvent(event) {
+  console.log(event)
   if (event.type !== 'message' || event.message.type !== 'text') {
     return Promise.resolve(null)
   }
 
   if (event.message.id == '100001') return 200 // to deal with verify dummy data
 
-  return client.replyMessage(event.replyToken, { 
+  return client.replyMessage(event.replyToken, {
     type: 'text',
     text: event.message.text
   })
 }
-
 
 const server = https.createServer(sslOptions, app)
 
