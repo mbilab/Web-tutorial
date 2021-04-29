@@ -37,7 +37,7 @@ SDK 是開發 FB 的套件，我們會在這設定並載入 SDK`。在 `fb_login
         FB.init({
           appId  : myAppId,
           cookie : true,    // enable cookies to allow the server to access the session
-          version: 'v10.0', // use graph api version 10.0
+          version: 'v10.0', // use graph api version v10.0
           xfbml  : true,    // parse social plugins on this page
         })
         FB.AppEvents.logPageView()
