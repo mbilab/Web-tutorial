@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "cypress": "^7.5.0",
+    "jest": "^27.0.4"
+  },
+  "scripts": {
+    "test": "jest",
+    "cy:run": "cypress run"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

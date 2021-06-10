@@ -1,0 +1,16 @@
+.field {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 20vh;
+}
+
+.input {
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+p {
+  font-size: 36px;
+}
