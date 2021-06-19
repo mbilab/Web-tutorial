@@ -1,8 +1,4 @@
-/**
- * @jest-environment jsdom
- */
-
-const fs = require("fs")
+const fs = require('fs')
 const html = fs.readFileSync(`${__dirname}/../dist/index.html`)
 
 describe('<Greeting />', () => {
@@ -13,6 +9,6 @@ describe('<Greeting />', () => {
     const greeting = document.getElementById('greeting-text')
     const button = document.getElementById('greetings-show-button')
 
-    /* Step 2 */
+    // Step 2 code goes here
   })
 })

@@ -1,6 +1,6 @@
-# http & ajax 練習
+# http & ajax
 
-## Step 0: Setup
+## Step 0: setup
 
 You can install packages from scratch.
 
@@ -38,9 +38,9 @@ $ npm i
 
 ## Step 1: create a web server, which returns text
 
-[Express](https://expressjs.com/) is a lightweight web server built with [Node.js](https://nodejs.org/).  This step uses it to create a web server in ten lines.  Insert the following code into `./ser.js` and follow the instructions beginning with `Step 1`.
+[Express](https://expressjs.com/) is a lightweight web server built with [Node.js](https://nodejs.org/).  This step uses it to create a web server in ten lines.  Add the following code into `./ser.js` and follow the instructions beginning with `Step 1`.
 
-[Express](https://expressjs.com/) 是一個使用 [Node.js](https://nodejs.org/) 開發的輕量級網頁伺服器，這個步驟用其在十行程式碼內打造一個網頁伺服器。將底下的程式碼插入 `./ser.js`，然後照著 `Step 1` 開頭的提示操作。
+[Express](https://expressjs.com/) 是一個使用 [Node.js](https://nodejs.org/) 開發的輕量級網頁伺服器，這個步驟用其在十行程式碼內打造一個網頁伺服器。將以下的程式碼加入 `./ser.js` 並照著 `Step 1` 開頭的提示操作。
 
 ```
 /* Step 1:
@@ -99,7 +99,7 @@ Server can return html code.  Try modify `./ser.js` to return `hello world` in a
 
 Insert the following code to `./ser.js` and follow the instructions beginning with `Step 3`.
 
-將底下的程式碼插入 `./ser.js`，然後照著 `Step 3` 開頭的提示操作。
+將以下的程式碼插入 `./ser.js` 並照著 `Step 3` 開頭的提示操作。
 
 ```
 /* Step 3:
@@ -120,13 +120,13 @@ app.use(express.static(`${__dirname}/[path]`))
 
 Re-execute server and open `[host]:[port]/exercise.html` in a browser to see the result.  Do you know where `exercise.html` is?
 
-重新執行啟伺服器，然後用瀏覽器打開 `[host]:[port]/exercise.html` 看結果。你知道 `exercise.html` 在哪嗎？
+重新執行啟伺服器並用瀏覽器打開 `[host]:[port]/exercise.html` 看結果。你知道 `exercise.html` 在哪嗎？
 
 ## Step 4: dynamic results, even with the same url
 
 That's the reason to develop server-side programs.  Insert the following code to `./ser.js` and follow the instructions beginning with `Step 4`.
 
-產生動態結果才是開發伺服器端程式的理由。將底下的程式碼插入 `./ser.js`，然後照著 `Step 4` 開頭的提示操作。
+產生動態結果才是開發伺服器端程式的理由。將以下的程式碼插入 `./ser.js` 並照著 `Step 4` 開頭的提示操作。
 
 ```
 /* Step 4:
@@ -147,7 +147,7 @@ app.get('/step4', (req, res) => {
 
 Usually, the dynamic results are related to user input.  Insert the following code to `./ser.js` and follow the instructions beginning with `Step 5`.
 
-通常網頁的結果會跟使用者的輸入有關，將底下的程式碼插入 `./ser.js`，然後照著 `Step 5` 開頭的提示操作。
+通常網頁的結果會跟使用者的輸入有關，將以下的程式碼插入 `./ser.js` 並照著 `Step 5` 開頭的提示操作。
 
 ```
 /* Step 5:
@@ -169,7 +169,7 @@ app.get('/step5', (req, res) => {
 
 In practice, websites need to provide html forms, since no users will input via editing url.  Insert the following code to `./dist/exercise.html` and follow the instructions beginning with `Step 6`.
 
-實際上，網頁需要提供表單，畢竟沒有使用者會透過網址來輸入資料。將底下的程式碼插入 `./dist/exercise.html`，然後照著 `Step 6` 開頭的提示操作。
+實際上，網頁需要提供表單，畢竟沒有使用者會透過網址來輸入資料。將以下的程式碼插入 `./dist/exercise.html` 並照著 `Step 6` 開頭的提示操作。
 
 ```
 <!-- Step 6:
@@ -199,7 +199,7 @@ In practice, websites need to provide html forms, since no users will input via 
 
 For complex data and/or security issue, sometimes we don't want to store form data in the url.  Insert the following code to `./ser.js` and follow the instructions beginning with `Step 7`.
 
-為了複雜資料或是安全等因素，有時我們不想將資料存放在網址上。將底下的程式碼插入 `./ser.js`，然後照著 `Step 7` 開頭的提示操作。
+為了複雜資料或是安全等因素，有時我們不想將資料存放在網址上。將以下的程式碼插入 `./ser.js` 並照著 `Step 7` 開頭的提示操作。
 
 ```
 /* Step 7:
@@ -231,7 +231,7 @@ app.post('/step7', (req, res) => {
 
 Insert the following code to `./dist/exercise.html` and follow the instructions beginning with `Step 7`.
 
-將底下的程式碼插入 `./dist/exercise.html`，然後照著 `Step 7` 開頭的提示操作。
+將以下的程式碼插入 `./dist/exercise.html` 並照著 `Step 7` 開頭的提示操作。
 
 ```
 <!-- Step 7:

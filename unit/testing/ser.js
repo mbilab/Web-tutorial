@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = [port] /* Step 3.1 */
+// Step 3.1 code goest here
 
 app.listen(port, function() {
   console.log(`listening on port: ${port}`)
