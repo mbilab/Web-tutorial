@@ -57,13 +57,11 @@ $(document).[event](() => { // Step 2: replace [event] with an appropriate value
 ## Step 3: change css properties dynamically
 
 Paste the following code into `./exercise.html`
+
 ```
 <!--
-    Script code will work when put at the bottom of <body> in html file(such as Step2),
-    but the better developing way is separating js code in other file/files,
-    and import them into html file.
-    Make sure the following code is under Step1's code,
-    because jQuery will be used later.
+  * put js code in a separate file is better than Step 2
+  * why Step 3 code below Step 2?
 -->
 <script src='./exercise.js'></script>
 ```
@@ -125,6 +123,7 @@ Insert the following code into `./exercise.css` and follow instructions beginnin
 /* Step 6:
  * pure css transition has limits, but is worthy to learn
  * it requires less dependency and has better performance
+ * it also supports transition, try google `css transition`
  * `:hover` is a bad event (for touch screen), prevent using it
  */
 .card:nth-child(4):hover {
