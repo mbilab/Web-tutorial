@@ -377,12 +377,12 @@ There are three instructions that change the content of `#ajax-output`.  Which c
 
 ## Step 12: more
 
-There are more examples included in this unit.  No step-by-step instructions for them.  But maybe you can learn something from the source code.  
-以下有更多這個單元的範例，但沒有手把手的教學，但也許你能從原始碼中學到一些東西。
-
+There are more examples included in this unit.  No step-by-step instructions for them.  But maybe you can learn something from the source code.
   * `./php/` provides a php version of this exercise.  Php is a classic server side language.  Unlike nodejs, which creates a web server, you need a web server, such as Apache, to run your php code.
   * `./chat/` provides a chat room example, where you can learn how to save server data "permanently".  That is, the data is stored in file, which does not disappear even if the server restarts.
   * `./parcel/` uses `parcel` to bulid static files.
+
+以下有更多這個單元的範例，但沒有手把手的教學，但也許你能從原始碼中學到一些東西。
   * `./php/` 提供本教學的 php 版本。Php 是一個經典的伺服器端語言。與 nodejs 自己建立一個網頁伺器不同，在使用 php 時，你會需要其他網頁伺服器(例如 apache)來執行你的 php 程式。
   * `./chat/` 提供一個聊天室範例，其中你們可將資料 "永久" 存在伺服器端。這些資料會以檔案的形式存在伺服器端，即使網頁伺服器重開也不會消失。
   * `./parcel/` 使用 `parcel` 來編譯靜態檔案。
