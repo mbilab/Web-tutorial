@@ -4,12 +4,9 @@
   "description": "",
   "main": "config.js",
   "dependencies": {
-    "lodash": "^4.17.12",
-    "mongodb": "^3.1.13",
-    "mongoose": "^5.7.5",
-    "mysql": "^2.16.0"
+    "mongoose": "^6.2.10",
+    "mysql": "^2.18.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
