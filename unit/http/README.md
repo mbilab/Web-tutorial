@@ -219,7 +219,8 @@ For complex data and/or security issue, sometimes we don't want to store form da
 
 // include `body-parser`
 // 載入 `body-parser`
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
+import bodyParser from 'body-parser'
 
 // setup `body-parser`
 // 設定 `body-parser`
