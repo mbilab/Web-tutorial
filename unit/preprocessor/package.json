@@ -12,17 +12,6 @@
   },
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/preset-typescript": "^7.0.0-alpha.19",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "parcel-bundler": "^1.11.0",
-    "pug": "^3.0.1",
-    "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.17.2"
-  },
   "bugs": {
     "url": "https://github.com/mbilab/web-tutorial/issues"
   },
@@ -30,6 +19,11 @@
   "main": "index.js",
   "keywords": [],
   "dependencies": {
-    "jquery": "^3.5.0"
+    "parcel": "^2.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.0",
+    "@parcel/transformer-pug": "2.4.1",
+    "@parcel/transformer-sass": "2.4.1"
   }
 }
