@@ -12,9 +12,9 @@
   "dependencies": {
     "express": "^4.17.3",
     "jquery": "^3.6.0",
-    "parcel-bundler": "^1.12.5"
+    "parcel": "^2.4.1"
   },
   "devDependencies": {
-    "pug": "^3.0.2"
+    "@parcel/transformer-pug": "2.4.1"
   }
 }
