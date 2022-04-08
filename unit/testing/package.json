@@ -3,10 +3,10 @@
     "cy:run": "cypress run"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
-    "cypress": "^7.5.0",
-    "jest": "^27.0.4"
+    "cypress": "^9.5.3",
+    "jest": "^27.5.1"
   }
 }
