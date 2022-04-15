@@ -24,7 +24,6 @@ yarn # if you have it
 ```
 
 ## Step 1: use pug, a better html  
-   步驟 1：使用 pug，一個更好的 html
 
 - What's [Pug](https://pugjs.org/language/tags.html)?
   - Need no end tag.
@@ -67,7 +66,6 @@ yarn # if you have it
   每當 `./app/index.pug` 變更時，`./dist/index.html` 會自動重新產生。
 
 ## Step 2: use sass, a better css  
-   步驟 2：使用 sass，一個更好的 css
 
 - What's [SASS](https://sass-lang.com/guide)?  As pug, sass use indent to represent scope level and has many useful features.  Try variables, nesting, and mixins.  
   [SASS](https://sass-lang.com/guide) 是什麼？如同 pug，sass 使用縮排決定範圍並提供了很多有用的功能，試試 variables、nesting 以及 mixins。
@@ -101,7 +99,6 @@ yarn # if you have it
   比較看看 `./app/app.sass` 跟 `./dist/app.css`。
 
 ## Step 3: is there a better javascript?  
-   步驟 3：那有更好的 javascript 嗎？
 
 There was, see [Babel](https://babeljs.io/).  However, modern js engines catch up the development of js syntax.  Try to execute `./babel/es6.js` in old [Node.js](https://nodejs.org/en/) (version &lt; 7).  Now Babel is usually used for js variants such as [TypeScript](https://www.typescriptlang.org/).  Execute the following command and than compare `./babel/typescript.ts` and `./dist/typescript.js`.  
 曾經有的，請參考 [Babel](https://babeljs.io/)。然而，現代的 js 引擎已經追上 js 語法的發展，試試使用舊版的 [Node.js](https://nodejs.org/en/) (版本號小於 7)執行 `./babel/es6.js`。目前 Babel 通常用來處理 js 的變型，像是 [TypeScript](https://www.typescriptlang.org/)。執行以下指令並比較看看 `./babel/typescript.ts` 跟 `./dist/typescript.js`。
@@ -111,7 +108,6 @@ There was, see [Babel](https://babeljs.io/).  However, modern js engines catch u
 ```
 
 ## Step 4: automation (with parcel)  
-   步驟 4：自動化(使用 parcel)
 
 - Using parcel, you can watch pug, sass and javascript together.  
   使用 parcel，你可以同時處理 pug、sass 以及 javascript。
