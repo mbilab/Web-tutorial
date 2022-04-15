@@ -1,6 +1,6 @@
 {
   "name": "preprocessor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "preprocessor",
   "scripts": {
     "watch": "parcel watch parcel/index.pug --out-dir dist/parcel/ --public-url ./ ",
@@ -16,10 +16,15 @@
     "url": "https://github.com/mbilab/web-tutorial/issues"
   },
   "homepage": "https://github.com/mbilab/web-tutorial#readme",
-  "main": "index.js",
   "keywords": [],
   "dependencies": {
-    "parcel": "^2.4.1"
+    "@babel/cli": "^7.17.6",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "jquery": "^3.6.0",
+    "node-sass": "^7.0.1",
+    "parcel": "^2.4.1",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",
