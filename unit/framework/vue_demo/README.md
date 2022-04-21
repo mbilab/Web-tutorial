@@ -1,144 +1,132 @@
-Vue
-===
+# vue demo
 
-## Step 0: setup and pack
+## Step 0: setup
 
-安裝 `parcel`
+Install packages. Notice that only one of the following commands is required.  
+安裝套件。注意下面指令擇一使用即可。
 
-```
-yarn add parcel
-# or
-npm i parcel
-```
-
-修課同學不用再裝 `parcel`，伺服器上裝好全域的 `parcel` 了。
-
-打包並開啟開發用伺服器，過程中 `parcel` 會自動幫忙安裝其它需要的套件。
-
-```
-parcel ./app/index.pug --port [port]
+```shell
+npm i
+yarn # if you have `yarn` installed
 ```
 
-Open `[host]:[port]` in a browser to see the result.
+Start the development server. Notice that only one of the following commands is required.  
+啟動開發伺服器。注意下面指令擇一使用即可。
 
+```shell
+npm run serve
+yarn serve # if you have yarn
+```
+
+Open `[host]:[port]` in a browser to see the result.  
 用瀏覽器打開 `[host]:[port]` 看結果。
 
-## Step 1: import js, vue, and semantic-ui-offline
+If you want to create a vue project from scratch, try search "vue-cli".  
+如果你想從無到有建構一個 vue 專案，試著搜尋 "vue-cli"。
 
-在 `app/index.pug` 加入以下程式碼:
+## Step 1: data binding
 
+Follow the instructions beginning with `Step 1`.  
+請照著 `Step 1` 開頭的提示操作。
+
+```pug
+// Step 1.1
+// copy this code snippet to `./src/App.vue`
+// replace the orignal `input` tag
+// watch out the indentation
+// edit [variable name] to an appropriate value
+// 複製這段程式碼至 `./src/App.vue`
+// 取代原本的 `input` 標籤
+// 注意縮排
+// 將 [variable name] 修改成合適的值
+input(v-model="[variable name]", type="text", placeholder="Task...")
 ```
-    // Step 1
-    // 加入被綁定的 DOM 以及內容實作
-    #app
-    script(src="./app.js")
+
+```pug
+// Step 1.2
+// copy this code snippet to `./src/App.vue`
+// edit [variable name] to an appropriate value
+// 複製這段程式碼至 `./src/App.vue`
+// 將 [variable name] 修改成合適的值
+p {{ [variable name ]}}
 ```
 
-在 `app/app.js` 加入以下程式碼:
-
-```
-/* Step 1
- * 在 `app.js` 中們新增一個 vue 實例並跟 `#app` 綁定
- * 根據 vue 作者的說法程式碼中的 h 代表 hyperscript
- * 我們會在同一個檔案，App.vue，中撰寫 pug/sass/js，並在此引入這個檔案
+```javascript
+/* Step 1.3
+ * copy this code snippet to `./src/App.vue`
+ * edit [variable name] to an appropriate value
+ * 複製這段程式碼至 `./src/App.vue`
+ * 將 [variable name] 修改成合適的值
  */
-import 'semantic-ui-offline/semantic.min.css'
-import App from './App.vue'
-
-new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+[variable name]: 'Data binding is cool!',
 ```
 
-## Step 2: use semantic-ui 
+You will see the UI changes as the data, which is _binding_.  
+你會看到介面隨著資料改變，這就是所謂的 _binding_。
 
-在 `app/App.vue` pug 的部分加入以下程式碼：
+## Step 2: handle event
 
-```
-    // 打包後，就能看到和 [semantic-ui 官網](https://semantic-ui.com/elements/input.html#action) 一樣的 input。
-    #input.ui.input.action
-      // Step 2.1
-      input(type="text", placeholder="add todo...")
+Follow the instructions beginning with `Step 2`.  
+請照著 `Step 2` 開頭的提示操作。
 
-      // Step 2.2
-      button.ui.icon.button
-        i.plus.icon
-```
-
-## Step 3: data binding
-
-將 `app/App.vue` 中 Step 2 的 Step 2.1 部分改成如下程式碼，可以看到介面即時跟著資料改動。
-
-```
-    // Step 3.1
-    // 取代掉 Step 2.1
-    // 請務必注意縮排
-    input(type="text", v-model='[your variable name]', placeholder="add todo...")
+```pug
+// Step 2.1
+// copy this code snippet to `./src/App.vue`
+// replace the orignal `input` tag
+// capture the `click` event
+// 複製這段程式碼至 `./src/App.vue`
+// 取代原本的 `input` 標籤
+// 處理 `click` 事件
+button(@click='addTask') Add
 ```
 
-在 `app/App.vue` Step 3.2 中加入以下程式碼：
+在 `app/App.vue` data 的部分加入以下程式碼:
 
-```
-    // Step 3.2
-    p {{[your variable name]}}
-```
-
-在 `app/App.vue` Step 3.3 的部分加入以下程式碼：
-	
-```
-    // Step 3.3
-    [your var name]: 'Data binding is cool!',
+```javascript
+/* Step 2.2
+ * copy this code snippet to `./src/App.vue`
+ * 複製這段程式碼至 `./src/App.vue`
+ */
+tasks: [],
 ```
 
-## Step 4: data and method
-
-綁定 DOM 的事件，透過 methods 修改 data。用以下程式碼取代上一步 `app/App.vue` 中 Step 3.2 的部分：
-
-```
-    // Step 4.1
-    // 取代掉 Step 2.2 的部分
-    // 請務必注意縮排
-    // 綁定事件，觸發 addTask 函式
-    button.ui.icon.button(@click='addTask')
-```
-
-在 `app/App.vue` data 的部分加入以下程式碼: 
-
-```
-    // Step 4.2
-    tasks: [],
-```
-
-在 `app/App.vue` methods 的部分加入以下程式碼: 
-
-```
-    // Step 4.3
-    addTask() {
-      if (!this.[your variable name])
-        return
-      this.tasks.push({
-        name: this.[your variable name],
-        toggle: false
-      })
-      this.[your variable name] = ''
-    },
+```javascript
+/* Step 2.3
+ * copy this code snippet to `./src/App.vue`
+ * edit [variable name] and [another variable name] to an appropriate value
+ * 複製這段程式碼至 `./src/App.vue`
+ * 將 [variable name] 與 [another variable name] 修改成合適的值
+ */
+addTask() {
+  if (!this.[variable name])
+    return
+  this.[another variable name].push({
+    name: this.[variable name],
+    toggle: false
+  })
+  this.[variable name] = ''
+},
 ```
 
-## Step 5: 列表渲染 v-for。
+## Step 3: 列表渲染 v-for。
 
-在 `app/App.vue` 加入以下程式碼：
+Follow the instructions beginning with `Step 3`.  
+請照著 `Step 3` 開頭的提示操作。
 
+```pug
+// Step 3.1
+// copy this code snippet to `./src/App.vue`
+// `v-for` renders multiple `.task` tags based on `tasks`
+// notice the data structure of each `task` (see `addTask()`)
+// 複製這段程式碼至 `./src/App.vue`
+// `v-for` 根據 `tasks` 渲染出多個 `.task` 標籤
+// 注意每個 `task` 的資料結構(參考 `addTask()`)
+.task(v-for="task in tasks")
+  div(@click='toggleTask(task.name)')
+    input(v-model="task.toggle",type="checkbox")
+    label(v-if="!task.toggle") {{ task.name }}
+    label(v-if="task.toggle"): del {{ task.name }}
 ```
-  // Step 5
-  // v-for 根據 task 中元素的數量選染出數個 .task。
-  .task(v-for="task in tasks")
-    .ui.checkbox(@click='toggleTask(task.name)')
-      input(type="checkbox" v-model='task.toggle')
-      label(v-if='!task.toggle') {{task.name}}
-      label(v-if='task.toggle')
-        del {{task.name}}
-    i.delete.icon(v-if='task.toggle' @click='rmTask(task.name)')
-```
 
-你已經完成一個用以 vue 作為框架的 todo list app。
+You've done a vue-based TODO app.  
+你已經完成一個以 vue 框架為基礎的 TODO app。

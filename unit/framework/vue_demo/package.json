@@ -1,8 +1,30 @@
 {
+  "name": "vue_demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "vue": {
+    "devServer": {
+      "host": "zoro.ee.ncku.edu.tw"
+    }
+  },
   "dependencies": {
-    "parcel": "^2.4.1"
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "vue": "^3.2.13"
   },
   "devDependencies": {
-    "@parcel/transformer-pug": "2.4.1"
-  }
+    "@vue/cli-service": "~5.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }

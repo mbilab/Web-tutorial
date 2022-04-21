@@ -20,7 +20,7 @@ Or, simply use our `package.json`, which specifies dependent packages for you.  
 
 ```shell
 npm i
-yarn # if you have it
+yarn # if you have `yarn` installed
 ```
 
 ## Step 1: use pug, a better html  
@@ -70,14 +70,14 @@ yarn # if you have it
 - What's [SASS](https://sass-lang.com/guide)?  As pug, sass use indent to represent scope level and has many useful features.  Try variables, nesting, and mixins.  
   [SASS](https://sass-lang.com/guide) 是什麼？如同 pug，sass 使用縮排決定範圍並提供了很多有用的功能，試試 variables、nesting 以及 mixins。
 
-- Compile `./app/app.sass` to `./dist/app.css`.  Since you know `--watch` in pug, here we just skip the manual compilation way.
+- Compile `./app/app.sass` to `./dist/app.css`.  Since you know `--watch` in pug, here we just skip the manual compilation way.  
   編譯 `./app/app.sass` 產生 `./dist/app.css`。既然在 pug 中看過 `--watch` 參數了，這邊我們就跳過手動編譯的方式。
 
   ```shell
   ./node_modules/.bin/node-sass ./app/app.sass -o dist --watch
   ```
 
-- Try writing sass code.  Follow the instructions beginning with `Step 2`.
+- Try writing sass code.  Follow the instructions beginning with `Step 2`.  
   試著寫 sass 語法，請照著 `Step 2` 開頭的提示操作。
 
   ```
