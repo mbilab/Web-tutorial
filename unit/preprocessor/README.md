@@ -15,8 +15,8 @@ npm i pug-cli --save-dev # for step 1
 # edit package.json if you want
 ```
 
-Or, simply use our `package.json`, which specifies dependent packages for you.  Notice that only one of the following two commands is required.  
-或者，直接使用我們的 `package.json`，裡頭記錄了需要的套件。注意下面兩個指令擇一使用即可。
+Or, simply use our `package.json`, which specifies dependent packages for you.  Notice that only one of the following commands is required.  
+或者，直接使用我們的 `package.json`，裡頭記錄了需要的套件。注意下面指令擇一使用即可。
 
 ```shell
 npm i
@@ -86,7 +86,7 @@ yarn # if you have `yarn` installed
    * you may need to copy more than once
    * make the three buttons different with `buttonStyle` mixin
    * replace [child index], [color] and [border radius] with appropriate values
-   * 將這段程式碼複製至 `./app/app.sass`
+   * 複製這段程式碼至 `./app/app.sass`
    * 你可能需要複製不止一次
    * 使用 `buttonStyle` mixin 讓三個按鈕看起來不一樣
    * 將 [child index]、[color] 以及 [border radius] 修改成合適的值
