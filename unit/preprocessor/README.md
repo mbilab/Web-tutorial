@@ -48,7 +48,7 @@ yarn # if you have `yarn` installed
   比較看看 `./app/index.pug` 跟 `./dist/index.html`。
 
 - Try writing pug code.  Follow the instructions beginning with `Step 1`.  In `vi`, try pressing `/` key to search text.  Remember to re-compile once you edit a pug file.  
-  試著寫 pug 語法，請照著 `Step 1` 開頭的提示操作。在 `vi` 中可以使用 `/` 鍵搜尋文字。記得在編輯 pug 檔之後要重新編譯。
+  試著寫 pug 語法，照著 `Step 1` 開頭的提示操作。在 `vi` 中可以使用 `/` 鍵搜尋文字。記得在編輯 pug 檔之後要重新編譯。
 
   ```pug
   // Step 1:
@@ -78,7 +78,7 @@ yarn # if you have `yarn` installed
   ```
 
 - Try writing sass code.  Follow the instructions beginning with `Step 2`.  
-  試著寫 sass 語法，請照著 `Step 2` 開頭的提示操作。
+  試著寫 sass 語法，照著 `Step 2` 開頭的提示操作。
 
   ```
   /* Step 2:
