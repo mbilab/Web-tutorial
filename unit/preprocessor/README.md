@@ -120,8 +120,8 @@ There was, see [Babel](https://babeljs.io/).  However, modern js engines catch u
   Note that `./app/index.pug` links to the compiled `app.css` but `./parcel/index.pug` links to the original `app.sass`.  
   注意 `./app/index.pug` 連到編譯過後的 `app.css`，但是 `./parcel/index.pug` 連到原始的 `app.sass`。
 
-- The files compiled by parcel are stored in `./dist` by default. You may want to configurate it to `./build` by the `--dist-dit ./build` option along with the parcel command.  
-  用 parcel 編譯後的檔案，預設會放在 `./dist`。你也許會想在 parcel 的指令中加上 `--dist-dir ./build` 的選項來把它設定成 `./build`。
+- The files compiled by parcel are stored in `./dist` by default. You may want to configurate it to `./build` by the `--dist-dir ./build` option along with the parcel command. (This option is named `--out-dir` for the older parcel whose version is less than `2.5.0`.)  
+  用 parcel 編譯後的檔案，預設會放在 `./dist`。也許你會想在 parcel 的指令中加上 `--dist-dir ./build` 的選項來把它設定成 `./build`。(這個選項在舊版(2.5.0前)的 parcel 中叫做 `--out-dir`。)
 
 - The `.map` files are source maps to link the compiled codes seen by the browser to the uncompiled source code. They can be used by the developers in debugging to set break points in source codes. Disabling the generation of the map files has no impact on the website. So, you may want to disable it by the `--no-source-maps` option along with the parcel command to make the working directory cleaner.  
   `.map` 檔是原始碼對應檔，把網頁看到的編譯後的程式碼對應到編譯前的原始碼。工程師可以利用這些檔案來在原始碼中設定中斷點。不生成這些檔案也不會對網頁有影響，所以你可能會想在 parcel 的指令中加上 `--no-source-maps` 的選項來停用，來讓資料夾乾淨些。
