@@ -112,9 +112,12 @@ There was, see [Babel](https://babeljs.io/).  However, modern js engines catch u
 
 - Using parcel, you can watch pug, sass and javascript together.  
   使用 parcel，你可以同時處理 pug、sass 以及 javascript。
+- Compile with parcel. Notice that only one of the following two commands is required. The definition of the second command is in `package.json`, "scripts".  
+  用 parcel 編譯。注意下面兩個指令擇一使用即可。第二個指令定義在 `package.json` 裡的 scripts。
 
   ```shell
   ./node_modules/.bin/parcel watch ./parcel/index.pug
+  npm run watch
   ```
 
   Note that `./app/index.pug` links to the compiled `app.css` but `./parcel/index.pug` links to the original `app.sass`.  
