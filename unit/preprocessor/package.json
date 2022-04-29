@@ -4,7 +4,7 @@
   "description": "preprocessor",
   "scripts": {
     "watch": "npx parcel watch parcel/index.pug --dist-dir dist/parcel/ --public-url ./ --no-source-maps",
-    "serv": "parcel parcel/index.pug --port 8080"
+    "serv": "npx parcel parcel/index.pug --port 8080"
   },
   "repository": {
     "type": "git",
