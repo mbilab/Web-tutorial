@@ -41,8 +41,8 @@ yarn # if you have `yarn` installed
   ```shell
   ./node_modules/.bin/pug3 ./app/index.pug -o ./dist/ -P # in Linux
   ./node_modules/.bin/pug3.cmd ./app/index.pug -o ./dist/ -P # in Windows
-  yarn pug ./app/index.pug -o ./dist/ -P # if you have yarn installed
-  npx pug ./app/index.pug -o ./dist/ -P # if you have npx installed
+  yarn pug3 ./app/index.pug -o ./dist/ -P # if you have yarn installed
+  npx pug3 ./app/index.pug -o ./dist/ -P # if you have npx installed
   ```
 
   Compare `./app/index.pug` and `./dist/index.html`.  
@@ -60,7 +60,7 @@ yarn # if you have `yarn` installed
   厭倦一直編譯了嗎？使用 `--wath` 參數。
 
   ```shell
-  ./node_modules/.bin/pug ./app/index.pug -o ./dist/ -P --watch
+  ./node_modules/.bin/pug3 ./app/index.pug -o ./dist/ -P --watch
   ```
 
   The `./dist/index.html` is automatically re-generated whenever you save `./app/index.pug`.  
