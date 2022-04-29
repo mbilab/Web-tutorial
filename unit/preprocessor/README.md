@@ -35,11 +35,12 @@ yarn # if you have `yarn` installed
   - 使用縮排決定標籤的範圍。
   - 使用 css 語法來描述 html 標籤。例如，pug 中的 `#container` 等同於 html 中的 `<div id="container"></div>`。
 
-- Compile a pug file.  Notice that only one of the following three commands is required.
-  編譯 pug 檔案。注意下面三個指令擇一使用即可。
+- Compile a pug file.  Notice that only one of the following 4 commands is required.  
+  編譯 pug 檔案。注意下面四個指令擇一使用即可。
 
   ```shell
-  ./node_modules/.bin/pug ./app/index.pug -o ./dist/ -P
+  ./node_modules/.bin/pug3 ./app/index.pug -o ./dist/ -P # in Linux
+  ./node_modules/.bin/pug3.cmd ./app/index.pug -o ./dist/ -P # in Windows
   yarn pug ./app/index.pug -o ./dist/ -P # if you have yarn installed
   npx pug ./app/index.pug -o ./dist/ -P # if you have npx installed
   ```
