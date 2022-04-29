@@ -1,6 +1,6 @@
 {
   "name": "preprocessor",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "preprocessor",
   "scripts": {
     "watch": "parcel watch parcel/index.pug --dist-dir dist/parcel/ --public-url ./ --no-source-maps",
