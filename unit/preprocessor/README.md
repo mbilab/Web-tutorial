@@ -129,7 +129,7 @@ There was, see [Babel](https://babeljs.io/).  However, modern js engines catch u
 - See `./parcel/app.js` to learn how to use jquery with parcel.  
   參考 `./parcel/app.js` 了解如何在 parcel 中使用 jquery。
 
-- Automation tools like parcel do more than just preprocessing.  The command below create a development web server for you.
+- Automation tools like parcel do more than just preprocessing.  The command below create a development web server for you.  
   像 parcel 這樣的自動化工具，其實可以做很多前處理以外的工作。下面的指令幫你建好一個測試用的網頁伺服器。
 
   ```shell
