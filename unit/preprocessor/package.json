@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "preprocessor",
   "scripts": {
-    "watch": "parcel watch parcel/index.pug --out-dir dist/parcel/ --public-url ./ ",
+    "watch": "parcel watch parcel/index.pug --dist-dir dist/parcel/ --public-url ./ --no-source-maps",
     "serv": "parcel parcel/index.pug --port 8080"
   },
   "repository": {
