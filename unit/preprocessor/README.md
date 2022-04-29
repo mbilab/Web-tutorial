@@ -123,6 +123,9 @@ There was, see [Babel](https://babeljs.io/).  However, modern js engines catch u
   Note that `./app/index.pug` links to the compiled `app.css` but `./parcel/index.pug` links to the original `app.sass`.  
   注意 `./app/index.pug` 連到編譯過後的 `app.css`，但是 `./parcel/index.pug` 連到原始的 `app.sass`。
 
+- The option `--public-url ./` must be provided to parcel for the html file run locally. Otherwise, the relative path is default to be `/` which is the root folder of your machine. On Windows, it is the disk where the html file is located (maybe C:\).
+  要在自己的電腦上打開 html 檔的話，用 parcel 時一定要加上 `--public-url ./` 的選項。不然預設的相對路徑會是 `/` ，也就是你的電腦地根目錄，在 Windows 上則是 html 檔所在的硬碟 (也許是 C 槽)。
+
 - The files compiled by parcel are stored in `./dist` by default. You may want to configurate it to `./build` by the `--dist-dir ./build` option along with the parcel command. (This option is named `--out-dir` for the older parcel whose version is less than `2.5.0`.)  
   用 parcel 編譯後的檔案，預設會放在 `./dist`。也許你會想在 parcel 的指令中加上 `--dist-dir ./build` 的選項來把它設定成 `./build`。(這個選項在舊版(2.5.0前)的 parcel 中叫做 `--out-dir`。)
 
