@@ -13,9 +13,11 @@
   "author": "Tien-Hao Chang <darby.chang@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^2.4.1"
+    "parcel": "^2.5.0",
+    "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@parcel/transformer-pug": "2.4.1"
+    "@parcel/transformer-pug": "2.5.0",
+    "@parcel/transformer-vue": "2.5.0"
   }
 }

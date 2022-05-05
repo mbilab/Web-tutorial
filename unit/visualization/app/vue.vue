@@ -8,9 +8,9 @@
 
   br
   svg#chart(height="460",width="960")
-    // Step 3.2
+    // Step 3.2 code goes here
 
-  // step 4.1
+  // Step 4.1 code goes here
 
 </template>
 
@@ -33,13 +33,9 @@ export default {
   methods: {
     update(code) {
       this.inputData = `你按了 ${code}`
-      // step 4.2
+      // Step 4.2 code goes here
     },
   },
 
 }
 </script>
-
-<!--
-vi:backupcopy=yes
--->
