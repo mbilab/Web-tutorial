@@ -8,7 +8,7 @@
   },
   "vue": {
     "devServer": {
-      "host": "zoro.ee.ncku.edu.tw"
+      "allowedHosts": "all"
     }
   },
   "dependencies": {
