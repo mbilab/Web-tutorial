@@ -4,14 +4,14 @@
 
 ### Step 0: Setup
 
-1. 前往 [FB developer](https://developers.facebook.com/) ，點選最上面的Banner右上角的「新手指南/立即開始/登入」後，輸入基本資料
-1. 建立應用程式，類型選「無」。輸入資料後按「建立應用程式」並登入
-1. 在新增產品頁面找到 Facebook 登入，並按右下角的「設定」後，就啟用 Facebook 登入了
-1. 從左側選單中找到 Facebook 登入，打開下拉式選單並點選「設定」。在「使用 JavaScript SDK 登入」處改成「是」。並在下方輸入允許的網域為 https://luffy.ee.ncku.edu.tw/ 後，儲存變更。
-1. 複製 `id.sample.js` 並改名為 `id.js`
-1. 點 FB developer 上方 Banner 的應用程式編號(數字的部分)，將其複製起來
-1. 將 `id.js` 裡的 `myAppID` 設定為複製的應用程式編號
-1. 在 FB developer 左側選單中找到「設定」，「基本資料」。並將「網站網址」改成 `https://luffy.ee.ncku.edu.tw/~<username>/sns/fb_login.html` ( 記得建立 soft link 在 public_html )
+1. 前往 [Meta for Developer](https://developers.facebook.com/)，點選 banner 右上角的「新手指南/立即開始/登入」後，輸入基本資料
+2. 建立應用程式，類型選「無」。輸入資料後按「建立應用程式」並登入
+3. 在新增產品頁面找到「Facebook 登入」，並按右下角的「設定」後，就啟用 Facebook 登入了
+4. 從左側選單中找到「Facebook 登入」，打開下拉式選單並點選「設定」。在「使用 JavaScript SDK 登入」處改成「是」。並在下方輸入允許的網域為 https://luffy.ee.ncku.edu.tw/ ，儲存變更。
+5. 複製 `id.sample.js` 並改名為 `id.js`
+6. 點 Meta for Developer 上方 Banner 的應用程式編號(數字的部分)，將其複製起來
+7. 將 `id.js` 裡的 `myAppID` 設定為複製的應用程式編號
+8. 在 Meta for Developer 左側選單中找到「設定」，「基本資料」。並將「網站網址」改成 `https://luffy.ee.ncku.edu.tw/~<username>/sns/fb_login.html` (記得建立 soft link 到 `~/public_html/`)
 
 ### Step 1: 新增「Facebook 登入」按鈕
 
