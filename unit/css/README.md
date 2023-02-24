@@ -84,12 +84,26 @@ Insert the following code into `./exercise.css` and follow instructions beginnin
 position: [correct position];
 ```
 
-## step 7: arrange the info of the paragraph
+## step 7: adjust the position of the main content on z-coordinate
+
+Insert the following code into `./exercise.css` and follow instructions beginning with `Step 8`.
+
+```
+/* Step 7:
+ * the paragraph will block the banner, while the page scrolled down
+ * input the `correct z-index` to adjust the position
+ * learn the attribute z-index for adjusting items' position on the z-coordinate
+ * google `css z-index` for more
+ */
+z-index: [correct z-index];
+```
+
+## step 8: arrange the info of the paragraph
  
 Insert the following code into `./exercise.css` and follow instructions beginning with `Step 7`.
 
 ```
-/* Step 7:
+/* Step 8:
  * the writer/date info should be arranged, to the end of left and right sides
  * input the `correct display` and `correct justify-content` to make flexbox
  * learn flexbox for arranging items
@@ -97,18 +111,4 @@ Insert the following code into `./exercise.css` and follow instructions beginnin
  */
 display: [correct display];
 justify-content: [correct justify-content];
-```
-
-## step 8: adjust the position of the main content on z-coordinate
-
-Insert the following code into `./exercise.css` and follow instructions beginning with `Step 8`.
-
-```
-/* Step 8:
- * the paragraph will block the banner, while the page scrolled down
- * input the `correct z-index` to adjust the position
- * learn the attribute z-index for adjusting items' position on the z-coordinate
- * google `css z-index` for more
- */
-z-index: [correct z-index];
 ```

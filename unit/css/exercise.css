@@ -8,7 +8,6 @@ body {
   background-color: white;
 
   /* Step 2 code goes here */
-
 }
 
 #navbar {
@@ -45,10 +44,10 @@ i.icon {
 
 }
 
-.avatar.dirty { background-image: url(./res/dirty.jpg) }
-.icon.arrow   { background-image: url(./res/angle-left.jpg) }
-.icon.dot     { background-image: url(./res/dot.svg) }
-.icon.submit  { background-image: url(./res/external-link.svg) }
+.avatar      { background-image: url(https://i.pravatar.cc/30) }
+.icon.arrow  { background-image: url(./res/angle-left.jpg) }
+.icon.dot    { background-image: url(./res/dot.svg) }
+.icon.submit { background-image: url(./res/external-link.svg) }
 
 #banner {
 
@@ -67,13 +66,13 @@ i.icon {
   position: relative;
   top: 290px;
 
-  /* Step 8 code goes here */
+  /* Step 7 code goes here */
 
 }
 
 .info {
 
-  /* Step 7 code goes here */
+  /* Step 8 code goes here */
 
   margin: 0 0 5% 0;
 }

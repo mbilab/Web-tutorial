@@ -39,10 +39,10 @@ i.icon {
   right: 0.5em;
 }
 
-.avatar.dirty { background-image: url(./res/dirty.jpg) }
-.icon.arrow   { background-image: url(./res/angle-left.jpg) }
-.icon.dot     { background-image: url(./res/dot.svg) }
-.icon.submit  { background-image: url(./res/external-link.svg) }
+.avatar      { background-image: url(https://i.pravatar.cc/30) }
+.icon.arrow  { background-image: url(./res/angle-left.jpg) }
+.icon.dot    { background-image: url(./res/dot.svg) }
+.icon.submit { background-image: url(./res/external-link.svg) }
 
 #banner {
   background: url(./res/main.jpg) center / cover;
