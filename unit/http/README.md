@@ -358,7 +358,7 @@ $.get('./step5', {
 Ajax means "asynchronous js and xml".  So, what's asyncronous?  Follow the instructions beginning with `Step 11`.  
 Ajax 代表「非同步的 js 與 xml」。所以什麼是非同步呢？請照著 `Step 11` 開頭的提示操作。
  
-```
+```javascript
 /* Step 11:
  * insert this code snippet to `./dist/exercise.js`
  * edit [timeout] to an appropriate value
