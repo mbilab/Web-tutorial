@@ -174,3 +174,7 @@ const cacheKey = 'demo-sw-v2'
 ```
 
 這時重新整理網頁，會發現網頁上的貓咪一直是貓咪 1，cache 中的 `index.html` 也並未改動。關掉網頁重開後，發現變成貓咪 2，cahce 中的 `index.html` 也變了。
+
+## Step 8: 更多
+
+瀏覽器對 PWA 的支援一直有在更新，了解基礎後，實際運用時，可以使用一些 CLI 工具來幫忙快速建立 PWA 網頁，例如 `vue-cli`。

@@ -3,7 +3,7 @@
 const express = require('express')
 const app = express()
 const fs = require('fs')
-const config= require('./config')
+const config = require('./config')
 const port = config.port
 
 app.use(express.static(`${__dirname}/dist`))
