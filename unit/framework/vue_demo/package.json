@@ -12,14 +12,13 @@
     }
   },
   "dependencies": {
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0",
-    "sass": "^1.50.0",
-    "sass-loader": "^12.6.0",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
     "vue": "^3.2.13"
   },
   "devDependencies": {
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "vue-cli-plugin-pug": "~2.0.0"
   },
   "browserslist": [
     "> 1%",
