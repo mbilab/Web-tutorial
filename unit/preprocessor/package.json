@@ -18,13 +18,13 @@
   "homepage": "https://github.com/mbilab/web-tutorial#readme",
   "keywords": [],
   "dependencies": {
+    "@anduh/pug-cli": "^1.0.0-alpha8",
     "@babel/cli": "^7.17.6",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "jquery": "^3.6.0",
-    "node-sass": "^7.0.1",
-    "parcel": "^2.5.0",
-    "@anduh/pug-cli": "^1.0.0-alpha8"
+    "node-sass": "^8.0.0",
+    "parcel": "^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",
