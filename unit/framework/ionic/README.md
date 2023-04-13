@@ -30,4 +30,5 @@ $ ../node_modules/ionic/bin/ionic serve
 * Reading [document of ionic](https://ionicframework.com/docs/intro).
 * Learn and try to customize your app. 
 * Moreover, publish your app in App Store and Google Play.
-
+* [This video](https://www.youtube.com/watch?v=whnA4Eod3xo) pretty much covers this tutorial.
+* [This video](https://www.youtube.com/watch?v=AZJUSomFOwk) shows that how to use simulators with ionic.
