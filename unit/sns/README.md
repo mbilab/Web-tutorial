@@ -23,7 +23,7 @@
     the JavaScript SDK to present a graphical Login button that triggers
     the FB.login() function when clicked.
     -->
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    <fb:login-button scope="public_profile" onlogin="checkLoginState();"></fb:login-button>
 ```
 
 由於目前沒有載入SDK，瀏覽器無法解析 <fb></fb> 這個 tag，但仍能透過開發人員工具看到該 tag 確實有在html裡。
@@ -67,40 +67,40 @@ SDK 是開發 FB 的套件，我們會在這設定並載入 SDK`。在 `fb_login
 
 完成剛剛寫好的按鈕事件，透過 `FB.getLoginStatus` 取得狀態，並傳入 `statusChangeCallback`，程式碼
 在 `fb_login.html` 加入以下程式碼，並觀察 console.log 中顯示的 response 物件內容
-```
-      /* Step 3 code goes here
-       * This function is called when someone finishes with the Login button
-       * See the onlogin handler attached to it in the sample code below
-       */
-      function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-          statusChangeCallback(response)
-        })
-      }
+```javascript
+    /* Step 3 code goes here
+      * This function is called when someone finishes with the Login button
+      * See the onlogin handler attached to it in the sample code below
+      */
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response)
+      })
+    }
 ```
 
 ### Step 4: 設計面對不同狀態使用者的反應
 
 我們可以在 `statusChangeCallback` 設計我們要怎麼面對不同狀態的使用者，在 `fb_login.html` 加入以下程式碼:
 
-```
-        /* Step 4 code goes here
-         * The response object is returned with a status field that lets the
-         * app know the current login status of the person.
-         * Full docs on the response object can be found in the documentation
-         * for FB.getLoginStatus().
-         */
-        if (response.status === 'connected') {
-          // Logged into your app and Facebook.
-          testAPI()
-        } else if (response.status === 'not_authorized') {
-          // The person is logged into Facebook, but not your app.
-          document.getElementById('status').innerHTML = 'Please log into this app.'
-        } else {
-          // The person is not logged into Facebook, so we're not sure if
-          // they are logged into this app or not.
-          document.getElementById('status').innerHTML = 'Please log into Facebook.'
-        }
+```javascript
+    /* Step 4 code goes here
+      * The response object is returned with a status field that lets the
+      * app know the current login status of the person.
+      * Full docs on the response object can be found in the documentation
+      * for FB.getLoginStatus().
+      */
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI()
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log into this app.'
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log into Facebook.'
+    }
 ```
 
 我們在 testAPI 取得了使用者的名字，試找找哪些使用者資料是可以透過這個 api 取得的。

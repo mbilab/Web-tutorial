@@ -1,8 +1,8 @@
 # LINE Bot
 
-1. 在 [LINE Developers Console](https://developers.line.biz/console/) 中建立 Channel, 如何建立 Channel 請參考 [如何建立Channel](https://developers.line.biz/zh-hant/docs/messaging-api/getting-started/)
+1. 在 [LINE Developers Console](https://developers.line.biz/console/) 中建立 Channel, 如何建立 Channel 請參考 [如何建立Channel](https://developers.line.biz/en/docs/messaging-api/getting-started/)
 
-2. 將 Channel 中的 Webhook URL 設定為 `https://luffy.ee.ncku.edu.tw:[port]/webhook`
+2. 在 Channel 的頁面中點選 Messaging API 頁籤，將 Webhook URL 設定為 `https://luffy.ee.ncku.edu.tw:[port]/webhook`
 
 3. 執行 `yarn` 安裝需要用到的套件
 
