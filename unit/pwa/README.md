@@ -14,11 +14,13 @@
 
 * 將 config.json.sample 複製成 config.json。
 
-  `cp config.json.sample config.json`
+```shell
+cp config.json.sample config.json
+```
 
-* 進入`config.json`，填寫 `cert`、`ca`、`key` 的路徑。
+* 開啟 `config.json`，填寫 `cert`、`ca`、`key` 的路徑。
 
-* 打開 `ser.js` 依指示刪掉程式碼，並加入:
+* 開啟 `ser.js` 依指示刪掉程式碼，並加入:
 
 ```javascript
 const https = require('https')
@@ -42,11 +44,11 @@ Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、
 
 在 `dist/index.html` 加入:
 
- ```html
-    <!-- for iOS -->
-    <link rel="apple-touch-icon" sizes="144x144" href="./src/VOCA-144x144.png"/>
-    <link rel="manifest" href="./manifest.json">
- ```
+```html
+<!-- for iOS -->
+<link rel="apple-touch-icon" sizes="144x144" href="./src/VOCA-144x144.png"/>
+<link rel="manifest" href="./manifest.json">
+```
 
 可以在 `./manifest.json` 更改 pwa 名稱及縮圖。
 
@@ -55,15 +57,15 @@ Web App manifest 提供了應用程式相關的資訊（像是名稱、作者、
 為了在離線時能順利工作，我們要註冊一個 service worker，一支在背景執行的程式，管理向網路抓取資料的行為。在 `dist/src/app.js` 中加入:
 
 ```javascript
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../sw.js')
-    .then(reg => {
-      console.log(`SW is registered with scope: ${reg.scope}`)
-    })
-    .catch(err => {
-      console.log('SW Error ', err)
-    })
-  }
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('../sw.js')
+  .then(reg => {
+    console.log(`SW is registered with scope: ${reg.scope}`)
+  })
+  .catch(err => {
+    console.log('SW Error ', err)
+  })
+}
 ```
 
 其中 sw.js 必須放在根目錄，因為 service workers 的作用範圍是根據其在目錄結構中的位置決定的。這時打開瀏覽器，console 會顯示 `SW is registered with scope: ${reg.scope}`，這時候 cache 裡沒有任何資料。
@@ -170,7 +172,7 @@ const cacheKey = 'demo-sw-v2'
 在 `dist/index.html` 中更改貓咪圖片為 `src/cat2.jpeg`：
 
 ```html
- <div style="background:url('src/cat2.jpeg') no-repeat no-repeat; width: 600px; height: 400px;"></div>
+<div style="background:url('src/cat2.jpeg') no-repeat no-repeat; width: 600px; height: 400px;"></div>
 ```
 
 這時重新整理網頁，會發現網頁上的貓咪一直是貓咪 1，cache 中的 `index.html` 也並未改動。關掉網頁重開後，發現變成貓咪 2，cahce 中的 `index.html` 也變了。
