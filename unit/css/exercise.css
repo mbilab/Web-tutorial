@@ -15,6 +15,7 @@ body {
   padding: 5px 0;
   top: 0;
 
+  /* Step 4.2 code goes here */
   /* Step 6 code goes here */
 
 }
@@ -40,7 +41,7 @@ i.icon {
 
 .right {
 
-  /* Step 4 code goes here */
+  /* Step 4.1 code goes here */
 
 }
 

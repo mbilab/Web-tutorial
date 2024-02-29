@@ -51,12 +51,20 @@ height: 30px;
 Insert the following code into `./exercise.css` and follow instructions beginning with `Step 4`.
 
 ```
-/* Step 4:
+/* Step 4.1:
  * change `static` to the correct value to make the `right` property work
+ * you might need to consider the `position` of its parent element (#navbar)
  * google `css position` for more
  */
 position: static;
 right: 0.5em;
+```
+
+```
+/* Step 4.2:
+ * change `static` to the correct value
+ */
+position: static;
 ```
 
 ## Step 5: style the banner
@@ -86,7 +94,7 @@ position: [correct position];
 
 ## step 7: adjust the position of the main content on z-coordinate
 
-Insert the following code into `./exercise.css` and follow instructions beginning with `Step 8`.
+Insert the following code into `./exercise.css` and follow instructions beginning with `Step 7`.
 
 ```
 /* Step 7:
@@ -100,7 +108,7 @@ z-index: [correct z-index];
 
 ## step 8: arrange the info of the paragraph
  
-Insert the following code into `./exercise.css` and follow instructions beginning with `Step 7`.
+Insert the following code into `./exercise.css` and follow instructions beginning with `Step 8`.
 
 ```
 /* Step 8:
