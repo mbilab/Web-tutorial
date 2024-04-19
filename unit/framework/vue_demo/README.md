@@ -48,7 +48,7 @@ input(v-model="[variable name]", type="text", placeholder="Task...")
 // edit [variable name] to an appropriate value
 // 複製這段程式碼至 `./src/App.vue`
 // 將 [variable name] 修改成合適的值
-p {{ [variable name ]}}
+p {{ [variable name] }}
 ```
 
 ```javascript
