@@ -7,7 +7,7 @@ Via visualization, we can meke data more meaningful.  This tutorial demo visuali
 
 ### Step 0: know jquery and svg
 
-Check [previous unit](https://github.com/mbilab/Web-tutorial/tree/master/unit/js) to learn jQuery basics, including:
+Check the [previous unit](https://github.com/mbilab/Web-tutorial/tree/master/unit/js) to learn jQuery basics, including:
   - how to include JavaScript in HTML
   - handle events
   - change CSS/HTML with jQuery
